@@ -1,0 +1,333 @@
+[gd_scene load_steps=30 format=3 uid="uid://dwjj0q4okd4tu"]
+
+[ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="1_48dkb"]
+[ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="2_6bbc2"]
+[ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="2_etcvn"]
+[ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="3_2qrg6"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="6_un2q0"]
+[ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="7_m0na6"]
+[ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="9_glqlt"]
+[ext_resource type="AudioStream" uid="uid://dxqg5uyh61jfl" path="res://Assets/audio/Intro/2.ogg" id="10_qn8of"]
+[ext_resource type="AudioStream" uid="uid://ck61yaoxa0b4c" path="res://Assets/audio/Intro/3.ogg" id="11_507pj"]
+[ext_resource type="AudioStream" uid="uid://c5hymttildovf" path="res://Assets/audio/Intro/Choices.ogg" id="12_qitfr"]
+[ext_resource type="AudioStream" uid="uid://5uukifyvltdl" path="res://Assets/audio/music/nature drums.wav" id="13_h2pg6"]
+[ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="13_mbnjt"]
+[ext_resource type="AudioStream" uid="uid://dm7snxy685cuu" path="res://Assets/audio/music/nature.wav" id="14_3m5h5"]
+[ext_resource type="AudioStream" uid="uid://jhvcymmgy8jd" path="res://Assets/audio/music/technology.wav" id="15_4cfeq"]
+[ext_resource type="AudioStream" uid="uid://ddlh70ms50ctq" path="res://Assets/audio/music/technology drums.wav" id="16_dipqf"]
+[ext_resource type="Texture2D" uid="uid://boebv13l6yy4j" path="res://Assets/Textures/Earth/earth_color_10K.jpg" id="17_yax02"]
+[ext_resource type="Texture2D" uid="uid://cfw3q60mqcsmv" path="res://Assets/Textures/Earth/earth_clouds_8K.jpg" id="18_52uev"]
+[ext_resource type="Texture2D" uid="uid://ccxfskgnfdltl" path="res://Assets/Textures/Earth/earth_nightlights_10K.png" id="19_tjmqt"]
+[ext_resource type="Texture2D" uid="uid://dbtwnnvmqrp2e" path="res://Assets/Textures/Earth/topography_5k.png" id="20_c7mf6"]
+[ext_resource type="Texture2D" uid="uid://sjdgud5kg31c" path="res://Assets/Textures/Earth/earth_landocean_4K_2.jpg" id="21_drkgj"]
+[ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="22_f1d4y"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qifjg"]
+panorama = ExtResource("1_48dkb")
+
+[sub_resource type="Sky" id="Sky_g0026"]
+sky_material = SubResource("PanoramaSkyMaterial_qifjg")
+
+[sub_resource type="Environment" id="Environment_vgy61"]
+background_mode = 2
+sky = SubResource("Sky_g0026")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hsow4"]
+size = Vector3(11, 5, 6)
+
+[sub_resource type="Curve3D" id="Curve3D_5xsma"]
+_data = {
+"points": PackedVector3Array(0, -1, -3, 0, 1, 3, -0.5, -0.5, -127, 0, 0, -9, 0, 0, 9, 5.07864, -0.68556, -106.795, 0, 0, -10, 0, 0, 10, -4, -1, -89, 0, 0, -7, 0, 0, 7, -4.71103, 0, -61.0692, 0, 0, -4, 0, 0, 4, -1, 3, -47, 0, 0, 0, 0, 0, 0, -1, 4, -32.6239),
+"tilts": PackedFloat32Array(0.0489368, 0.138979, 0.0872665, 0, 0, 0.0872665)
+}
+point_count = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4baci"]
+albedo_texture = ExtResource("17_yax02")
+roughness_texture = ExtResource("21_drkgj")
+emission_enabled = true
+emission_texture = ExtResource("19_tjmqt")
+heightmap_enabled = true
+heightmap_texture = ExtResource("20_c7mf6")
+detail_enabled = true
+detail_mask = ExtResource("18_52uev")
+detail_blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_5lbt3"]
+resource_name = "earthSpin"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.97, 1, 0, 8.74228e-08, 0, 1, 1.01, 1, 0, 8.74228e-08, 0, 1, 1.03, 1, 0, 8.74228e-08, 0, 1, 1.04, 1, 0, 0.67559, 0, 0.737277)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rm12f"]
+_data = {
+"earthSpin": SubResource("Animation_5lbt3")
+}
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 78.6239)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vgy61")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.414693, -0.333502, 0.846644, 0, 0.930417, 0.366501, -0.909962, -0.151986, 0.385838, 0, 0, -129)
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -134.5)
+size = Vector3(10, 1, 18)
+material = ExtResource("2_etcvn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -147)
+size = Vector3(10, 1, 7)
+material = ExtResource("2_etcvn")
+
+[node name="Gate1" parent="." instance=ExtResource("2_6bbc2")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -3, 0.5, -146)
+
+[node name="Gate2" parent="." instance=ExtResource("3_2qrg6")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2, 0.5, -146)
+
+[node name="Player" parent="." instance=ExtResource("6_un2q0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5.2, -37.8665)
+
+[node name="Path" type="CSGCombiner3D" parent="."]
+
+[node name="Text" type="Node3D" parent="."]
+
+[node name="1_Title" type="Label3D" parent="Text"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8.2, -48)
+text = "CUBETOPIA"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Text/1_Title" node_paths=PackedStringArray("audio_stream")]
+script = ExtResource("7_m0na6")
+audio_stream = NodePath("AudioStreamPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/1_Title/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.5)
+shape = SubResource("BoxShape3D_hsow4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/1_Title/Area3D"]
+volume_db = -6.0
+bus = &"VO"
+
+[node name="2" type="Label3D" parent="Text"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -5, 6.2, -68)
+text = "Try to imagine what you want the world
+ to look like in a hundred years"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Text/2" node_paths=PackedStringArray("audio_stream")]
+script = ExtResource("7_m0na6")
+audio_stream = NodePath("AudioStreamPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/2/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_hsow4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/2/Area3D"]
+stream = ExtResource("9_glqlt")
+bus = &"VO"
+
+[node name="3" type="Label3D" parent="Text"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.2, -86)
+text = "What do you want it to look like?
+What do you think is right?
+"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Text/3" node_paths=PackedStringArray("audio_stream")]
+script = ExtResource("7_m0na6")
+audio_stream = NodePath("AudioStreamPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1.5)
+shape = SubResource("BoxShape3D_hsow4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/3/Area3D"]
+stream = ExtResource("10_qn8of")
+bus = &"VO"
+
+[node name="4" type="Label3D" parent="Text"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5.2, -106)
+text = "How do you hope people
+that you will never meet will live?
+"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Text/4" node_paths=PackedStringArray("audio_stream")]
+script = ExtResource("7_m0na6")
+audio_stream = NodePath("AudioStreamPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1.5)
+shape = SubResource("BoxShape3D_hsow4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/4/Area3D"]
+stream = ExtResource("11_507pj")
+bus = &"VO"
+
+[node name="5" type="Label3D" parent="Text"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5.2, -131)
+text = "Do you think humanity of the future 
+should focus on global cooperation and unity
+ or do we have better chances of achieving our goals in small, 
+independent communities?"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Text/5" node_paths=PackedStringArray("audio_stream")]
+script = ExtResource("7_m0na6")
+audio_stream = NodePath("AudioStreamPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 2.5)
+shape = SubResource("BoxShape3D_hsow4")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/5/Area3D"]
+stream = ExtResource("12_qitfr")
+volume_db = -3.0
+bus = &"VO"
+
+[node name="6" type="Label3D" parent="Text"]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -3, 5.2, -146)
+text = "SMALL COMMUNITIES
+"
+font_size = 100
+outline_size = 20
+
+[node name="7" type="Label3D" parent="Text"]
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 2.7, 5.2, -145.8)
+text = "GLOBAL COOPERATION
+"
+font_size = 100
+outline_size = 20
+
+[node name="Path3D2" type="Path3D" parent="."]
+curve = SubResource("Curve3D_5xsma")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -78.6)
+use_collision = true
+polygon = PackedVector2Array(-1, 0, -6, 1, 6, 1, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("13_mbnjt")
+
+[node name="music" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="music"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, -58)
+stream = ExtResource("13_h2pg6")
+autoplay = true
+max_distance = 40.0
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="music"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, -78)
+stream = ExtResource("14_3m5h5")
+autoplay = true
+max_distance = 40.0
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="music"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -96)
+stream = ExtResource("15_4cfeq")
+autoplay = true
+max_distance = 40.0
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="music"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -115)
+stream = ExtResource("16_dipqf")
+autoplay = true
+max_distance = 30.0
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="music"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -122)
+stream = ExtResource("15_4cfeq")
+autoplay = true
+max_distance = 30.0
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer3D7" type="AudioStreamPlayer3D" parent="music"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -147)
+stream = ExtResource("15_4cfeq")
+autoplay = true
+max_distance = 30.0
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="music"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 3, -145)
+stream = ExtResource("16_dipqf")
+autoplay = true
+max_distance = 30.0
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(-0.776093, -0.0821325, 0.625247, 0.344932, 0.77473, 0.529919, -0.527921, 0.626935, -0.572933, -3, 103, -264)
+radius = 66.0
+radial_segments = 32
+rings = 32
+material = SubResource("StandardMaterial3D_4baci")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CSGSphere3D"]
+libraries = {
+"": SubResource("AnimationLibrary_rm12f")
+}
+
+[node name="tree_wire_teal" parent="." instance=ExtResource("22_f1d4y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -13, 0, -131.624)
+
+[node name="tree_wire_teal2" parent="." instance=ExtResource("22_f1d4y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 13, 0, -131.624)
+
+[node name="tree_wire_teal3" parent="." instance=ExtResource("22_f1d4y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 8, 5, -38.6239)
+
+[node name="tree_wire_teal4" parent="." instance=ExtResource("22_f1d4y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -13, 0, -105.624)
+
+[node name="tree_wire_teal5" parent="." instance=ExtResource("22_f1d4y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 7, 0, -76.6239)
+
+[node name="tree_wire_teal6" parent="." instance=ExtResource("22_f1d4y")]
+transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -17, 0, -63.6239)
+
+[connection signal="body_entered" from="Text/1_Title/Area3D" to="Text/1_Title/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Text/2/Area3D" to="Text/2/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Text/3/Area3D" to="Text/3/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Text/4/Area3D" to="Text/4/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Text/5/Area3D" to="Text/5/Area3D" method="_on_body_entered"]

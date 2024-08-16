@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://caf2ufboi3wj0"]
+
+[ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="1_kkosf"]
+
+[resource]
+albedo_texture = ExtResource("1_kkosf")
+emission_enabled = true
+emission_texture = ExtResource("1_kkosf")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_texture = ExtResource("1_kkosf")
+heightmap_flip_texture = true
+uv1_scale = Vector3(10, 5, 1)
+texture_filter = 4

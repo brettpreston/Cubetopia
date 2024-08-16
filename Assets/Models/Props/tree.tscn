@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8a45sqmxjmcw"]
+
+[ext_resource type="PackedScene" uid="uid://cys4va57xd5af" path="res://Assets/Models/Props/lowpoly_tree_1.glb" id="1_tereq"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_tereq")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+
+[editable path="Sketchfab_Scene"]

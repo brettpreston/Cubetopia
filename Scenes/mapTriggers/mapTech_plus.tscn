@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwb8xnxe7a4nq"]
+
+[ext_resource type="Script" path="res://Assets/UI/mapCube/mapTech_plus.gd" id="1_k6axm"]
+[ext_resource type="Shader" uid="uid://c130nilup2un4" path="res://Assets/Textures/Energy2.tres" id="2_yhh54"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oj12f"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymy1r"]
+render_priority = 0
+shader = ExtResource("2_yhh54")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/uv1_blend_sharpness = null
+
+[node name="Tech_plus" type="Area3D"]
+script = ExtResource("1_k6axm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_oj12f")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CollisionShape3D"]
+radius = 1.0
+smooth_faces = false
+material = SubResource("ShaderMaterial_ymy1r")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+billboard = 1
+text = "Tech +1"
+font_size = 64
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

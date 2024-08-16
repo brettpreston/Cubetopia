@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=3 uid="uid://cx3dlvw3hbpm2"]
+
+[ext_resource type="Shader" path="res://Assets/Textures/Stars.gdshader" id="1_t15s1"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_wotup"]
+[ext_resource type="Texture2D" uid="uid://gwt4mrbmdv01" path="res://Assets/Textures/Grids/Orange.png" id="2_5ik0r"]
+[ext_resource type="PackedScene" uid="uid://dtpmgpd6rpdcc" path="res://Scenes/Gates/Gate0.tscn" id="2_sq0fm"]
+[ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="3_lr1tf"]
+[ext_resource type="PackedScene" uid="uid://d2jumnpofrwoi" path="res://Assets/Models/Props/Space station 1/space_station.glb" id="4_cvmg4"]
+[ext_resource type="AudioStream" uid="uid://bo0fo4xf3ul55" path="res://Assets/audio/music/Space Drums.wav" id="7_w5u0f"]
+[ext_resource type="AudioStream" uid="uid://bpfwfuknppxng" path="res://Assets/audio/music/Space.wav" id="8_cawjl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_msp42"]
+shader = ExtResource("1_t15s1")
+shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
+shader_parameter/star_base_color = Color(0.8, 1, 0.3, 1)
+shader_parameter/star_hue_offset = 0.6
+shader_parameter/star_intensity = 0.08
+shader_parameter/star_twinkle_speed = 0.8
+shader_parameter/star_twinkle_intensity = 0.2
+shader_parameter/layer_scale = 20.0
+shader_parameter/layer_scale_step = 10.0
+shader_parameter/layers_count = 3
+
+[sub_resource type="Sky" id="Sky_3gycq"]
+sky_material = SubResource("ShaderMaterial_msp42")
+
+[sub_resource type="Environment" id="Environment_oykmn"]
+background_mode = 2
+sky = SubResource("Sky_3gycq")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qmhn"]
+albedo_texture = ExtResource("2_5ik0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sl1iq"]
+albedo_texture = ExtResource("2_5ik0r")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.786567, 0.0638225, -0.614197, -0.612371, 0.0473632, 0.78915, 0.0794559, 0.996837, 0.00182868, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oykmn")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.5)
+size = Vector3(5, 1, 18)
+material = SubResource("StandardMaterial3D_3qmhn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -18)
+size = Vector3(10, 1, 7)
+material = SubResource("StandardMaterial3D_sl1iq")
+
+[node name="Player" parent="." instance=ExtResource("1_wotup")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, -12)
+
+[node name="Gate2" parent="." instance=ExtResource("2_sq0fm")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3, 0, -18)
+
+[node name="Gate1" parent="." instance=ExtResource("3_lr1tf")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2, 0, -18)
+
+[node name="Space Station" parent="." instance=ExtResource("4_cvmg4")]
+transform = Transform3D(-96.5926, 0, 25.8819, 0, 100, 0, -25.8819, 0, -96.5926, 108, 0, -173)
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -18)
+stream = ExtResource("7_w5u0f")
+autoplay = true
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -11)
+stream = ExtResource("8_cawjl")
+autoplay = true
+panning_strength = 0.0
+bus = &"Music"

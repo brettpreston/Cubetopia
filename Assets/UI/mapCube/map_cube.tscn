@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dao20kjowrugg"]
+
+[ext_resource type="PackedScene" uid="uid://gg8d0wsqxdqv" path="res://Assets/Models/Props/Cube3.glb" id="1_rs2lm"]
+[ext_resource type="Script" path="res://Assets/UI/mapCube/Ball.gd" id="2_38pri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lvcb2"]
+emission_enabled = true
+emission = Color(0.0509804, 0.470588, 1, 1)
+emission_energy_multiplier = 5.57
+
+[sub_resource type="SphereMesh" id="SphereMesh_uglrs"]
+material = SubResource("StandardMaterial3D_lvcb2")
+
+[node name="mapCube" type="Node3D"]
+
+[node name="Cube_Map" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0999999, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+skeleton = NodePath("../../../..")
+
+[node name="Cube3" parent="Cube_Map" instance=ExtResource("1_rs2lm")]
+
+[node name="Ball" type="MeshInstance3D" parent="Cube_Map"]
+mesh = SubResource("SphereMesh_uglrs")
+script = ExtResource("2_38pri")
+
+[node name="x" type="Label3D" parent="Cube_Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 4)
+text = "X"
+
+[node name="y" type="Label3D" parent="Cube_Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.98023e-07, 4)
+text = "Y
+"
+
+[node name="z" type="Label3D" parent="Cube_Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3, 0)
+text = "Z
+
+"

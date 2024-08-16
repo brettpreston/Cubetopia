@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtpmgpd6rpdcc"]
+
+[ext_resource type="Script" path="res://Scenes/Gates/Gate0.gd" id="1_ajhi3"]
+[ext_resource type="Texture2D" uid="uid://b8q44ipg8a3cq" path="res://Assets/Textures/Grids/Black.png" id="2_cj3m1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7ix1"]
+albedo_texture = ExtResource("2_cj3m1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w676p"]
+size = Vector3(3, 3.5, 1)
+
+[node name="Gate2" type="Area3D"]
+script = ExtResource("1_ajhi3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+size = Vector3(5, 4, 1)
+material = SubResource("StandardMaterial3D_h7ix1")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+operation = 2
+size = Vector3(3, 3.5, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+shape = SubResource("BoxShape3D_w676p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
