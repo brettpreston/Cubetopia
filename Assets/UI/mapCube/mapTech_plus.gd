@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	#if body.name == "player":
+	if "Player" in body.name:
 		#player_data.mapGlobality += 0
 		player_data.mapTech += 1
 		#player_data.mapEconomy += 0

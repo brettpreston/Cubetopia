@@ -6,7 +6,8 @@ extends Area3D
 @export var audio_stream: AudioStreamPlayer3D
 
 func _on_body_entered(body):
-	audio_stream.play()
+	if "Player" in body.name:
+		audio_stream.play()
 	# Attach the audio_player to your scene or relevant node.
 
 # Called when the node enters the scene tree for the first time.

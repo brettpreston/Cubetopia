@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwjj0q4okd4tu"]
+[gd_scene load_steps=23 format=3 uid="uid://dwjj0q4okd4tu"]
 
 [ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="1_48dkb"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="2_6bbc2"]
@@ -15,12 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://dm7snxy685cuu" path="res://Assets/audio/music/nature.wav" id="14_3m5h5"]
 [ext_resource type="AudioStream" uid="uid://jhvcymmgy8jd" path="res://Assets/audio/music/technology.wav" id="15_4cfeq"]
 [ext_resource type="AudioStream" uid="uid://ddlh70ms50ctq" path="res://Assets/audio/music/technology drums.wav" id="16_dipqf"]
-[ext_resource type="Texture2D" uid="uid://boebv13l6yy4j" path="res://Assets/Textures/Earth/earth_color_10K.jpg" id="17_yax02"]
-[ext_resource type="Texture2D" uid="uid://cfw3q60mqcsmv" path="res://Assets/Textures/Earth/earth_clouds_8K.jpg" id="18_52uev"]
-[ext_resource type="Texture2D" uid="uid://ccxfskgnfdltl" path="res://Assets/Textures/Earth/earth_nightlights_10K.png" id="19_tjmqt"]
-[ext_resource type="Texture2D" uid="uid://dbtwnnvmqrp2e" path="res://Assets/Textures/Earth/topography_5k.png" id="20_c7mf6"]
-[ext_resource type="Texture2D" uid="uid://sjdgud5kg31c" path="res://Assets/Textures/Earth/earth_landocean_4K_2.jpg" id="21_drkgj"]
 [ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="22_f1d4y"]
+[ext_resource type="PackedScene" uid="uid://d4k1pgv2pq48" path="res://Earth.tscn" id="22_fxvse"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qifjg"]
 panorama = ExtResource("1_48dkb")
@@ -43,32 +39,6 @@ _data = {
 "tilts": PackedFloat32Array(0.0489368, 0.138979, 0.0872665, 0, 0, 0.0872665)
 }
 point_count = 6
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4baci"]
-albedo_texture = ExtResource("17_yax02")
-roughness_texture = ExtResource("21_drkgj")
-emission_enabled = true
-emission_texture = ExtResource("19_tjmqt")
-heightmap_enabled = true
-heightmap_texture = ExtResource("20_c7mf6")
-detail_enabled = true
-detail_mask = ExtResource("18_52uev")
-detail_blend_mode = 1
-
-[sub_resource type="Animation" id="Animation_5lbt3"]
-resource_name = "earthSpin"
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.97, 1, 0, 8.74228e-08, 0, 1, 1.01, 1, 0, 8.74228e-08, 0, 1, 1.03, 1, 0, 8.74228e-08, 0, 1, 1.04, 1, 0, 0.67559, 0, 0.737277)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rm12f"]
-_data = {
-"earthSpin": SubResource("Animation_5lbt3")
-}
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 78.6239)
@@ -296,18 +266,6 @@ max_distance = 30.0
 panning_strength = 0.0
 bus = &"Music"
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(-0.776093, -0.0821325, 0.625247, 0.344932, 0.77473, 0.529919, -0.527921, 0.626935, -0.572933, -3, 103, -264)
-radius = 66.0
-radial_segments = 32
-rings = 32
-material = SubResource("StandardMaterial3D_4baci")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CSGSphere3D"]
-libraries = {
-"": SubResource("AnimationLibrary_rm12f")
-}
-
 [node name="tree_wire_teal" parent="." instance=ExtResource("22_f1d4y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -13, 0, -131.624)
 
@@ -325,6 +283,9 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 7, 0, -76.6239)
 
 [node name="tree_wire_teal6" parent="." instance=ExtResource("22_f1d4y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -17, 0, -63.6239)
+
+[node name="Earth" parent="." instance=ExtResource("22_fxvse")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 103, -264)
 
 [connection signal="body_entered" from="Text/1_Title/Area3D" to="Text/1_Title/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Text/2/Area3D" to="Text/2/Area3D" method="_on_body_entered"]

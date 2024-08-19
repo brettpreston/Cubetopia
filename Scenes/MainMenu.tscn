@@ -1,0 +1,112 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxsksshrs1wvu"]
+
+[ext_resource type="Theme" uid="uid://cur1si5sm4vmn" path="res://Assets/UI/Menu/CubetopiaTheme.tres" id="1_lfxdq"]
+[ext_resource type="Texture2D" uid="uid://3mwo8hbdejub" path="res://Assets/UI/Menu/MenuBackground.png" id="2_2m7ol"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="2_4u76l"]
+[ext_resource type="Texture2D" uid="uid://b6suotg55f6f6" path="res://Assets/UI/Menu/Logotype.png" id="2_toe31"]
+[ext_resource type="Texture2D" uid="uid://ufqm3rj58fxr" path="res://Assets/UI/Menu/CCC_Logo.png" id="3_sc3og"]
+[ext_resource type="Texture2D" uid="uid://dwu6pafhi1glq" path="res://Assets/UI/Menu/Logo.png" id="4_j41kh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxahf"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lfxdq")
+script = ExtResource("2_4u76l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2m7ol")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+texture = ExtResource("2_toe31")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_gxahf")
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "START"
+flat = true
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OPTIONS"
+flat = true
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "CREDITS"
+flat = true
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "QUIT"
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_right = 128
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"VersionNumberLabel"
+text = "v0.1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="CCC" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("3_sc3og")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Cubetopia" type="TextureButton" parent="VBoxContainer/MarginContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+focus_mode = 0
+texture_normal = ExtResource("4_j41kh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
