@@ -5,6 +5,8 @@ const LERP_VALUE : float = 0.15
 var snap_vector : Vector3 = Vector3.DOWN
 var speed : float
 
+var xform : Transform3D
+
 @export_group("Movement variables")
 @export var walk_speed : float = 2.0
 @export var run_speed : float = 5.0
@@ -24,6 +26,11 @@ func _physics_process(delta):
 	move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 	
 	velocity.y -= gravity * delta
+	
+	#align player with ground
+	if is_on_floor():
+		align_with_floor($RayCast3D.get_collision_normal())
+		global_transform = global_transform.interpolate_with(xform, 0.01)
 	
 	if Input.is_action_pressed("run"):
 		speed = run_speed
@@ -47,6 +54,13 @@ func _physics_process(delta):
 	apply_floor_snap()
 	move_and_slide()
 	animate(delta)
+	
+	#more align player with ground
+func align_with_floor(floor_normal):
+	xform = global_transform
+	xform.basis.y = floor_normal
+	xform.basis.x = -xform.basis.z.cross(floor_normal)
+	xform.basis = xform.basis.orthonormalized()
 
 func animate(delta):
 	if is_on_floor():
