@@ -1,0 +1,384 @@
+[gd_scene load_steps=17 format=3 uid="uid://dyesufnrbuiwl"]
+
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_k17dc"]
+[ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_6tcl4"]
+[ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_wpcwx"]
+[ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="4_5n1lt"]
+[ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_8lnfg"]
+[ext_resource type="PackedScene" uid="uid://cuy2ch6seo4sn" path="res://Scenes/mapTriggers/mapTech_minus.tscn" id="6_pwkqt"]
+[ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="7_jrn6x"]
+[ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="8_2ud4o"]
+[ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="9_jm8sw"]
+[ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="10_4jq6d"]
+[ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="11_glvia"]
+[ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="11_hrbxy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
+sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
+
+[sub_resource type="Sky" id="Sky_6uvix"]
+sky_material = SubResource("ProceduralSkyMaterial_el0em")
+
+[sub_resource type="Environment" id="Environment_ngaxy"]
+background_mode = 2
+sky = SubResource("Sky_6uvix")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ra5ch"]
+size = Vector3(11, 5, 6)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ngaxy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_k17dc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
+
+[node name="1" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -11)
+text = "What is our relationship with animals, exactly?"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="1"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="1/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="1/Area3D"]
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="3" type="Label3D" parent="."]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -5, 6, -41)
+text = "As little interference as possible, except maybe to save dying species.
+ We no longer exploit of subjugate animals. "
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="3"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="3/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="3/Area3D"]
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="4" type="Label3D" parent="."]
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -42)
+text = "We need to strike a balance between 
+ethical treatment and our needs as humans. 
+We may still use animals for sustenance, 
+provided we do it responsibly"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="4"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="4/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="4/Area3D"]
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="Quote" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, -1, 6, -106)
+text = "Add audio here “This planet is a crime scene.” 9:50 10Y"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Quote"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quote/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote/Area3D"]
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="6" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 6, -127)
+text = "Do we regulate the weather or submit to cataclysms?"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="6"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="6/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="6/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="9" type="Label3D" parent="."]
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -4, 6, -150)
+text = "We regulate the environment to be stable,
+even if that means we might mess something up."
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="9"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="9/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="9/Area3D"]
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="10" type="Label3D" parent="."]
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 8, 6, -154)
+text = "We live in humility to natural forces. The risk is too great."
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="10"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="10/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="10/Area3D"]
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="Quote2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -214)
+text = "Add audio here “Justice doesn’t just happen. Justice is forced by people coming together and exercising strength, unity and intelligence.”  13:05WLvW"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Quote2"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quote2/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote2/Area3D"]
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="12" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -231)
+text = "SOME PEOPLE WON’T OBEY THE RULES OF SOCIETY NO MATTER HOW MUCH EDUCATION,
+ PREVENTION AND SUPPORT YOU PROVIDE. WHAT THEN?"
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="12"]
+script = ExtResource("2_6tcl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="12/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="12/Area3D"]
+stream = ExtResource("3_wpcwx")
+bus = &"VO"
+
+[node name="Gate" type="CSGCombiner3D" parent="."]
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+inner_radius = 3.0
+outer_radius = 4.0
+
+[node name="Gate2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Gate2"]
+transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0.866025, -3.78552e-08, -2, 1, -2)
+inner_radius = 3.0
+outer_radius = 4.0
+
+[node name="CSGTorus3D3" type="CSGTorus3D" parent="Gate2"]
+transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0.866025, -3.78552e-08, -2, 1, -112)
+inner_radius = 3.0
+outer_radius = 4.0
+
+[node name="CSGTorus3D4" type="CSGTorus3D" parent="Gate2"]
+transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0.866025, -3.78552e-08, -5, 1, -223)
+inner_radius = 3.0
+outer_radius = 4.0
+
+[node name="12" type="Label3D" parent="Gate2/CSGTorus3D4"]
+transform = Transform3D(1, 2.08616e-07, 2.98023e-08, 1.78814e-07, -1.63181e-08, 1, 1.78814e-07, -1, -6.37425e-08, 0, 0, -5)
+text = "PEER ENFORCEMENT"
+font_size = 100
+outline_size = 20
+
+[node name="Tech_plus" parent="Gate2" instance=ExtResource("4_5n1lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -112)
+
+[node name="State_Plus" parent="Gate2" instance=ExtResource("5_8lnfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -111)
+
+[node name="Resilience_Minus" parent="Gate2" instance=ExtResource("10_4jq6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -223)
+
+[node name="Gate3" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Gate3"]
+transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, 2, 1, 0)
+inner_radius = 3.0
+outer_radius = 4.0
+
+[node name="CSGTorus3D2" type="CSGTorus3D" parent="Gate3"]
+transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, 2, 1, -110)
+inner_radius = 3.0
+outer_radius = 4.0
+
+[node name="CSGTorus3D3" type="CSGTorus3D" parent="Gate3"]
+transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, 2, 1, -222)
+inner_radius = 3.0
+outer_radius = 4.0
+
+[node name="12" type="Label3D" parent="Gate3/CSGTorus3D3"]
+transform = Transform3D(1, 2.08616e-07, 2.98023e-08, 1.78814e-07, -1.63181e-08, 1, 1.78814e-07, -1, -6.37425e-08, 0, 0, -5)
+text = "PROFESSIONAL POLICE"
+font_size = 100
+outline_size = 20
+
+[node name="Tech_minus" parent="Gate3" instance=ExtResource("6_pwkqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -110)
+
+[node name="Resilience_Minus" parent="Gate3" instance=ExtResource("10_4jq6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -110)
+
+[node name="autonomy_Minus" parent="Gate3" instance=ExtResource("9_jm8sw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -222)
+
+[node name="State_Plus" parent="Gate3" instance=ExtResource("5_8lnfg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -221)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -124)
+size = Vector3(7, 1, 45)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -53.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11, 0, -53.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -81.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -81.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -236)
+size = Vector3(7, 1, 49)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -268.5)
+size = Vector3(25, 1, 16)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -191.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -191.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -38)
+size = Vector3(10, 1, 7)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -163.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11, 0, -163.5)
+size = Vector3(7, 1, 36)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -148)
+size = Vector3(10, 1, 7)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -208)
+size = Vector3(10, 1, 7)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+size = Vector3(10, 1, 7)
+
+[node name="Tech_minus" parent="." instance=ExtResource("6_pwkqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+
+[node name="Tech_minus2" parent="." instance=ExtResource("6_pwkqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+
+[node name="Economy_plus" parent="." instance=ExtResource("8_2ud4o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -45)
+
+[node name="Tech_minus3" parent="." instance=ExtResource("6_pwkqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -46)
+
+[node name="Resilience_Minus" parent="." instance=ExtResource("10_4jq6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -45)
+
+[node name="Autonomy_Plus" parent="." instance=ExtResource("11_glvia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -45)
+
+[node name="Resilience_Plus" parent="." instance=ExtResource("7_jrn6x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -47)
+
+[node name="State_Minus" parent="." instance=ExtResource("11_hrbxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -46)
+
+[connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="4/Area3D" to="4/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Quote/Area3D" to="Quote/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="6/Area3D" to="6/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="9/Area3D" to="9/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="10/Area3D" to="10/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Quote2/Area3D" to="Quote2/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="12/Area3D" to="12/Area3D" method="_on_body_entered"]

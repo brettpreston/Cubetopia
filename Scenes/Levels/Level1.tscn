@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://byqak6kd1jv1h"]
+[gd_scene load_steps=26 format=3 uid="uid://byqak6kd1jv1h"]
 
 [ext_resource type="Texture2D" uid="uid://dvus8d0i7gqto" path="res://Assets/background/cityalt360Kpano.png" id="1_bprx2"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_kc5lt"]
@@ -14,7 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="14_fnxur"]
 [ext_resource type="PackedScene" uid="uid://cy7dnrux8p15g" path="res://Scenes/mapTriggers/mapEconomy_minus.tscn" id="15_xoqup"]
 [ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="16_co2g1"]
+[ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="16_s1lj2"]
+[ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="17_kt03j"]
 [ext_resource type="PackedScene" uid="uid://cuy2ch6seo4sn" path="res://Scenes/mapTriggers/mapTech_minus.tscn" id="17_yuigo"]
+[ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="18_x2y66"]
+[ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="19_h15j6"]
+[ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="20_x06cp"]
+[ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="21_jnf0f"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3cvss"]
 panorama = ExtResource("1_bprx2")
@@ -51,6 +57,11 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
 size = Vector3(23, 1, 37)
+material = ExtResource("2_46b28")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, 0, 4)
+size = Vector3(24, 1, 37)
 material = ExtResource("2_46b28")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -155,3 +166,21 @@ transform = Transform3D(-1.54478e-07, 0, -1, 0, 1, 0, 1, 0, -1.54478e-07, 0.0333
 
 [node name="Tech_minus2" parent="." instance=ExtResource("17_yuigo")]
 transform = Transform3D(-1.54478e-07, 0, -1, 0, 1, 0, 1, 0, -1.54478e-07, 3.03333, 1.6, 15.9667)
+
+[node name="State_Plus" parent="." instance=ExtResource("16_s1lj2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2, -9)
+
+[node name="State_Plus2" parent="." instance=ExtResource("17_kt03j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2, -9)
+
+[node name="autonomy_Minus" parent="." instance=ExtResource("18_x2y66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2, -3)
+
+[node name="Autonomy_Plus" parent="." instance=ExtResource("19_h15j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2, -6)
+
+[node name="Resilience_Plus" parent="." instance=ExtResource("20_x06cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2, -6)
+
+[node name="Resilience_Plus2" parent="." instance=ExtResource("21_jnf0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2, -3)

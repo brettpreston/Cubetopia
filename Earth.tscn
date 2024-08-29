@@ -19,7 +19,6 @@ detail_mask = ExtResource("2_5l6qv")
 detail_blend_mode = 1
 
 [node name="Earth" type="CSGSphere3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 radius = 66.0
 radial_segments = 32
 rings = 32
