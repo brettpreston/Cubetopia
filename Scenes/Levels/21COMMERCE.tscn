@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ctpo8qxqv8237"]
+[gd_scene load_steps=19 format=3 uid="uid://ctpo8qxqv8237"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_m0f82"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4u7l8"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="8_pmcpf"]
 [ext_resource type="PackedScene" uid="uid://cy7dnrux8p15g" path="res://Scenes/mapTriggers/mapEconomy_minus.tscn" id="9_vovpb"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="10_8giv6"]
+[ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="11_e48xt"]
+[ext_resource type="Script" path="res://Gate_30Nature.gd" id="12_j5736"]
+[ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="13_8xrdl"]
+[ext_resource type="Script" path="res://Gate_31Space.gd" id="14_5g5op"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
 sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
@@ -224,17 +228,6 @@ transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0
 inner_radius = 3.0
 outer_radius = 4.0
 
-[node name="CSGTorus3D4" type="CSGTorus3D" parent="Gate2"]
-transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0.866025, -3.78552e-08, -5, 1, -223)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="12" type="Label3D" parent="Gate2/CSGTorus3D4"]
-transform = Transform3D(1, 2.08616e-07, 2.98023e-08, 1.78814e-07, -1.63181e-08, 1, 1.78814e-07, -1, -6.37425e-08, 0, 0, -5)
-text = "SPACE"
-font_size = 100
-outline_size = 20
-
 [node name="Economy_minus" parent="Gate2" instance=ExtResource("9_vovpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -2)
 
@@ -270,17 +263,6 @@ outer_radius = 4.0
 transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, 2, 1, -110)
 inner_radius = 3.0
 outer_radius = 4.0
-
-[node name="CSGTorus3D3" type="CSGTorus3D" parent="Gate3"]
-transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, 2, 1, -222)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="12" type="Label3D" parent="Gate3/CSGTorus3D3"]
-transform = Transform3D(1, 2.08616e-07, 2.98023e-08, 1.78814e-07, -1.63181e-08, 1, 1.78814e-07, -1, -6.37425e-08, 0, 0, -5)
-text = "NATURE"
-font_size = 100
-outline_size = 20
 
 [node name="Economy_plus" parent="Gate3" instance=ExtResource("4_sewm0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -338,12 +320,12 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -81
 size = Vector3(7, 1, 36)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -236)
-size = Vector3(7, 1, 49)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -226.5)
+size = Vector3(7, 1, 30)
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -268.5)
-size = Vector3(25, 1, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -245.5)
+size = Vector3(25, 1, 10)
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -191.5)
@@ -382,6 +364,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 
 [node name="Economy_minus2" parent="." instance=ExtResource("9_vovpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+
+[node name="Gate1" parent="." instance=ExtResource("11_e48xt")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6, 0, -246)
+script = ExtResource("12_j5736")
+
+[node name="12" type="Label3D" parent="Gate1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "NATURE"
+font_size = 100
+outline_size = 20
+
+[node name="Gate4" parent="." instance=ExtResource("13_8xrdl")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 6, 0, -246)
+script = ExtResource("14_5g5op")
+
+[node name="12" type="Label3D" parent="Gate4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "SPACE"
+font_size = 100
+outline_size = 20
 
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]

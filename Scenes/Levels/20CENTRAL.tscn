@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bl0wxpinyyqxb"]
+[gd_scene load_steps=18 format=3 uid="uid://bl0wxpinyyqxb"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_fmc72"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_757vd"]
@@ -8,7 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="6_hljxc"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="8_mnfj3"]
 [ext_resource type="PackedScene" uid="uid://cy7dnrux8p15g" path="res://Scenes/mapTriggers/mapEconomy_minus.tscn" id="9_g3yik"]
+[ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="10_5nbp2"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="10_y0hs5"]
+[ext_resource type="Script" path="res://Gate_30Nature.gd" id="11_r0yxo"]
+[ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="12_ktwn1"]
+[ext_resource type="Script" path="res://Gate_31Space.gd" id="13_s80id"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
 sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
@@ -220,17 +224,6 @@ transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0
 inner_radius = 3.0
 outer_radius = 4.0
 
-[node name="CSGTorus3D4" type="CSGTorus3D" parent="Gate2"]
-transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0.866025, -3.78552e-08, -5, 1, -223)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="12" type="Label3D" parent="Gate2/CSGTorus3D4"]
-transform = Transform3D(1, 2.08616e-07, 2.98023e-08, 1.78814e-07, -1.63181e-08, 1, 1.78814e-07, -1, -6.37425e-08, 0, 0, -5)
-text = "SPACE"
-font_size = 100
-outline_size = 20
-
 [node name="Economy_plus" parent="Gate2" instance=ExtResource("8_mnfj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -2)
 
@@ -264,17 +257,6 @@ transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 
 inner_radius = 3.0
 outer_radius = 4.0
 
-[node name="CSGTorus3D3" type="CSGTorus3D" parent="Gate3"]
-transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, 2, 1, -222)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="12" type="Label3D" parent="Gate3/CSGTorus3D3"]
-transform = Transform3D(1, 2.08616e-07, 2.98023e-08, 1.78814e-07, -1.63181e-08, 1, 1.78814e-07, -1, -6.37425e-08, 0, 0, -5)
-text = "NATURE"
-font_size = 100
-outline_size = 20
-
 [node name="Economy_plus" parent="Gate3" instance=ExtResource("8_mnfj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -3)
 
@@ -295,6 +277,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -109)
 
 [node name="State_Plus4" parent="Gate3" instance=ExtResource("6_hljxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -109)
+
+[node name="Gate1" parent="Gate3" instance=ExtResource("10_5nbp2")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 0, -220)
+script = ExtResource("11_r0yxo")
+
+[node name="12" type="Label3D" parent="Gate3/Gate1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "NATURE"
+font_size = 100
+outline_size = 20
+
+[node name="Gate2" parent="Gate3" instance=ExtResource("12_ktwn1")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 15, 0, -220)
+script = ExtResource("13_s80id")
+
+[node name="12" type="Label3D" parent="Gate3/Gate2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "SPACE"
+font_size = 100
+outline_size = 20
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true

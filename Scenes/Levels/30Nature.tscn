@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyesufnrbuiwl"]
+[gd_scene load_steps=19 format=3 uid="uid://dyesufnrbuiwl"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_k17dc"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_6tcl4"]
@@ -12,18 +12,20 @@
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="10_4jq6d"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="11_glvia"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="11_hrbxy"]
+[ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="13_erite"]
+[ext_resource type="Script" path="res://Gate_40Final.gd" id="14_f1d3c"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
-sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c5hrr"]
+sky_horizon_color = Color(0.59625, 0.680768, 0.6375, 1)
+ground_bottom_color = Color(6.01634e-09, 0.26907, 2.40654e-07, 1)
+ground_horizon_color = Color(0.59625, 0.680768, 0.6375, 1)
 
-[sub_resource type="Sky" id="Sky_6uvix"]
-sky_material = SubResource("ProceduralSkyMaterial_el0em")
+[sub_resource type="Sky" id="Sky_1ch31"]
+sky_material = SubResource("ProceduralSkyMaterial_c5hrr")
 
-[sub_resource type="Environment" id="Environment_ngaxy"]
+[sub_resource type="Environment" id="Environment_33jeb"]
 background_mode = 2
-sky = SubResource("Sky_6uvix")
+sky = SubResource("Sky_1ch31")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -33,7 +35,7 @@ size = Vector3(11, 5, 6)
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ngaxy")
+environment = SubResource("Environment_33jeb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -372,6 +374,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -47)
 
 [node name="State_Minus" parent="." instance=ExtResource("11_hrbxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -46)
+
+[node name="Gate4" parent="." instance=ExtResource("13_erite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -272)
+script = ExtResource("14_f1d3c")
+
+[node name="Label3D" type="Label3D" parent="Gate4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "End
+"
 
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]

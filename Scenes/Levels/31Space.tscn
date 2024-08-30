@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=21 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
+[ext_resource type="Shader" path="res://Assets/Textures/Stars.gdshader" id="1_xppjm"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4m7ci"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_d2eap"]
 [ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="4_mjl73"]
@@ -12,18 +13,28 @@
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="10_2pi1e"]
 [ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="11_11it7"]
 [ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="12_mswn4"]
+[ext_resource type="PackedScene" uid="uid://d2jumnpofrwoi" path="res://Assets/Models/Props/Space station 1/space_station.glb" id="14_orji6"]
+[ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="15_62hdw"]
+[ext_resource type="Script" path="res://Gate_40Final.gd" id="16_ibjn1"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
-sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgw4b"]
+shader = ExtResource("1_xppjm")
+shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
+shader_parameter/star_base_color = Color(0.8, 1, 0.3, 1)
+shader_parameter/star_hue_offset = 0.6
+shader_parameter/star_intensity = 0.08
+shader_parameter/star_twinkle_speed = 0.8
+shader_parameter/star_twinkle_intensity = 0.2
+shader_parameter/layer_scale = 20.0
+shader_parameter/layer_scale_step = 10.0
+shader_parameter/layers_count = 3
 
-[sub_resource type="Sky" id="Sky_6uvix"]
-sky_material = SubResource("ProceduralSkyMaterial_el0em")
+[sub_resource type="Sky" id="Sky_3gycq"]
+sky_material = SubResource("ShaderMaterial_pgw4b")
 
-[sub_resource type="Environment" id="Environment_ngaxy"]
+[sub_resource type="Environment" id="Environment_uadpp"]
 background_mode = 2
-sky = SubResource("Sky_6uvix")
+sky = SubResource("Sky_3gycq")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -32,12 +43,12 @@ size = Vector3(11, 5, 6)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ngaxy")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.786567, 0.0638225, -0.614197, -0.612371, 0.0473632, 0.78915, 0.0794559, 0.996837, 0.00182872, 0, 0, 0)
 shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uadpp")
 
 [node name="Player" parent="." instance=ExtResource("1_p8uvs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
@@ -368,6 +379,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -157)
 
 [node name="Global_minus" parent="." instance=ExtResource("12_mswn4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -158)
+
+[node name="Space Station" parent="." instance=ExtResource("14_orji6")]
+transform = Transform3D(-96.5926, 0, 25.8819, 0, 100, 0, -25.8819, 0, -96.5926, 300, 0, -173)
+
+[node name="Gate4" parent="." instance=ExtResource("15_62hdw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -272)
+script = ExtResource("16_ibjn1")
+
+[node name="Label3D" type="Label3D" parent="Gate4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "End
+"
 
 [connection signal="body_entered" from="Quote3/Area3D" to="Quote3/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]

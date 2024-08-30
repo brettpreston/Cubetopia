@@ -1,0 +1,186 @@
+[gd_scene load_steps=26 format=3 uid="uid://byqak6kd1jv1h"]
+
+[ext_resource type="Texture2D" uid="uid://dvus8d0i7gqto" path="res://Assets/background/cityalt360Kpano.png" id="1_b1yv7"]
+[ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="2_m68vj"]
+[ext_resource type="Texture2D" uid="uid://dkpqh8de7tb3n" path="res://Assets/Textures/Grids/Green.png" id="3_g86la"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="4_2ftfk"]
+[ext_resource type="PackedScene" uid="uid://dtpmgpd6rpdcc" path="res://Scenes/Gates/Gate0.tscn" id="5_chdpo"]
+[ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_ltjrg"]
+[ext_resource type="PackedScene" uid="uid://bg563s43ytakm" path="res://Assets/Models/Props/Tree_Wire_Green.glb" id="7_x5wy3"]
+[ext_resource type="AudioStream" uid="uid://ddlh70ms50ctq" path="res://Assets/audio/music/technology drums.wav" id="8_8ymp7"]
+[ext_resource type="AudioStream" uid="uid://jhvcymmgy8jd" path="res://Assets/audio/music/technology.wav" id="9_suof3"]
+[ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="10_4rjh5"]
+[ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="11_khfd6"]
+[ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="12_144gm"]
+[ext_resource type="PackedScene" uid="uid://cy7dnrux8p15g" path="res://Scenes/mapTriggers/mapEconomy_minus.tscn" id="13_h2s21"]
+[ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="14_p8sg4"]
+[ext_resource type="PackedScene" uid="uid://cuy2ch6seo4sn" path="res://Scenes/mapTriggers/mapTech_minus.tscn" id="15_wobxx"]
+[ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="16_rge57"]
+[ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="17_qxitu"]
+[ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="18_5s3dj"]
+[ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="19_8oltt"]
+[ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="20_y6g53"]
+[ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="21_nr0tr"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_3cvss"]
+panorama = ExtResource("1_b1yv7")
+
+[sub_resource type="Sky" id="Sky_p2a3o"]
+sky_material = SubResource("PanoramaSkyMaterial_3cvss")
+
+[sub_resource type="Environment" id="Environment_ia4kq"]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_p2a3o")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+tonemap_mode = 2
+ssao_radius = 0.01
+ssao_intensity = 3.1
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymrwh"]
+albedo_texture = ExtResource("3_g86la")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ia4kq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
+size = Vector3(23, 1, 37)
+material = ExtResource("2_m68vj")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, 0, 4)
+size = Vector3(24, 1, 37)
+material = ExtResource("2_m68vj")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -18)
+size = Vector3(10, 1, 7)
+material = SubResource("StandardMaterial3D_ymrwh")
+
+[node name="Player" parent="." instance=ExtResource("4_2ftfk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.52, 4)
+
+[node name="Gate2" parent="." instance=ExtResource("5_chdpo")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4, 0, -17)
+
+[node name="Gate3" parent="." instance=ExtResource("6_ltjrg")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2, 0, -17)
+
+[node name="Tree_Wire_Green" parent="." instance=ExtResource("7_x5wy3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8.62399)
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Tree_Wire_Green"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 3, 2)
+stream = ExtResource("8_8ymp7")
+autoplay = true
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Tree_Wire_Green"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 3, 24)
+stream = ExtResource("9_suof3")
+autoplay = true
+panning_strength = 0.0
+bus = &"Music"
+
+[node name="Global_plus" parent="." instance=ExtResource("10_4rjh5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.03333, 1.6, -7.03333)
+
+[node name="Global_minus" parent="." instance=ExtResource("11_khfd6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.03333, 1.5, -7.03333)
+
+[node name="Economy_plus" parent="." instance=ExtResource("12_144gm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.03333, 1.7, -3.43333)
+
+[node name="Economy_minus" parent="." instance=ExtResource("13_h2s21")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.03333, 1.6, -3.43333)
+
+[node name="Tech_plus" parent="." instance=ExtResource("14_p8sg4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.03333, 1.6, -0.0333333)
+
+[node name="Tech_minus" parent="." instance=ExtResource("15_wobxx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.03333, 1.6, -0.0333333)
+
+[node name="Global_plus3" parent="." instance=ExtResource("10_4rjh5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9667, 1.6, 0.0333333)
+
+[node name="Global_minus3" parent="." instance=ExtResource("11_khfd6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.9667, 1.5, 0.0333333)
+
+[node name="Economy_plus3" parent="." instance=ExtResource("12_144gm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9667, 1.7, -3.56667)
+
+[node name="Economy_minus3" parent="." instance=ExtResource("13_h2s21")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.9667, 1.6, -3.56667)
+
+[node name="Tech_plus3" parent="." instance=ExtResource("14_p8sg4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9667, 1.6, -6.96667)
+
+[node name="Tech_minus3" parent="." instance=ExtResource("15_wobxx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.9667, 1.6, -6.96667)
+
+[node name="Global_plus4" parent="." instance=ExtResource("10_4rjh5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9667, 1.6, 17.0333)
+
+[node name="Global_minus4" parent="." instance=ExtResource("11_khfd6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.9667, 1.5, 17.0333)
+
+[node name="Economy_plus4" parent="." instance=ExtResource("12_144gm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9667, 1.7, 13.4333)
+
+[node name="Economy_minus4" parent="." instance=ExtResource("13_h2s21")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.9667, 1.6, 13.4333)
+
+[node name="Tech_plus4" parent="." instance=ExtResource("14_p8sg4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.9667, 1.6, 10.0333)
+
+[node name="Tech_minus4" parent="." instance=ExtResource("15_wobxx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.9667, 1.6, 10.0333)
+
+[node name="Global_plus2" parent="." instance=ExtResource("10_4rjh5")]
+transform = Transform3D(-1.54478e-07, 0, -1, 0, 1, 0, 1, 0, -1.54478e-07, 0.0333339, 1.6, 8.96667)
+
+[node name="Global_minus2" parent="." instance=ExtResource("11_khfd6")]
+transform = Transform3D(-1.54478e-07, 0, -1, 0, 1, 0, 1, 0, -1.54478e-07, 3.03333, 1.5, 8.96667)
+
+[node name="Economy_plus2" parent="." instance=ExtResource("12_144gm")]
+transform = Transform3D(-1.54478e-07, 0, -1, 0, 1, 0, 1, 0, -1.54478e-07, 0.0333335, 1.7, 12.5667)
+
+[node name="Economy_minus2" parent="." instance=ExtResource("13_h2s21")]
+transform = Transform3D(-1.54478e-07, 0, -1, 0, 1, 0, 1, 0, -1.54478e-07, 3.03333, 1.6, 12.5667)
+
+[node name="Tech_plus2" parent="." instance=ExtResource("14_p8sg4")]
+transform = Transform3D(-1.54478e-07, 0, -1, 0, 1, 0, 1, 0, -1.54478e-07, 0.0333327, 1.6, 15.9667)
+
+[node name="Tech_minus2" parent="." instance=ExtResource("15_wobxx")]
+transform = Transform3D(-1.54478e-07, 0, -1, 0, 1, 0, 1, 0, -1.54478e-07, 3.03333, 1.6, 15.9667)
+
+[node name="State_Plus" parent="." instance=ExtResource("16_rge57")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2, -9)
+
+[node name="State_Plus2" parent="." instance=ExtResource("17_qxitu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2, -9)
+
+[node name="autonomy_Minus" parent="." instance=ExtResource("18_5s3dj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2, -3)
+
+[node name="Autonomy_Plus" parent="." instance=ExtResource("19_8oltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2, -6)
+
+[node name="Resilience_Plus" parent="." instance=ExtResource("20_y6g53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2, -6)
+
+[node name="Resilience_Plus2" parent="." instance=ExtResource("21_nr0tr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2, -3)

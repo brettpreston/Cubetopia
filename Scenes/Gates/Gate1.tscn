@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhbijqclbto4s"]
+[gd_scene load_steps=11 format=3 uid="uid://bhbijqclbto4s"]
 
-[ext_resource type="Script" path="res://Scenes/Gates/Gate1.gd" id="1_or238"]
 [ext_resource type="Texture2D" uid="uid://dkpqh8de7tb3n" path="res://Assets/Textures/Grids/Green.png" id="2_60px3"]
 [ext_resource type="PackedScene" uid="uid://dj25egnveivgn" path="res://Assets/Models/Props/Portal_Teal.glb" id="3_ldq13"]
 [ext_resource type="Texture2D" uid="uid://cpot6yddpgadd" path="res://Assets/Textures/Energy_v.png" id="4_1a10k"]
@@ -89,7 +88,6 @@ shader_parameter/ColorParameter = Color(3.85046e-06, 0.648047, 0.910132, 1)
 [sub_resource type="QuadMesh" id="QuadMesh_62om5"]
 
 [node name="Gate1" type="Area3D"]
-script = ExtResource("1_or238")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
