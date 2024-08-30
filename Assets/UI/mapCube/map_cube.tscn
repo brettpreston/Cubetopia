@@ -25,15 +25,18 @@ script = ExtResource("2_38pri")
 
 [node name="x" type="Label3D" parent="Cube_Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 4)
+visible = false
 text = "X"
 
 [node name="y" type="Label3D" parent="Cube_Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.98023e-07, 4)
+visible = false
 text = "Y
 "
 
 [node name="z" type="Label3D" parent="Cube_Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3, 0)
+visible = false
 text = "Z
 
 "

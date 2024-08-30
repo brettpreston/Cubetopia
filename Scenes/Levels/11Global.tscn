@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://ba56j2jb46od5"]
+[gd_scene load_steps=21 format=3 uid="uid://ba56j2jb46od5"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_0oc7h"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_pa75y"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_d23yd"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_8wbg3"]
+[ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="4_gg55x"]
+[ext_resource type="Shader" path="res://Scenes/wireframe.gdshader" id="5_hp8iy"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="5_r3hnj"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="6_76a47"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="7_ejim6"]
@@ -30,6 +32,15 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ra5ch"]
 size = Vector3(11, 5, 6)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ajd42"]
+render_priority = 0
+shader = ExtResource("5_hp8iy")
+shader_parameter/modelColor = Color(0, 0, 0.243137, 1)
+shader_parameter/wireframeColor = Color(0, 0, 1, 1)
+shader_parameter/width = 3.0
+shader_parameter/modelOpacity = 0.75
+shader_parameter/filtered = false
 
 [node name="Node3D" type="Node3D"]
 
@@ -257,6 +268,12 @@ transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0
 inner_radius = 3.0
 outer_radius = 4.0
 
+[node name="Door" parent="Gate2" instance=ExtResource("4_gg55x")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -2)
+
+[node name="Door2" parent="Gate2" instance=ExtResource("4_gg55x")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -84)
+
 [node name="Gate3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 
@@ -270,12 +287,19 @@ transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 
 inner_radius = 3.0
 outer_radius = 4.0
 
+[node name="Door" parent="Gate3" instance=ExtResource("4_gg55x")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, 0)
+
+[node name="Door2" parent="Gate3" instance=ExtResource("4_gg55x")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, -82)
+
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.5)
 size = Vector3(7, 1, 36)
+material = SubResource("ShaderMaterial_ajd42")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -53.5)
@@ -352,10 +376,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -47)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -46)
 
 [node name="Resilience_Minus" parent="." instance=ExtResource("9_2ftih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -126)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -128)
 
 [node name="autonomy_Minus2" parent="." instance=ExtResource("5_r3hnj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -128)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -130)
 
 [node name="Gate1" parent="." instance=ExtResource("10_mo3qg")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6, 0, -239)

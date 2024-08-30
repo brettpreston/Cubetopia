@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv34kdx23al6"]
+[gd_scene load_steps=3 format=3 uid="uid://dv34kdx23al6"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_qs62g"]
+[ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="2_31dcq"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -12,7 +13,8 @@ shadow_enabled = true
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-size = Vector3(5, 1, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+size = Vector3(5, 1, 19)
 
 [node name="player" parent="CSGCombiner3D" instance=ExtResource("1_qs62g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
@@ -22,3 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5)
 text = "Final tests
 Then 1 of multiple cutscenes/levels load based on player score.
 Visions of the resulting Utopia."
+
+[node name="Door" parent="." instance=ExtResource("2_31dcq")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 9)
