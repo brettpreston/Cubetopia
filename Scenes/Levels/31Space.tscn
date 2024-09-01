@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=22 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
 [ext_resource type="Shader" path="res://Assets/Textures/Stars.gdshader" id="1_xppjm"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="4_mjl73"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_nbvwk"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="6_mncwm"]
+[ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="8_mauvu"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="8_tkejo"]
 [ext_resource type="PackedScene" uid="uid://cy7dnrux8p15g" path="res://Scenes/mapTriggers/mapEconomy_minus.tscn" id="9_g1n55"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="9_sxi01"]
@@ -289,66 +290,82 @@ use_collision = true
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -124)
 size = Vector3(7, 1, 45)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -53.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11, 0, -53.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -81.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -81.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -236)
 size = Vector3(7, 1, 49)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -268.5)
 size = Vector3(25, 1, 16)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -191.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -191.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -38)
 size = Vector3(10, 1, 7)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -163.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11, 0, -163.5)
 size = Vector3(7, 1, 36)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -148)
 size = Vector3(10, 1, 7)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -208)
 size = Vector3(10, 1, 7)
+material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
 size = Vector3(10, 1, 7)
+material = ExtResource("8_mauvu")
 
 [node name="Tech_plus" parent="." instance=ExtResource("4_mjl73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
@@ -357,28 +374,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 
 [node name="Economy_plus" parent="." instance=ExtResource("9_sxi01")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -46)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 1, -46)
 
 [node name="State_Plus" parent="." instance=ExtResource("5_nbvwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -46)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 1, -46)
 
 [node name="Economy_minus" parent="." instance=ExtResource("9_g1n55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -48)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10, 1, -48)
 
 [node name="Autonomy_Plus" parent="." instance=ExtResource("10_2pi1e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -47)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10, 1, -48)
 
 [node name="Resilience_Plus" parent="." instance=ExtResource("11_11it7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -155)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 1, -156)
 
 [node name="State_Plus2" parent="." instance=ExtResource("5_nbvwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -154)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 1, -156)
 
 [node name="Resilience_Minus" parent="." instance=ExtResource("6_mncwm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -157)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10, 1, -158)
 
 [node name="Global_minus" parent="." instance=ExtResource("12_mswn4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -158)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10, 1, -158)
 
 [node name="Space Station" parent="." instance=ExtResource("14_orji6")]
 transform = Transform3D(-96.5926, 0, 25.8819, 0, 100, 0, -25.8819, 0, -96.5926, 300, 0, -173)

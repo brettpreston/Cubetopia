@@ -1,41 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://du3kmpndgn2oe"]
+[gd_scene load_steps=3 format=3 uid="uid://du3kmpndgn2oe"]
 
 [ext_resource type="Script" path="res://autonomy_plus.gd" id="1_72il7"]
-[ext_resource type="Shader" uid="uid://c130nilup2un4" path="res://Assets/Textures/Energy2.tres" id="2_86vnd"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_uwg60"]
-size = Vector3(2, 2, 2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4l7i8"]
-render_priority = 0
-shader = ExtResource("2_86vnd")
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/point_size = 0.0
-shader_parameter/roughness = 0.0
-shader_parameter/metallic_texture_channel = null
-shader_parameter/specular = null
-shader_parameter/metallic = null
-shader_parameter/uv1_scale = null
-shader_parameter/uv1_offset = null
-shader_parameter/uv2_scale = null
-shader_parameter/uv2_offset = null
-shader_parameter/uv1_blend_sharpness = null
+[ext_resource type="PackedScene" uid="uid://gae1dtlysnlq" path="res://Scenes/mapTriggers/mapTrigger_collision.tscn" id="2_j0hxr"]
 
 [node name="Autonomy_Plus" type="Area3D"]
 script = ExtResource("1_72il7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_uwg60")
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="CollisionShape3D"]
-radius = 1.0
-smooth_faces = false
-material = SubResource("ShaderMaterial_4l7i8")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 billboard = 1
 text = "Autonomy +1"
 font_size = 64
+
+[node name="Collision" parent="." instance=ExtResource("2_j0hxr")]
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
