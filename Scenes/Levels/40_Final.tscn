@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv34kdx23al6"]
+[gd_scene load_steps=9 format=3 uid="uid://dv34kdx23al6"]
 
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="1_80j43"]
 [ext_resource type="Texture2D" uid="uid://daw0cn6bfwjdp" path="res://Assets/background/space_nebula_6k_360.png" id="1_a2vx5"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_qs62g"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="2_31dcq"]
+[ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="5_w2ben"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_opq0u"]
 panorama = ExtResource("1_a2vx5")
@@ -47,3 +48,8 @@ outline_size = 50
 
 [node name="Door" parent="." instance=ExtResource("2_31dcq")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 9)
+
+[node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_w2ben")
+autoplay = true
+bus = &"SFX"

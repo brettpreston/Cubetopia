@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://ct3t8flmtdjqq"]
+[gd_scene load_steps=12 format=4 uid="uid://ct3t8flmtdjqq"]
 
 [ext_resource type="Script" path="res://Door.gd" id="1_mro7o"]
 [ext_resource type="Shader" path="res://Scenes/Gates/Fresnel.gdshader" id="2_bt1af"]
 [ext_resource type="Shader" path="res://Scenes/wireframe.gdshader" id="3_h4o7x"]
+[ext_resource type="AudioStream" uid="uid://ddoh1p4nd83cb" path="res://Assets/audio/SFX/door3.ogg" id="4_fsx0u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2tkf"]
 render_priority = 0
@@ -48,6 +49,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioDoor2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.039974),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_scmvd"]
 length = 0.001
@@ -74,6 +87,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioDoor2:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l2mi7"]
@@ -133,5 +158,9 @@ use_collision = true
 inner_radius = 3.0
 outer_radius = 4.0
 material = SubResource("ShaderMaterial_ofuf3")
+
+[node name="AudioDoor2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_fsx0u")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

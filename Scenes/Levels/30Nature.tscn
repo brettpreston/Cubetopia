@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dyesufnrbuiwl"]
+[gd_scene load_steps=22 format=3 uid="uid://dyesufnrbuiwl"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_k17dc"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_6tcl4"]
@@ -11,15 +11,20 @@
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="9_csc4b"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="9_jm8sw"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="10_4jq6d"]
+[ext_resource type="PackedScene" uid="uid://bg563s43ytakm" path="res://Assets/Models/Props/Tree_Wire_Green.glb" id="10_x3wmk"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="11_glvia"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="11_hrbxy"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="13_erite"]
 [ext_resource type="Script" path="res://Gate_40Final.gd" id="14_f1d3c"]
+[ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="16_kio18"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c5hrr"]
+sky_top_color = Color(0.250743, 0.303862, 0.377742, 1)
 sky_horizon_color = Color(0.59625, 0.680768, 0.6375, 1)
-ground_bottom_color = Color(6.01634e-09, 0.26907, 2.40654e-07, 1)
+sky_curve = 0.102453
+ground_bottom_color = Color(4.81308e-08, 0.213257, 4.33177e-07, 1)
 ground_horizon_color = Color(0.59625, 0.680768, 0.6375, 1)
+ground_curve = 0.0828215
 
 [sub_resource type="Sky" id="Sky_1ch31"]
 sky_material = SubResource("ProceduralSkyMaterial_c5hrr")
@@ -368,6 +373,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
 size = Vector3(10, 1, 7)
 material = ExtResource("9_csc4b")
 
+[node name="Tree_Wire_Green" parent="CSGCombiner3D" instance=ExtResource("10_x3wmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -65)
+
 [node name="Tech_minus" parent="." instance=ExtResource("6_pwkqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 
@@ -400,6 +408,14 @@ script = ExtResource("14_f1d3c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 text = "End
 "
+
+[node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("16_kio18")
+autoplay = true
+bus = &"SFX"
+
+[node name="Tree_Wire_Green" parent="." instance=ExtResource("10_x3wmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -179)
 
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]

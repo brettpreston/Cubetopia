@@ -19,6 +19,10 @@ const ANIMATION_BLEND : float = 7.0
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
 @onready var animator : AnimationTree = $AnimationTree
 
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+
 func _physics_process(delta):
 	var move_direction : Vector3 = Vector3.ZERO
 	move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -28,9 +32,9 @@ func _physics_process(delta):
 	velocity.y -= gravity * delta
 	
 	#align player with ground
-	if is_on_floor():
-		align_with_floor($RayCast3D.get_collision_normal())
-		global_transform = global_transform.interpolate_with(xform, 0.01)
+#	if is_on_floor():
+#		align_with_floor($RayCast3D.get_collision_normal())
+#		global_transform = global_transform.interpolate_with(xform, 0.01)
 	
 	if Input.is_action_pressed("run"):
 		speed = run_speed
@@ -56,11 +60,11 @@ func _physics_process(delta):
 	animate(delta)
 	
 	#more align player with ground
-func align_with_floor(floor_normal):
-	xform = global_transform
-	xform.basis.y = floor_normal
-	xform.basis.x = -xform.basis.z.cross(floor_normal)
-	xform.basis = xform.basis.orthonormalized()
+#func align_with_floor(floor_normal):
+#	xform = global_transform
+#	xform.basis.y = floor_normal
+#	xform.basis.x = -xform.basis.z.cross(floor_normal)
+#	xform.basis = xform.basis.orthonormalized()
 
 func animate(delta):
 	if is_on_floor():
