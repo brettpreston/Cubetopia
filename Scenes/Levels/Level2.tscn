@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cx3dlvw3hbpm2"]
 
 [ext_resource type="Shader" path="res://Assets/Textures/Stars.gdshader" id="1_t15s1"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_wotup"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_wotup"]
 [ext_resource type="Texture2D" uid="uid://gwt4mrbmdv01" path="res://Assets/Textures/Grids/Orange.png" id="2_5ik0r"]
 [ext_resource type="PackedScene" uid="uid://dtpmgpd6rpdcc" path="res://Scenes/Gates/Gate0.tscn" id="2_sq0fm"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="3_lr1tf"]
