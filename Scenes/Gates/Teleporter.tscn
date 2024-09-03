@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://lufia1rcbg7l"]
+[gd_scene load_steps=6 format=3 uid="uid://lufia1rcbg7l"]
 
 [ext_resource type="Script" path="res://teleporter.gd" id="1_2uq3k"]
+[ext_resource type="Shader" path="res://Assets/Textures/wire2.gdshader" id="2_0gy8b"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="2_uaks2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cfrv4"]
 size = Vector3(3, 1.5, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2keb"]
+render_priority = 0
+shader = ExtResource("2_0gy8b")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/wire_color = Color(0, 0, 1, 1)
+shader_parameter/wire_width = 0.789
+shader_parameter/wire_smoothness = 0.01
 
 [node name="Teleporter" type="Area3D"]
 script = ExtResource("1_2uq3k")
@@ -17,6 +26,7 @@ shape = SubResource("BoxShape3D_cfrv4")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0)
 inner_radius = 2.0
 outer_radius = 3.0
+material = SubResource("ShaderMaterial_m2keb")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_uaks2")

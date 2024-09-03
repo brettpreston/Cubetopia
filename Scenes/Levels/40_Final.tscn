@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv34kdx23al6"]
+[gd_scene load_steps=8 format=3 uid="uid://dv34kdx23al6"]
 
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="1_80j43"]
 [ext_resource type="Texture2D" uid="uid://daw0cn6bfwjdp" path="res://Assets/background/space_nebula_6k_360.png" id="1_a2vx5"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_qs62g"]
-[ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="2_31dcq"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="5_w2ben"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_opq0u"]
@@ -31,8 +30,8 @@ shadow_enabled = true
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
-size = Vector3(5, 1, 19)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+size = Vector3(5, 1, 7)
 material = ExtResource("1_80j43")
 
 [node name="player" parent="CSGCombiner3D" instance=ExtResource("1_qs62g")]
@@ -45,9 +44,6 @@ Then 1 of multiple cutscenes/levels load based on player score.
 Visions of the resulting Utopia."
 font_size = 100
 outline_size = 50
-
-[node name="Door" parent="." instance=ExtResource("2_31dcq")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 9)
 
 [node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_w2ben")

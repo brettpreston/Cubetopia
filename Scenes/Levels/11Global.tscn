@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://ba56j2jb46od5"]
+[gd_scene load_steps=25 format=3 uid="uid://ba56j2jb46od5"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_0oc7h"]
+[ext_resource type="Script" path="res://Scenes/Levels/11_global.gd" id="1_ag3f1"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_pa75y"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_d23yd"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_8wbg3"]
@@ -33,11 +34,16 @@ background_mode = 2
 sky = SubResource("Sky_6uvix")
 tonemap_mode = 2
 glow_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_end = 20.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ra5ch"]
-size = Vector3(11, 5, 6)
+size = Vector3(3, 5, 6)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_ag3f1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ngaxy")
@@ -47,7 +53,9 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_0oc7h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
+
+[node name="Tween" type="Node3D" parent="Player"]
 
 [node name="1" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -11)
@@ -82,7 +90,7 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="3/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00001, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="3/Area3D"]

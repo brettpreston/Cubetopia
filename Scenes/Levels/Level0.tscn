@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwjj0q4okd4tu"]
+[gd_scene load_steps=26 format=3 uid="uid://dwjj0q4okd4tu"]
 
 [ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="1_48dkb"]
+[ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_nt1g0"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="2_6bbc2"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="2_etcvn"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="3_2qrg6"]
@@ -44,6 +45,7 @@ point_count = 6
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 78.6239)
+script = ExtResource("1_nt1g0")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vgy61")

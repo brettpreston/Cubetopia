@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=26 format=3 uid="uid://3yfweq66ct17"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_8on32"]
+[ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_ar23t"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_itxvu"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_1stx4"]
@@ -44,6 +45,7 @@ size = Vector3(6, 5, 6)
 size = Vector3(4.4, 2.4, 0.6)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_x5krv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ngaxy")

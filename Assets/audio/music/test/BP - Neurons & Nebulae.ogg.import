@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dwt23s43rj4vc"
+path="res://.godot/imported/BP - Neurons & Nebulae.ogg-168904362f9febab5e958961d9f1fcec.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/audio/music/test/BP - Neurons & Nebulae.ogg"
+dest_files=["res://.godot/imported/BP - Neurons & Nebulae.ogg-168904362f9febab5e958961d9f1fcec.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

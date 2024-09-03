@@ -13,7 +13,7 @@ var xform : Transform3D
 @export var jump_strength : float = 15.0
 @export var gravity : float = 50.0
 
-const ANIMATION_BLEND : float = 7.0
+const ANIMATION_BLEND : float = 15.0
 
 @onready var player_mesh : Node3D = $Mesh
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot

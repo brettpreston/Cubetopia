@@ -32,34 +32,33 @@ shadow_enabled = true
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
-size = Vector3(5, 1, 10)
-
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
-size = Vector3(7, 1, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, -18)
+size = Vector3(24, 1, 7)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 2.5)
-size = Vector3(5, 1, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5, 0, 2.5)
+size = Vector3(20, 1, 10)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -18)
-size = Vector3(7, 1, 7)
-
-[node name="player" parent="." instance=ExtResource("1_sjt0v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, 6)
+[node name="Player" parent="." instance=ExtResource("1_sjt0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 6)
 
 [node name="tree_wire_teal" parent="." instance=ExtResource("3_asy03")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 
 [node name="Tree_Wire_Green" parent="." instance=ExtResource("4_1j000")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -18)
 
-[node name="TeleTarget" parent="." instance=ExtResource("6_gbekw")]
+[node name="TeleTarget1" parent="." instance=ExtResource("6_gbekw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2, -17)
 
 [node name="Teleporter" parent="." instance=ExtResource("1_vrouy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 2)
-target_node_path = NodePath("../TeleTarget")
+target_node_path = NodePath("../TeleTarget1")
+
+[node name="Teleporter2" parent="." instance=ExtResource("1_vrouy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, -17)
+target_node_path = NodePath("../TeleTarget2")
+
+[node name="TeleTarget2" parent="." instance=ExtResource("6_gbekw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, 2)
