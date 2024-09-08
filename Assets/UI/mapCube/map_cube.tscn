@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dao20kjowrugg"]
+[gd_scene load_steps=6 format=3 uid="uid://dao20kjowrugg"]
 
 [ext_resource type="PackedScene" uid="uid://gg8d0wsqxdqv" path="res://Assets/Models/Props/Cube3.glb" id="1_rs2lm"]
 [ext_resource type="Script" path="res://Assets/UI/mapCube/Ball.gd" id="2_38pri"]
+[ext_resource type="PackedScene" uid="uid://cyk3pt21qjlsg" path="res://Assets/UI/mapCube/Echo Cube2.glb" id="3_kwd7k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lvcb2"]
 emission_enabled = true
@@ -18,6 +19,7 @@ transform = Transform3D(0.0999999, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 skeleton = NodePath("../../../..")
 
 [node name="Cube3" parent="Cube_Map" instance=ExtResource("1_rs2lm")]
+visible = false
 
 [node name="Ball" type="MeshInstance3D" parent="Cube_Map"]
 mesh = SubResource("SphereMesh_uglrs")
@@ -40,3 +42,6 @@ visible = false
 text = "Z
 
 "
+
+[node name="Echo Cube2" parent="." instance=ExtResource("3_kwd7k")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.2, -0.2, 0.2)
