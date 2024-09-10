@@ -457,7 +457,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -177)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -67)
 
 [node name="Global_plus" parent="." instance=ExtResource("4_1stx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -157)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98105, 0.981555, -157.005)
 
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="2/Area3D" to="2/Area3D" method="_on_body_entered"]
