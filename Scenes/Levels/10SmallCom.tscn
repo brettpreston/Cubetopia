@@ -1,12 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=25 format=3 uid="uid://3yfweq66ct17"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_8on32"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_8on32"]
 [ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_ar23t"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_itxvu"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_1stx4"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_q1yeh"]
-[ext_resource type="PackedScene" uid="uid://cy7dnrux8p15g" path="res://Scenes/mapTriggers/mapEconomy_minus.tscn" id="6_nu07h"]
 [ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="7_yehxa"]
 [ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="8_uhbgx"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="9_8qc3j"]
@@ -227,17 +226,8 @@ shape = SubResource("BoxShape3D_ra5ch")
 stream = ExtResource("3_itxvu")
 bus = &"VO"
 
-[node name="Global_plus" parent="9/Area3D" instance=ExtResource("4_1stx4")]
-transform = Transform3D(1, 0, -2.08616e-07, 0, 1, 0, 2.08616e-07, 0, 1, 0.401909, -4, -6.69615)
-
 [node name="State_Plus" parent="9/Area3D" instance=ExtResource("5_q1yeh")]
 transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.401924, -5, -6.69615)
-
-[node name="Economy_minus" parent="9/Area3D" instance=ExtResource("6_nu07h")]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 16.1243, -4, 0.0718231)
-
-[node name="Resilience_Plus" parent="9/Area3D" instance=ExtResource("7_yehxa")]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 16.1243, -5, 0.0718384)
 
 [node name="10" type="Label3D" parent="."]
 transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -152)
@@ -321,7 +311,7 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 1, 1)
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 2, 1)
 
 [node name="State_Plus" parent="Gate3" instance=ExtResource("5_q1yeh")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 2, 1)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 1.55473, 1)
 
 [node name="Resilience_Minus" parent="Gate3" instance=ExtResource("10_e33e2")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 19, 2, -2)
@@ -332,12 +322,18 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 19, 1, -2)
 [node name="Door" parent="Gate3" instance=ExtResource("9_vha7y")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 19, 1, -2)
 
+[node name="PillerR" parent="Gate3/Door" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Gate3/Door/Area3D" index="1"]
 transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, -12.3564, 1.4, 9.59808)
 shape = SubResource("BoxShape3D_romjo")
 
 [node name="Door2" parent="Gate3" instance=ExtResource("9_vha7y")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 1, 1)
+
+[node name="PillerR" parent="Gate3/Door2" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Gate3/Door2/Area3D" index="1"]
 transform = Transform3D(0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, 0.5, 15.3564, 1.4, 4.40194)
@@ -459,6 +455,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -177)
 
 [node name="tree_wire_teal2" parent="." instance=ExtResource("19_jvu8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -67)
+
+[node name="Global_plus" parent="." instance=ExtResource("4_1stx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -157)
 
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="2/Area3D" to="2/Area3D" method="_on_body_entered"]

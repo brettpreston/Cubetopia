@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://ba56j2jb46od5"]
+[gd_scene load_steps=26 format=3 uid="uid://ba56j2jb46od5"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_0oc7h"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_0oc7h"]
 [ext_resource type="Script" path="res://Scenes/Levels/11_global.gd" id="1_ag3f1"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_pa75y"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_d23yd"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Gate_21Com.gd" id="13_lx2ws"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="16_mvms0"]
 [ext_resource type="PackedScene" uid="uid://b66lb63h66xyd" path="res://Scenes/Gates/tele_target.tscn" id="19_ubcu0"]
+[ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="21_4ltgo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
 sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
@@ -201,7 +202,7 @@ bus = &"VO"
 
 [node name="10" type="Label3D" parent="."]
 transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -124)
-text = "A caste of people educated for the purpose."
+text = "A group of people educated for the purpose."
 font_size = 100
 outline_size = 20
 
@@ -412,6 +413,18 @@ bus = &"SFX"
 
 [node name="TeleTarget" parent="." instance=ExtResource("19_ubcu0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, -70)
+
+[node name="Global_minus" parent="." instance=ExtResource("21_4ltgo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -44)
+
+[node name="Autonomy_Plus2" parent="." instance=ExtResource("7_ejim6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -44)
+
+[node name="State_Minus2" parent="." instance=ExtResource("8_763cv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -44)
+
+[node name="Global_plus3" parent="." instance=ExtResource("4_8wbg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -45)
 
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]
