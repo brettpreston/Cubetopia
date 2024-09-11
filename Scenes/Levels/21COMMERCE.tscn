@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://ctpo8qxqv8237"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_m0f82"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4u7l8"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_kt8rm"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="4_sewm0"]
@@ -225,7 +225,7 @@ outer_radius = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
 
 [node name="Economy_minus" parent="Gate2" instance=ExtResource("9_vovpb")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -2)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0.48324, 1, -7.27024)
 
 [node name="Economy_minus2" parent="Gate2" instance=ExtResource("9_vovpb")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -2)
@@ -234,7 +234,7 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -2)
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 2, -2)
 
 [node name="autonomy_Minus" parent="Gate2" instance=ExtResource("5_3rfy0")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -2)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -1.94673, 1, -2.20783)
 
 [node name="Economy_plus" parent="Gate2" instance=ExtResource("4_sewm0")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 2, -112)
@@ -252,10 +252,10 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -11
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 
 [node name="Economy_plus" parent="Gate3" instance=ExtResource("4_sewm0")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1, 2, -4)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.972925, 2, -4)
 
 [node name="Autonomy_Plus" parent="Gate3" instance=ExtResource("8_pmcpf")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1, 1, -4)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.978224, 1, -4)
 
 [node name="State_Plus" parent="Gate3" instance=ExtResource("6_8bl7j")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1, 1, -4)
@@ -267,13 +267,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -6)
 
 [node name="Economy_minus" parent="Gate3" instance=ExtResource("9_vovpb")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, -110)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 1.9401, 1, -110)
 
 [node name="Economy_minus2" parent="Gate3" instance=ExtResource("9_vovpb")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 2, -110)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 2, -110.003)
 
 [node name="autonomy_Minus" parent="Gate3" instance=ExtResource("5_3rfy0")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, -110)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, -110.043)
 
 [node name="Door" parent="Gate3" instance=ExtResource("9_34j4l")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1, 1, -4)

@@ -1,13 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://bl0wxpinyyqxb"]
+[gd_scene load_steps=21 format=3 uid="uid://bl0wxpinyyqxb"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_fmc72"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_fmc72"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_757vd"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_53yb8"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="4_ensoe"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="5_u1m6d"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="6_hljxc"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="8_mnfj3"]
-[ext_resource type="PackedScene" uid="uid://cy7dnrux8p15g" path="res://Scenes/mapTriggers/mapEconomy_minus.tscn" id="9_g3yik"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="9_qt30p"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="10_5nbp2"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="10_y0hs5"]
@@ -218,14 +217,11 @@ outer_radius = 4.0
 [node name="Gate2" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
 
-[node name="Economy_plus" parent="Gate2" instance=ExtResource("8_mnfj3")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 2, -2)
-
 [node name="autonomy_Minus" parent="Gate2" instance=ExtResource("5_u1m6d")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 2, -2)
 
 [node name="State_Plus" parent="Gate2" instance=ExtResource("6_hljxc")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 2, -2)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 3, -5)
 
 [node name="Resilience_Minus2" parent="Gate2" instance=ExtResource("4_ensoe")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -112)
@@ -253,9 +249,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -3)
 
 [node name="State_Plus3" parent="Gate3" instance=ExtResource("6_hljxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -3)
-
-[node name="Economy_minus" parent="Gate3" instance=ExtResource("9_g3yik")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 1, 2, 0)
 
 [node name="autonomy_Minus3" parent="Gate3" instance=ExtResource("5_u1m6d")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, -110)
@@ -291,6 +284,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -3)
 
 [node name="Door3" parent="Gate3" instance=ExtResource("9_qt30p")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, -110)
+
+[node name="State_Plus" parent="Gate3" instance=ExtResource("6_hljxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -3)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -393,6 +389,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
 stream = ExtResource("16_xibtl")
 autoplay = true
 bus = &"SFX"
+
+[node name="Resilience_Minus" parent="." instance=ExtResource("4_ensoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -46)
 
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]
