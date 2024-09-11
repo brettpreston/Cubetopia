@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dir0spdqulavi"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
-[ext_resource type="Shader" path="res://Assets/Textures/Stars.gdshader" id="1_xppjm"]
+[ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="1_ltomu"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4m7ci"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_d2eap"]
 [ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="4_mjl73"]
@@ -18,20 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="17_428ou"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="18_uc4of"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgw4b"]
-shader = ExtResource("1_xppjm")
-shader_parameter/sky_color = Color(0.03, 0.05, 0.11, 1)
-shader_parameter/star_base_color = Color(0.8, 1, 0.3, 1)
-shader_parameter/star_hue_offset = 0.6
-shader_parameter/star_intensity = 0.08
-shader_parameter/star_twinkle_speed = 0.8
-shader_parameter/star_twinkle_intensity = 0.2
-shader_parameter/layer_scale = 20.0
-shader_parameter/layer_scale_step = 10.0
-shader_parameter/layers_count = 3
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wkyxy"]
+panorama = ExtResource("1_ltomu")
 
 [sub_resource type="Sky" id="Sky_3gycq"]
-sky_material = SubResource("ShaderMaterial_pgw4b")
+sky_material = SubResource("PanoramaSkyMaterial_wkyxy")
 
 [sub_resource type="Environment" id="Environment_uadpp"]
 background_mode = 2

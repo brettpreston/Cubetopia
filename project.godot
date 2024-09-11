@@ -14,6 +14,7 @@ config/name="Cubetopia"
 config/tags=PackedStringArray("introdemo", "map")
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/image="res://Assets/UI/godotbotwire.png"
 config/icon="res://icon.svg"
 
 [autoload]
