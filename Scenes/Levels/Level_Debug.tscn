@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://byqak6kd1jv1h"]
+[gd_scene load_steps=27 format=3 uid="uid://byqak6kd1jv1h"]
 
 [ext_resource type="Texture2D" uid="uid://dvus8d0i7gqto" path="res://Assets/background/cityalt360Kpano.png" id="1_b1yv7"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="2_m68vj"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="4_2ftfk"]
 [ext_resource type="PackedScene" uid="uid://dtpmgpd6rpdcc" path="res://Scenes/Gates/Gate0.tscn" id="5_chdpo"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_ltjrg"]
+[ext_resource type="Script" path="res://Gate_40Final.gd" id="7_iplfh"]
 [ext_resource type="PackedScene" uid="uid://bg563s43ytakm" path="res://Assets/Models/Props/Tree_Wire_Green.glb" id="7_x5wy3"]
 [ext_resource type="AudioStream" uid="uid://ddlh70ms50ctq" path="res://Assets/audio/music/technology drums.wav" id="8_8ymp7"]
 [ext_resource type="AudioStream" uid="uid://jhvcymmgy8jd" path="res://Assets/audio/music/technology.wav" id="9_suof3"]
@@ -77,6 +78,7 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="Gate3" parent="." instance=ExtResource("6_ltjrg")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2, 0, -17)
+script = ExtResource("7_iplfh")
 
 [node name="Tree_Wire_Green" parent="." instance=ExtResource("7_x5wy3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8.62399)
