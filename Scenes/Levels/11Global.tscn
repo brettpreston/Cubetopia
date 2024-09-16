@@ -1,17 +1,19 @@
-[gd_scene load_steps=26 format=3 uid="uid://ba56j2jb46od5"]
+[gd_scene load_steps=29 format=3 uid="uid://ba56j2jb46od5"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_0oc7h"]
 [ext_resource type="Script" path="res://Scenes/Levels/11_global.gd" id="1_ag3f1"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_pa75y"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_d23yd"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_8wbg3"]
+[ext_resource type="AudioStream" uid="uid://c80m0ra5bsdw4" path="res://Assets/audio/Quotes/1b millions.ogg" id="4_bvut0"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="4_gg55x"]
+[ext_resource type="AudioStream" uid="uid://3x1x3g3jsra0" path="res://Assets/audio/Quotes/1b acid.ogg" id="4_gksim"]
+[ext_resource type="AudioStream" uid="uid://cjrh3dku8qq1p" path="res://Assets/audio/Quotes/01b diversity.ogg" id="5_f54b8"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="5_r3hnj"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="5_tiqom"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="6_76a47"]
 [ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="6_ahexn"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="7_ejim6"]
-[ext_resource type="PackedScene" uid="uid://lufia1rcbg7l" path="res://Scenes/Gates/Teleporter.tscn" id="7_hc7lk"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="8_763cv"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="9_2ftih"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="10_mo3qg"]
@@ -19,8 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="12_wf5fk"]
 [ext_resource type="Script" path="res://Gate_21Com.gd" id="13_lx2ws"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="16_mvms0"]
-[ext_resource type="PackedScene" uid="uid://b66lb63h66xyd" path="res://Scenes/Gates/tele_target.tscn" id="19_ubcu0"]
-[ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="21_4ltgo"]
+[ext_resource type="PackedScene" uid="uid://xwh7p6vbdhds" path="res://Assets/Models/Props/earth_lp.tscn" id="20_mwfbi"]
+[ext_resource type="Script" path="res://Earth.gd" id="21_gpka5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
 sky_horizon_color = Color(0.59625, 0.6135, 0.6375, 1)
@@ -41,7 +43,10 @@ fog_density = 1.0
 fog_depth_end = 20.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ra5ch"]
-size = Vector3(3, 5, 6)
+size = Vector3(7, 5, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phcjw"]
+size = Vector3(7, 3, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ag3f1")
@@ -59,7 +64,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
 [node name="Tween" type="Node3D" parent="Player"]
 
 [node name="1" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -11)
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -25)
 text = "In different places around the world,
 humanity has very different cultures and beliefs."
 font_size = 100
@@ -69,11 +74,26 @@ outline_size = 20
 script = ExtResource("2_pa75y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="1/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.32134e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="1/Area3D"]
-stream = ExtResource("3_d23yd")
+bus = &"VO"
+
+[node name="q" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -13)
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="q"]
+script = ExtResource("2_pa75y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="q/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.32134e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="q/Area3D"]
+stream = ExtResource("4_bvut0")
 bus = &"VO"
 
 [node name="3" type="Label3D" parent="."]
@@ -90,46 +110,30 @@ script = ExtResource("2_pa75y")
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="3/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00001, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="3/Area3D"]
-stream = ExtResource("3_d23yd")
 bus = &"VO"
 
 [node name="Quote" type="Label3D" parent="."]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -10, 6, -55)
-text = " Add audio here: “.You don't have to start the culture with anything.
- It just naturally turns into sauerkraut every single time (...) 
-there's one particular species of bacteria that eats the cabbage 
-and releases lactic acid (...) eventually killing off everything around it until there's only one species left. 
-And every single time you put this recipe together, 
-you always end up with sauerkraut...” bunnie"
 font_size = 100
 outline_size = 20
 
 [node name="Area3D" type="Area3D" parent="Quote"]
 script = ExtResource("2_pa75y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Quote/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Quote/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote/Area3D"]
-stream = ExtResource("3_d23yd")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79423, 0, -14.8923)
+stream = ExtResource("4_gksim")
+unit_size = 12.0
+panning_strength = 0.0
 bus = &"VO"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quote/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73205, -4, -1)
+shape = SubResource("BoxShape3D_phcjw")
 
 [node name="Quote2" type="Label3D" parent="."]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 14, 6, -55)
-text = " Add Audio here
-“Hasn’t it always been the artists, the slightly crazy people, 
-the slightly non-normative people, that have seen things coming first, 
-that have warned about things first?” 31:58 10Y"
 font_size = 100
 outline_size = 20
 
@@ -145,7 +149,10 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote2/Area3D"]
-stream = ExtResource("3_d23yd")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16987, 0, -12.0263)
+stream = ExtResource("5_f54b8")
+unit_size = 12.0
+panning_strength = 0.0
 bus = &"VO"
 
 [node name="4" type="Label3D" parent="."]
@@ -163,7 +170,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="4/Area3D"]
-stream = ExtResource("3_d23yd")
 bus = &"VO"
 
 [node name="5" type="Label3D" parent="."]
@@ -180,7 +186,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="5/Area3D"]
-stream = ExtResource("3_d23yd")
 bus = &"VO"
 
 [node name="9" type="Label3D" parent="."]
@@ -197,7 +202,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="9/Area3D"]
-stream = ExtResource("3_d23yd")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bus = &"VO"
 
 [node name="10" type="Label3D" parent="."]
@@ -231,7 +236,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="11/Area3D"]
-stream = ExtResource("3_d23yd")
 bus = &"VO"
 
 [node name="12" type="Label3D" parent="."]
@@ -249,7 +253,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="12/Area3D"]
-stream = ExtResource("3_d23yd")
 bus = &"VO"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
@@ -271,6 +274,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 [node name="Door" parent="Gate3" instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, 0)
 
+[node name="Door3" parent="Gate3" instance=ExtResource("4_gg55x")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 18, 1, 0)
+
 [node name="Door2" parent="Gate3" instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2, 1, -82)
 
@@ -283,8 +289,8 @@ size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 6.25, 0, -41.8087)
-size = Vector3(7, 1, 9)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -53.5)
+size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -358,10 +364,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -150)
 [node name="tree_wire_teal2" parent="CSGCombiner3D" instance=ExtResource("6_ahexn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -67)
 
-[node name="Teleporter" parent="CSGCombiner3D" instance=ExtResource("7_hc7lk")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 8, 0, -44)
-target_node_path = NodePath("../../TeleTarget")
-
 [node name="Global_plus" parent="." instance=ExtResource("4_8wbg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 
@@ -375,10 +377,10 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6.93301, 
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6.06699, 2, -46.25)
 
 [node name="Autonomy_Plus" parent="." instance=ExtResource("7_ejim6")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 20, 1, -70)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 9, 1.4, -46)
 
 [node name="State_Minus" parent="." instance=ExtResource("8_763cv")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 20, 1, -70)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 9, 1, -46)
 
 [node name="Resilience_Minus" parent="." instance=ExtResource("9_2ftih")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 2, -128)
@@ -411,22 +413,15 @@ stream = ExtResource("16_mvms0")
 autoplay = true
 bus = &"SFX"
 
-[node name="TeleTarget" parent="." instance=ExtResource("19_ubcu0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2, -70)
-
-[node name="Global_minus" parent="." instance=ExtResource("21_4ltgo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -44)
-
-[node name="Autonomy_Plus2" parent="." instance=ExtResource("7_ejim6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -44)
-
-[node name="State_Minus2" parent="." instance=ExtResource("8_763cv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -44)
-
 [node name="Global_plus3" parent="." instance=ExtResource("4_8wbg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -45)
 
+[node name="Earth_LP" parent="." instance=ExtResource("20_mwfbi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -67)
+script = ExtResource("21_gpka5")
+
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="q/Area3D" to="q/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Quote/Area3D" to="Quote/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Quote2/Area3D" to="Quote2/Area3D" method="_on_body_entered"]

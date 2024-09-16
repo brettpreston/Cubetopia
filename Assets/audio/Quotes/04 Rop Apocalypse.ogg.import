@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dmumf1sjnhmi"
+path="res://.godot/imported/04 Rop Apocalypse.ogg-8eb36ce7014b451bfa40ae6579ba73e5.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/audio/Quotes/04 Rop Apocalypse.ogg"
+dest_files=["res://.godot/imported/04 Rop Apocalypse.ogg-8eb36ce7014b451bfa40ae6579ba73e5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

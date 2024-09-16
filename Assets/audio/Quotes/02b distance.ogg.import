@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bce81v6qkxwcr"
+path="res://.godot/imported/02b distance.ogg-fca001870f658bc36b17f84e968826b2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/audio/Quotes/02b distance.ogg"
+dest_files=["res://.godot/imported/02b distance.ogg-fca001870f658bc36b17f84e968826b2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

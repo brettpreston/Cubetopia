@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://xwh7p6vbdhds"]
+
+[ext_resource type="ArrayMesh" uid="uid://b5mu85l4exv8c" path="res://Assets/Models/Props/earthwire.obj" id="1_bunai"]
+[ext_resource type="Shader" path="res://Scenes/Gates/Fresnel.gdshader" id="2_gllfi"]
+[ext_resource type="PackedScene" uid="uid://e6vx7yfmvuco" path="res://Assets/Models/Props/earthwireglow.glb" id="3_oeir3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ujbw"]
+render_priority = 0
+shader = ExtResource("2_gllfi")
+shader_parameter/color = Color(0, 0.0068954, 0.999999, 1)
+shader_parameter/fresnel_sharpness = 1.0
+shader_parameter/impact_points = null
+shader_parameter/impact_size = null
+shader_parameter/impact_falloff_sharpness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_643ov"]
+render_priority = 0
+shader = ExtResource("2_gllfi")
+shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/fresnel_sharpness = 1.0
+shader_parameter/impact_points = null
+shader_parameter/impact_size = null
+shader_parameter/impact_falloff_sharpness = 1.0
+
+[node name="Earth_LP" type="Node3D"]
+
+[node name="Earthwire" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_bunai")
+surface_material_override/0 = SubResource("ShaderMaterial_0ujbw")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radius = 8.4
+radial_segments = 16
+rings = 16
+material = SubResource("ShaderMaterial_643ov")
+
+[node name="earthwireglow" parent="." instance=ExtResource("3_oeir3")]

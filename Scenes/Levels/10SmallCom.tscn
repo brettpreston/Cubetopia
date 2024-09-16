@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=28 format=3 uid="uid://3yfweq66ct17"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_8on32"]
 [ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_itxvu"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_1stx4"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_q1yeh"]
+[ext_resource type="AudioStream" uid="uid://cks0tnoovjwbn" path="res://Assets/audio/Quotes/01a You are not alone.ogg" id="5_v6hbj"]
 [ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="7_yehxa"]
 [ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="8_uhbgx"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="9_8qc3j"]
@@ -19,6 +20,7 @@
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="17_mtmi3"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="18_ji2ky"]
 [ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="19_jvu8k"]
+[ext_resource type="AudioStream" uid="uid://c5n7rpira216h" path="res://Assets/audio/Quotes/01a people.ogg" id="20_8lp0x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -43,7 +45,11 @@ size = Vector3(6, 5, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_romjo"]
 size = Vector3(4.4, 2.4, 0.6)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjvf8"]
+size = Vector3(57, 7, 1)
+
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 script = ExtResource("1_x5krv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -54,7 +60,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_8on32")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 8)
 
 [node name="1" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -11)
@@ -72,6 +78,22 @@ shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="1/Area3D"]
 stream = ExtResource("3_itxvu")
+bus = &"VO"
+
+[node name="q1" type="Label3D" parent="1"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -4.58955e-06, -3, 11)
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="1/q1"]
+script = ExtResource("2_ar23t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="1/q1/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="1/q1/Area3D"]
+stream = ExtResource("5_v6hbj")
 bus = &"VO"
 
 [node name="2" type="Label3D" parent="."]
@@ -285,15 +307,15 @@ bus = &"VO"
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 8)
 inner_radius = 3.0
 outer_radius = 4.0
 
 [node name="Global_minus" parent="Gate" instance=ExtResource("8_uhbgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
 
 [node name="Global_minus2" parent="Gate" instance=ExtResource("8_uhbgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
 
 [node name="Gate2" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
@@ -366,8 +388,8 @@ outline_size = 20
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.5)
-size = Vector3(7, 1, 36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.5)
+size = Vector3(7, 1, 44)
 material = ExtResource("17_mtmi3")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -456,10 +478,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -177)
 [node name="tree_wire_teal2" parent="." instance=ExtResource("19_jvu8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -67)
 
+[node name="q1" type="Label3D" parent="tree_wire_teal2"]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -4.58956e-06, 6, -3)
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="tree_wire_teal2/q1"]
+script = ExtResource("2_ar23t")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tree_wire_teal2/q1/Area3D"]
+stream = ExtResource("20_8lp0x")
+bus = &"VO"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_wire_teal2/q1/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3, 0)
+shape = SubResource("BoxShape3D_fjvf8")
+
 [node name="Global_plus" parent="." instance=ExtResource("4_1stx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98105, 0.981555, -157.005)
 
 [connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="1/q1/Area3D" to="1/q1/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="2/Area3D" to="2/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="4/Area3D" to="4/Area3D" method="_on_body_entered"]
@@ -471,6 +510,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98105, 0.981555, -157.005)
 [connection signal="body_entered" from="10/Area3D" to="10/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="11/Area3D" to="11/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="12/Area3D" to="12/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="tree_wire_teal2/q1/Area3D" to="tree_wire_teal2/q1/Area3D" method="_on_body_entered"]
 
 [editable path="Gate3/Door"]
 [editable path="Gate3/Door2"]

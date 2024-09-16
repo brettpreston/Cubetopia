@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://di2j0aky63es5"]
+[gd_scene load_steps=14 format=3 uid="uid://di2j0aky63es5"]
 
 [ext_resource type="Texture2D" uid="uid://b70qkbc614vpe" path="res://Assets/Textures/Grids/Purple.png" id="2_uk77m"]
 [ext_resource type="ArrayMesh" uid="uid://box778jsse03p" path="res://Assets/Models/Props/portal_Natv0.obj" id="3_dhbpm"]
 [ext_resource type="PackedScene" uid="uid://bxtst0axgnst8" path="res://Assets/Models/Props/Portal.glb" id="4_oqs07"]
 [ext_resource type="Texture2D" uid="uid://cpot6yddpgadd" path="res://Assets/Textures/Energy_v.png" id="5_qhrbu"]
+[ext_resource type="AudioStream" uid="uid://bx52jr3l5e4q4" path="res://Assets/audio/SFX/portalhum.ogg" id="6_7406d"]
 [ext_resource type="Shader" uid="uid://gei33hqy7aj4" path="res://Scenes/Gates/GatePortalV.tres" id="6_lcler"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7ix1"]
@@ -132,5 +133,13 @@ material = SubResource("ShaderMaterial_s2qrk")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.8, 0)
 material_override = SubResource("ShaderMaterial_s2luy")
 mesh = SubResource("QuadMesh_iqo5g")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+stream = ExtResource("6_7406d")
+attenuation_model = 1
+unit_size = 1.5
+autoplay = true
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

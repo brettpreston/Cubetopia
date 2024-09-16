@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://berruc68v6as2"
+path="res://.godot/imported/03 marley Legal.ogg-3fc59d955351de637481c0d39e0c846d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/audio/Quotes/03 marley Legal.ogg"
+dest_files=["res://.godot/imported/03 marley Legal.ogg-3fc59d955351de637481c0d39e0c846d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=23 format=3 uid="uid://dir0spdqulavi"]
 
-[ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="1_ltomu"]
+[ext_resource type="Texture2D" uid="uid://coqsagh5hpdtk" path="res://Assets/background/Background_Futuristic.png" id="1_4p1pd"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4m7ci"]
-[ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_d2eap"]
+[ext_resource type="AudioStream" uid="uid://bce81v6qkxwcr" path="res://Assets/audio/Quotes/02b distance.ogg" id="4_gv58k"]
 [ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="4_mjl73"]
+[ext_resource type="AudioStream" uid="uid://berruc68v6as2" path="res://Assets/audio/Quotes/03 marley Legal.ogg" id="5_jensl"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_nbvwk"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="6_mncwm"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="8_mauvu"]
@@ -19,7 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="18_uc4of"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wkyxy"]
-panorama = ExtResource("1_ltomu")
+panorama = ExtResource("1_4p1pd")
 
 [sub_resource type="Sky" id="Sky_3gycq"]
 sky_material = SubResource("PanoramaSkyMaterial_wkyxy")
@@ -47,7 +48,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
 
 [node name="Quote3" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -11)
-text = " add audio “...Distance no longer has the same power over our lives because of the things that we all built in the last thirty years. …” NNG"
 font_size = 100
 outline_size = 20
 
@@ -59,7 +59,8 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote3/Area3D"]
-stream = ExtResource("3_d2eap")
+stream = ExtResource("4_gv58k")
+panning_strength = 0.0
 bus = &"VO"
 
 [node name="3" type="Label3D" parent="."]
@@ -76,12 +77,7 @@ script = ExtResource("2_4m7ci")
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="3/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="3/Area3D"]
-stream = ExtResource("3_d2eap")
 bus = &"VO"
 
 [node name="4" type="Label3D" parent="."]
@@ -99,7 +95,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="4/Area3D"]
-stream = ExtResource("3_d2eap")
 bus = &"VO"
 
 [node name="5" type="Label3D" parent="."]
@@ -119,7 +114,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="5/Area3D"]
-stream = ExtResource("3_d2eap")
 bus = &"VO"
 
 [node name="6" type="Label3D" parent="."]
@@ -137,7 +131,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="6/Area3D"]
-stream = ExtResource("3_d2eap")
 bus = &"VO"
 
 [node name="9" type="Label3D" parent="."]
@@ -155,7 +148,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="9/Area3D"]
-stream = ExtResource("3_d2eap")
 bus = &"VO"
 
 [node name="10" type="Label3D" parent="."]
@@ -173,12 +165,10 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="10/Area3D"]
-stream = ExtResource("3_d2eap")
 bus = &"VO"
 
 [node name="Quote2" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -214)
-text = "Add audio here “Justice doesn’t just happen. Justice is forced by people coming together and exercising strength, unity and intelligence.”  13:05WLvW"
 font_size = 100
 outline_size = 20
 
@@ -190,7 +180,8 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote2/Area3D"]
-stream = ExtResource("3_d2eap")
+stream = ExtResource("5_jensl")
+panning_strength = 0.0
 bus = &"VO"
 
 [node name="12" type="Label3D" parent="."]
@@ -208,7 +199,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="12/Area3D"]
-stream = ExtResource("3_d2eap")
 bus = &"VO"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
@@ -384,6 +374,7 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10, 1, -15
 
 [node name="Space Station" parent="." instance=ExtResource("14_orji6")]
 transform = Transform3D(-96.5926, 0, 25.8819, 0, 100, 0, -25.8819, 0, -96.5926, 300, 0, -173)
+visible = false
 
 [node name="Gate4" parent="." instance=ExtResource("15_62hdw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -260)

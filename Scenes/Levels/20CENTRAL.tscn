@@ -1,9 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://bl0wxpinyyqxb"]
+[gd_scene load_steps=23 format=3 uid="uid://bl0wxpinyyqxb"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_fmc72"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_757vd"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_53yb8"]
+[ext_resource type="AudioStream" uid="uid://dw3rw16imwlgc" path="res://Assets/audio/Quotes/04 Justice.ogg" id="3_mfxt4"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="4_ensoe"]
+[ext_resource type="AudioStream" uid="uid://ckj2td6kdvdiu" path="res://Assets/audio/Quotes/02a free info.ogg" id="5_7wj32"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="5_u1m6d"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="6_hljxc"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="8_mnfj3"]
@@ -46,21 +48,37 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_fmc72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
 
-[node name="1" type="Label3D" parent="."]
+[node name="q" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -11)
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="q"]
+script = ExtResource("2_757vd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="q/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="q/Area3D"]
+stream = ExtResource("3_mfxt4")
+panning_strength = 0.0
+bus = &"VO"
+
+[node name="2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -25)
 text = "Who’s in charge of resources? "
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="1"]
+[node name="Area3D" type="Area3D" parent="2"]
 script = ExtResource("2_757vd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="1/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2/Area3D"]
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="1/Area3D"]
-stream = ExtResource("3_53yb8")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="2/Area3D"]
 bus = &"VO"
 
 [node name="3" type="Label3D" parent="."]
@@ -77,7 +95,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="3/Area3D"]
-stream = ExtResource("3_53yb8")
 bus = &"VO"
 
 [node name="4" type="Label3D" parent="."]
@@ -115,7 +132,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="5/Area3D"]
-stream = ExtResource("3_53yb8")
 bus = &"VO"
 
 [node name="6" type="Label3D" parent="."]
@@ -151,7 +167,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="9/Area3D"]
-stream = ExtResource("3_53yb8")
 bus = &"VO"
 
 [node name="10" type="Label3D" parent="."]
@@ -168,12 +183,10 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="10/Area3D"]
-stream = ExtResource("3_53yb8")
 bus = &"VO"
 
 [node name="Quote2" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -214)
-text = "Add audio here“Information is unlimited, and because of this it must be free.”  https://www.youtube.com/watch?v=h7diyE0U9Bs 0:27"
 font_size = 100
 outline_size = 20
 
@@ -185,7 +198,8 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote2/Area3D"]
-stream = ExtResource("3_53yb8")
+stream = ExtResource("5_7wj32")
+panning_strength = 0.0
 bus = &"VO"
 
 [node name="12" type="Label3D" parent="."]
@@ -204,7 +218,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="12/Area3D"]
-stream = ExtResource("3_53yb8")
 bus = &"VO"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
@@ -221,7 +234,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 2, -2)
 
 [node name="State_Plus" parent="Gate2" instance=ExtResource("6_hljxc")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 3, -5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 3, -2)
 
 [node name="Resilience_Minus2" parent="Gate2" instance=ExtResource("4_ensoe")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2, 1, -112)
@@ -393,7 +406,8 @@ bus = &"SFX"
 [node name="Resilience_Minus" parent="." instance=ExtResource("4_ensoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -46)
 
-[connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="q/Area3D" to="q/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="2/Area3D" to="2/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="4/Area3D" to="4/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="5/Area3D" to="5/Area3D" method="_on_body_entered"]

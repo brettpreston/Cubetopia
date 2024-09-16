@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://3x1x3g3jsra0"
+path="res://.godot/imported/1b acid.ogg-322adcd54c6de1bda221308dfcba07f3.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/audio/Quotes/1b acid.ogg"
+dest_files=["res://.godot/imported/1b acid.ogg-322adcd54c6de1bda221308dfcba07f3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

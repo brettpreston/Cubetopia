@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5mu85l4exv8c"
+path="res://.godot/imported/earthwire.obj-c10e1abf7420f2b6a69ff4ab1f04d454.mesh"
+
+[deps]
+
+files=["res://.godot/imported/earthwire.obj-c10e1abf7420f2b6a69ff4ab1f04d454.mesh"]
+
+source_file="res://Assets/Models/Props/earthwire.obj"
+dest_files=["res://.godot/imported/earthwire.obj-c10e1abf7420f2b6a69ff4ab1f04d454.mesh", "res://.godot/imported/earthwire.obj-c10e1abf7420f2b6a69ff4ab1f04d454.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

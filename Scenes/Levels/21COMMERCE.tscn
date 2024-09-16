@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4u7l8"]
-[ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_kt8rm"]
+[ext_resource type="AudioStream" uid="uid://dwvyxulo220vj" path="res://Assets/audio/Quotes/02b state of corruption.ogg" id="3_d8xns"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="4_sewm0"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="5_3rfy0"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="6_8bl7j"]
@@ -62,7 +62,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="1/Area3D"]
-stream = ExtResource("3_kt8rm")
 bus = &"VO"
 
 [node name="3" type="Label3D" parent="."]
@@ -82,7 +81,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="3/Area3D"]
-stream = ExtResource("3_kt8rm")
 bus = &"VO"
 
 [node name="4" type="Label3D" parent="."]
@@ -99,12 +97,7 @@ script = ExtResource("2_4u7l8")
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="4/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="4/Area3D"]
-stream = ExtResource("3_kt8rm")
 bus = &"VO"
 
 [node name="5" type="Label3D" parent="."]
@@ -122,7 +115,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="5/Area3D"]
-stream = ExtResource("3_kt8rm")
 bus = &"VO"
 
 [node name="6" type="Label3D" parent="."]
@@ -140,7 +132,6 @@ shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="6/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
-stream = ExtResource("3_kt8rm")
 bus = &"VO"
 
 [node name="9" type="Label3D" parent="."]
@@ -158,7 +149,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="9/Area3D"]
-stream = ExtResource("3_kt8rm")
 bus = &"VO"
 
 [node name="10" type="Label3D" parent="."]
@@ -175,12 +165,10 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="10/Area3D"]
-stream = ExtResource("3_kt8rm")
 bus = &"VO"
 
 [node name="Quote2" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -214)
-text = "“It’s not like this greed and this corruption is the native state of humanity. It is just what people made it to be.” 48:49 10Y"
 font_size = 100
 outline_size = 20
 
@@ -192,7 +180,8 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote2/Area3D"]
-stream = ExtResource("3_kt8rm")
+stream = ExtResource("3_d8xns")
+panning_strength = 0.0
 bus = &"VO"
 
 [node name="12" type="Label3D" parent="."]
@@ -211,7 +200,6 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="12/Area3D"]
-stream = ExtResource("3_kt8rm")
 bus = &"VO"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwjj0q4okd4tu"]
+[gd_scene load_steps=25 format=3 uid="uid://dwjj0q4okd4tu"]
 
-[ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="1_48dkb"]
 [ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_nt1g0"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="2_6bbc2"]
+[ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="2_6yqw6"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="2_etcvn"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="3_2qrg6"]
 [ext_resource type="Script" path="res://Gate_10smallcom.gd" id="4_n7wqc"]
@@ -19,13 +19,12 @@
 [ext_resource type="AudioStream" uid="uid://jhvcymmgy8jd" path="res://Assets/audio/music/technology.wav" id="15_4cfeq"]
 [ext_resource type="AudioStream" uid="uid://ddlh70ms50ctq" path="res://Assets/audio/music/technology drums.wav" id="16_dipqf"]
 [ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="22_f1d4y"]
-[ext_resource type="PackedScene" uid="uid://d4k1pgv2pq48" path="res://Earth.tscn" id="22_fxvse"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qifjg"]
-panorama = ExtResource("1_48dkb")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kjwaf"]
+panorama = ExtResource("2_6yqw6")
 
 [sub_resource type="Sky" id="Sky_g0026"]
-sky_material = SubResource("PanoramaSkyMaterial_qifjg")
+sky_material = SubResource("PanoramaSkyMaterial_kjwaf")
 
 [sub_resource type="Environment" id="Environment_vgy61"]
 background_mode = 2
@@ -88,9 +87,8 @@ text = "CUBETOPIA"
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="Text/1_Title" node_paths=PackedStringArray("audio_stream")]
+[node name="Area3D" type="Area3D" parent="Text/1_Title"]
 script = ExtResource("7_m0na6")
-audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Text/1_Title/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.5)
@@ -107,9 +105,8 @@ text = "Try to imagine what you want the world
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="Text/2" node_paths=PackedStringArray("audio_stream")]
+[node name="Area3D" type="Area3D" parent="Text/2"]
 script = ExtResource("7_m0na6")
-audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Text/2/Area3D"]
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
@@ -127,9 +124,8 @@ What do you think is right?
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="Text/3" node_paths=PackedStringArray("audio_stream")]
+[node name="Area3D" type="Area3D" parent="Text/3"]
 script = ExtResource("7_m0na6")
-audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Text/3/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1.5)
@@ -147,9 +143,8 @@ that you will never meet will live?
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="Text/4" node_paths=PackedStringArray("audio_stream")]
+[node name="Area3D" type="Area3D" parent="Text/4"]
 script = ExtResource("7_m0na6")
-audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Text/4/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1.5)
@@ -168,9 +163,8 @@ independent communities?"
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="Text/5" node_paths=PackedStringArray("audio_stream")]
+[node name="Area3D" type="Area3D" parent="Text/5"]
 script = ExtResource("7_m0na6")
-audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Text/5/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 2.5)
@@ -289,9 +283,6 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 7, 0, -76.6239)
 
 [node name="tree_wire_teal6" parent="." instance=ExtResource("22_f1d4y")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -17, 0, -63.6239)
-
-[node name="Earth" parent="." instance=ExtResource("22_fxvse")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 103, -264)
 
 [connection signal="body_entered" from="Text/1_Title/Area3D" to="Text/1_Title/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Text/2/Area3D" to="Text/2/Area3D" method="_on_body_entered"]

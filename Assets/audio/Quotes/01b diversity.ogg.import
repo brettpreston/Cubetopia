@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjrh3dku8qq1p"
+path="res://.godot/imported/01b diversity.ogg-46b47d57281f3815e3d9bb371f718849.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/audio/Quotes/01b diversity.ogg"
+dest_files=["res://.godot/imported/01b diversity.ogg-46b47d57281f3815e3d9bb371f718849.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

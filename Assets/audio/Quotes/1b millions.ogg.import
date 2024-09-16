@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c80m0ra5bsdw4"
+path="res://.godot/imported/1b millions.ogg-9e6093dc107f21b0203443a5ea33946d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/audio/Quotes/1b millions.ogg"
+dest_files=["res://.godot/imported/1b millions.ogg-9e6093dc107f21b0203443a5ea33946d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
