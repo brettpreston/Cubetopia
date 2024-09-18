@@ -19,7 +19,7 @@ func _unhandled_input(event):
 		spring_arm.rotate_x(-event.relative.y * 0.005)
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
 
-func _process(delta):
+func _process(_delta):
 	var look_x = Input.get_action_strength("look_left") - Input.get_action_strength("look_right")
 	var look_y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
 
