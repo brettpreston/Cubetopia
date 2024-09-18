@@ -11,5 +11,5 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 	if "Player" in body.name:
 		#player_data.vstate += 0
 		#player_data.vresilience += 0
-		player_data.vautonomy += -1
+		PlayerData.add_to_item("autonomy", -1)
 		queue_free()
