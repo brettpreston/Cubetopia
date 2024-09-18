@@ -1,29 +1,18 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://cur1si5sm4vmn"]
 
-[ext_resource type="Texture2D" uid="uid://bxe6xavm6hurj" path="res://Assets/UI/Menu/ButtonCubes.png" id="1_df7nv"]
+[ext_resource type="StyleBox" uid="uid://c8ppta4blk2yw" path="res://Theme/Resources/button_main_menu_focus.tres" id="1_2gg4p"]
 [ext_resource type="FontFile" uid="uid://cxqeln67cm58a" path="res://Assets/Fonts/DEJAVUSANS-OBLIQUE.TTF" id="2_ebbte"]
+[ext_resource type="StyleBox" uid="uid://bupopnlga34a3" path="res://Theme/Resources/button_main_menu_hover.tres" id="2_hkedh"]
 [ext_resource type="FontFile" uid="uid://bfingl6l1pten" path="res://Assets/Fonts/DEJAVUSANS.TTF" id="2_t3s42"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6sww"]
-content_margin_top = 13.0
-content_margin_bottom = 13.0
-texture = ExtResource("1_df7nv")
-texture_margin_left = 48.0
-texture_margin_right = 48.0
-axis_stretch_horizontal = 1
-region_rect = Rect2(0, 0, 131, 64)
-draw_center = false
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_grk8n"]
-content_margin_top = 13.0
-content_margin_bottom = 13.0
+[ext_resource type="StyleBox" uid="uid://d4loxpe5fmw2g" path="res://Theme/Resources/button_main_menu_normal.tres" id="3_ocmxd"]
 
 [resource]
 default_font = ExtResource("2_t3s42")
 default_font_size = 32
-Button/styles/focus = SubResource("StyleBoxTexture_t6sww")
-Button/styles/hover = SubResource("StyleBoxTexture_t6sww")
-Button/styles/normal = SubResource("StyleBoxEmpty_grk8n")
+ButtonMainMenu/base_type = &"Button"
+ButtonMainMenu/styles/focus = ExtResource("1_2gg4p")
+ButtonMainMenu/styles/hover = ExtResource("2_hkedh")
+ButtonMainMenu/styles/normal = ExtResource("3_ocmxd")
 VersionNumberLabel/base_type = &"Label"
 VersionNumberLabel/font_sizes/font_size = 16
 VersionNumberLabel/fonts/font = ExtResource("2_ebbte")

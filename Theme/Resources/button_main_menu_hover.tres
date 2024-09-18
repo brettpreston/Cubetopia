@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bupopnlga34a3"]
+
+[ext_resource type="Texture2D" uid="uid://bxe6xavm6hurj" path="res://Assets/UI/Menu/ButtonCubes.png" id="1_pjuq8"]
+
+[resource]
+content_margin_top = 13.0
+content_margin_bottom = 13.0
+texture = ExtResource("1_pjuq8")
+texture_margin_left = 48.0
+texture_margin_right = 48.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(0, 0, 131, 64)
+draw_center = false
