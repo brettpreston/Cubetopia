@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://ba56j2jb46od5"]
+[gd_scene load_steps=30 format=3 uid="uid://ba56j2jb46od5"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_0oc7h"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_0oc7h"]
 [ext_resource type="Script" path="res://Scenes/Levels/11_global.gd" id="1_ag3f1"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_pa75y"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_d23yd"]
+[ext_resource type="FontFile" uid="uid://cokp3lgag5j2p" path="res://Assets/Fonts/exo-2-v7-latin-700.ttf" id="3_tt2r2"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_8wbg3"]
 [ext_resource type="AudioStream" uid="uid://c80m0ra5bsdw4" path="res://Assets/audio/Quotes/1b millions.ogg" id="4_bvut0"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="4_gg55x"]
@@ -67,6 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
 transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -25)
 text = "In different places around the world,
 humanity has very different cultures and beliefs."
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -82,6 +84,12 @@ bus = &"VO"
 
 [node name="q" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -13)
+modulate = Color(1, 1, 1, 0.490196)
+outline_modulate = Color(0, 0, 0, 0.490196)
+text = "“You made millions of people care 
+about people they didn’t know existed. 
+Millions of people they didn’t know existed.”"
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -97,9 +105,10 @@ stream = ExtResource("4_bvut0")
 bus = &"VO"
 
 [node name="3" type="Label3D" parent="."]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -5, 6, -41)
-text = "If diversity of beliefs means conflicting goals. We should strive 
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6, 6, -44)
+text = "If diversity of beliefs means conflicting goals, we should strive 
 for a common culture, so we can cooperate better."
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -114,7 +123,16 @@ shape = SubResource("BoxShape3D_ra5ch")
 bus = &"VO"
 
 [node name="Quote" type="Label3D" parent="."]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -10, 6, -55)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -10, 6, -60)
+modulate = Color(1, 1, 1, 0.490196)
+outline_modulate = Color(0, 0, 0, 0.490196)
+text = "
+ “.You don't have to start the culture with anything. 
+It just naturally turns into sauerkraut every single time (...) 
+there's one particular species of bacteria that eats the cabbage and releases lactic acid (...) eventually killing off everything around it 
+until there's only one species left. And every single time you 
+put this recipe together, you always end up with sauerkraut...” "
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -133,7 +151,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73205, -4, -1)
 shape = SubResource("BoxShape3D_phcjw")
 
 [node name="Quote2" type="Label3D" parent="."]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 14, 6, -55)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 14, 6, -56)
+modulate = Color(1, 1, 1, 0.490196)
+outline_modulate = Color(0, 0, 0, 0.490196)
+text = "\"“Hasn’t it always been the artists, 
+the slightly crazy people, 
+the slightly non-normative people, 
+that have seen things coming first, 
+that have warned about things first?”"
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -145,7 +171,7 @@ transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-0
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Quote2/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -2, 1.63397)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote2/Area3D"]
@@ -156,9 +182,10 @@ panning_strength = 0.0
 bus = &"VO"
 
 [node name="4" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -42)
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 8, 6, -45)
 text = "It’s crucial to preserve diversity, 
 or we lose our humanity."
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -173,8 +200,9 @@ shape = SubResource("BoxShape3D_ra5ch")
 bus = &"VO"
 
 [node name="5" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, -1, 6, -98)
+transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 1, 6, -101)
 text = "Who makes decisions for the global community?"
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -189,8 +217,9 @@ shape = SubResource("BoxShape3D_ra5ch")
 bus = &"VO"
 
 [node name="9" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -4, 6, -122)
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -6, 6, -126)
 text = "Democratically elected global assembly."
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -202,12 +231,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="9/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bus = &"VO"
 
 [node name="10" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -124)
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 9, 6, -127)
 text = "A group of people educated for the purpose."
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -224,7 +253,9 @@ bus = &"VO"
 
 [node name="11" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -186)
-text = "SHOULD RESOURCES BE CENTRALLY DISTRIBUTED TO ENSURE EQUITY "
+text = "Should resources be centrally distributed 
+to ensure equity,"
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -240,8 +271,9 @@ bus = &"VO"
 
 [node name="12" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -203)
-text = "OR DO WE NEED FREEDOM FROM CHAOS,
-AS IN COMMERCE OR MUTUALISM?"
+text = "or do we need some freedom from chaos,
+through either commerce or mutualism?"
+font = ExtResource("3_tt2r2")
 font_size = 100
 outline_size = 20
 
@@ -361,9 +393,6 @@ material = ExtResource("5_tiqom")
 [node name="tree_wire_teal" parent="CSGCombiner3D" instance=ExtResource("6_ahexn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -150)
 
-[node name="tree_wire_teal2" parent="CSGCombiner3D" instance=ExtResource("6_ahexn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -67)
-
 [node name="Global_plus" parent="." instance=ExtResource("4_8wbg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
 
@@ -394,7 +423,7 @@ script = ExtResource("11_aen3o")
 
 [node name="12" type="Label3D" parent="Gate1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "CENTRAL DISTRIBUTION"
+text = "central distribution"
 font_size = 100
 outline_size = 20
 
@@ -404,7 +433,7 @@ script = ExtResource("13_lx2ws")
 
 [node name="12" type="Label3D" parent="Gate4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "COMMERCE/ MUTUALISM"
+text = "commerce or mutualism"
 font_size = 100
 outline_size = 20
 
