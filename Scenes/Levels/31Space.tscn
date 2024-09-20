@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=26 format=3 uid="uid://dir0spdqulavi"]
 
-[ext_resource type="Texture2D" uid="uid://coqsagh5hpdtk" path="res://Assets/background/Background_Futuristic.png" id="1_4p1pd"]
+[ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/Models/Props/Space/Background_Futuristic.jpg" id="1_0j1uw"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4m7ci"]
 [ext_resource type="AudioStream" uid="uid://bce81v6qkxwcr" path="res://Assets/audio/Quotes/02b distance.ogg" id="4_gv58k"]
@@ -18,9 +18,12 @@
 [ext_resource type="Script" path="res://Gate_40Final.gd" id="16_ibjn1"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="17_428ou"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="18_uc4of"]
+[ext_resource type="PackedScene" uid="uid://buswn0ogvoa3e" path="res://Assets/Models/Props/Space/Planet_rings.glb" id="19_i1lw6"]
+[ext_resource type="PackedScene" uid="uid://bqip3t7rag1kd" path="res://Assets/Models/Props/Space/station_lowpoly.glb" id="20_61ent"]
+[ext_resource type="PackedScene" uid="uid://dhbgxv454h0wh" path="res://Assets/Models/Props/Space/RingStation_lowpoly.glb" id="21_434ds"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wkyxy"]
-panorama = ExtResource("1_4p1pd")
+panorama = ExtResource("1_0j1uw")
 
 [sub_resource type="Sky" id="Sky_3gycq"]
 sky_material = SubResource("PanoramaSkyMaterial_wkyxy")
@@ -395,6 +398,15 @@ transform = Transform3D(0.5, -0.362372, 0.786566, 0.5, 0.862372, 0.0794593, -0.7
 
 [node name="State_Minus" parent="." instance=ExtResource("17_428ou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -48)
+
+[node name="Planet_rings" parent="." instance=ExtResource("19_i1lw6")]
+transform = Transform3D(10, 0, 0, 0, -5, 8.66025, 0, -8.66025, -5, -859, 1101, -1328)
+
+[node name="station_lowpoly" parent="." instance=ExtResource("20_61ent")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -69, 316, 1043)
+
+[node name="RingStation_lowpoly" parent="." instance=ExtResource("21_434ds")]
+transform = Transform3D(8.66025, 5, 0, -4.33013, 7.5, 5, 2.5, -4.33013, 8.66025, 1484, 457, 257)
 
 [connection signal="body_entered" from="Quote3/Area3D" to="Quote3/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]

@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="2_etcvn"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="3_2qrg6"]
 [ext_resource type="Script" path="res://Gate_10smallcom.gd" id="4_n7wqc"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="6_un2q0"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="6_un2q0"]
 [ext_resource type="Script" path="res://Gate_11Global.gd" id="6_v2yxt"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="7_m0na6"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="9_glqlt"]
