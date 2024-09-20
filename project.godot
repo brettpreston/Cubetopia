@@ -20,8 +20,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Autoload1="*res://Autoload1.gd"
 music_player="*res://Scenes/music_player.tscn"
-PlayerData="*res://Autoloads/PlayerData.gd"
 
 [display]
 
