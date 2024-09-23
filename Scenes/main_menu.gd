@@ -1,6 +1,6 @@
 extends Control
 
-const NEXT_SCENE=preload("res://Scenes/Levels/Level0.tscn")
+const NEXT_SCENE=preload("res://Scenes/Levels/00Intro.tscn")
 
 func _ready():
 	music_player.play_bird()

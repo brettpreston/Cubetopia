@@ -6,7 +6,7 @@ extends MeshInstance3D
 
 
 var shown = false
-var cubetopia_mesh = load("res://Scenes/Titles/Epilogue_mesh.tres")
+var cubetopia_mesh = load("res://Scenes/Titles/Quote_mesh.tres")
 
 func _ready():
 	$Area3D.body_entered.connect(_on_body_entered)

@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://cokp3lgag5j2p" path="res://Assets/Fonts/exo-2-v7-latin-700.ttf" id="1_ww1d7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkou3"]
-albedo_color = Color(0.615686, 0.635294, 0.639216, 0.764706)
+albedo_color = Color(0.972549, 0.972549, 0.968627, 0)
 emission = Color(0.635294, 0.968627, 1, 1)
 backlight_enabled = true
 backlight = Color(0.8, 0.8, 0.8, 1)

@@ -1,6 +1,6 @@
 extends Area3D
 
-var next_scene=load("res://Scenes/Levels/20CENTRAL.tscn")
+var next_scene=load("res://Scenes/Levels/20Central.tscn")
 var autoload1 = load("res://Autoload1.gd")
 
 func _on_body_entered(body):

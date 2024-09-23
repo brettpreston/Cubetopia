@@ -5,6 +5,8 @@
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_ar23t"]
 [ext_resource type="FontFile" uid="uid://cokp3lgag5j2p" path="res://Assets/Fonts/exo-2-v7-latin-700.ttf" id="3_dqddn"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_itxvu"]
+[ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_lcf0d"]
+[ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="3_mgfei"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_1stx4"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_q1yeh"]
 [ext_resource type="AudioStream" uid="uid://cks0tnoovjwbn" path="res://Assets/audio/Quotes/01a You are not alone.ogg" id="5_v6hbj"]
@@ -21,7 +23,6 @@
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="17_mtmi3"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="18_ji2ky"]
 [ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="19_jvu8k"]
-[ext_resource type="AudioStream" uid="uid://c5n7rpira216h" path="res://Assets/audio/Quotes/01a people.ogg" id="20_8lp0x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -46,9 +47,6 @@ size = Vector3(6, 5, 6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_romjo"]
 size = Vector3(4.4, 2.4, 0.6)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fjvf8"]
-size = Vector3(20, 7, 0.001)
-
 [node name="Node3D2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 script = ExtResource("1_x5krv")
@@ -63,86 +61,25 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_8on32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 8)
 
-[node name="1" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -1)
+[node name="quote-movement" parent="." instance=ExtResource("3_lcf0d")]
+transform = Transform3D(0.0540788, 0, 0.998537, 0, 1, 0, -0.998537, 0, 0.0540788, -4.27403, 4, 0.743365)
+audio_stream = ExtResource("5_v6hbj")
+
+[node name="1" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13657, 5, -11.657)
 text = "Rynn disagrees with her community’s
 beliefs and power structure."
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="1"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="1/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="1/Area3D"]
-stream = ExtResource("3_itxvu")
-bus = &"VO"
-
-[node name="q1" type="Label3D" parent="1"]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -3.12924e-06, -2, 4)
-modulate = Color(1, 1, 1, 0.513726)
-outline_modulate = Color(0, 0, 0, 0.490196)
-text = "“... You are not alone, 
-you will have a movement that got your back 
-and we'll see you through.
-We'll see you through to the other end…”"
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="1/q1"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="1/q1/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="1/q1/Area3D"]
-stream = ExtResource("5_v6hbj")
-bus = &"VO"
-
-[node name="2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -12)
+[node name="2" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13657, 5, -18.657)
 text = "...and Kael would like to move to a more successful
  community, to have a better life."
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="2"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="2/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="2/Area3D"]
-stream = ExtResource("3_itxvu")
-bus = &"VO"
-
-[node name="13" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 2, 6, -25)
+[node name="3" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.13657, 5, -28.657)
 text = "Should they be able to do that?"
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="13"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="13/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="13/Area3D"]
-stream = ExtResource("3_itxvu")
-bus = &"VO"
-
-[node name="3" type="Label3D" parent="."]
+[node name="portal1" type="Label3D" parent="."]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -5, 6, -41)
 text = "To join a community, the other members’ consent is necessary.
 Even if that means some people have to stay in unhealthy communities."
@@ -150,23 +87,23 @@ font = ExtResource("3_dqddn")
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="3"]
+[node name="Area3D" type="Area3D" parent="portal1"]
 script = ExtResource("2_ar23t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="3/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portal1/Area3D"]
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="3/Area3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="portal1/Area3D"]
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="3/Area3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="portal1/Area3D"]
 stream = ExtResource("3_itxvu")
 bus = &"VO"
 
-[node name="4" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -45)
+[node name="portal2" type="Label3D" parent="."]
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 9, 6, -44)
 text = "It should be possible for each person to exit a
 community and enter another at will.
 "
@@ -174,97 +111,39 @@ font = ExtResource("3_dqddn")
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="4"]
+[node name="Area3D" type="Area3D" parent="portal2"]
 script = ExtResource("2_ar23t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="4/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portal2/Area3D"]
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="4/Area3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="portal2/Area3D"]
 stream = ExtResource("3_itxvu")
 bus = &"VO"
 
-[node name="5" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 6, -110)
+[node name="4" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, -110)
 text = "The communities of Elysium, Horizon and
 Edengale have been living next to each other,
-but Elysium and Horizon are stricken by a famine.
-"
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
+but Elysium and Horizon are stricken by a famine."
 
-[node name="Area3D" type="Area3D" parent="5"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="5/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.17233e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="5/Area3D"]
-stream = ExtResource("3_itxvu")
-bus = &"VO"
-
-[node name="6" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 6, -120)
+[node name="5" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, -122)
 text = "Edengale doesn’t have enough 
 food to feed all three communities."
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="6"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="6/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="6/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-stream = ExtResource("3_itxvu")
-bus = &"VO"
-
-[node name="7" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 6, -130)
+[node name="6" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, -131)
 text = "How do we prevent Elysium and Horizon
 from taking what they need by force?"
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="7"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="7/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="7/Area3D"]
-stream = ExtResource("3_itxvu")
-bus = &"VO"
-
-[node name="8" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 6, -136)
+[node name="7" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, -140)
 text = "Or Edengale from subjugating 
 the others in return for food?"
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="8"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="8/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="8/Area3D"]
-stream = ExtResource("3_itxvu")
-bus = &"VO"
-
-[node name="9" type="Label3D" parent="."]
+[node name="portal3" type="Label3D" parent="."]
 transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -6, 6, -153)
 text = "There should be a global assembly 
 enforcing peace and responding to crises."
@@ -272,21 +151,21 @@ font = ExtResource("3_dqddn")
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="9"]
+[node name="Area3D" type="Area3D" parent="portal3"]
 script = ExtResource("2_ar23t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="9/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portal3/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="9/Area3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="portal3/Area3D"]
 stream = ExtResource("3_itxvu")
 bus = &"VO"
 
-[node name="State_Plus" parent="9/Area3D" instance=ExtResource("5_q1yeh")]
+[node name="State_Plus" parent="portal3/Area3D" instance=ExtResource("5_q1yeh")]
 transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.401924, -5, -6.69615)
 
-[node name="10" type="Label3D" parent="."]
+[node name="portal4" type="Label3D" parent="."]
 transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -154)
 text = "There should be enough trade and cultural exchange between
 communities that stark differences in how they do are impossible"
@@ -294,53 +173,25 @@ font = ExtResource("3_dqddn")
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="10"]
+[node name="Area3D" type="Area3D" parent="portal4"]
 script = ExtResource("2_ar23t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="10/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portal4/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500038, -2, 2.49998)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="10/Area3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="portal4/Area3D"]
 stream = ExtResource("3_itxvu")
 bus = &"VO"
 
-[node name="11" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -215)
+[node name="8" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, -221)
 text = "Should resources be centrally distributed to ensure quity,"
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="11"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="11/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="11/Area3D"]
-stream = ExtResource("3_itxvu")
-bus = &"VO"
-
-[node name="12" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -231)
-text = "or do we need some freedom from chaor, 
+[node name="9" parent="." instance=ExtResource("3_mgfei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, -238)
+text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="12"]
-script = ExtResource("2_ar23t")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="12/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="12/Area3D"]
-stream = ExtResource("3_itxvu")
-bus = &"VO"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
@@ -517,67 +368,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -177)
 [node name="tree_wire_teal2" parent="." instance=ExtResource("19_jvu8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -67)
 
-[node name="q1" type="Label3D" parent="tree_wire_teal2"]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 13, 6, -3)
-modulate = Color(1, 1, 1, 0.529412)
-outline_modulate = Color(0, 0, 0, 0.513726)
-text = "“People. Families. Families of origin, families that we create.” "
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="tree_wire_teal2/q1"]
-script = ExtResource("2_ar23t")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tree_wire_teal2/q1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -4, 6.00001)
-stream = ExtResource("20_8lp0x")
-bus = &"VO"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_wire_teal2/q1/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, -3, 0.499504)
-shape = SubResource("BoxShape3D_fjvf8")
-
-[node name="q2" type="Label3D" parent="tree_wire_teal2"]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -16, 6, -5)
-modulate = Color(1, 1, 1, 0.517647)
-outline_modulate = Color(0, 0, 0, 0.490196)
-text = "“People. Families. Families of origin, families that we create.” "
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="tree_wire_teal2/q2"]
-script = ExtResource("2_ar23t")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tree_wire_teal2/q2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-06, -2, 7.62939e-06)
-stream = ExtResource("20_8lp0x")
-bus = &"VO"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tree_wire_teal2/q2/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -3, 0.499504)
-shape = SubResource("BoxShape3D_fjvf8")
-
 [node name="Global_plus" parent="." instance=ExtResource("4_1stx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98105, 0.981555, -157.005)
 
-[connection signal="body_entered" from="1/Area3D" to="1/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="1/q1/Area3D" to="1/q1/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="2/Area3D" to="2/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="13/Area3D" to="13/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="4/Area3D" to="4/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="5/Area3D" to="5/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="6/Area3D" to="6/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="7/Area3D" to="7/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="8/Area3D" to="8/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="9/Area3D" to="9/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="10/Area3D" to="10/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="11/Area3D" to="11/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="12/Area3D" to="12/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="tree_wire_teal2/q1/Area3D" to="tree_wire_teal2/q1/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="tree_wire_teal2/q2/Area3D" to="tree_wire_teal2/q2/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="portal1/Area3D" to="portal1/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="portal2/Area3D" to="portal2/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="portal3/Area3D" to="portal3/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="portal4/Area3D" to="portal4/Area3D" method="_on_body_entered"]
 
 [editable path="Gate3/Door"]
 [editable path="Gate3/Door2"]
