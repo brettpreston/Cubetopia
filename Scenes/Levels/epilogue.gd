@@ -1,13 +1,21 @@
-extends Label3D
+extends MeshInstance3D
 
-var smallcom: String="You walk among your neighbors \n and look up at the starry sky. \n"
-var global: String="You are on your way to see your friends in the Capital, \n and look at the world outside the train window. \n"
-var nature: String="The wind sways the young trees gently. \n You can hear the nightingales.\n"
-var space: String="The lights are reflected in the station dome, \n beyond it in the sky you can see the waxing Earth.\n "
-var capitalismState: String="You know that some of your friends are struggling,\n the inequality has not been contained.\n But the elite have a strong hold on power.\n Many will be afraid to strive for change."
-var capitalismNoState: String="You know that some of your friends are struggling,\n the inequality has not been contained. Here and there, \n you are starting to hear about violent incidents. \n Perhaps things will have to change again."
-var commerceNature: String="You've made some pastries for the market.\n "
-var commerceTech: String="You’ve made some medicine in your lab,\n that should make Athena feel better. \n"
+@export_multiline var text: String
+@export var width := 1000
+@export var audio_stream: AudioStream
+
+
+var shown = false
+var cubetopia_mesh = load("res://Scenes/Titles/Epilogue_mesh.tres")
+
+var smallcom: String="You walk among your neighbors and look up at the starry sky. "
+var global: String="You are on your way to see your friends in the Capital, and look at the world outside the train window. "
+var nature: String="The wind sways the young trees gently, and you can hear the nightingales."
+var space: String="The lights are reflected in the station dome, beyond it in the sky you can see the waxing Earth. "
+var capitalismState: String="You know that some of your friends are struggling, the inequality has not been contained. But the elite have a strong hold on power. Many will be afraid to strive for change."
+var capitalismNoState: String="You know that some of your friends are struggling, the inequality has not been contained. Here and there, you are starting to hear about violent incidents. Perhaps things will have to change again."
+var commerceNature: String="You've made some pastries for the market. "
+var commerceTech: String="You’ve made some medicine in your lab, that should make Athena feel better. "
 var central: String=""
 var captured: String=""
 var volatile: String=""
@@ -16,7 +24,7 @@ var utopia: String=""
 
 func _ready():
 	var Text: String =epilogue()
-	self.text=Text
+	mesh.text=Text
 		
 func epilogue():
 	var x: String=""

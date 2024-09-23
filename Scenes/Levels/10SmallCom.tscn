@@ -49,7 +49,7 @@ size = Vector3(4.4, 2.4, 0.6)
 [sub_resource type="BoxShape3D" id="BoxShape3D_fjvf8"]
 size = Vector3(20, 7, 0.001)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 script = ExtResource("1_x5krv")
 
