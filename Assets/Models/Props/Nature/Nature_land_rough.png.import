@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsx4i788cw1jl"
 path.s3tc="res://.godot/imported/Nature_land_rough.png-bbfeb0d5bb9e5c3464712c0683c87b7e.s3tc.ctex"
-path.etc2="res://.godot/imported/Nature_land_rough.png-bbfeb0d5bb9e5c3464712c0683c87b7e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Props/Nature/Nature_land_rough.png"
-dest_files=["res://.godot/imported/Nature_land_rough.png-bbfeb0d5bb9e5c3464712c0683c87b7e.s3tc.ctex", "res://.godot/imported/Nature_land_rough.png-bbfeb0d5bb9e5c3464712c0683c87b7e.etc2.ctex"]
+dest_files=["res://.godot/imported/Nature_land_rough.png-bbfeb0d5bb9e5c3464712c0683c87b7e.s3tc.ctex"]
 
 [params]
 

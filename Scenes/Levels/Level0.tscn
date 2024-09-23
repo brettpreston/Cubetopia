@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="2_etcvn"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="3_2qrg6"]
 [ext_resource type="Script" path="res://Gate_10smallcom.gd" id="4_n7wqc"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="6_un2q0"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="6_un2q0"]
 [ext_resource type="Script" path="res://Gate_11Global.gd" id="6_v2yxt"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="7_m0na6"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="9_glqlt"]
@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://dxqg5uyh61jfl" path="res://Assets/audio/Intro/2.ogg" id="10_qn8of"]
 [ext_resource type="Texture2D" uid="uid://reuwi5xjik34" path="res://Assets/2D/cubetopia.svg" id="10_voqxc"]
 [ext_resource type="AudioStream" uid="uid://ck61yaoxa0b4c" path="res://Assets/audio/Intro/3.ogg" id="11_507pj"]
-[ext_resource type="AudioStream" uid="uid://c5hymttildovf" path="res://Assets/audio/Intro/Choices.ogg" id="12_qitfr"]
+[ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="11_qcmgm"]
 [ext_resource type="AudioStream" uid="uid://5uukifyvltdl" path="res://Assets/audio/music/nature drums.wav" id="13_h2pg6"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="13_mbnjt"]
 [ext_resource type="AudioStream" uid="uid://dm7snxy685cuu" path="res://Assets/audio/music/nature.wav" id="14_3m5h5"]
@@ -103,88 +103,35 @@ bus = &"VO"
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 texture = ExtResource("10_voqxc")
 
-[node name="2" type="Label3D" parent="Text"]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -5, 6.2, -68)
-text = "Try to imagine what you want 
-the world to look like in a hundred years"
-font = ExtResource("10_13b0j")
-font_size = 100
-outline_size = 20
+[node name="2" parent="Text" instance=ExtResource("11_qcmgm")]
+transform = Transform3D(0.99925, 0, -0.0387192, 0, 1, 0, 0.0387192, 0, 0.99925, -2.0376, 5.63369, -60.7814)
+text = "Try to look at what the world was like a few hundred years ago, and try to imagine what you want the world to look like in a hundred years."
+audio_stream = ExtResource("9_glqlt")
 
-[node name="Area3D" type="Area3D" parent="Text/2"]
-script = ExtResource("7_m0na6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/2/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_hsow4")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/2/Area3D"]
-stream = ExtResource("9_glqlt")
-bus = &"VO"
-
-[node name="3" type="Label3D" parent="Text"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.2, -86)
+[node name="3" parent="Text" instance=ExtResource("11_qcmgm")]
+transform = Transform3D(0.999541, 0.0302943, 0, -0.0302943, 0.999541, 0, 0, 0, 1, -4.55033, 5.67769, -87.5205)
+skeleton = NodePath("")
 text = "What do you want it to look like?
-What do you think is right?
-"
-font = ExtResource("10_13b0j")
-font_size = 100
-outline_size = 20
+What do you think is right?"
+audio_stream = ExtResource("10_qn8of")
 
-[node name="Area3D" type="Area3D" parent="Text/3"]
-script = ExtResource("7_m0na6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/3/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1.5)
-shape = SubResource("BoxShape3D_hsow4")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/3/Area3D"]
-stream = ExtResource("10_qn8of")
-bus = &"VO"
-
-[node name="4" type="Label3D" parent="Text"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5.2, -106)
+[node name="4" parent="Text" instance=ExtResource("11_qcmgm")]
+transform = Transform3D(0.952359, 0, -0.304981, 0, 1, 0, 0.304981, 0, 0.952359, 5.76668, 5.42221, -103.031)
 text = "How do you hope people
-that you will never meet will live?
-"
-font = ExtResource("10_13b0j")
-font_size = 100
-outline_size = 20
+that you will never meet will live?"
+audio_stream = ExtResource("11_507pj")
 
-[node name="Area3D" type="Area3D" parent="Text/4"]
-script = ExtResource("7_m0na6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/4/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 1.5)
-shape = SubResource("BoxShape3D_hsow4")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/4/Area3D"]
-stream = ExtResource("11_507pj")
-bus = &"VO"
-
-[node name="5" type="Label3D" parent="Text"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5.2, -131)
+[node name="5" parent="Text" instance=ExtResource("11_qcmgm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21986, 3.60646, -113.25)
 text = "Do you think humanity of the future 
-should focus on global cooperation and unity
- or do we have better chances of achieving our goals in small, 
+should bet on global cooperation and unity...?"
+
+[node name="6" parent="Text" instance=ExtResource("11_qcmgm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25298, 4.14567, -129.898)
+text = " Or do we have better chances of achieving our goals in small, 
 independent communities?"
-font = ExtResource("10_13b0j")
-font_size = 100
-outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="Text/5"]
-script = ExtResource("7_m0na6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/5/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 2.5)
-shape = SubResource("BoxShape3D_hsow4")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/5/Area3D"]
-stream = ExtResource("12_qitfr")
-volume_db = -3.0
-bus = &"VO"
-
-[node name="6" type="Label3D" parent="Text"]
+[node name="portal 1" type="Label3D" parent="."]
 transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -3, 5.2, -146)
 text = "small communities
 "
@@ -192,7 +139,7 @@ font = ExtResource("10_13b0j")
 font_size = 100
 outline_size = 20
 
-[node name="7" type="Label3D" parent="Text"]
+[node name="portal 2" type="Label3D" parent="."]
 transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 1.78885, 5.16839, -145.817)
 text = "global cooperation"
 font = ExtResource("10_13b0j")
@@ -295,7 +242,3 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 7, 0, -76.6239)
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -17, 0, -63.6239)
 
 [connection signal="body_entered" from="Text/1_Title/Area3D" to="Text/1_Title/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Text/2/Area3D" to="Text/2/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Text/3/Area3D" to="Text/3/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Text/4/Area3D" to="Text/4/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Text/5/Area3D" to="Text/5/Area3D" method="_on_body_entered"]

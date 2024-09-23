@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b70qkbc614vpe"
 path.s3tc="res://.godot/imported/Purple.png-0da5de11e9f76748b789854bdd3220d2.s3tc.ctex"
-path.etc2="res://.godot/imported/Purple.png-0da5de11e9f76748b789854bdd3220d2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/Grids/Purple.png"
-dest_files=["res://.godot/imported/Purple.png-0da5de11e9f76748b789854bdd3220d2.s3tc.ctex", "res://.godot/imported/Purple.png-0da5de11e9f76748b789854bdd3220d2.etc2.ctex"]
+dest_files=["res://.godot/imported/Purple.png-0da5de11e9f76748b789854bdd3220d2.s3tc.ctex"]
 
 [params]
 

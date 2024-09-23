@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2lcg5ig5x74b"
 path.s3tc="res://.godot/imported/Retro.png-dc6995f509d2eeb5a2dc3b2c910aac5d.s3tc.ctex"
-path.etc2="res://.godot/imported/Retro.png-dc6995f509d2eeb5a2dc3b2c910aac5d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/background/Retro.png"
-dest_files=["res://.godot/imported/Retro.png-dc6995f509d2eeb5a2dc3b2c910aac5d.s3tc.ctex", "res://.godot/imported/Retro.png-dc6995f509d2eeb5a2dc3b2c910aac5d.etc2.ctex"]
+dest_files=["res://.godot/imported/Retro.png-dc6995f509d2eeb5a2dc3b2c910aac5d.s3tc.ctex"]
 
 [params]
 

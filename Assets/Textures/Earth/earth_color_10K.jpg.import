@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://boebv13l6yy4j"
 path.s3tc="res://.godot/imported/earth_color_10K.jpg-d80386381bb5888533d3fac17337d5d4.s3tc.ctex"
-path.etc2="res://.godot/imported/earth_color_10K.jpg-d80386381bb5888533d3fac17337d5d4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/Earth/earth_color_10K.jpg"
-dest_files=["res://.godot/imported/earth_color_10K.jpg-d80386381bb5888533d3fac17337d5d4.s3tc.ctex", "res://.godot/imported/earth_color_10K.jpg-d80386381bb5888533d3fac17337d5d4.etc2.ctex"]
+dest_files=["res://.godot/imported/earth_color_10K.jpg-d80386381bb5888533d3fac17337d5d4.s3tc.ctex"]
 
 [params]
 

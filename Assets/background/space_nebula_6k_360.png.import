@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://daw0cn6bfwjdp"
 path.s3tc="res://.godot/imported/space_nebula_6k_360.png-b690a3f9723ffd2f900c1763d93be10f.s3tc.ctex"
-path.etc2="res://.godot/imported/space_nebula_6k_360.png-b690a3f9723ffd2f900c1763d93be10f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/background/space_nebula_6k_360.png"
-dest_files=["res://.godot/imported/space_nebula_6k_360.png-b690a3f9723ffd2f900c1763d93be10f.s3tc.ctex", "res://.godot/imported/space_nebula_6k_360.png-b690a3f9723ffd2f900c1763d93be10f.etc2.ctex"]
+dest_files=["res://.godot/imported/space_nebula_6k_360.png-b690a3f9723ffd2f900c1763d93be10f.s3tc.ctex"]
 
 [params]
 

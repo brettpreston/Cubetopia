@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c76mjx5r5n5pf"
 path.s3tc="res://.godot/imported/Node_Path.png-c3629c483cf970c3473b2c7dfbf123e4.s3tc.ctex"
-path.etc2="res://.godot/imported/Node_Path.png-c3629c483cf970c3473b2c7dfbf123e4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/Node_Path.png"
-dest_files=["res://.godot/imported/Node_Path.png-c3629c483cf970c3473b2c7dfbf123e4.s3tc.ctex", "res://.godot/imported/Node_Path.png-c3629c483cf970c3473b2c7dfbf123e4.etc2.ctex"]
+dest_files=["res://.godot/imported/Node_Path.png-c3629c483cf970c3473b2c7dfbf123e4.s3tc.ctex"]
 
 [params]
 
