@@ -1,12 +1,14 @@
-[gd_scene load_steps=26 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=28 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/Models/Props/Space/Background_Futuristic.jpg" id="1_0j1uw"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4m7ci"]
+[ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_ffvvd"]
 [ext_resource type="AudioStream" uid="uid://bce81v6qkxwcr" path="res://Assets/audio/Quotes/02b distance.ogg" id="4_gv58k"]
 [ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="4_mjl73"]
 [ext_resource type="AudioStream" uid="uid://berruc68v6as2" path="res://Assets/audio/Quotes/03 marley Legal.ogg" id="5_jensl"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_nbvwk"]
+[ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="5_o86ru"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="6_mncwm"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="8_mauvu"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="8_tkejo"]
@@ -49,27 +51,38 @@ environment = SubResource("Environment_uadpp")
 [node name="Player" parent="." instance=ExtResource("1_p8uvs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
 
-[node name="Quote3" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -11)
+[node name="quote-distance" parent="." instance=ExtResource("3_ffvvd")]
+transform = Transform3D(0.267238, 0, 0.96363, 0, 1, 0, -0.96363, 0, 0.267238, -2, 3, -5)
+audio_stream = ExtResource("4_gv58k")
+
+[node name="1" parent="." instance=ExtResource("5_o86ru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -20)
+text = "The air filters in sector 8 of your space station are failing. 
+Who is in charge of repairing them?"
+
+[node name="2" type="Label3D" parent="."]
+transform = Transform3D(0.866026, 0, 0.500001, 0, 1, 0, -0.500001, 0, 0.866026, -5, 6, -42)
+text = "A professional class of engineers. 
+We can’t risk this being done badly."
 font_size = 100
 outline_size = 20
 
-[node name="Area3D" type="Area3D" parent="Quote3"]
+[node name="Area3D" type="Area3D" parent="2"]
 script = ExtResource("2_4m7ci")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Quote3/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2/Area3D"]
 transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
 shape = SubResource("BoxShape3D_ra5ch")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote3/Area3D"]
-stream = ExtResource("4_gv58k")
-panning_strength = 0.0
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="2/Area3D"]
 bus = &"VO"
 
 [node name="3" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 6, -25)
-text = "The air filters in sector 8 of your space station are failing. 
-Who is in charge of repairing it?"
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -44)
+text = "Everyone is taught to fix
+ life-saving infrastructure.
+We can’t have a group of 
+people holding power over life and death."
 font_size = 100
 outline_size = 20
 
@@ -83,29 +96,15 @@ shape = SubResource("BoxShape3D_ra5ch")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="3/Area3D"]
 bus = &"VO"
 
-[node name="4" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, 0.500001, 0, 1, 0, -0.500001, 0, 0.866026, -5, 6, -42)
-text = "A professional caste of engineers. 
-We can’t risk this being done badly."
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="4"]
-script = ExtResource("2_4m7ci")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="4/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="4/Area3D"]
-bus = &"VO"
+[node name="4" parent="." instance=ExtResource("5_o86ru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -102)
+text = "What if a conflict arises and a small group of
+people becomes disliked by others on a space station? How will we protect them from violence?"
 
 [node name="5" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 7, 6, -44)
-text = "Everyone is taught to fix
- life-saving infrastructure.
-We can’t have a group of 
-people holding power over life and death."
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -4, 6, -150)
+text = "Mediation, conflict resolution,
+strong leadership."
 font_size = 100
 outline_size = 20
 
@@ -113,16 +112,16 @@ outline_size = 20
 script = ExtResource("2_4m7ci")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="5/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
 shape = SubResource("BoxShape3D_ra5ch")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="5/Area3D"]
 bus = &"VO"
 
 [node name="6" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, -1, 6, -106)
-text = "What if a conflict arises and a small group of
-people becomes disliked by others on a space station?"
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 8, 6, -154)
+text = "Provide a way for the minority to 
+safely exit the station."
 font_size = 100
 outline_size = 20
 
@@ -136,59 +135,13 @@ shape = SubResource("BoxShape3D_ra5ch")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="6/Area3D"]
 bus = &"VO"
 
-[node name="9" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -4, 6, -150)
-text = "Mediation, conflict resolution,
-strong leadership."
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="9"]
-script = ExtResource("2_4m7ci")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="9/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="9/Area3D"]
-bus = &"VO"
-
-[node name="10" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 8, 6, -154)
-text = "Provide a way for the minority to 
-safely exit the station."
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="10"]
-script = ExtResource("2_4m7ci")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="10/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="10/Area3D"]
-bus = &"VO"
-
-[node name="Quote2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -214)
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Quote2"]
-script = ExtResource("2_4m7ci")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Quote2/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Quote2/Area3D"]
-stream = ExtResource("5_jensl")
-panning_strength = 0.0
-bus = &"VO"
+[node name="quote-law" parent="." instance=ExtResource("3_ffvvd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, -211)
+audio_stream = ExtResource("5_jensl")
 
 [node name="12" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 0, 6, -231)
+visible = false
 text = "SOME PEOPLE WON’T OBEY THE RULES OF SOCIETY NO MATTER HOW MUCH EDUCATION,
  PREVENTION AND SUPPORT YOU PROVIDE. WHAT THEN?"
 font_size = 100
@@ -224,20 +177,6 @@ transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0
 inner_radius = 3.0
 outer_radius = 4.0
 
-[node name="CSGTorus3D4" type="CSGTorus3D" parent="Gate2"]
-transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0.866025, -3.78552e-08, -5, 1, -211)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="12" type="Label3D" parent="Gate2/CSGTorus3D4"]
-transform = Transform3D(1, 2.08616e-07, 2.98023e-08, 1.78814e-07, -1.63181e-08, 1, 1.78814e-07, -1, -6.37425e-08, 0, 0, -5)
-text = "PEER ENFORCEMENT"
-font_size = 100
-outline_size = 20
-
-[node name="Resilience_Minus" parent="Gate2" instance=ExtResource("6_mncwm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -211)
-
 [node name="Gate3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 
@@ -250,23 +189,6 @@ outer_radius = 4.0
 transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, 2, 1, -110)
 inner_radius = 3.0
 outer_radius = 4.0
-
-[node name="CSGTorus3D3" type="CSGTorus3D" parent="Gate3"]
-transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, 2, 1, -210)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="12" type="Label3D" parent="Gate3/CSGTorus3D3"]
-transform = Transform3D(1, 2.08616e-07, 2.98023e-08, 1.78814e-07, -1.63181e-08, 1, 1.78814e-07, -1, -6.37425e-08, 0, 0, -5)
-text = "PROFESSIONAL POLICE"
-font_size = 100
-outline_size = 20
-
-[node name="autonomy_Minus" parent="Gate3" instance=ExtResource("8_tkejo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -210)
-
-[node name="State_Plus" parent="Gate3" instance=ExtResource("5_nbvwk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -209)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -394,7 +316,7 @@ autoplay = true
 bus = &"SFX"
 
 [node name="autonomy_Minus" parent="." instance=ExtResource("8_tkejo")]
-transform = Transform3D(0.5, -0.362372, 0.786566, 0.5, 0.862372, 0.0794593, -0.707107, 0.353553, 0.612372, -6.48055, 2.5, -44.02)
+transform = Transform3D(0.750341, -0.477474, 0.457172, 0.499895, 0.862364, 0.0801989, -0.432542, 0.168362, 0.885755, -6.48055, 1.5, -45.02)
 
 [node name="State_Minus" parent="." instance=ExtResource("17_428ou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -48)
@@ -408,12 +330,8 @@ transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -69, 3
 [node name="RingStation_lowpoly" parent="." instance=ExtResource("21_434ds")]
 transform = Transform3D(8.66025, 5, 0, -4.33013, 7.5, 5, 2.5, -4.33013, 8.66025, 1484, 457, 257)
 
-[connection signal="body_entered" from="Quote3/Area3D" to="Quote3/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="2/Area3D" to="2/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="3/Area3D" to="3/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="4/Area3D" to="4/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="5/Area3D" to="5/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="6/Area3D" to="6/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="9/Area3D" to="9/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="10/Area3D" to="10/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Quote2/Area3D" to="Quote2/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="12/Area3D" to="12/Area3D" method="_on_body_entered"]
