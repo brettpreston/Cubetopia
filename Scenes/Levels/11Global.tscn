@@ -136,7 +136,6 @@ bus = &"VO"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 
 [node name="State_Minus" parent="Door2" instance=ExtResource("8_763cv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="quote-diversity" parent="." instance=ExtResource("9_3kjeg")]
 transform = Transform3D(0.64679, 0, -0.762669, 0, 1, 0, 0.762669, 0, 0.64679, 21, 5, -70)
