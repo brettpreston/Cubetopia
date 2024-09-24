@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://blio4n1huua7n" path="res://Assets/audio/Intro/Title.ogg" id="3_cccqw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hsow4"]
-size = Vector3(11, 50, 6)
+size = Vector3(11, 18, 6)
 
 [sub_resource type="Animation" id="Animation_ba18o"]
 length = 0.001
@@ -57,7 +57,7 @@ width = 1200
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022, 3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.5)
 shape = SubResource("BoxShape3D_hsow4")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D"]
