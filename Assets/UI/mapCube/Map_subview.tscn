@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2gd0yw1gwrx4"]
+
+[ext_resource type="PackedScene" uid="uid://dao20kjowrugg" path="res://Assets/UI/mapCube/map_cube.tscn" id="1_me4nj"]
+
+[node name="Cube View" type="SubViewportContainer"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.37114e-08, -7, 0)
+current = true
+near = 0.1
+far = 3.0
+
+[node name="mapCube" parent="SubViewport/Camera3D" instance=ExtResource("1_me4nj")]
+transform = Transform3D(-0.866025, 0.321394, 0.383022, 0, 0.766044, -0.642788, -0.5, -0.55667, -0.663414, 4.37114e-08, 0, -1)
