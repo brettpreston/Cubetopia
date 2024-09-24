@@ -4,14 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://gae1dtlysnlq" path="res://Scenes/mapTriggers/mapTrigger_collision.tscn" id="2_ga0nb"]
 
 [node name="State_Plus" type="Area3D"]
+visible = false
 script = ExtResource("1_ucmap")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+visible = false
 billboard = 1
 text = "State +1"
 font_size = 64
 
 [node name="Collision" parent="." instance=ExtResource("2_ga0nb")]
+visible = false
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

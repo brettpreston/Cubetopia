@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://gae1dtlysnlq" path="res://Scenes/mapTriggers/mapTrigger_collision.tscn" id="2_0xcuj"]
 
 [node name="Tech_plus" type="Area3D"]
+visible = false
 script = ExtResource("1_k6axm")
 
 [node name="Label3D" type="Label3D" parent="."]
