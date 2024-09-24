@@ -1,6 +1,6 @@
 [gd_resource type="TextMesh" load_steps=3 format=3 uid="uid://7y8x3yq3okct"]
 
-[ext_resource type="FontFile" uid="uid://sd4cc20h30il" path="res://Assets/Fonts/exo-2-v7-latin-regular.ttf" id="1_h4uv4"]
+[ext_resource type="FontFile" uid="uid://bcrbhs7gvwvsf" path="res://Assets/Fonts/dejavu-sans-mono.bold.ttf" id="1_ue0hj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkou3"]
 albedo_color = Color(0.658824, 0.976471, 0.992157, 1)
@@ -15,7 +15,7 @@ distance_fade_max_distance = 20.9
 [resource]
 material = SubResource("StandardMaterial3D_lkou3")
 text = "Hello World"
-font = ExtResource("1_h4uv4")
+font = ExtResource("1_ue0hj")
 font_size = 56
 autowrap_mode = 3
 width = 800.0

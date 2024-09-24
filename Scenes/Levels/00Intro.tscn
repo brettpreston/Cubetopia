@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dwjj0q4okd4tu"]
+[gd_scene load_steps=26 format=3 uid="uid://dwjj0q4okd4tu"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_vl1r8"]
 [ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="2_din7f"]
@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_lbjps"]
 [ext_resource type="Script" path="res://Gate_11Global.gd" id="7_abhgn"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="8_cl2xg"]
-[ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="9_ovfwt"]
 [ext_resource type="Texture2D" uid="uid://reuwi5xjik34" path="res://Assets/2D/cubetopia.svg" id="10_aof7y"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="11_02wuk"]
+[ext_resource type="Script" path="res://Scenes/Levels/sprite_3d.gd" id="11_a0omv"]
 [ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="12_r1e41"]
 [ext_resource type="AudioStream" uid="uid://dxqg5uyh61jfl" path="res://Assets/audio/Intro/2.ogg" id="13_b0n03"]
 [ext_resource type="AudioStream" uid="uid://ck61yaoxa0b4c" path="res://Assets/audio/Intro/3.ogg" id="14_qlo4j"]
@@ -33,9 +33,9 @@ background_mode = 2
 sky = SubResource("Sky_g0026")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hsow4"]
-size = Vector3(11, 5, 6)
+glow_normalized = true
+glow_intensity = 1.3
+glow_strength = 1.5
 
 [sub_resource type="Curve3D" id="Curve3D_5xsma"]
 _data = {
@@ -81,30 +81,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5.2, -37.8665)
 
 [node name="Path" type="CSGCombiner3D" parent="."]
 
+[node name="Title" type="Sprite3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1, 9.2, -48)
+modulate = Color(2, 2, 2, 1)
+texture = ExtResource("10_aof7y")
+script = ExtResource("11_a0omv")
+
 [node name="Text" type="Node3D" parent="."]
 
-[node name="1_Title" type="Label3D" parent="Text"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8.2, -48)
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Text/1_Title"]
-script = ExtResource("9_ovfwt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Text/1_Title/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0.5)
-shape = SubResource("BoxShape3D_hsow4")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Text/1_Title/Area3D"]
-volume_db = -6.0
-bus = &"VO"
-
-[node name="Sprite3D" type="Sprite3D" parent="Text/1_Title"]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
-texture = ExtResource("10_aof7y")
-
 [node name="2" parent="Text" instance=ExtResource("11_02wuk")]
-transform = Transform3D(0.99925, 0, -0.0387192, 0, 1, 0, 0.0387192, 0, 0.99925, -2.0376, 7.86885, -57.6977)
+transform = Transform3D(0.99925, 0, -0.0387192, 0, 1, 0, 0.0387192, 0, 0.99925, -3.0376, 7.86885, -57.6977)
 text = "Try to look at what the world was like a few hundred years ago, and try to imagine what you want the world to look like in a hundred years."
 audio_stream = ExtResource("12_r1e41")
 
@@ -240,5 +226,3 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 7, 0, -76.6239)
 
 [node name="tree_wire_teal6" parent="." instance=ExtResource("21_hps2c")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -17, 0, -63.6239)
-
-[connection signal="body_entered" from="Text/1_Title/Area3D" to="Text/1_Title/Area3D" method="_on_body_entered"]
