@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://ctpo8qxqv8237"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_m0f82"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4u7l8"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="2_x54mw"]
 [ext_resource type="AudioStream" uid="uid://dwvyxulo220vj" path="res://Assets/audio/Quotes/02b state of corruption.ogg" id="3_d8xns"]
@@ -83,7 +83,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023447, 1, 0.0135422)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0188599, 0, 0.0108871)
 
 [node name="State_Plus" parent="Door1" instance=ExtResource("6_8bl7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Door2" parent="." instance=ExtResource("9_34j4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -52)
@@ -137,13 +136,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0577927, 0, -0.206619)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 1, 0)
 
 [node name="State_Minus" parent="Door3" instance=ExtResource("10_8giv6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Economy_minus2" parent="Door3" instance=ExtResource("9_vovpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Economy_minus" parent="Door3" instance=ExtResource("9_vovpb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="4" parent="." instance=ExtResource("2_x54mw")]
 transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 4, -106)
@@ -202,7 +199,6 @@ bus = &"VO"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="State_Plus" parent="Door5" instance=ExtResource("6_8bl7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="quote-greed" parent="." instance=ExtResource("12_klcs6")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 6, -214)
