@@ -51,7 +51,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
 
 [node name="0" parent="." instance=ExtResource("2_x54mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74202, 6.32494, -17.2846)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74202, 5.32494, -17.2846)
 text = "How do you make sure people’s basic needs are met?"
 
 [node name="Door1" parent="." instance=ExtResource("9_34j4l")]
