@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwjj0q4okd4tu"]
+[gd_scene load_steps=27 format=3 uid="uid://dwjj0q4okd4tu"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_vl1r8"]
 [ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="2_din7f"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Gate_10smallcom.gd" id="5_bny4j"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_lbjps"]
 [ext_resource type="Script" path="res://Gate_11Global.gd" id="7_abhgn"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="8_cl2xg"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="8_cl2xg"]
 [ext_resource type="Texture2D" uid="uid://reuwi5xjik34" path="res://Assets/2D/cubetopia.svg" id="10_aof7y"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="11_02wuk"]
 [ext_resource type="Script" path="res://Scenes/Levels/sprite_3d.gd" id="11_a0omv"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://jhvcymmgy8jd" path="res://Assets/audio/music/technology.wav" id="19_vmi8k"]
 [ext_resource type="AudioStream" uid="uid://ddlh70ms50ctq" path="res://Assets/audio/music/technology drums.wav" id="20_dwxv6"]
 [ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="21_hps2c"]
+[ext_resource type="PackedScene" uid="uid://bajhq28k0d0g7" path="res://Assets/Models/Props/fairy_path.tscn" id="22_3y3la"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kjwaf"]
 panorama = ExtResource("2_din7f")
@@ -226,3 +227,6 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 7, 0, -76.6239)
 
 [node name="tree_wire_teal6" parent="." instance=ExtResource("21_hps2c")]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -17, 0, -63.6239)
+
+[node name="FairyPath" parent="." instance=ExtResource("22_3y3la")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 32, -90.624)
