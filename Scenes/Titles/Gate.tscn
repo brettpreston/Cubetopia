@@ -57,7 +57,7 @@ width = 1200
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0573756, -0.0215063, 1.1127)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(2, 0, 0, 0, 0.302522, -1.97699, 0, 1.97699, 0.302522, 0, -4, 5)
+transform = Transform3D(2, 0, 0, 0, 0.302522, -1.97699, 0, 1.97699, 0.302522, 0, -4, 10)
 shape = SubResource("BoxShape3D_hsow4")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D"]

@@ -3,7 +3,10 @@
 [ext_resource type="FontFile" uid="uid://sd4cc20h30il" path="res://Assets/Fonts/exo-2-v7-latin-regular.ttf" id="1_h4uv4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkou3"]
-emission = Color(0.635294, 0.968627, 1, 1)
+albedo_color = Color(0.658824, 0.976471, 0.992157, 1)
+emission_enabled = true
+emission = Color(0.658824, 0.976471, 0.992157, 1)
+emission_energy_multiplier = 9.7
 backlight_enabled = true
 backlight = Color(1, 1, 1, 1)
 proximity_fade_distance = 0.01
