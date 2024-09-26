@@ -1,22 +1,21 @@
 [gd_resource type="TextMesh" load_steps=3 format=3 uid="uid://7y8x3yq3okct"]
 
-[ext_resource type="FontFile" uid="uid://bm26r1i36p3lh" path="res://Assets/Fonts/ShareTechMono-Regular.ttf" id="1_86gff"]
+[ext_resource type="FontFile" uid="uid://bcrbhs7gvwvsf" path="res://Assets/Fonts/dejavu-sans-mono.bold.ttf" id="1_ue0hj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkou3"]
 albedo_color = Color(0.658824, 0.976471, 0.992157, 1)
 emission_enabled = true
-emission = Color(0.758764, 0.983827, 0.994413, 1)
-emission_energy_multiplier = 2.0
+emission = Color(0.658824, 0.976471, 0.992157, 1)
+emission_energy_multiplier = 9.7
 backlight_enabled = true
-backlight = Color(0, 0, 0.00784314, 1)
-disable_receive_shadows = true
+backlight = Color(1, 1, 1, 1)
 proximity_fade_distance = 0.01
 distance_fade_max_distance = 20.9
 
 [resource]
 material = SubResource("StandardMaterial3D_lkou3")
 text = "Hello World"
-font = ExtResource("1_86gff")
+font = ExtResource("1_ue0hj")
 font_size = 56
 autowrap_mode = 3
 width = 800.0
