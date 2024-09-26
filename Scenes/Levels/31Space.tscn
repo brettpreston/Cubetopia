@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=29 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/Models/Props/Space/Background_Futuristic.jpg" id="1_0j1uw"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="18_uc4of"]
 [ext_resource type="PackedScene" uid="uid://buswn0ogvoa3e" path="res://Assets/Models/Props/Space/Planet_rings.glb" id="19_i1lw6"]
 [ext_resource type="PackedScene" uid="uid://bqip3t7rag1kd" path="res://Assets/Models/Props/Space/station_lowpoly.glb" id="20_61ent"]
+[ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="21_7f4k8"]
 [ext_resource type="PackedScene" uid="uid://dhbgxv454h0wh" path="res://Assets/Models/Props/Space/RingStation_lowpoly.glb" id="21_434ds"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wkyxy"]
@@ -61,116 +62,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -20)
 text = "The air filters in sector 8 of your space station are failing. 
 Who is in charge of repairing them?"
 
-[node name="Door1" type="CSGTorus3D" parent="."]
-transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, -6, 1, -45)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="State_Plus" parent="Door1" instance=ExtResource("5_nbvwk")]
-transform = Transform3D(1, 1.95399e-14, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0909519, 0.0646935, 0.183958)
-
-[node name="autonomy_Minus" parent="Door1" instance=ExtResource("8_tkejo")]
-transform = Transform3D(0.866086, -0.497686, -0.0469552, 0.000578314, -0.0929314, 0.995673, -0.499895, -0.862364, -0.0801989, -0.0401421, 1.10843, -0.5)
-
-[node name="Gate text2" parent="Door1" instance=ExtResource("8_5s56a")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -5.5)
-visibility_range_begin = 6.0
-text = "A professional class of engineers. 
-We can’t risk this being done badly."
-
-[node name="Door2" type="CSGTorus3D" parent="."]
-transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0.866025, -3.78552e-08, 8, 1, -45)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="Autonomy_Plus" parent="Door2" instance=ExtResource("10_2pi1e")]
-transform = Transform3D(1, -1.95399e-14, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-
-[node name="State_Minus" parent="Door2" instance=ExtResource("17_428ou")]
-transform = Transform3D(0.866026, -1.95399e-14, 0.5, -0.5, -4.37114e-08, 0.866026, 2.18557e-08, -1, -3.78552e-08, 0, 0, 0)
-
-[node name="Gate text3" parent="Door2" instance=ExtResource("8_5s56a")]
-transform = Transform3D(1, 0, -4.37114e-08, 4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1, -5.5)
-visibility_range_begin = 6.0
-skeleton = NodePath("../../Door1")
-text = "Everyone is taught to fix
- life-saving infrastructure.
-We can’t have a group of 
-people holding power over life and death."
-
 [node name="4" parent="." instance=ExtResource("5_o86ru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -133)
 text = "What if a conflict arises and a small group of
 people becomes disliked by others on a space station? How will we protect them from violence?"
-
-[node name="Door3" type="CSGTorus3D" parent="."]
-transform = Transform3D(0.866025, 0.5, -2.18557e-08, 0, -4.37114e-08, -1, -0.5, 0.866025, -3.78552e-08, -7, 1, -156)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="5" type="Label3D" parent="Door3"]
-transform = Transform3D(1, 1.95399e-14, -5.06639e-07, 5.06639e-07, -4.37114e-08, 1, -2.13163e-14, -1, -4.37114e-08, -0.401932, 6.69615, -5)
-visible = false
-text = "Mediation, conflict resolution,
-strong leadership."
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door3/5"]
-script = ExtResource("2_4m7ci")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door3/5/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door3/5/Area3D"]
-bus = &"VO"
-
-[node name="Resilience_Plus" parent="Door3" instance=ExtResource("11_11it7")]
-transform = Transform3D(1, 1.95399e-14, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-
-[node name="State_Plus2" parent="Door3" instance=ExtResource("5_nbvwk")]
-transform = Transform3D(1, 1.95399e-14, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0472336, -0.00738525, -0.05786)
-
-[node name="Gate text2" parent="Door3" instance=ExtResource("8_5s56a")]
-transform = Transform3D(1, 0, 4.37114e-08, -4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 0, 1, -5.5)
-skeleton = NodePath("../../Door4")
-text = "Mediation, conflict resolution,
-strong leadership."
-
-[node name="Door4" type="CSGTorus3D" parent="."]
-transform = Transform3D(0.866025, -0.5, 2.18557e-08, 0, -4.37114e-08, -1, 0.5, 0.866025, -3.78552e-08, 9, 1, -156)
-inner_radius = 3.0
-outer_radius = 4.0
-
-[node name="6" type="Label3D" parent="Door4"]
-transform = Transform3D(1, -1.95399e-14, 4.76837e-07, -4.76837e-07, -4.37114e-08, 1, 1.95399e-14, -1, -4.37114e-08, 0.267952, 4.4641, -5)
-visible = false
-text = "Provide a way for the minority to 
-safely exit the station."
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door4/6"]
-script = ExtResource("2_4m7ci")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door4/6/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door4/6/Area3D"]
-bus = &"VO"
-
-[node name="Resilience_Minus" parent="Door4" instance=ExtResource("6_mncwm")]
-transform = Transform3D(1, -1.95399e-14, -2.98023e-08, 2.98023e-08, -4.37114e-08, 1, -1.77636e-15, -1, -4.37114e-08, 0, 0, 0)
-
-[node name="Global_minus" parent="Door4" instance=ExtResource("12_mswn4")]
-transform = Transform3D(1, -1.95399e-14, -2.98023e-08, 2.98023e-08, -4.37114e-08, 1, -1.77636e-15, -1, -4.37114e-08, 0, 0, 0)
-
-[node name="Gate text" parent="Door4" instance=ExtResource("8_5s56a")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, -5.5)
-text = "Provide a way for the minority to 
-safely exit the station."
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
@@ -216,16 +111,6 @@ material = ExtResource("8_mauvu")
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -81.5)
 size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -230)
-size = Vector3(7, 1, 37)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -256.5)
-size = Vector3(25, 1, 16)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -279,7 +164,7 @@ transform = Transform3D(-96.5926, 0, 25.8819, 0, 100, 0, -25.8819, 0, -96.5926, 
 visible = false
 
 [node name="Gate4" parent="." instance=ExtResource("15_62hdw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -260)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -209)
 script = ExtResource("16_ibjn1")
 
 [node name="Label3D" type="Label3D" parent="Gate4"]
@@ -301,6 +186,107 @@ transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -69, 3
 
 [node name="RingStation_lowpoly" parent="." instance=ExtResource("21_434ds")]
 transform = Transform3D(8.66025, 5, 0, -4.33013, 7.5, 5, 2.5, -4.33013, 8.66025, 1484, 457, 257)
+
+[node name="Door1" parent="." instance=ExtResource("21_7f4k8")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6, 1, -45)
+
+[node name="State_Plus" parent="Door1" instance=ExtResource("5_nbvwk")]
+transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34957e-14, 1, -0.0909519, -0.183958, 0.0646935)
+visible = true
+
+[node name="autonomy_Minus" parent="Door1" instance=ExtResource("8_tkejo")]
+transform = Transform3D(0.866086, -0.497686, -0.046955, 0.499895, 0.862364, 0.0801989, 0.000578135, -0.0929312, 0.995673, -0.0401421, 0.5, 1.10843)
+
+[node name="Gate text2" parent="Door1" instance=ExtResource("8_5s56a")]
+transform = Transform3D(1, -1.95399e-14, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.38441e-14, 1, 0, 5.5, 0)
+visibility_range_begin = 6.0
+skeleton = NodePath("")
+text = "A professional class of engineers. 
+We can’t risk this being done badly."
+
+[node name="Door2" parent="." instance=ExtResource("21_7f4k8")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 8, 1, -45)
+
+[node name="Autonomy_Plus" parent="Door2" instance=ExtResource("10_2pi1e")]
+transform = Transform3D(1, -1.17285e-15, -2.08616e-07, 0, 1, 0, 2.08616e-07, 3.34957e-14, 1, 0, 0, 0)
+
+[node name="State_Minus" parent="Door2" instance=ExtResource("17_428ou")]
+transform = Transform3D(0.866026, -1.17285e-15, 0.5, 0, 1, -7.10543e-15, -0.5, 3.34957e-14, 0.866026, 0, 0, 0)
+
+[node name="Gate text3" parent="Door2" instance=ExtResource("8_5s56a")]
+transform = Transform3D(1, 8.88178e-15, -2.68221e-07, -1.91069e-15, 1, -4.37114e-08, 2.68221e-07, 4.37114e-08, 1, -9.53674e-07, 5.5, 1)
+visibility_range_begin = 6.0
+skeleton = NodePath("")
+text = "Everyone is taught to fix
+ life-saving infrastructure.
+We can’t have a group of 
+people holding power over life and death."
+
+[node name="Door3" parent="." instance=ExtResource("21_7f4k8")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 1, -156)
+
+[node name="5" type="Label3D" parent="Door3"]
+transform = Transform3D(1, 1.17285e-15, -2.98023e-07, -8.29599e-16, 1, 0, 2.98023e-07, 3.34957e-14, 1, -0.401932, 5, 6.69615)
+visible = false
+text = "Mediation, conflict resolution,
+strong leadership."
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Door3/5"]
+script = ExtResource("2_4m7ci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door3/5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door3/5/Area3D"]
+bus = &"VO"
+
+[node name="Resilience_Plus" parent="Door3" instance=ExtResource("11_11it7")]
+transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34957e-14, 1, 0, 0, 0)
+
+[node name="State_Plus2" parent="Door3" instance=ExtResource("5_nbvwk")]
+transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34957e-14, 1, 0.0472336, 0.05786, -0.00738525)
+
+[node name="Gate text2" parent="Door3" instance=ExtResource("8_5s56a")]
+transform = Transform3D(1, -8.88178e-15, 2.68221e-07, 1.91069e-15, 1, -4.37114e-08, -2.68221e-07, 4.37114e-08, 1, 0, 5.5, 1)
+skeleton = NodePath("")
+text = "Mediation, conflict resolution,
+strong leadership."
+
+[node name="Door4" parent="." instance=ExtResource("21_7f4k8")]
+transform = Transform3D(0.866026, 2.84217e-14, -0.5, 2.01348e-15, 1, 7.10543e-15, 0.5, 3.55271e-15, 0.866026, 9, 1, -156)
+
+[node name="6" type="Label3D" parent="Door4"]
+transform = Transform3D(0.999999, -2.75631e-14, 2.68221e-07, -7.10165e-16, 1, -7.10542e-15, -2.68221e-07, 4.46298e-14, 0.999999, 0.267952, 5, 4.4641)
+visible = false
+text = "Provide a way for the minority to 
+safely exit the station."
+font_size = 100
+outline_size = 20
+
+[node name="Area3D" type="Area3D" parent="Door4/6"]
+script = ExtResource("2_4m7ci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door4/6/Area3D"]
+transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
+shape = SubResource("BoxShape3D_ra5ch")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door4/6/Area3D"]
+bus = &"VO"
+
+[node name="Resilience_Minus" parent="Door4" instance=ExtResource("6_mncwm")]
+transform = Transform3D(0.999999, -2.75631e-14, -2.08616e-07, -1.53982e-15, 1, -7.10542e-15, 2.08616e-07, 4.46298e-14, 0.999999, 0, 0, 0)
+
+[node name="Global_minus" parent="Door4" instance=ExtResource("12_mswn4")]
+transform = Transform3D(0.999999, -2.75631e-14, -2.08616e-07, -1.53982e-15, 1, -7.10542e-15, 2.08616e-07, 4.46298e-14, 0.999999, 0, 0, 0)
+
+[node name="Gate text" parent="Door4" instance=ExtResource("8_5s56a")]
+transform = Transform3D(0.999999, -6.85035e-15, -2.08616e-07, -2.01348e-15, 1, -7.10542e-15, 2.08616e-07, 4.49782e-14, 0.999999, 0, 5.5, 1)
+skeleton = NodePath("")
+text = "Provide a way for the minority to 
+safely exit the station."
 
 [connection signal="body_entered" from="Door3/5/Area3D" to="Door3/5/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Door4/6/Area3D" to="Door4/6/Area3D" method="_on_body_entered"]

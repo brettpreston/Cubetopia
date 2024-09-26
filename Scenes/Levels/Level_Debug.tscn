@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://byqak6kd1jv1h"]
+[gd_scene load_steps=25 format=3 uid="uid://byqak6kd1jv1h"]
 
 [ext_resource type="Texture2D" uid="uid://dvus8d0i7gqto" path="res://Assets/background/cityalt360Kpano.png" id="1_b1yv7"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="2_m68vj"]
@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_ltjrg"]
 [ext_resource type="Script" path="res://Gate_40Final.gd" id="7_iplfh"]
 [ext_resource type="PackedScene" uid="uid://bg563s43ytakm" path="res://Assets/Models/Props/Tree_Wire_Green.glb" id="7_x5wy3"]
-[ext_resource type="AudioStream" uid="uid://ddlh70ms50ctq" path="res://Assets/audio/music/technology drums.wav" id="8_8ymp7"]
-[ext_resource type="AudioStream" uid="uid://jhvcymmgy8jd" path="res://Assets/audio/music/technology.wav" id="9_suof3"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="10_4rjh5"]
 [ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="11_khfd6"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="12_144gm"]
@@ -82,20 +80,6 @@ script = ExtResource("7_iplfh")
 
 [node name="Tree_Wire_Green" parent="." instance=ExtResource("7_x5wy3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -8.62399)
-
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Tree_Wire_Green"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 3, 2)
-stream = ExtResource("8_8ymp7")
-autoplay = true
-panning_strength = 0.0
-bus = &"Music"
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Tree_Wire_Green"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 3, 24)
-stream = ExtResource("9_suof3")
-autoplay = true
-panning_strength = 0.0
-bus = &"Music"
 
 [node name="Global_plus" parent="." instance=ExtResource("10_4rjh5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.03333, 1.6, -7.03333)

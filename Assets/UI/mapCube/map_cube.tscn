@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Assets/UI/mapCube/Ball.gd" id="2_38pri"]
 [ext_resource type="PackedScene" uid="uid://cyk3pt21qjlsg" path="res://Assets/UI/mapCube/Echo Cube2.glb" id="3_kwd7k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lvcb2"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkfxd"]
 emission_enabled = true
-emission = Color(0.0509804, 0.470588, 1, 1)
-emission_energy_multiplier = 5.57
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 3.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_uglrs"]
-material = SubResource("StandardMaterial3D_lvcb2")
+material = SubResource("StandardMaterial3D_tkfxd")
 
 [node name="mapCube" type="Node3D"]
 
