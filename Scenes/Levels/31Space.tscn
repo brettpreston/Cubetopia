@@ -104,13 +104,13 @@ size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -81.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -10, 0, -82.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -81.5)
-size = Vector3(7, 1, 36)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 11.75, 0, -83.6651)
+size = Vector3(7, 1, 41)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
