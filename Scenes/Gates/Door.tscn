@@ -8,7 +8,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2tkf"]
 render_priority = 0
 shader = ExtResource("2_bt1af")
-shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/fresnel_sharpness = 1.0
 shader_parameter/impact_points = PackedVector4Array()
 shader_parameter/impact_size = 0.1
@@ -17,7 +17,7 @@ shader_parameter/impact_falloff_sharpness = 1.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_njxxp"]
 render_priority = 0
 shader = ExtResource("2_bt1af")
-shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/fresnel_sharpness = 1.0
 shader_parameter/impact_points = PackedVector4Array()
 shader_parameter/impact_size = 0.1
@@ -114,7 +114,7 @@ size = Vector3(4.4, 2.4, 0.6)
 render_priority = 0
 shader = ExtResource("3_h4o7x")
 shader_parameter/modelColor = Color(0, 0, 0, 1)
-shader_parameter/wireframeColor = Color(0, 0, 1, 1)
+shader_parameter/wireframeColor = Color(1, 1, 1, 1)
 shader_parameter/width = 3.0
 shader_parameter/modelOpacity = 1.0
 shader_parameter/filtered = false
