@@ -8,12 +8,10 @@ script = ExtResource("1_72il7")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
-visible = false
 billboard = 1
 text = "Autonomy +1"
 font_size = 64
 
 [node name="Collision" parent="." instance=ExtResource("2_j0hxr")]
-visible = false
 
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

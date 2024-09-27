@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/Models/Props/Space/Background_Futuristic.jpg" id="1_0j1uw"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4m7ci"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_ffvvd"]
 [ext_resource type="AudioStream" uid="uid://bce81v6qkxwcr" path="res://Assets/audio/Quotes/02b distance.ogg" id="4_gv58k"]
@@ -224,7 +224,6 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6, 1, -45
 
 [node name="State_Plus" parent="Door1" instance=ExtResource("5_nbvwk")]
 transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34957e-14, 1, -0.0909519, -0.183958, 0.0646935)
-visible = true
 
 [node name="autonomy_Minus" parent="Door1" instance=ExtResource("8_tkejo")]
 transform = Transform3D(0.866086, -0.497686, -0.046955, 0.499895, 0.862364, 0.0801989, 0.000578135, -0.0929312, 0.995673, -0.0401421, 0.5, 1.10843)
@@ -314,7 +313,7 @@ transform = Transform3D(0.999999, -2.75631e-14, -2.08616e-07, -1.53982e-15, 1, -
 [node name="Global_minus" parent="Door4" instance=ExtResource("12_mswn4")]
 transform = Transform3D(0.999999, -2.75631e-14, -2.08616e-07, -1.53982e-15, 1, -7.10542e-15, 2.08616e-07, 4.46298e-14, 0.999999, 0, 0, 0)
 
-[node name="Gate text" parent="Door4" instance=ExtResource("8_5s56a")]
+[node name="Gate text2" parent="Door4" instance=ExtResource("8_5s56a")]
 transform = Transform3D(0.999999, -6.85035e-15, -2.08616e-07, -2.01348e-15, 1, -7.10542e-15, 2.08616e-07, 4.49782e-14, 0.999999, 0, 5.5, 1)
 skeleton = NodePath("")
 text = "Provide a way for the minority to 

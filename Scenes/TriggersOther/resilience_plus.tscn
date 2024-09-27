@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://gae1dtlysnlq" path="res://Scenes/mapTriggers/mapTrigger_collision.tscn" id="2_u2hwd"]
 
 [node name="Resilience_Plus" type="Area3D"]
-visible = false
 script = ExtResource("1_iegm7")
 
 [node name="Collision" parent="." instance=ExtResource("2_u2hwd")]
@@ -15,4 +14,4 @@ billboard = 1
 text = "Resilience +1"
 font_size = 64
 
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Gate_10smallcom.gd" id="5_bny4j"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_lbjps"]
 [ext_resource type="Script" path="res://Gate_11Global.gd" id="7_abhgn"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="8_cl2xg"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="8_cl2xg"]
 [ext_resource type="Texture2D" uid="uid://reuwi5xjik34" path="res://Assets/2D/cubetopia.svg" id="10_aof7y"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="11_02wuk"]
 [ext_resource type="Script" path="res://Scenes/Levels/sprite_3d.gd" id="11_a0omv"]

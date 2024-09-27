@@ -12,7 +12,7 @@ shader_parameter/outline_color = Color(0, 0, 0, 1)
 next_pass = SubResource("ShaderMaterial_oebv2")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 5.0
+emission_energy_multiplier = 10.0
 
 [resource]
 material = SubResource("StandardMaterial3D_1vuul")
