@@ -1,8 +1,7 @@
-[gd_scene load_steps=46 format=4 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=43 format=4 uid="uid://3yfweq66ct17"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_8on32"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_8on32"]
 [ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
-[ext_resource type="FontFile" uid="uid://cokp3lgag5j2p" path="res://Assets/Fonts/exo-2-v7-latin-700.ttf" id="3_dqddn"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_lcf0d"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="3_mgfei"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_1stx4"]
@@ -22,8 +21,6 @@
 [ext_resource type="Script" path="res://Gate_21Com.gd" id="16_1dixi"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="17_mtmi3"]
 [ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="17_ufgxs"]
-[ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="18_ji2ky"]
-[ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="19_jvu8k"]
 [ext_resource type="PackedScene" uid="uid://dkxtyrh5srbj2" path="res://Assets/Models/Props/Community/Sunballmod.glb" id="24_pvtyu"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ffxqr"]
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_abgwe"]
@@ -348,7 +345,6 @@ text = "There should be enough trade and cultural exchange between
 communities that stark differences in how they do are impossible"
 
 [node name="Global_plus" parent="Door4" instance=ExtResource("4_1stx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Door4b" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 26, -137)
@@ -361,7 +357,6 @@ text = "There should be enough trade and cultural exchange between
 communities that stark differences in how they do are impossible"
 
 [node name="Global_plus" parent="Door4b" instance=ExtResource("4_1stx4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="8" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.795473, 0.130127, 0.591852, 0, 0.976672, -0.214735, -0.605988, 0.170816, 0.776917, 0.747342, 29.5581, -142.287)
@@ -401,11 +396,6 @@ with either commerce or mutualism?"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 141, 1, 8)
-inner_radius = 3.0
-outer_radius = 4.0
-
 [node name="Node3D" parent="Gate" instance=ExtResource("17_ufgxs")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.6, -15.1, -8.3)
 
@@ -415,121 +405,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
 [node name="Gate3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 
-[node name="Gate1" parent="Gate3" instance=ExtResource("13_cauyu")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 146, 0, -204)
-script = ExtResource("14_mx81y")
-
-[node name="12" type="Label3D" parent="Gate3/Gate1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "central distribution"
-font = ExtResource("3_dqddn")
-font_size = 100
-outline_size = 20
-
-[node name="Gate2" parent="Gate3" instance=ExtResource("15_wtvhc")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 155, 0, -204)
-script = ExtResource("16_1dixi")
-
-[node name="12" type="Label3D" parent="Gate3/Gate2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.62939e-06, 5, 0)
-text = "commerce or mutualism"
-font_size = 100
-outline_size = 20
-
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 0, -13.5)
-size = Vector3(7, 1, 44)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 0, -126)
-size = Vector3(7, 1, 49)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 154, 0, -53.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 130, 0, -53.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 130, 0, -81.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 154, 0, -81.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 0, -228.5)
-size = Vector3(7, 1, 34)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 0, -250)
-size = Vector3(19, 1, 9)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 130, 0, -191.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 154, 0, -191.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.5, 0, -38)
-size = Vector3(10, 1, 7)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 154, 0, -163.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 130, 0, -163.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.5, 0, -148)
-size = Vector3(10, 1, 7)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.5, 0, -208)
-size = Vector3(10, 1, 7)
-material = ExtResource("17_mtmi3")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 0, -100)
-size = Vector3(10, 1, 7)
-material = ExtResource("17_mtmi3")
-
-[node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 0, 0)
-stream = ExtResource("18_ji2ky")
-autoplay = true
-bus = &"SFX"
-
-[node name="tree_wire_teal" parent="." instance=ExtResource("19_jvu8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142, 0, -177)
-
-[node name="tree_wire_teal2" parent="." instance=ExtResource("19_jvu8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142, 0, -67)
 
 [node name="Balls" type="MultiMeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.58501, 36.085)

@@ -293,17 +293,12 @@ size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -113.5)
-size = Vector3(9, 1, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -109.5)
+size = Vector3(9, 1, 28)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -180)
-size = Vector3(10, 1, 7)
-material = ExtResource("5_tiqom")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
 size = Vector3(10, 1, 7)
 material = ExtResource("5_tiqom")
 
