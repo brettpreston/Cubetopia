@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="10_e33e2"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="11_rwaja"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="13_cauyu"]
+[ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="13_ks1o3"]
 [ext_resource type="Script" path="res://Gate_20Central.gd" id="14_mx81y"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="15_wtvhc"]
 [ext_resource type="Script" path="res://Gate_21Com.gd" id="16_1dixi"]
@@ -47,9 +48,6 @@ fog_light_color = Color(0, 0, 0, 1)
 fog_light_energy = 0.0
 fog_density = 0.05
 fog_sky_affect = 0.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_romjo"]
-size = Vector3(4.4, 2.4, 0.6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlat4"]
 resource_name = "Material.002"
@@ -239,63 +237,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.50389, -66.3321)
 text = "Should they be able to do that?"
 
 [node name="Door1" parent="." instance=ExtResource("9_vha7y")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6, 1, -45)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -80)
 
-[node name="CSGBox3D" parent="Door1/LeftHinge" index="0"]
-transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 122.11, 1.5, 72.2501)
+[node name="PillerR" parent="Door1" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="CSGBox3D2" parent="Door1/PillerR" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.2505, 1.5, 122.109)
-
-[node name="CollisionShape3D" parent="Door1/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.11, 1.4, 69.5001)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Door1/Area3D" index="1"]
-transform = Transform3D(0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, 0.5, 137.466, 1.4, 74.902)
-shape = SubResource("BoxShape3D_romjo")
-
-[node name="CSGTorus3D" parent="Door1" index="4"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 122.11, 1, 70.5001)
-
-[node name="Gate text" parent="Door1/CSGTorus3D" index="0" instance=ExtResource("7_tx0wf")]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 1, -5)
-skeleton = NodePath("../..")
+[node name="Gate text" parent="Door1" index="6"]
 text = "To join a community, the other members’ consent is necessary.
 Even if that means some people have to stay in unhealthy communities."
 
-[node name="AudioDoor2" parent="Door1" index="5"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 122.11, 0, 70.5001)
+[node name="Resilience_Plus" parent="Door1" instance=ExtResource("7_yehxa")]
+
+[node name="State_Plus" parent="Door1" instance=ExtResource("5_q1yeh")]
+
+[node name="autonomy_Minus" parent="Door1" instance=ExtResource("9_8qc3j")]
 
 [node name="Door2" parent="." instance=ExtResource("9_vha7y")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10, 1, -48)
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 10, 2, -80)
 
-[node name="CSGBox3D" parent="Door2/LeftHinge" index="0"]
-transform = Transform3D(-5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 122.11, 1.5, -68.7501)
+[node name="PillerR" parent="Door2" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="CSGBox3D2" parent="Door2/PillerR" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.7496, 1.5, 122.11)
-
-[node name="AnimationPlayer" parent="Door2" index="2"]
-root_node = NodePath("../../Door2")
-
-[node name="CollisionShape3D" parent="Door2/Area3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.11, 1.4, -71.5001)
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Door2/Area3D" index="1"]
-transform = Transform3D(0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, 0.5, 109.753, 1.4, -60.902)
-shape = SubResource("BoxShape3D_romjo")
-
-[node name="CSGTorus3D" parent="Door2" index="4"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 122.11, 1, -70.5001)
-
-[node name="Gate text" parent="Door2/CSGTorus3D" index="0" instance=ExtResource("7_tx0wf")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, -5)
+[node name="Gate text" parent="Door2" index="6"]
 text = "It should be possible for each person to exit a
-community and enter another at will.
-"
+community and enter another at will."
 
-[node name="AudioDoor2" parent="Door2" index="5"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 122.11, 0, -70.5001)
+[node name="Autonomy_Plus" parent="Door2" instance=ExtResource("11_rwaja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0, 1.14441e-05)
+
+[node name="Resilience_Minus" parent="Door2" instance=ExtResource("10_e33e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1, 1.14441e-05)
+
+[node name="State_Minus" parent="Door2" instance=ExtResource("13_ks1o3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="4" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 6.5, -78.825)
@@ -340,26 +314,54 @@ text = "Or Edengale from subjugating
 the others in return for food?"
 
 [node name="Door3" parent="." instance=ExtResource("9_vha7y")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 134, 1, -156)
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 26, -36)
 
-[node name="State_Plus" parent="Door3" instance=ExtResource("5_q1yeh")]
-transform = Transform3D(1, 0, -5.96046e-07, 0, 1, 0, 5.96046e-07, 0, 1, -0.23204, 0, -3.5981)
+[node name="PillerR" parent="Door3" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Gate text2" parent="Door3" instance=ExtResource("7_tx0wf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 1)
+[node name="Gate text" parent="Door3" index="6"]
 text = "There should be a global assembly 
 enforcing peace and responding to crises."
 
+[node name="State_Plus" parent="Door3" instance=ExtResource("5_q1yeh")]
+
+[node name="Door3b" parent="." instance=ExtResource("9_vha7y")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4, 26, -126)
+
+[node name="PillerR" parent="Door3b" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door3b" index="6"]
+text = "There should be a global assembly 
+enforcing peace and responding to crises."
+
+[node name="State_Plus" parent="Door3b" instance=ExtResource("5_q1yeh")]
+
 [node name="Door4" parent="." instance=ExtResource("9_vha7y")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 151, 1, -158)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -1, 26, -24)
 
-[node name="Global_plus" parent="Door4" instance=ExtResource("4_1stx4")]
-transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -0.384949, -0.018445, 1.37115)
+[node name="PillerR" parent="Door4" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Gate text2" parent="Door4" instance=ExtResource("7_tx0wf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 1)
+[node name="Gate text" parent="Door4" index="6"]
 text = "There should be enough trade and cultural exchange between
 communities that stark differences in how they do are impossible"
+
+[node name="Global_plus" parent="Door4" instance=ExtResource("4_1stx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Door4b" parent="." instance=ExtResource("9_vha7y")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 26, -137)
+
+[node name="PillerR" parent="Door4b" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door4b" index="6"]
+text = "There should be enough trade and cultural exchange between
+communities that stark differences in how they do are impossible"
+
+[node name="Global_plus" parent="Door4b" instance=ExtResource("4_1stx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="8" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.795473, 0.130127, 0.591852, 0, 0.976672, -0.214735, -0.605988, 0.170816, 0.776917, 0.747342, 29.5581, -142.287)
@@ -801,27 +803,10 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
-[node name="Door" parent="." instance=ExtResource("9_vha7y")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -80)
-
-[node name="Resilience_Plus" parent="Door" instance=ExtResource("7_yehxa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="State_Plus" parent="Door" instance=ExtResource("5_q1yeh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="autonomy_Minus" parent="Door" instance=ExtResource("9_8qc3j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Door5" parent="." instance=ExtResource("9_vha7y")]
-transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 10, 2, -80)
-
-[node name="Autonomy_Plus" parent="Door5" instance=ExtResource("11_rwaja")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0, 1.14441e-05)
-
-[node name="Resilience_Minus" parent="Door5" instance=ExtResource("10_e33e2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 1, 1.14441e-05)
-
 [editable path="Door1"]
 [editable path="Door2"]
+[editable path="Door3"]
+[editable path="Door3b"]
+[editable path="Door4"]
+[editable path="Door4b"]
 [editable path="Balls/Sunballmod"]
