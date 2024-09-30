@@ -1,7 +1,8 @@
-[gd_scene load_steps=40 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=42 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/Models/Props/Space/Background_Futuristic.jpg" id="1_0j1uw"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
+[ext_resource type="Script" path="res://music_auto_stop.gd" id="1_tbdsx"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4m7ci"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_ffvvd"]
 [ext_resource type="AudioStream" uid="uid://bce81v6qkxwcr" path="res://Assets/audio/Quotes/02b distance.ogg" id="4_gv58k"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_44qlx"]
 [ext_resource type="PackedScene" uid="uid://dir1nnlflaqs7" path="res://Assets/Models/Props/Space/EV_planet.glb" id="27_7jso4"]
 [ext_resource type="Script" path="res://Planet_rotate.gd" id="28_fpmxv"]
+[ext_resource type="AudioStream" uid="uid://6wcsprryqp" path="res://Assets/audio/music/ambi/ambi_space2.ogg" id="30_0eflw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wkyxy"]
 panorama = ExtResource("1_0j1uw")
@@ -47,7 +49,7 @@ size = Vector3(11, 5, 6)
 
 [sub_resource type="Curve3D" id="Curve3D_0sirr"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, -42.81, 0.409363, 0, 0.631347, 0, 0, -41.62, -19.385, 8.05, 0, -49.009, 24, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, -42.81, 0.409363, 0, 0.631347, 0, 0, -41.62, -19.385, 8.05, 0, -50, 25, 2.105),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -79,6 +81,7 @@ point_count = 2
 radius = 300.0
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_tbdsx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.786567, 0.0638225, -0.614197, -0.612371, 0.0473632, 0.78915, 0.0794559, 0.996837, 0.00182872, 0, 0, 0)
@@ -369,6 +372,26 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
+[node name="Path3D4" type="Path3D" parent="LevelSwirl/Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 57.5, 24.7, -0.5)
+curve = SubResource("Curve3D_0sirr")
+
+[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Node3D/Path3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.299999, 2.5)
+material_override = ExtResource("25_pnapc")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
 [node name="Triangle" type="CSGPolygon3D" parent="LevelSwirl/Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -104, 25, -5.99998)
 material_override = SubResource("StandardMaterial3D_06mf6")
@@ -421,6 +444,78 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelSwirl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 25.8, -1)
+material_override = SubResource("StandardMaterial3D_ja0qe")
+size = Vector3(7, 0.4, 13)
+material = SubResource("StandardMaterial3D_ncvh5")
+
+[node name="Path3D4" type="Path3D" parent="LevelSwirl"]
+transform = Transform3D(1, 0, 2.4869e-14, 0, 1, 0, -2.4869e-14, 0, 1, 50.5, 24.7, -10.5)
+curve = SubResource("Curve3D_0sirr")
+
+[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Path3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.299999, 2.5)
+material_override = ExtResource("25_pnapc")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D5" type="Path3D" parent="LevelSwirl"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -58.5, 24.7, -0.5)
+curve = SubResource("Curve3D_0sirr")
+
+[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Path3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.299999, 2.5)
+material_override = ExtResource("25_pnapc")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelSwirl"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -52, 25.8, 0)
+material_override = SubResource("StandardMaterial3D_ja0qe")
+size = Vector3(7, 0.4, 13)
+material = SubResource("StandardMaterial3D_ncvh5")
+
+[node name="Path3D6" type="Path3D" parent="LevelSwirl"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -51.5, 24.7, 9.5)
+curve = SubResource("Curve3D_0sirr")
+
+[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Path3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.299999, 2.5)
+material_override = ExtResource("25_pnapc")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
 [node name="EV_planet" parent="." instance=ExtResource("27_7jso4")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 6, -3966, -111)
 script = ExtResource("28_fpmxv")
@@ -429,6 +524,11 @@ script = ExtResource("28_fpmxv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EV_planet/StaticBody3D"]
 shape = SubResource("SphereShape3D_kdhb6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("30_0eflw")
+autoplay = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Door3/5/Area3D" to="Door3/5/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Door4/6/Area3D" to="Door4/6/Area3D" method="_on_body_entered"]

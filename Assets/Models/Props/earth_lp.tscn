@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://xwh7p6vbdhds"]
+[gd_scene load_steps=7 format=3 uid="uid://xwh7p6vbdhds"]
 
 [ext_resource type="ArrayMesh" uid="uid://b5mu85l4exv8c" path="res://Assets/Models/Props/earthwire.obj" id="1_bunai"]
 [ext_resource type="Shader" path="res://Scenes/Gates/Fresnel.gdshader" id="2_gllfi"]
@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0ujbw"]
 render_priority = 0
 shader = ExtResource("2_gllfi")
-shader_parameter/color = Color(0, 0.0068954, 0.999999, 1)
+shader_parameter/color = Color(0.984314, 0.662745, 0.133333, 1)
 shader_parameter/fresnel_sharpness = 1.0
 shader_parameter/impact_points = null
 shader_parameter/impact_size = null
@@ -16,11 +16,13 @@ shader_parameter/impact_falloff_sharpness = 1.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_643ov"]
 render_priority = 0
 shader = ExtResource("2_gllfi")
-shader_parameter/color = Color(0, 0, 1, 1)
+shader_parameter/color = Color(0.984314, 0.662745, 0.133333, 1)
 shader_parameter/fresnel_sharpness = 1.0
 shader_parameter/impact_points = null
 shader_parameter/impact_size = null
 shader_parameter/impact_falloff_sharpness = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7li4"]
 
 [node name="Earth_LP" type="Node3D"]
 
@@ -35,3 +37,8 @@ rings = 16
 material = SubResource("ShaderMaterial_643ov")
 
 [node name="earthwireglow" parent="." instance=ExtResource("3_oeir3")]
+
+[node name="earth4_lambert1_0" parent="earthwireglow" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y7li4")
+
+[editable path="earthwireglow"]
