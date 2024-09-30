@@ -1,7 +1,7 @@
 shader_type spatial;
 render_mode unshaded,wireframe,cull_disabled;
 
-uniform vec4 albedo : source_color = vec4(0.0,0.0,0.0,1.0);
+uniform vec4 albedo : source_color = vec4(0.855,0.949,0.612,1.0);
 uniform float outline_width : hint_range(0.0, 10.0, 0.1) = 3.0;
 
 
@@ -24,5 +24,5 @@ void vertex() {
 
 
 void fragment() {
-	ALBEDO = vec3(0.0, 1.0, 0.0); // Green color
+	ALBEDO = vec3(0.514,0.945,0.176); // Green color
 }
