@@ -1,5 +1,5 @@
 extends Node3D
-const ROT_speed = 0.01 #deg rotation per frame
+const ROT_speed = 0.005 #deg rotation per frame
 
 func _ready():
 	pass
