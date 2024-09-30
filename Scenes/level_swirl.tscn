@@ -1,0 +1,218 @@
+[gd_scene load_steps=8 format=3 uid="uid://x4lhriyyfyoj"]
+
+[ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="1_kqo35"]
+[ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="2_chjc6"]
+
+[sub_resource type="Curve3D" id="Curve3D_vq4ri"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, -42.81, 0.409363, 0, 0.631347, 0, 0, -41.62, -19.385, 8.05, 0, -50, 25, 2.105),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_iaa8c"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 1.3, 0, 0, 0.802063, 0, 0.401623, -5.95, 0, 0, 10.98, 0, 0, 19.0278, 0, 12.816, 0, 0, 0, 0, 0, 0, 36.4434, 0, 12.6158),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6hmi"]
+albedo_texture = ExtResource("2_chjc6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1y5hu"]
+albedo_texture = ExtResource("2_chjc6")
+
+[sub_resource type="Curve3D" id="Curve3D_hwso7"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 16.825, 2.085, 0, -0.127563, 0, -0.255153, -5.935, -2, 0, 24.965, -10.11, 0, 34.7556, -6.58936, 1.48238e-06),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="LevelSwirl" type="CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 10, 0)
+use_collision = true
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Path3D" type="Path3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -8)
+curve = SubResource("Curve3D_vq4ri")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D"]
+material_override = ExtResource("1_kqo35")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D3" type="Path3D" parent="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0, 8)
+curve = SubResource("Curve3D_vq4ri")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+material_override = ExtResource("1_kqo35")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D4" type="Path3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 57.5, 24.7, -0.5)
+curve = SubResource("Curve3D_vq4ri")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.299999, 2.5)
+material_override = ExtResource("1_kqo35")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D2" type="Path3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102, 25, -4.99998)
+curve = SubResource("Curve3D_iaa8c")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -1)
+material_override = SubResource("StandardMaterial3D_p6hmi")
+size = Vector3(7, 0.4, 13)
+material = SubResource("StandardMaterial3D_1y5hu")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.70001, 1, 0)
+curve = SubResource("Curve3D_hwso7")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200012, -1, -1)
+material_override = ExtResource("1_kqo35")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 25.8, -1)
+material_override = SubResource("StandardMaterial3D_p6hmi")
+size = Vector3(7, 0.4, 13)
+material = SubResource("StandardMaterial3D_1y5hu")
+
+[node name="Path3D4" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 2.4869e-14, 0, 1, 0, -2.4869e-14, 0, 1, 50.5, 24.7, -10.5)
+curve = SubResource("Curve3D_vq4ri")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Path3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.299999, 2.5)
+material_override = ExtResource("1_kqo35")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D5" type="Path3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -58.5, 24.7, -0.5)
+curve = SubResource("Curve3D_vq4ri")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Path3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.299999, 2.5)
+material_override = ExtResource("1_kqo35")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -52, 25.8, 0)
+material_override = SubResource("StandardMaterial3D_p6hmi")
+size = Vector3(7, 0.4, 13)
+material = SubResource("StandardMaterial3D_1y5hu")
+
+[node name="Path3D6" type="Path3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -51.5, 24.7, 9.5)
+curve = SubResource("Curve3D_vq4ri")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Path3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.299999, 2.5)
+material_override = ExtResource("1_kqo35")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 51, -0.500015)
+material_override = SubResource("StandardMaterial3D_p6hmi")
+size = Vector3(17, 0.8, 10.8)
+material = SubResource("StandardMaterial3D_1y5hu")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299999, 0.149994)
+material_override = SubResource("StandardMaterial3D_p6hmi")
+operation = 2
+size = Vector3(15, 1, 10)
+material = SubResource("StandardMaterial3D_1y5hu")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGBox3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.299999, 0.149994)
+material_override = SubResource("StandardMaterial3D_p6hmi")
+operation = 2
+size = Vector3(6, 1, 12)
+material = SubResource("StandardMaterial3D_1y5hu")
