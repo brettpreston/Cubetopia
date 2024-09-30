@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://db6pbgoqtv0kb" path="res://Assets/Textures/Node_Path_W.png" id="1_nl8du"]
 
 [resource]
+albedo_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
 albedo_texture = ExtResource("1_nl8du")
 emission_enabled = true
+emission_energy_multiplier = 2.74
 emission_texture = ExtResource("1_nl8du")
 heightmap_enabled = true
 heightmap_scale = 16.0
