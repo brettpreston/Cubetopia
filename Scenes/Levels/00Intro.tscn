@@ -59,22 +59,23 @@ shadow_enabled = true
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -134.5)
-size = Vector3(10, 1, 18)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.2, -134)
+size = Vector3(10, 1.4, 17)
 material = ExtResource("3_m2mxn")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -147)
-size = Vector3(10, 1, 7)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0.5)
+operation = 2
+size = Vector3(9, 0.5, 16)
 material = ExtResource("3_m2mxn")
 
 [node name="Gate1" parent="." instance=ExtResource("4_yaaxc")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -3, 0.5, -146)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -3, 0.5, -138)
 script = ExtResource("5_bny4j")
 
 [node name="Gate2" parent="." instance=ExtResource("6_lbjps")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2, 0.5, -146)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2, 0.5, -138)
 script = ExtResource("7_abhgn")
 
 [node name="Player" parent="." instance=ExtResource("8_cl2xg")]
@@ -119,7 +120,7 @@ text = " Or do we have better chances of achieving our goals in small,
 independent communities?"
 
 [node name="portal 1" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -3.03313, 5.16646, -146.007)
+transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -3.03313, 5.16646, -138.007)
 text = "small communities
 "
 font = ExtResource("15_jhkdu")
@@ -127,7 +128,7 @@ font_size = 100
 outline_size = 20
 
 [node name="portal 2" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 1.78885, 5.16839, -145.817)
+transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 1.78885, 5.16839, -137.817)
 text = "global cooperation"
 font = ExtResource("15_jhkdu")
 font_size = 100
@@ -136,16 +137,16 @@ outline_size = 20
 [node name="Path3D2" type="Path3D" parent="."]
 curve = SubResource("Curve3D_5xsma")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -78.6)
+[node name="pathgon2" type="CSGPolygon3D" parent="Path3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -78)
 use_collision = true
-polygon = PackedVector2Array(-1, 0, -6, 1, 6, 1, 1, 0)
+polygon = PackedVector2Array(5, 1, 5, 1.6, 6, 1, 1, 0, -1, 0, -6, 1, -5, 1.6, -5, 1)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
 path_interval = 1.0
 path_simplify_angle = 0.0
-path_rotation = 2
+path_rotation = 1
 path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
@@ -195,7 +196,7 @@ panning_strength = 0.0
 bus = &"Music"
 
 [node name="AudioStreamPlayer3D7" type="AudioStreamPlayer3D" parent="music"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -147)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -139)
 stream = ExtResource("19_vmi8k")
 autoplay = true
 max_distance = 30.0
@@ -203,7 +204,7 @@ panning_strength = 0.0
 bus = &"Music"
 
 [node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="music"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 3, -145)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 3, -137)
 stream = ExtResource("20_dwxv6")
 autoplay = true
 max_distance = 30.0
@@ -230,3 +231,26 @@ transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, -17, 0, -63.6239)
 
 [node name="FairyPath" parent="." instance=ExtResource("22_3y3la")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 32, -67.624)
+
+[node name="pathgon1" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -78.6)
+visible = false
+use_collision = true
+polygon = PackedVector2Array(-1, 0, -6, 1, 6, 1, 1, 0)
+mode = 2
+path_node = NodePath("../Path3D2")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = ExtResource("16_6sd66")
+
+[node name="pathgon2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 4, -31.1)
+use_collision = true
+polygon = PackedVector2Array(5, 1.6, 5, 1.6, 6, 1, 1, 0, -1, 0, -6, 1, -5, 1.6, -5, 1.6)
+material = ExtResource("16_6sd66")
