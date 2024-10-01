@@ -1,10 +1,11 @@
-[gd_scene load_steps=43 format=4 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=44 format=4 uid="uid://3yfweq66ct17"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_8on32"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_8on32"]
 [ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_lcf0d"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="3_mgfei"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_1stx4"]
+[ext_resource type="AudioStream" uid="uid://demqmf8xjqyop" path="res://Assets/audio/Quotes/tts/ursula.ogg" id="5_hxa2y"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_q1yeh"]
 [ext_resource type="AudioStream" uid="uid://cks0tnoovjwbn" path="res://Assets/audio/Quotes/01a You are not alone.ogg" id="5_v6hbj"]
 [ext_resource type="PackedScene" uid="uid://c1oyfd7rd1jbx" path="res://Scenes/Titles/Gate.tscn" id="7_tx0wf"]
@@ -215,9 +216,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.3, -0.1)
 
 [node name="Global_minus" parent="Player/Global_minus" instance=ExtResource("8_uhbgx")]
 
-[node name="quote-movement" parent="." instance=ExtResource("3_lcf0d")]
+[node name="quote-ursula" parent="." instance=ExtResource("3_lcf0d")]
 transform = Transform3D(0.0540788, 0, 0.998537, 0, 1, 0, -0.998537, 0, 0.0540788, -2.53848, -12.0082, -12.2779)
-audio_stream = ExtResource("5_v6hbj")
+audio_stream = ExtResource("5_hxa2y")
 
 [node name="1" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.84867, -32.1951)
@@ -358,39 +359,55 @@ communities that stark differences in how they do are impossible"
 
 [node name="Global_plus" parent="Door4b" instance=ExtResource("4_1stx4")]
 
+[node name="quote-movement" parent="." instance=ExtResource("3_lcf0d")]
+transform = Transform3D(0.359964, 0, -0.932966, 0, 1, 0, 0.932966, 0, 0.359964, 4.6388, 29.0075, -19.2736)
+audio_stream = ExtResource("5_v6hbj")
+
+[node name="quote-movement2" parent="." instance=ExtResource("3_lcf0d")]
+transform = Transform3D(-0.571931, 0, -0.820302, 0, 1, 0, 0.820302, 0, -0.571931, 4.6388, 30.3997, -37.8886)
+audio_stream = ExtResource("5_v6hbj")
+
+[node name="quote-movement3" parent="." instance=ExtResource("3_lcf0d")]
+transform = Transform3D(-0.451859, 0, 0.89209, 0, 1, 0, -0.89209, 0, -0.451859, -2.71763, 30.3997, -141.792)
+audio_stream = ExtResource("5_v6hbj")
+
+[node name="quote-movement4" parent="." instance=ExtResource("3_lcf0d")]
+transform = Transform3D(-0.661927, 0, -0.749568, 0, 1, 0, 0.749568, 0, -0.661927, 5.49463, 27.1114, -118.895)
+audio_stream = ExtResource("5_v6hbj")
+
 [node name="8" parent="." instance=ExtResource("3_mgfei")]
-transform = Transform3D(0.795473, 0.130127, 0.591852, 0, 0.976672, -0.214735, -0.605988, 0.170816, 0.776917, 0.747342, 29.5581, -142.287)
+transform = Transform3D(0.913303, 0.172123, 0.36912, -2.12929e-08, 0.906308, -0.422618, -0.407278, 0.385979, 0.827734, -5.38581, 33.5987, -153.289)
 text = "Should resources be centrally distributed to ensure equity,"
 
 [node name="8c" parent="." instance=ExtResource("3_mgfei")]
-transform = Transform3D(-0.866025, 0.107368, 0.488336, 0, 0.976672, -0.214735, -0.5, -0.185966, -0.845823, -1.0432, 29.5581, -119.516)
+transform = Transform3D(-0.866025, 0.107368, 0.488336, 0, 0.976672, -0.214735, -0.5, -0.185966, -0.845823, -4.68434, 32.9171, -112.353)
 text = "Should resources be centrally distributed to ensure equity,"
 
 [node name="8b" parent="." instance=ExtResource("3_mgfei")]
-transform = Transform3D(0.907777, -0.0900712, -0.409667, 0, 0.976672, -0.214735, 0.419452, 0.194932, 0.886601, 1.24298, 30.4507, -43.2581)
+transform = Transform3D(0.907777, -0.0900712, -0.409667, 0, 0.976672, -0.214735, 0.419452, 0.194932, 0.886601, 7.47005, 36.391, -50.8141)
 text = "Should resources be centrally distributed to ensure equity,"
 
 [node name="8d" parent="." instance=ExtResource("3_mgfei")]
-transform = Transform3D(-0.906308, -0.0907511, -0.41276, 0, 0.976672, -0.214735, 0.422618, -0.194616, -0.885166, 4.21461, 30.3109, -11.9168)
+transform = Transform3D(-0.906308, -0.0907511, -0.41276, 0, 0.976672, -0.214735, 0.422618, -0.194616, -0.885166, 7.09111, 33.7054, -6.7)
 text = "Should resources be centrally distributed to ensure equity,"
 
 [node name="9" parent="." instance=ExtResource("3_mgfei")]
-transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -7.997, 36.2706, -159.89)
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -6.7634, 37.2332, -162.05)
 text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
 
 [node name="9c" parent="." instance=ExtResource("3_mgfei")]
-transform = Transform3D(-1, -4.37114e-08, -7.57103e-08, 0, 0.866025, -0.5, 8.74228e-08, -0.5, -0.866025, -6.84295, 35.8658, -108.168)
+transform = Transform3D(-1, -4.37114e-08, -7.57103e-08, 0, 0.866025, -0.5, 8.74228e-08, -0.5, -0.866025, -6.84295, 37.971, -100.593)
 text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
 
 [node name="9b" parent="." instance=ExtResource("3_mgfei")]
-transform = Transform3D(0.965926, -0.0977923, -0.239633, 0, 0.925871, -0.377841, 0.258819, 0.364966, 0.894322, 6.61636, 36.2293, -50.6009)
+transform = Transform3D(0.994764, 0.0386162, 0.0946259, 7.71341e-09, 0.925871, -0.377841, -0.102202, 0.375862, 0.921022, 7.94397, 37.0088, -61.8245)
 text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
 
 [node name="9d" parent="." instance=ExtResource("3_mgfei")]
-transform = Transform3D(-0.965926, -0.0977924, -0.239633, -2.26267e-08, 0.925871, -0.377841, 0.258819, -0.364966, -0.894322, 10.161, 36.2293, -3.47336)
+transform = Transform3D(-0.965926, -0.0977924, -0.239633, -2.26267e-08, 0.925871, -0.377841, 0.258819, -0.364966, -0.894322, 10.161, 37.2298, 1.48909)
 text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
 
