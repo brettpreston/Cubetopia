@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://ctpo8qxqv8237"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_m0f82"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
 [ext_resource type="Texture2D" uid="uid://b6v1pinigq11x" path="res://Assets/background/Background_Mutualism.jpg" id="1_xq6nr"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4u7l8"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="2_x54mw"]
