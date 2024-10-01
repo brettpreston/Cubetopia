@@ -6,7 +6,7 @@
 albedo_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
 albedo_texture = ExtResource("2_qjx3o")
 emission_enabled = true
-emission_energy_multiplier = 2.74
+emission_energy_multiplier = 2.0
 emission_texture = ExtResource("2_qjx3o")
 heightmap_enabled = true
 heightmap_scale = 16.0
