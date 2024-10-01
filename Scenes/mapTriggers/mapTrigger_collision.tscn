@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://Scenes/wireframe.gdshader" id="1_ahkfb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ey8jf"]
-size = Vector3(2.2, 1, 0.2)
+size = Vector3(4, 1, 0.2)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_846f6"]
 render_priority = 0
@@ -15,10 +15,8 @@ shader_parameter/modelOpacity = 1.0
 shader_parameter/filtered = false
 
 [node name="Collision" type="CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08)
 shape = SubResource("BoxShape3D_ey8jf")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0, 2.98023e-08)
-size = Vector3(2.2, 1, 0.2)
+size = Vector3(4, 1, 0.2)
 material = SubResource("ShaderMaterial_846f6")
