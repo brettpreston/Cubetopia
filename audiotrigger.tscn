@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2kxkqmgi0d1y"]
+[gd_scene load_steps=3 format=3 uid="uid://b2kxkqmgi0d1y"]
 
-[ext_resource type="AudioStream" uid="uid://qu0amnyspgfj" path="res://Assets/audio/Quotes/03 food.ogg" id="1_hcrox"]
 [ext_resource type="Script" path="res://audiotrigger.gd" id="1_is2vp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxxq6"]
@@ -14,7 +13,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("BoxShape3D_lxxq6")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("1_hcrox")
+max_distance = 8.0
 bus = &"VO"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

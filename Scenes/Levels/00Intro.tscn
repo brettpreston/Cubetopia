@@ -1,13 +1,12 @@
-[gd_scene load_steps=28 format=3 uid="uid://dwjj0q4okd4tu"]
+[gd_scene load_steps=27 format=3 uid="uid://dwjj0q4okd4tu"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_vl1r8"]
 [ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="2_din7f"]
-[ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="3_m2mxn"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="4_yaaxc"]
 [ext_resource type="Script" path="res://Gate_10smallcom.gd" id="5_bny4j"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_lbjps"]
 [ext_resource type="Script" path="res://Gate_11Global.gd" id="7_abhgn"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="8_cl2xg"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="8_cl2xg"]
 [ext_resource type="Texture2D" uid="uid://reuwi5xjik34" path="res://Assets/2D/cubetopia.svg" id="10_aof7y"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="11_02wuk"]
 [ext_resource type="Script" path="res://Scenes/Levels/sprite_3d.gd" id="11_a0omv"]
@@ -41,8 +40,8 @@ glow_strength = 1.5
 
 [sub_resource type="Curve3D" id="Curve3D_5xsma"]
 _data = {
-"points": PackedVector3Array(0, -1, -3, 0, 1, 3, -0.5, -0.5, -127, 0, 0, -9, 0, 0, 9, 5.07864, -0.68556, -106.795, 0, 0, -10, 0, 0, 10, -4, -1, -89, 0, 0, -7, 0, 0, 7, -4.71103, 0, -61.0692, 0, 0, -4, 0, 0, 4, -1, 3, -47, 0, 0, 0, 0, 0, 0, -1, 4, -32.6239),
-"tilts": PackedFloat32Array(0.0489368, 0.138979, 0.0872665, 0.0872665, 0.0872665, 0.0872665)
+"points": PackedVector3Array(0, -1, -3, -0.35, 1, 27.96, -0.5, -0.5, -140.46, 0, 0, -9, 0, 0, 9, 5.07864, -0.68556, -106.795, 0, 0, -10, 0, 0, 10, -4, -1, -89, 0, 0, -7, 0, 0, 7, -4.71103, 0, -61.0692, 0, 0, -4, 0, 0, 4, -1, 3, -47, 0, 0, 0, 0, 0, 0, -1, 4, -32.6239),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
 
@@ -56,20 +55,6 @@ environment = SubResource("Environment_vgy61")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.414693, -0.333502, 0.846644, 0, 0.930417, 0.366501, -0.909962, -0.151986, 0.385838, 0, 0, -129)
 shadow_enabled = true
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-use_collision = true
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.2, -134)
-size = Vector3(10, 1.4, 17)
-material = ExtResource("3_m2mxn")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0.5)
-operation = 2
-size = Vector3(9, 0.5, 16)
-material = ExtResource("3_m2mxn")
 
 [node name="Gate1" parent="." instance=ExtResource("4_yaaxc")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -3, 0.5, -138)
@@ -253,6 +238,12 @@ material = ExtResource("16_6sd66")
 
 [node name="pathgon2" type="CSGPolygon3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 4, -31.1)
+use_collision = true
+polygon = PackedVector2Array(5, 1.6, 5, 1.6, 6, 1, 1, 0, -1, 0, -6, 1, -5, 1.6, -5, 1.6)
+material = ExtResource("16_6sd66")
+
+[node name="pathgon2" type="CSGPolygon3D" parent="pathgon2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -4.4, -108.7)
 use_collision = true
 polygon = PackedVector2Array(5, 1.6, 5, 1.6, 6, 1, 1, 0, -1, 0, -6, 1, -5, 1.6, -5, 1.6)
 material = ExtResource("16_6sd66")

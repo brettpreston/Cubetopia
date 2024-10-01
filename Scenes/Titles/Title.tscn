@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsbnduuv6kfxe"]
+[gd_scene load_steps=7 format=3 uid="uid://bsbnduuv6kfxe"]
 
 [ext_resource type="TextMesh" uid="uid://7y8x3yq3okct" path="res://Scenes/Titles/Title_mesh.tres" id="1_im0t1"]
 [ext_resource type="Script" path="res://Scenes/Titles/Title.gd" id="2_2qvhk"]
-[ext_resource type="AudioStream" uid="uid://blio4n1huua7n" path="res://Assets/audio/Intro/Title.ogg" id="3_cccqw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hsow4"]
 size = Vector3(11, 12, 6)
@@ -61,7 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.5)
 shape = SubResource("BoxShape3D_hsow4")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Area3D"]
-stream = ExtResource("3_cccqw")
 attenuation_model = 2
 volume_db = -6.0
 bus = &"VO"
