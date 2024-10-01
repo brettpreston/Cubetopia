@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=52 format=4 uid="uid://3yfweq66ct17"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_8on32"]
 [ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://dkxtyrh5srbj2" path="res://Assets/Models/Props/Community/Sunballmod.glb" id="24_pvtyu"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ffxqr"]
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_abgwe"]
+[ext_resource type="Texture2D" uid="uid://db6pbgoqtv0kb" path="res://Assets/Textures/Node_Path_W.png" id="31_phtkk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_el0em"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -195,6 +196,12 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m73pn"]
+albedo_texture = ExtResource("31_phtkk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fthsd"]
+albedo_texture = ExtResource("31_phtkk")
+
 [sub_resource type="Curve3D" id="Curve3D_esk6g"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, -21.01, -1.32, 12.565, 0.0611267, 0, 0.0917692, 19.175, 0, 0, 0, 0, 0, -36.094, 10, 12.818),
@@ -214,7 +221,7 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_8on32")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -15, -9.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -14, -10)
 
 [node name="Global_minus" parent="Player" instance=ExtResource("8_uhbgx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.3, -0.1)
@@ -265,7 +272,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1,
 audio_stream = ExtResource("14_wtq5j")
 
 [node name="Audio2" parent="Door1" instance=ExtResource("13_xtfrg")]
-transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, -1, 5)
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, -1, 6)
 audio_stream = ExtResource("10_718kr")
 
 [node name="Door2" parent="." instance=ExtResource("9_vha7y")]
@@ -587,9 +594,9 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Portals" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.25, 34.9, 7.20001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.25, 35.1, 7.20001)
 use_collision = true
-size = Vector3(8.1, 0.2, 15)
+size = Vector3(8.1, 0.6, 15)
 material = ExtResource("17_mtmi3")
 
 [node name="Gate1" parent="LevelSwirl/Portals" instance=ExtResource("13_cauyu")]
@@ -608,10 +615,22 @@ script = ExtResource("16_1dixi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 text = "commerce or mutualism"
 
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelSwirl/Portals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500031, 0.19722, -3.33786e-06)
+operation = 2
+size = Vector3(7.1, 0.605566, 13.6)
+material = SubResource("StandardMaterial3D_m73pn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelSwirl/Portals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.200001, 0.299993)
+operation = 2
+size = Vector3(0.7, 0.6, 7)
+material = SubResource("StandardMaterial3D_fthsd")
+
 [node name="Portals2" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.69998, 34.9, 7.40001)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.69998, 35.15, 7.40001)
 use_collision = true
-size = Vector3(8.2, 0.2, 15)
+size = Vector3(8.2, 0.7, 15)
 material = ExtResource("17_mtmi3")
 
 [node name="Gate1" parent="LevelSwirl/Portals2" instance=ExtResource("13_cauyu")]
@@ -630,10 +649,22 @@ script = ExtResource("16_1dixi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 text = "commerce or mutualism"
 
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelSwirl/Portals2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500031, 0.175442, -3.33786e-06)
+operation = 2
+size = Vector3(7.1, 0.649121, 13.6)
+material = SubResource("StandardMaterial3D_m73pn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelSwirl/Portals2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.175613, 0.299993)
+operation = 2
+size = Vector3(0.7, 0.648779, 7)
+material = SubResource("StandardMaterial3D_fthsd")
+
 [node name="Portals3" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75002, 34.9, -8.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75002, 35.1492, -8.8)
 use_collision = true
-size = Vector3(8.1, 0.2, 15)
+size = Vector3(8.1, 0.698425, 15)
 material = ExtResource("17_mtmi3")
 
 [node name="Gate1" parent="LevelSwirl/Portals3" instance=ExtResource("13_cauyu")]
@@ -652,10 +683,22 @@ script = ExtResource("16_1dixi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 text = "commerce or mutualism"
 
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelSwirl/Portals3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500031, 0.171047, -3.8147e-06)
+operation = 2
+size = Vector3(7.1, 0.65791, 13.6)
+material = SubResource("StandardMaterial3D_m73pn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelSwirl/Portals3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.173977, 0.299991)
+operation = 2
+size = Vector3(0.7, 0.652051, 7)
+material = SubResource("StandardMaterial3D_fthsd")
+
 [node name="Portals4" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 92.3, 34.9, -9.59999)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 92.3, 35.0926, -9.59999)
 use_collision = true
-size = Vector3(8.2, 0.2, 15)
+size = Vector3(8.2, 0.837659, 15)
 material = ExtResource("17_mtmi3")
 
 [node name="Gate1" parent="LevelSwirl/Portals4" instance=ExtResource("13_cauyu")]
@@ -674,6 +717,18 @@ script = ExtResource("16_1dixi")
 [node name="Gate text" parent="LevelSwirl/Portals4/Gate2" instance=ExtResource("7_tx0wf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0109963, 5, -0.00976372)
 text = "commerce or mutualism"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelSwirl/Portals4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500031, 0.196339, -2.86102e-06)
+operation = 2
+size = Vector3(7.1, 0.607324, 13.6)
+material = SubResource("StandardMaterial3D_m73pn")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelSwirl/Portals4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75, 0.200001, 0.299993)
+operation = 2
+size = Vector3(0.7, 0.6, 7)
+material = SubResource("StandardMaterial3D_fthsd")
 
 [node name="Path3D2" type="Path3D" parent="LevelSwirl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.5, 25, -5.3)

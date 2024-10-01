@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://bl0wxpinyyqxb"]
 
 [ext_resource type="Texture2D" uid="uid://cfkyt43mo8cwp" path="res://Assets/background/Background_Centralized.jpg" id="1_apbi8"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_fmc72"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_fmc72"]
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_thq80"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="2_68nmx"]
 [ext_resource type="AudioStream" uid="uid://dw3rw16imwlgc" path="res://Assets/audio/Quotes/04 Justice.ogg" id="3_mfxt4"]
@@ -18,11 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="11_ssr7v"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="12_ktwn1"]
 [ext_resource type="Script" path="res://Gate_31Space.gd" id="13_s80id"]
-[ext_resource type="Material" uid="uid://bb4rpedebjtkf" path="res://Assets/Textures/Path_Texture_B.tres" id="14_a0030"]
 [ext_resource type="PackedScene" uid="uid://c1oyfd7rd1jbx" path="res://Scenes/Titles/Gate.tscn" id="16_ld14u"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="16_xibtl"]
 [ext_resource type="Material" uid="uid://coeb05bqdb2hb" path="res://Assets/Textures/Path_Texture_SQ_P.tres" id="23_3ubpf"]
 [ext_resource type="AudioStream" uid="uid://cr4laixmv3rgo" path="res://Assets/audio/music/ambi/ambi_acoustic.ogg" id="24_kugvb"]
+[ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="24_puxl8"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ri24n"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_exmi3"]
@@ -271,12 +271,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.963
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
-
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
-material_override = ExtResource("14_a0030")
-inner_radius = 3.0
-outer_radius = 4.0
 
 [node name="Gate1" parent="." instance=ExtResource("10_5nbp2")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 55, 0, -56.5)
@@ -788,6 +782,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0834538, 1.62086, -1.27077
 
 [node name="Economy_plus4" parent="." instance=ExtResource("8_mnfj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145434, 1.7036, -1.24317)
+
+[node name="Gate_Enter" parent="." instance=ExtResource("24_puxl8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [editable path="Door1"]
 [editable path="Door2"]
