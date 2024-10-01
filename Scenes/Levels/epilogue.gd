@@ -44,7 +44,7 @@ func epilogue():
 			x=x+capitalismNoState
 			return x
 	elif player_data.mapEconomy <=0:
-		if player_data.mapTech<0:
+		if player_data.mapTech<=0:
 			x=x+commerceNature
 		else:
 			x=x+commerceTech
