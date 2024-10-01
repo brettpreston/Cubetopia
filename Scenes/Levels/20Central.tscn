@@ -1,11 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://bl0wxpinyyqxb"]
+[gd_scene load_steps=27 format=3 uid="uid://bl0wxpinyyqxb"]
 
 [ext_resource type="Texture2D" uid="uid://cfkyt43mo8cwp" path="res://Assets/background/Background_Centralized.jpg" id="1_apbi8"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_fmc72"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_fmc72"]
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_thq80"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="2_68nmx"]
-[ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_757vd"]
-[ext_resource type="AudioStream" uid="uid://x188d0bq4au0" path="res://Assets/audio/Intro/1.ogg" id="3_53yb8"]
 [ext_resource type="AudioStream" uid="uid://dw3rw16imwlgc" path="res://Assets/audio/Quotes/04 Justice.ogg" id="3_mfxt4"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="4_4blwt"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="4_ensoe"]
@@ -38,9 +36,6 @@ sky = SubResource("Sky_6uvix")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ra5ch"]
-size = Vector3(11, 5, 6)
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_thq80")
 
@@ -54,69 +49,60 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_fmc72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -1)
 
+[node name="0" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -13.0078)
+text = "Who makes decisions about the resources? "
+
 [node name="quote-justice" parent="." instance=ExtResource("2_68nmx")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 3, -7)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 3, -34.1199)
 skeleton = NodePath("")
 audio_stream = ExtResource("3_mfxt4")
 
-[node name="0" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -20)
-text = "Who makes decisions about the resources? "
+[node name="quote-justice2" parent="." instance=ExtResource("2_68nmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2123, 3, -29.1589)
+skeleton = NodePath("")
+audio_stream = ExtResource("3_mfxt4")
+
+[node name="quote-justice3" parent="." instance=ExtResource("2_68nmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0418, 3, -29.1589)
+skeleton = NodePath("")
+audio_stream = ExtResource("3_mfxt4")
 
 [node name="Door1" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -7, 1, -23)
 
+[node name="PillerR" parent="Door1" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door1" index="6"]
+text = "direct democracy"
+
 [node name="Resilience_Minus" parent="Door1" instance=ExtResource("4_ensoe")]
 transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 0, 0)
-
-[node name="1" type="Label3D" parent="Door1"]
-transform = Transform3D(1, 0, 3.57628e-07, 0, 1, 0, -3.57628e-07, 0, 1, 0, 5.5, 0)
-text = "Direct democracy"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door1/1"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door1/1/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door1/1/Area3D"]
-bus = &"VO"
 
 [node name="Door2" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30.4)
 
+[node name="PillerR" parent="Door2" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door2" index="6"]
+text = "a group of qualified people"
+
 [node name="State_Plus" parent="Door2" instance=ExtResource("6_hljxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0.753564, 0)
 
 [node name="autonomy_Minus2" parent="Door2" instance=ExtResource("5_u1m6d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0, 1.52588e-05)
-
-[node name="2" type="Label3D" parent="Door2"]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 5.5, 0)
-text = "A group of qualified people"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door2/2"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2/2/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Door2/2/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door2/2/Area3D"]
-stream = ExtResource("3_53yb8")
-bus = &"VO"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0.940825, 1.52588e-05)
 
 [node name="Door3" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 7, 1, -23)
+
+[node name="PillerR" parent="Door3" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door3" index="6"]
+text = "a supercomputer"
 
 [node name="autonomy_Minus" parent="Door3" instance=ExtResource("5_u1m6d")]
 
@@ -124,172 +110,144 @@ transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 7, 1, 
 
 [node name="State_Plus" parent="Door3" instance=ExtResource("6_hljxc")]
 
-[node name="3" type="Label3D" parent="Door3"]
-transform = Transform3D(1, 0, 5.36442e-07, 0, 1, 0, -5.36442e-07, 0, 1, 0, 5.5, 0)
-text = "Supercomputer"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door3/3"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door3/3/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door3/3/Area3D"]
-bus = &"VO"
-
 [node name="4" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -59)
-text = "What if someone comes up with new technology 
-that gives them an advantage but doesn’t want to give it up?"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17167, 6, -52.0971)
+text = "Elvi is an inventoor, and she came up with a new technology that gives her a big advantage over others."
+
+[node name="5" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17167, 6, -67.3152)
+text = "She doesn't want to give it up. This new inequality is threatening to destabilize society."
 
 [node name="Door4" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -6, 1, -82)
+
+[node name="PillerR" parent="Door4" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door4" index="6"]
+text = "She will have to share the knowledge. It's the law."
 
 [node name="State_Plus4" parent="Door4" instance=ExtResource("6_hljxc")]
 
 [node name="autonomy_Minus3" parent="Door4" instance=ExtResource("5_u1m6d")]
 
-[node name="9" type="Label3D" parent="Door4"]
-transform = Transform3D(1, 0, -5.06639e-07, 0, 1, 0, 5.06639e-07, 0, 1, 0, 5.5, 1)
-text = "The law will require them to share"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door4/9"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door4/9/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door4/9/Area3D"]
-bus = &"VO"
-
 [node name="Door5" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 6, 1, -82)
+
+[node name="PillerR" parent="Door5" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door5" index="6"]
+text = "We will task others with reverse-engineering the new technology."
 
 [node name="Resilience_Minus2" parent="Door5" instance=ExtResource("4_ensoe")]
 
 [node name="Autonomy_Plus" parent="Door5" instance=ExtResource("10_y0hs5")]
 
-[node name="10" type="Label3D" parent="Door5"]
-transform = Transform3D(1, 0, 5.06639e-07, 0, 1, 0, -5.06639e-07, 0, 1, 0, 5.5, 1)
-text = "Task other people with reverse-engineering it"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door5/10"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door5/10/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door5/10/Area3D"]
-bus = &"VO"
-
 [node name="Door6" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, -1, -59, 1, -17)
+
+[node name="PillerR" parent="Door6" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door6" index="6"]
+text = "She will have to share the knowledge. It's the law."
 
 [node name="State_Plus4" parent="Door6" instance=ExtResource("6_hljxc")]
 
 [node name="autonomy_Minus3" parent="Door6" instance=ExtResource("5_u1m6d")]
 
-[node name="9" type="Label3D" parent="Door6"]
-transform = Transform3D(1, 0, -5.06639e-07, 0, 1, 0, 5.06639e-07, 0, 1, 0, 5.5, 1)
-text = "The law will require them to share"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door6/9"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door6/9/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door6/9/Area3D"]
-bus = &"VO"
-
 [node name="Door7" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, -2.54312e-07, 0, 1, 0, 2.54312e-07, 0, 1, -59, 1, -29)
+
+[node name="PillerR" parent="Door7" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door7" index="6"]
+text = "We will task others with reverse-engineering the new technology."
 
 [node name="Resilience_Minus2" parent="Door7" instance=ExtResource("4_ensoe")]
 
 [node name="Autonomy_Plus" parent="Door7" instance=ExtResource("10_y0hs5")]
 
-[node name="10" type="Label3D" parent="Door7"]
-transform = Transform3D(1, 0, 5.06639e-07, 0, 1, 0, -5.06639e-07, 0, 1, 0, 5.5, 1)
-text = "Task other people with reverse-engineering it"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door7/10"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door7/10/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door7/10/Area3D"]
-bus = &"VO"
-
 [node name="Door8" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, -1, 58, 1, -17)
+
+[node name="PillerR" parent="Door8" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door8" index="6"]
+text = "She will have to share the knowledge. It's the law."
 
 [node name="State_Plus4" parent="Door8" instance=ExtResource("6_hljxc")]
 
 [node name="autonomy_Minus3" parent="Door8" instance=ExtResource("5_u1m6d")]
 
-[node name="9" type="Label3D" parent="Door8"]
-transform = Transform3D(1, 0, -5.06639e-07, 0, 1, 0, 5.06639e-07, 0, 1, 0, 5.5, 1)
-text = "The law will require them to share"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door8/9"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door8/9/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door8/9/Area3D"]
-bus = &"VO"
-
 [node name="Door9" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, -2.54312e-07, 0, 1, 0, 2.54312e-07, 0, 1, 58, 1, -29)
+
+[node name="PillerR" parent="Door9" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door9" index="6"]
+text = "We will task others with reverse-engineering the new technology."
 
 [node name="Resilience_Minus2" parent="Door9" instance=ExtResource("4_ensoe")]
 
 [node name="Autonomy_Plus" parent="Door9" instance=ExtResource("10_y0hs5")]
 
-[node name="10" type="Label3D" parent="Door9"]
-transform = Transform3D(1, 0, 5.06639e-07, 0, 1, 0, -5.06639e-07, 0, 1, 0, 5.5, 1)
-text = "Task other people with reverse-engineering it"
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door9/10"]
-script = ExtResource("2_757vd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door9/10/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door9/10/Area3D"]
-bus = &"VO"
-
 [node name="quote-wau" parent="." instance=ExtResource("2_68nmx")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 127, 5, -213)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60.8705, 4.00038, -10.0168)
+skeleton = NodePath("")
+audio_stream = ExtResource("5_7wj32")
+
+[node name="quote-wau2" parent="." instance=ExtResource("2_68nmx")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60.8705, 4.00038, -33.5748)
+skeleton = NodePath("")
+audio_stream = ExtResource("5_7wj32")
+
+[node name="quote-wau3" parent="." instance=ExtResource("2_68nmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4581, 4.00038, -83.7902)
+skeleton = NodePath("")
+audio_stream = ExtResource("5_7wj32")
+
+[node name="quote-wau4" parent="." instance=ExtResource("2_68nmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7074, 4.00038, -83.7902)
+skeleton = NodePath("")
+audio_stream = ExtResource("5_7wj32")
+
+[node name="quote-wau5" parent="." instance=ExtResource("2_68nmx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59.2838, 4.00038, -32.5768)
+skeleton = NodePath("")
+audio_stream = ExtResource("5_7wj32")
+
+[node name="quote-wau6" parent="." instance=ExtResource("2_68nmx")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59.2838, 4.00038, -12.3588)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
 [node name="7" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132, 5, -232)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 54.3321, 5, 2.74614)
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="9" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3321, 5, -48.1597)
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="8" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -50.2198, 5, 5.81517)
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="10" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2198, 5, -47.0004)
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="11" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.5294, 5, -80.2989)
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="12" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.149, 5, -80.2989)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
@@ -921,12 +879,18 @@ operation = 2
 size = Vector3(2, 0.3, 6)
 material = ExtResource("14_ud84v")
 
-[connection signal="body_entered" from="Door1/1/Area3D" to="Door1/1/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door2/2/Area3D" to="Door2/2/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door3/3/Area3D" to="Door3/3/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door4/9/Area3D" to="Door4/9/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door5/10/Area3D" to="Door5/10/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door6/9/Area3D" to="Door6/9/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door7/10/Area3D" to="Door7/10/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door8/9/Area3D" to="Door8/9/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door9/10/Area3D" to="Door9/10/Area3D" method="_on_body_entered"]
+[node name="Economy_plus3" parent="." instance=ExtResource("8_mnfj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0834538, 1.62086, -1.27077)
+
+[node name="Economy_plus4" parent="." instance=ExtResource("8_mnfj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.145434, 1.7036, -1.24317)
+
+[editable path="Door1"]
+[editable path="Door2"]
+[editable path="Door3"]
+[editable path="Door4"]
+[editable path="Door5"]
+[editable path="Door6"]
+[editable path="Door7"]
+[editable path="Door8"]
+[editable path="Door9"]

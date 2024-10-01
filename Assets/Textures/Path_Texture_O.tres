@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cofwpm3qy7jpj"]
+
+[ext_resource type="Texture2D" uid="uid://bh3iy2q43ylcn" path="res://Assets/Textures/Node_Path_O.png" id="1_6nqtd"]
+[ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="2_a07fk"]
+
+[resource]
+albedo_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+albedo_texture = ExtResource("1_6nqtd")
+emission_enabled = true
+emission_energy_multiplier = 2.74
+emission_texture = ExtResource("1_6nqtd")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_texture = ExtResource("2_a07fk")
+heightmap_flip_texture = true
+uv1_scale = Vector3(0.5, 56, 1)
+texture_filter = 4
