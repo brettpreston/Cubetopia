@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="12_ktwn1"]
 [ext_resource type="Script" path="res://Gate_31Space.gd" id="13_s80id"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="14_ud84v"]
-[ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="16_vajoe"]
+[ext_resource type="PackedScene" uid="uid://c1oyfd7rd1jbx" path="res://Scenes/Titles/Gate.tscn" id="16_ld14u"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="16_xibtl"]
 [ext_resource type="AudioStream" uid="uid://cr4laixmv3rgo" path="res://Assets/audio/music/ambi/ambi_acoustic.ogg" id="24_kugvb"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ri24n"]
@@ -111,11 +111,27 @@ text = "a supercomputer"
 [node name="State_Plus" parent="Door3" instance=ExtResource("6_hljxc")]
 
 [node name="4" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17167, 6, -52.0971)
-text = "Elvi is an inventoor, and she came up with a new technology that gives her a big advantage over others."
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25728, 4.75162, -59.3619)
+text = "Elvi is an inventor, and she came up with a new technology that gives her a big advantage over others."
+
+[node name="4b" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -33.9373, 5.58481, -23.2757)
+text = "Elvi is an inventor, and she came up with a new technology that gives her a big advantage over others."
+
+[node name="4b2" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 37.4697, 5.585, -23.466)
+text = "Elvi is an inventor, and she came up with a new technology that gives her a big advantage over others."
 
 [node name="5" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17167, 6, -67.3152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712223, 5.59655, -74.154)
+text = "She doesn't want to give it up. This new inequality is threatening to destabilize society."
+
+[node name="5b" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -53.0277, 5.65745, -23.8334)
+text = "She doesn't want to give it up. This new inequality is threatening to destabilize society."
+
+[node name="5b2" parent="." instance=ExtResource("4_4blwt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.7497, 5.65745, -23.4723)
 text = "She doesn't want to give it up. This new inequality is threatening to destabilize society."
 
 [node name="Door4" parent="." instance=ExtResource("9_qt30p")]
@@ -197,63 +213,63 @@ text = "We will task others with reverse-engineering the new technology."
 [node name="Autonomy_Plus" parent="Door9" instance=ExtResource("10_y0hs5")]
 
 [node name="quote-wau" parent="." instance=ExtResource("2_68nmx")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60.8705, 4.00038, -10.0168)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -63.8785, 4.00038, -11.2874)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
 [node name="quote-wau2" parent="." instance=ExtResource("2_68nmx")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60.8705, 4.00038, -33.5748)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -64.4204, 4.00038, -33.5748)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
 [node name="quote-wau3" parent="." instance=ExtResource("2_68nmx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4581, 4.00038, -83.7902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4581, 4.00038, -85.6063)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
 [node name="quote-wau4" parent="." instance=ExtResource("2_68nmx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7074, 4.00038, -83.7902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7074, 2.17608, -87.0532)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
 [node name="quote-wau5" parent="." instance=ExtResource("2_68nmx")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59.2838, 4.00038, -32.5768)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60.3161, 4.00038, -32.5768)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
 [node name="quote-wau6" parent="." instance=ExtResource("2_68nmx")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 59.2838, 4.00038, -12.3588)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 61.9101, 4.00038, -12.3588)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
 [node name="7" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 54.3321, 5, 2.74614)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 54.3321, 5.71657, 2.74614)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="9" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3321, 5, -48.1597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3321, 5.75206, -48.1597)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="8" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -50.2198, 5, 5.81517)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60.9879, 5, 5.81517)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="10" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2198, 5, -47.0004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9679, 5, -51.2845)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="11" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -26.5294, 5, -80.2989)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.1503, 4.91468, -80.3064)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="12" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.149, 5, -80.2989)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.963, 3.69162, -81.9756)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 130, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
 inner_radius = 3.0
 outer_radius = 4.0
 
@@ -261,121 +277,97 @@ outer_radius = 4.0
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 55, 0, -56.5)
 script = ExtResource("11_r0yxo")
 
-[node name="12" type="Label3D" parent="Gate1"]
+[node name="Gate text" parent="Gate1" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "NATURE"
-font_size = 100
-outline_size = 20
+text = "nature"
 
 [node name="Gate4" parent="." instance=ExtResource("12_ktwn1")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 61, 0, -56.5)
 script = ExtResource("13_s80id")
 
-[node name="12" type="Label3D" parent="Gate4"]
+[node name="Gate text" parent="Gate4" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "SPACE"
-font_size = 100
-outline_size = 20
+text = "space"
 
 [node name="Gate5" parent="." instance=ExtResource("10_5nbp2")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -62, 0, -56.5)
 script = ExtResource("11_r0yxo")
 
-[node name="12" type="Label3D" parent="Gate5"]
+[node name="Gate text" parent="Gate5" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "NATURE"
-font_size = 100
-outline_size = 20
+text = "nature"
 
 [node name="Gate6" parent="." instance=ExtResource("12_ktwn1")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -56, 0, -56.5)
 script = ExtResource("13_s80id")
 
-[node name="12" type="Label3D" parent="Gate6"]
+[node name="Gate text" parent="Gate6" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "SPACE"
-font_size = 100
-outline_size = 20
+text = "space"
 
 [node name="Gate7" parent="." instance=ExtResource("10_5nbp2")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -56, 0, 10.5333)
 script = ExtResource("11_r0yxo")
 
-[node name="12" type="Label3D" parent="Gate7"]
+[node name="Gate text" parent="Gate7" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "NATURE"
-font_size = 100
-outline_size = 20
+text = "nature"
 
 [node name="Gate8" parent="." instance=ExtResource("12_ktwn1")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -62, 0, 10.5333)
 script = ExtResource("13_s80id")
 
-[node name="12" type="Label3D" parent="Gate8"]
+[node name="Gate text" parent="Gate8" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "SPACE"
-font_size = 100
-outline_size = 20
+text = "space"
 
 [node name="Gate9" parent="." instance=ExtResource("10_5nbp2")]
 transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 61, 0, 10.5333)
 script = ExtResource("11_r0yxo")
 
-[node name="12" type="Label3D" parent="Gate9"]
+[node name="Gate text" parent="Gate9" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "NATURE"
-font_size = 100
-outline_size = 20
+text = "nature"
 
 [node name="Gate10" parent="." instance=ExtResource("12_ktwn1")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 55, 0, 10.5333)
 script = ExtResource("13_s80id")
 
-[node name="12" type="Label3D" parent="Gate10"]
+[node name="Gate text" parent="Gate10" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "SPACE"
-font_size = 100
-outline_size = 20
+text = "space"
 
 [node name="Gate11" parent="." instance=ExtResource("10_5nbp2")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 33.5167, 0, -85.5833)
 script = ExtResource("11_r0yxo")
 
-[node name="12" type="Label3D" parent="Gate11"]
+[node name="Gate text" parent="Gate11" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "NATURE"
-font_size = 100
-outline_size = 20
+text = "nature"
 
 [node name="Gate12" parent="." instance=ExtResource("12_ktwn1")]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 33.5167, 0, -79.5833)
 script = ExtResource("13_s80id")
 
-[node name="12" type="Label3D" parent="Gate12"]
+[node name="Gate text" parent="Gate12" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "SPACE"
-font_size = 100
-outline_size = 20
+text = "space"
 
 [node name="Gate13" parent="." instance=ExtResource("10_5nbp2")]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -33.5167, 0, -79.5833)
 script = ExtResource("11_r0yxo")
 
-[node name="12" type="Label3D" parent="Gate13"]
+[node name="Gate text" parent="Gate13" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "NATURE"
-font_size = 100
-outline_size = 20
+text = "nature"
 
 [node name="Gate14" parent="." instance=ExtResource("12_ktwn1")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -33.5167, 0, -85.5833)
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -34.6992, -0.676857, -85.9198)
 script = ExtResource("13_s80id")
 
-[node name="12" type="Label3D" parent="Gate14"]
+[node name="Gate text" parent="Gate14" instance=ExtResource("16_ld14u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "SPACE"
-font_size = 100
-outline_size = 20
+text = "space"
 
 [node name="Gate2" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
@@ -383,100 +375,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
 [node name="Gate3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.5, 0, -17.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, -70)
-size = Vector3(7, 1, 57)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, -124)
-size = Vector3(7, 1, 45)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 143.1, 0, -38.2728)
-size = Vector3(7, 1, 17.3)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, 107.5, 0, -53.5)
-size = Vector3(7, 1, 15)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 118, 0, -81.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 143, 0, -81.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, -229.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 119, 0, -191.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 143, 0, -191.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.7, 0, -38)
-size = Vector3(8.4, 1, 8)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 143, 0, -163.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 119, 0, -163.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.5, 0, -148)
-size = Vector3(10, 1, 7)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.5, 0, -208)
-size = Vector3(10, 1, 7)
-material = ExtResource("14_ud84v")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, -100)
-size = Vector3(10, 1, 7)
-material = ExtResource("14_ud84v")
-
-[node name="tree_wire_teal" parent="CSGCombiner3D" instance=ExtResource("16_vajoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, -177)
-
-[node name="Economy_plus" parent="." instance=ExtResource("8_mnfj3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 1, -1)
-
-[node name="Economy_plus2" parent="." instance=ExtResource("8_mnfj3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 2, -1)
-
 [node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, 0)
 stream = ExtResource("16_xibtl")
 autoplay = true
 bus = &"SFX"
