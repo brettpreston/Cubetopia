@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dwjj0q4okd4tu"]
+[gd_scene load_steps=28 format=3 uid="uid://dwjj0q4okd4tu"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_vl1r8"]
 [ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="2_din7f"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Gate_10smallcom.gd" id="5_bny4j"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_lbjps"]
 [ext_resource type="Script" path="res://Gate_11Global.gd" id="7_abhgn"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="8_cl2xg"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="8_cl2xg"]
 [ext_resource type="Texture2D" uid="uid://reuwi5xjik34" path="res://Assets/2D/cubetopia.svg" id="10_aof7y"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="11_02wuk"]
 [ext_resource type="Script" path="res://Scenes/Levels/sprite_3d.gd" id="11_a0omv"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://dxqg5uyh61jfl" path="res://Assets/audio/Intro/2.ogg" id="13_b0n03"]
 [ext_resource type="AudioStream" uid="uid://ck61yaoxa0b4c" path="res://Assets/audio/Intro/3.ogg" id="14_qlo4j"]
 [ext_resource type="FontFile" uid="uid://cokp3lgag5j2p" path="res://Assets/Fonts/exo-2-v7-latin-700.ttf" id="15_jhkdu"]
+[ext_resource type="Material" uid="uid://bb4rpedebjtkf" path="res://Assets/Textures/Path_Texture_B.tres" id="16_2fijn"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="16_6sd66"]
 [ext_resource type="AudioStream" uid="uid://5uukifyvltdl" path="res://Assets/audio/music/nature drums.wav" id="17_n7t0g"]
 [ext_resource type="AudioStream" uid="uid://dm7snxy685cuu" path="res://Assets/audio/music/nature.wav" id="18_xgmk0"]
@@ -139,6 +140,7 @@ curve = SubResource("Curve3D_5xsma")
 
 [node name="pathgon2" type="CSGPolygon3D" parent="Path3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -78)
+material_override = ExtResource("16_2fijn")
 use_collision = true
 polygon = PackedVector2Array(5, 1, 5, 1.6, 6, 1, 1, 0, -1, 0, -6, 1, -5, 1.6, -5, 1)
 mode = 2
