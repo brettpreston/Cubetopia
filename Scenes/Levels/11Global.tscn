@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ba56j2jb46od5"]
+[gd_scene load_steps=38 format=3 uid="uid://ba56j2jb46od5"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_0oc7h"]
 [ext_resource type="Texture2D" uid="uid://cyy76lhqi4rnw" path="res://Assets/background/Background_Global.jpg" id="2_2y03g"]
@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://xwh7p6vbdhds" path="res://Assets/Models/Props/earth_lp.tscn" id="20_mwfbi"]
 [ext_resource type="Script" path="res://Earth.gd" id="21_gpka5"]
 [ext_resource type="AudioStream" uid="uid://b8p4iqmh3jnct" path="res://Assets/audio/music/ambi/ambi_tech.ogg" id="27_6wbhs"]
+[ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="28_tfpph"]
+[ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="29_hmgqw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_37pb6"]
 panorama = ExtResource("2_2y03g")
@@ -47,22 +49,46 @@ fog_depth_end = 20.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_ra5ch"]
 size = Vector3(7, 5, 6)
 
+[sub_resource type="Curve3D" id="Curve3D_i6rgr"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -30),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6f7iv"]
+albedo_texture = ExtResource("29_hmgqw")
+
+[sub_resource type="Curve3D" id="Curve3D_b642g"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 18.54, 5.725, 0, 1.89499, 0.0267487, -33.5882, 21.53, -0.065, 0, 0, 0, 0, 0.172, 10.609, -80.102),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_ea0bs"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, -32.26, -12.885, 0, -1.79319, 0, -33.6945, -17.84, -0.105, 0, 0, 0, 0, 0, -9.195, -81),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ngaxy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 198, 0, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_0oc7h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198, 1.1, -1)
 
 [node name="Tween" type="Node3D" parent="Player"]
 
 [node name="quote-millions" parent="." instance=ExtResource("5_xmy48")]
-transform = Transform3D(0.267238, 0, 0.96363, 0, 1, 0, -0.96363, 0, 0.267238, -6.98303, 2.8604, -4.98292)
+transform = Transform3D(0.267238, 0, 0.96363, 0, 1, 0, -0.96363, 0, 0.267238, 191.017, 2.8604, -4.98292)
 script = ExtResource("6_y1j5h")
 text = "You made millions of people care 
 about people they didn’t know existed. 
@@ -70,16 +96,16 @@ Millions of people they didn’t know existed."
 audio_stream = ExtResource("4_bvut0")
 
 [node name="1" parent="." instance=ExtResource("5_xmy48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199, 5, -20)
 text = "In different places around the world,
 humanity has very different cultures and beliefs."
 
 [node name="2" parent="." instance=ExtResource("5_xmy48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.941954, 6.02042, -36.9558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.942, 6.02042, -36.9558)
 text = "Are you worried that this becomes a source of conflict?"
 
 [node name="Door1" parent="." instance=ExtResource("4_gg55x")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 1, -46)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 191, 1, -46)
 
 [node name="3" type="Label3D" parent="Door1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133974, 5, 2.23205)
@@ -109,7 +135,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.433016, 1, 0.616024)
 transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, -0.5, 0, 0.866024)
 
 [node name="Door2" parent="." instance=ExtResource("4_gg55x")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 9, 1, -46)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 207, 1, -46)
 
 [node name="4" type="Label3D" parent="Door2"]
 transform = Transform3D(1, 0, 5.06639e-07, 0, 1, 0, -5.06639e-07, 0, 1, -0.366026, 5, 1.36602)
@@ -135,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 [node name="State_Minus" parent="Door2" instance=ExtResource("8_763cv")]
 
 [node name="quote-diversity" parent="." instance=ExtResource("9_3kjeg")]
-transform = Transform3D(0.64679, 0, -0.762669, 0, 1, 0, 0.762669, 0, 0.64679, 21, 5, -70)
+transform = Transform3D(0.64679, 0, -0.762669, 0, 1, 0, 0.762669, 0, 0.64679, 219, 5, -70)
 text = "Hasn’t it always been the artists, 
 the slightly crazy people, 
 the slightly non-normative people, 
@@ -144,7 +170,7 @@ that have warned about things first?"
 audio_stream = ExtResource("5_f54b8")
 
 [node name="quote-sauerkraut" parent="." instance=ExtResource("9_3kjeg")]
-transform = Transform3D(0.267238, 0, 0.963631, 0, 1, 0, -0.963631, 0, 0.267238, -19, 5, -70)
+transform = Transform3D(0.267238, 0, 0.963631, 0, 1, 0, -0.963631, 0, 0.267238, 179, 5, -70)
 text = "You don't have to start the culture with anything. 
 It just naturally turns into sauerkraut every single time (...) 
 there's one particular species of bacteria that eats the cabbage and releases lactic acid (...) eventually killing off everything around it 
@@ -153,11 +179,11 @@ put this recipe together, you always end up with sauerkraut..."
 audio_stream = ExtResource("4_gksim")
 
 [node name="5" parent="." instance=ExtResource("5_xmy48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, -113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199, 6, -113)
 text = "Who makes decisions for the global community?"
 
 [node name="Door3" parent="." instance=ExtResource("4_gg55x")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 1, -128)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 191, 1, -128)
 
 [node name="9" type="Label3D" parent="Door3"]
 transform = Transform3D(1, 0, -5.06639e-07, 0, 1, 0, 5.06639e-07, 0, 1, -0.133976, 5, 2.23205)
@@ -180,7 +206,7 @@ bus = &"VO"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Door4" parent="." instance=ExtResource("4_gg55x")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10, 1, -130)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 208, 1, -130)
 
 [node name="10" type="Label3D" parent="Door4"]
 transform = Transform3D(1, 0, 5.06639e-07, 0, 1, 0, -5.06639e-07, 0, 1, 0.633976, 5, 3.09808)
@@ -204,19 +230,19 @@ bus = &"VO"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Title" parent="." instance=ExtResource("5_xmy48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, -193)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197, 3, -193)
 text = "Should resources be centrally distributed 
 to ensure equity?"
 
 [node name="Title2" parent="." instance=ExtResource("5_xmy48")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, -210)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197, 3, -210)
 text = "Or do we need some freedom from chaos,
 through either commerce or mutualism?"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 198, 1, 0)
 inner_radius = 3.0
 outer_radius = 4.0
 
@@ -230,83 +256,83 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198, 0, -17.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -53.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 211, 0, -53.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11, 0, -53.5)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 187, 0, -53.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -81.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 187, 0, -81.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -81.5)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 211, 0, -81.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198, 0, -200)
 size = Vector3(7, 1, 33)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -224.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198, 0, -224.5)
 size = Vector3(25, 1, 16)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -163.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 187, 0, -163.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -163.5)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 211, 0, -163.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -38)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.5, 0, -38)
 size = Vector3(10, 1, 7)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -135.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 211, 0, -135.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11, 0, -135.5)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 187, 0, -135.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -109.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198, 0, -109.5)
 size = Vector3(9, 1, 28)
 material = ExtResource("5_tiqom")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -180)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.5, 0, -180)
 size = Vector3(10, 1, 7)
 material = ExtResource("5_tiqom")
 
 [node name="Global_plus" parent="." instance=ExtResource("4_8wbg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198, 1, -1)
 
 [node name="Global_plus2" parent="." instance=ExtResource("4_8wbg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198, 2, -1)
 
 [node name="Gate1" parent="." instance=ExtResource("10_mo3qg")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -5.9996, -0.0795958, -222.98)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 192, -0.0795958, -222.98)
 script = ExtResource("11_aen3o")
 
 [node name="12" type="Label3D" parent="Gate1"]
@@ -316,7 +342,7 @@ font_size = 100
 outline_size = 20
 
 [node name="Gate4" parent="." instance=ExtResource("12_wf5fk")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 5, 0, -223)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 203, 0, -223)
 script = ExtResource("13_lx2ws")
 
 [node name="12" type="Label3D" parent="Gate4"]
@@ -326,18 +352,99 @@ font_size = 100
 outline_size = 20
 
 [node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198, 0, 0)
 stream = ExtResource("16_mvms0")
 autoplay = true
 bus = &"SFX"
 
 [node name="Earth_LP" parent="." instance=ExtResource("20_mwfbi")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 1, -67)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 198, 1, -67)
 script = ExtResource("21_gpka5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_6wbhs")
 autoplay = true
 bus = &"Music"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Path3D" type="Path3D" parent="Node3D"]
+curve = SubResource("Curve3D_i6rgr")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("28_tfpph")
+use_collision = true
+polygon = PackedVector2Array(3.5, 0.3, 3.5, 0.8, 3.9, 0.8, 3.9, 0, -4, 0, -4, 0.8, -3.6, 0.8, -3.6, 0.3)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Triangle" type="CSGPolygon3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -32)
+material_override = SubResource("StandardMaterial3D_6f7iv")
+use_collision = true
+polygon = PackedVector2Array(0, -4.2, -3.8, 2, 3.6, 2)
+depth = 0.5
+
+[node name="Triangle3" type="CSGPolygon3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -10, -82)
+material_override = SubResource("StandardMaterial3D_6f7iv")
+use_collision = true
+polygon = PackedVector2Array(0, -4.2, -3.8, 2, 3.6, 2)
+depth = 0.5
+
+[node name="Triangle2" type="CSGPolygon3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -3, 11, -80)
+material_override = SubResource("StandardMaterial3D_6f7iv")
+use_collision = true
+polygon = PackedVector2Array(0, -4.2, -3.8, 2, 3.6, 2)
+depth = 0.5
+
+[node name="Path3D2" type="Path3D" parent="Node3D"]
+curve = SubResource("Curve3D_b642g")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("28_tfpph")
+use_collision = true
+polygon = PackedVector2Array(3.5, 0.3, 3.5, 0.8, 3.9, 0.8, 3.9, 0, -4, 0, -4, 0.8, -3.6, 0.8, -3.6, 0.3)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Path3D3" type="Path3D" parent="Node3D"]
+curve = SubResource("Curve3D_ea0bs")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("28_tfpph")
+use_collision = true
+polygon = PackedVector2Array(3.5, 0.3, 3.5, 0.8, 3.9, 0.8, 3.9, 0, -4, 0, -4, 0.8, -3.6, 0.8, -3.6, 0.3)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
 
 [connection signal="body_entered" from="Door1/3/Area3D" to="Door1/3/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Door2/4/Area3D" to="Door2/4/Area3D" method="_on_body_entered"]

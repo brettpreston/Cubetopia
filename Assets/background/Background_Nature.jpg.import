@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b11cjpbgvdkix"
-path.s3tc="res://.godot/imported/Background_Nature.jpg-d888799e59cec35d9e95f4c91e91531a.s3tc.ctex"
+path="res://.godot/imported/Background_Nature.jpg-d888799e59cec35d9e95f4c91e91531a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/background/Background_Nature.jpg"
-dest_files=["res://.godot/imported/Background_Nature.jpg-d888799e59cec35d9e95f4c91e91531a.s3tc.ctex"]
+dest_files=["res://.godot/imported/Background_Nature.jpg-d888799e59cec35d9e95f4c91e91531a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
