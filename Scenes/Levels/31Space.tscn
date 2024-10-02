@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=39 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/background/Background_Futuristic.jpg" id="1_0j1uw"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_nbvwk"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="5_o86ru"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="6_mncwm"]
-[ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="8_mauvu"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="8_tkejo"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="10_2pi1e"]
 [ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="11_11it7"]
@@ -115,7 +114,7 @@ We can’t risk this being done badly."
 transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34957e-14, 1, -0.0909519, -0.183958, 0.0646935)
 
 [node name="autonomy_Minus" parent="Door1" instance=ExtResource("8_tkejo")]
-transform = Transform3D(0.866086, -0.497686, -0.046955, 0.499895, 0.862364, 0.0801989, 0.000578135, -0.0929312, 0.995673, -0.0401421, 0.5, 1.10843)
+transform = Transform3D(0.866086, -0.497686, -0.046955, 0.499895, 0.862364, 0.0801989, 0.00057815, -0.0929312, 0.995673, -0.34848, 0.5, -0.026516)
 
 [node name="Door2" parent="." instance=ExtResource("21_7f4k8")]
 transform = Transform3D(0.202924, 0, -0.979194, 0, 1, 0, 0.979194, 0, 0.202924, 4.17535, -5.712, -26.2336)
@@ -143,33 +142,27 @@ audio_stream = ExtResource("4_gv58k")
 
 [node name="4" parent="." instance=ExtResource("5_o86ru")]
 transform = Transform3D(-0.980904, 0, 0.194491, 0, 1, 0, -0.194491, 0, -0.980904, -19.6563, -0.0535121, -13.4456)
-text = "What if a conflict arises and a small group of
-people becomes disliked by others on a space station? How will we protect them from violence?"
+text = "There is a conflict between one family ad the rest of the crew of your spaceship."
 
 [node name="4b" parent="." instance=ExtResource("5_o86ru")]
 transform = Transform3D(-0.892389, 0, -0.451267, 0, 1, 0, 0.451267, 0, -0.892389, 17.612, -0.413751, -13.446)
-text = "What if a conflict arises and a small group of
-people becomes disliked by others on a space station? How will we protect them from violence?"
+text = "There is a conflict between one family ad the rest of the crew of your spaceship."
 
 [node name="5" parent="." instance=ExtResource("5_o86ru")]
 transform = Transform3D(-0.105674, 0, 0.994401, 0, 1, 0, -0.994401, 0, -0.105674, -27.7846, 3.13708, 3.1838)
-text = "What if a conflict arises and a small group of
-people becomes disliked by others on a space station? How will we protect them from violence?"
+text = "It is starting to turn into violence, and close quarters are making the situation worse."
 
 [node name="5b" parent="." instance=ExtResource("5_o86ru")]
 transform = Transform3D(-0.908443, 0, -0.41801, 0, 1, 0, 0.41801, 0, -0.908443, 15.8292, 1.56636, -2.34961)
-text = "What if a conflict arises and a small group of
-people becomes disliked by others on a space station? How will we protect them from violence?"
+text = "It is starting to turn into violence, and close quarters are making the situation worse."
 
 [node name="6" parent="." instance=ExtResource("5_o86ru")]
 transform = Transform3D(-0.987868, 0, 0.155297, 0, 1, 0, -0.155297, 0, -0.987868, -19.7846, 2.13708, -2.8162)
-text = "What if a conflict arises and a small group of
-people becomes disliked by others on a space station? How will we protect them from violence?"
+text = "How will you ensure everyone's safety?"
 
 [node name="6b" parent="." instance=ExtResource("5_o86ru")]
 transform = Transform3D(-0.254011, 0, -0.967201, 0, 1, 0, 0.967201, 0, -0.254011, 27.3234, 4.15521, 3.64983)
-text = "What if a conflict arises and a small group of
-people becomes disliked by others on a space station? How will we protect them from violence?"
+text = "How will you ensure everyone's safety?"
 
 [node name="Door3" parent="." instance=ExtResource("21_7f4k8")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -34.3852, 0.48536, -1.92816)
@@ -210,8 +203,8 @@ transform = Transform3D(-0.868935, -2.8442e-14, 0.494928, 2.01348e-15, 1, 7.1054
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door4" index="6"]
-text = "Provide a way for the minority to 
-safely exit the station."
+text = "Provide a way for the family to 
+safely exit the spaceship."
 
 [node name="Resilience_Minus" parent="Door4" instance=ExtResource("6_mncwm")]
 transform = Transform3D(0.999999, -2.75631e-14, -2.38419e-07, -1.53982e-15, 1, -7.10542e-15, 2.38419e-07, 4.46298e-14, 0.999999, 0, 0.732019, 0)
@@ -226,8 +219,8 @@ transform = Transform3D(-0.94249, -2.11512e-14, -0.334235, 2.01348e-15, 1, 7.105
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door6" index="6"]
-text = "Provide a way for the minority to 
-safely exit the station."
+text = "Provide a way for the family to 
+safely exit the spaceship."
 
 [node name="Resilience_Minus" parent="Door6" instance=ExtResource("6_mncwm")]
 transform = Transform3D(0.999999, -2.75631e-14, -2.38419e-07, -1.53982e-15, 1, -7.10542e-15, 2.38419e-07, 4.46298e-14, 0.999999, 0, 0.732019, 0)
@@ -266,76 +259,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 97.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -9)
-size = Vector3(7, 1, 45)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 77, 0, 61.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 53, 0, 61.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 54, 0, 32.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 75.75, 0, 31.3349)
-size = Vector3(7, 1, 41)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 53, 0, -76.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 77, 0, -76.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 0, 77)
-size = Vector3(10, 1, 7)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 77, 0, -48.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 53, 0, -48.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 0, -33)
-size = Vector3(10, 1, 7)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 0, -93)
-size = Vector3(10, 1, 7)
-material = ExtResource("8_mauvu")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 15)
-size = Vector3(10, 1, 7)
-material = ExtResource("8_mauvu")
 
 [node name="Tech_plus" parent="." instance=ExtResource("4_mjl73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1.09518)
