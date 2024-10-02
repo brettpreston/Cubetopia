@@ -61,14 +61,14 @@ albedo_texture = ExtResource("29_hmgqw")
 
 [sub_resource type="Curve3D" id="Curve3D_b642g"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 18.54, 5.725, 0, 1.89499, 0.0267487, -33.5882, 21.53, -0.065, 0, 0, 0, 0, 0.172, 10.609, -80.102),
+"points": PackedVector3Array(0, 0, 0, 21.255, 0, -12, 1.82, 0.027, -32.983, 33.13, 0, 20, 0, 0, 0, 2.32, 10.609, -78.907),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_ea0bs"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, -32.26, -12.885, 0, -1.79319, 0, -33.6945, -17.84, -0.105, 0, 0, 0, 0, 0, -9.195, -81),
+"points": PackedVector3Array(0, 0, 0, -26.845, 0, -15.91, -1.793, 0, -33.124, -14.65, 0, 8.78, 0, 0, 0, -1.81, -9.805, -79.055),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -372,7 +372,6 @@ bus = &"Music"
 curve = SubResource("Curve3D_i6rgr")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("28_tfpph")
 use_collision = true
 polygon = PackedVector2Array(3.5, 0.3, 3.5, 0.8, 3.9, 0.8, 3.9, 0, -4, 0, -4, 0.8, -3.6, 0.8, -3.6, 0.3)
@@ -388,21 +387,21 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Triangle" type="CSGPolygon3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -32)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.2, -32)
 material_override = SubResource("StandardMaterial3D_6f7iv")
 use_collision = true
 polygon = PackedVector2Array(0, -4.2, -3.8, 2, 3.6, 2)
 depth = 0.5
 
 [node name="Triangle3" type="CSGPolygon3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -10, -82)
+transform = Transform3D(-1, 8.74228e-08, -3.82137e-15, 0, -4.37114e-08, -1, -8.74228e-08, -1, 4.37114e-08, 0, -10, -80)
 material_override = SubResource("StandardMaterial3D_6f7iv")
 use_collision = true
 polygon = PackedVector2Array(0, -4.2, -3.8, 2, 3.6, 2)
 depth = 0.5
 
 [node name="Triangle2" type="CSGPolygon3D" parent="Node3D"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -3, 11, -80)
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0.5, 10.5, -80)
 material_override = SubResource("StandardMaterial3D_6f7iv")
 use_collision = true
 polygon = PackedVector2Array(0, -4.2, -3.8, 2, 3.6, 2)
@@ -412,7 +411,6 @@ depth = 0.5
 curve = SubResource("Curve3D_b642g")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("28_tfpph")
 use_collision = true
 polygon = PackedVector2Array(3.5, 0.3, 3.5, 0.8, 3.9, 0.8, 3.9, 0, -4, 0, -4, 0.8, -3.6, 0.8, -3.6, 0.3)
@@ -431,7 +429,6 @@ path_joined = false
 curve = SubResource("Curve3D_ea0bs")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Node3D/Path3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("28_tfpph")
 use_collision = true
 polygon = PackedVector2Array(3.5, 0.3, 3.5, 0.8, 3.9, 0.8, 3.9, 0, -4, 0, -4, 0.8, -3.6, 0.8, -3.6, 0.3)

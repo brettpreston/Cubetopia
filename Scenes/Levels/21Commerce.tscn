@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ctpo8qxqv8237"]
+[gd_scene load_steps=35 format=3 uid="uid://ctpo8qxqv8237"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
 [ext_resource type="Texture2D" uid="uid://b6v1pinigq11x" path="res://Assets/background/Background_Mutualism.jpg" id="1_xq6nr"]
@@ -24,6 +24,7 @@
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="22_3p2cr"]
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="23_tfmmo"]
 [ext_resource type="PackedScene" uid="uid://cl1nxstijc6yb" path="res://Assets/Models/Props/Commerce/ant.tscn" id="24_1kan2"]
+[ext_resource type="Material" uid="uid://bkkbv3hve2108" path="res://Assets/Textures/Path_Texture_SQ_G.tres" id="24_5sf5f"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lye3d"]
 panorama = ExtResource("1_xq6nr")
@@ -422,6 +423,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46.9)
 radius = 8.0
 height = 1.8
 sides = 6
+material = ExtResource("24_5sf5f")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Pathcom/CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 1.1)
@@ -429,11 +431,25 @@ operation = 2
 radius = 7.0
 height = 1.4
 sides = 6
+material = ExtResource("24_5sf5f")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Pathcom/CSGCylinder3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -5.9)
 operation = 2
 size = Vector3(7, 0.6, 3)
+material = ExtResource("24_5sf5f")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Pathcom/CSGCylinder3D"]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 6, 0.7, -2.9)
+operation = 2
+size = Vector3(7, 0.6, 3)
+material = ExtResource("24_5sf5f")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Pathcom/CSGCylinder3D"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -6, 0.7, -2.9)
+operation = 2
+size = Vector3(7, 0.6, 3)
+material = ExtResource("24_5sf5f")
 
 [node name="Path3D3" type="Path3D" parent="Pathcom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -53.8)

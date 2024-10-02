@@ -58,7 +58,7 @@ albedo_texture = ExtResource("26_44qlx")
 
 [sub_resource type="Curve3D" id="Curve3D_0sirr"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, -45, 20, 0, 0, 0, 0, -45, -19.385, 8.05, 0, -50, 0, 0),
+"points": PackedVector3Array(0, 0, 0, 1.28, 0, -45, 20, 0, -0.11, 0, 0, -45, -19.385, 8.05, 0, -50, -0.055, -0.24),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -72,24 +72,24 @@ point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_u7n4l"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 10.7, 0, 0, 0, 0, 2.87, -11.125, 0, 0, 0, 0, -6.12, 22.347),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 10.7, 0, 0, 0, 0, 0, -11.125, 0, 0, 0, 0, -6, 26.742),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
 [sub_resource type="Curve3D" id="Curve3D_g2e8g"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, -0.92, 0, 21.62, -27.303, -0.09, 1.194, -12.155, 0, 0.44, 0, 0, 0, -4.343, -0.113, 26.837),
-"tilts": PackedFloat32Array(0, 0)
+"points": PackedVector3Array(0, 0, 0, 22.25, 0, 0, -31.433, -0.09, -2.556, 0, 0, 0, 0, 0, 0, -15.65, -3.69, 11.535, -17.955, 0, 0, 0, 0, 0, -3.86, -6, 28.49),
+"tilts": PackedFloat32Array(0, 0, 0)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="Curve3D" id="Curve3D_6twbs"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, -0.92, 0, 21.62, 27.303, 0, 1.194, 12.155, 0, 0.44, 0, 0, 0, 4.343, 0, 26.837),
-"tilts": PackedFloat32Array(0, 0)
+"points": PackedVector3Array(0, 0, 0, -17.415, 0, -0.355, 32.278, -0.085, -0.086, 0, 0, 0, 0, 0, 0, 17.24, -3.34, 15.545, 16.4, 0, -0.015, 0, 0, 0, 4.266, -6.096, 31.065),
+"tilts": PackedFloat32Array(0, 0, 0)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kdhb6"]
 radius = 300.0
@@ -98,26 +98,25 @@ radius = 300.0
 script = ExtResource("1_tbdsx")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.786567, 0.0638225, -0.614197, -0.612371, 0.0473632, 0.78915, 0.0794559, 0.996837, 0.00182872, 0, 0, 0)
+transform = Transform3D(-0.786567, 0.0638225, -0.614197, -0.612371, 0.0473632, 0.78915, 0.0794559, 0.996837, 0.00182872, 64, 0, 115)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uadpp")
 
 [node name="Player" parent="." instance=ExtResource("1_p8uvs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -1)
 
 [node name="quote-distance" parent="." instance=ExtResource("3_ffvvd")]
-transform = Transform3D(0.267238, 0, 0.96363, 0, 1, 0, -0.96363, 0, 0.267238, -2, 3, -5)
+transform = Transform3D(0.267238, 0, 0.96363, 0, 1, 0, -0.96363, 0, 0.267238, 62, 3, 110)
 audio_stream = ExtResource("4_gv58k")
 
 [node name="1" parent="." instance=ExtResource("5_o86ru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 4, 95)
 text = "The air filters in sector 8 of your space station are failing. 
 Who is in charge of repairing them?"
 
 [node name="4" parent="." instance=ExtResource("5_o86ru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 4, -18)
 text = "What if a conflict arises and a small group of
 people becomes disliked by others on a space station? How will we protect them from violence?"
 
@@ -127,7 +126,7 @@ people becomes disliked by others on a space station? How will we protect them f
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 64, 1, 115)
 inner_radius = 3.0
 outer_radius = 4.0
 
@@ -138,87 +137,87 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 97.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -124)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -9)
 size = Vector3(7, 1, 45)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -53.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 77, 0, 61.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11, 0, -53.5)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 53, 0, 61.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -10, 0, -82.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 54, 0, 32.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 11.75, 0, -83.6651)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 75.75, 0, 31.3349)
 size = Vector3(7, 1, 41)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -11, 0, -191.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 53, 0, -76.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 13, 0, -191.5)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 77, 0, -76.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -38)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 0, 77)
 size = Vector3(10, 1, 7)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 13, 0, -163.5)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 77, 0, -48.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -11, 0, -163.5)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 53, 0, -48.5)
 size = Vector3(7, 1, 36)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -148)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 0, -33)
 size = Vector3(10, 1, 7)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -208)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.5, 0, -93)
 size = Vector3(10, 1, 7)
 material = ExtResource("8_mauvu")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 15)
 size = Vector3(10, 1, 7)
 material = ExtResource("8_mauvu")
 
 [node name="Tech_plus" parent="." instance=ExtResource("4_mjl73")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 1, 114)
 
 [node name="Tech_plus2" parent="." instance=ExtResource("4_mjl73")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 2, 114)
 
 [node name="Space Station" parent="." instance=ExtResource("14_orji6")]
 transform = Transform3D(-96.5926, 0, 25.8819, 0, 100, 0, -25.8819, 0, -96.5926, 300, 0, -173)
 visible = false
 
 [node name="Gate4" parent="." instance=ExtResource("15_62hdw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -94)
 script = ExtResource("16_ibjn1")
 
 [node name="Label3D" type="Label3D" parent="Gate4"]
@@ -228,6 +227,7 @@ text = "End
 "
 
 [node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 115)
 stream = ExtResource("18_uc4of")
 autoplay = true
 bus = &"SFX"
@@ -242,7 +242,7 @@ transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -69, 3
 transform = Transform3D(8.66025, 5, 2.30318e-06, -4.33013, 7.5, 5, 2.5, -4.33013, 8.66025, 1484, 457, 257)
 
 [node name="Door1" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -6, 1, -45)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 58, 1, 70)
 
 [node name="State_Plus" parent="Door1" instance=ExtResource("5_nbvwk")]
 transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34957e-14, 1, -0.0909519, -0.183958, 0.0646935)
@@ -258,7 +258,7 @@ text = "A professional class of engineers.
 We can’t risk this being done badly."
 
 [node name="Door2" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 8, 1, -45)
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 72, 1, 70)
 
 [node name="Autonomy_Plus" parent="Door2" instance=ExtResource("10_2pi1e")]
 transform = Transform3D(1, -1.17285e-15, -2.08616e-07, 0, 1, 0, 2.08616e-07, 3.34957e-14, 1, 0, 0, 0)
@@ -276,7 +276,7 @@ We can’t have a group of
 people holding power over life and death."
 
 [node name="Door3" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -7, 1, -156)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 57, 1, -41)
 
 [node name="5" type="Label3D" parent="Door3"]
 transform = Transform3D(1, 1.17285e-15, -2.98023e-07, -8.29599e-16, 1, 0, 2.98023e-07, 3.34957e-14, 1, -0.401932, 5, 6.69615)
@@ -309,7 +309,7 @@ text = "Mediation, conflict resolution,
 strong leadership."
 
 [node name="Door4" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(0.866026, 2.84217e-14, -0.5, 2.01348e-15, 1, 7.10543e-15, 0.5, 3.55271e-15, 0.866026, 9, 1, -156)
+transform = Transform3D(0.866026, 2.84217e-14, -0.5, 2.01348e-15, 1, 7.10543e-15, 0.5, 3.55271e-15, 0.866026, 73, 1, -41)
 
 [node name="6" type="Label3D" parent="Door4"]
 transform = Transform3D(0.999999, -2.75631e-14, 2.68221e-07, -7.10165e-16, 1, -7.10542e-15, -2.68221e-07, 4.46298e-14, 0.999999, 0.267952, 5, 4.4641)
@@ -342,7 +342,7 @@ text = "Provide a way for the minority to
 safely exit the station."
 
 [node name="LevelSwirl" type="CSGCombiner3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -141, 0, -80)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 use_collision = true
 
 [node name="Node3D" type="Node3D" parent="LevelSwirl"]
@@ -360,25 +360,32 @@ size = Vector3(7, 0.4, 13)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0.799999, -1)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -26.8312, -6.68306, -0.231237)
 material_override = SubResource("StandardMaterial3D_ja0qe")
-size = Vector3(7, 0.4, 13)
+size = Vector3(7.6, 0.433887, 8)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1, 25.8, 60)
+transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.46875, -0.700001, 35.7687)
 material_override = SubResource("StandardMaterial3D_ja0qe")
-size = Vector3(7, 0.4, 13)
+size = Vector3(7.6, 0.4, 8)
+material = SubResource("StandardMaterial3D_ncvh5")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="LevelSwirl"]
+transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.51874, -0.800001, -35.2312)
+material_override = SubResource("StandardMaterial3D_ja0qe")
+size = Vector3(7.7, 0.4, 8)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="Pathbig" type="Path3D" parent="LevelSwirl"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.16875, -1.5, 15.2687)
 curve = SubResource("Curve3D_0sirr")
 
-[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Pathbig"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, -0.5)
+[node name="pathgon2" type="CSGPolygon3D" parent="LevelSwirl/Pathbig"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, -4.7)
 material_override = ExtResource("25_pnapc")
 use_collision = true
-polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.9, 1.1)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -391,14 +398,14 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Pathbig2" type="Path3D" parent="LevelSwirl"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -30, 0, 0)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3.16874, -1.5, -14.7312)
 curve = SubResource("Curve3D_0sirr")
 
-[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Pathbig2"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, -0.5)
+[node name="pathgon2" type="CSGPolygon3D" parent="LevelSwirl/Pathbig2"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, -2.60001)
 material_override = ExtResource("25_pnapc")
 use_collision = true
-polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.9, 1.1)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -415,10 +422,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123, 25, 1.52588e-05)
 curve = SubResource("Curve3D_1qqxy")
 
 [node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Pathsmall"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, -0.5)
+transform = Transform3D(1, -1.13133e-08, 1.48943e-09, 1.13133e-08, 1, 4.47035e-08, -1.48943e-09, -4.47035e-08, 1, 0, 0, 0)
 material_override = ExtResource("25_pnapc")
 use_collision = true
-polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.9, 1.1)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -431,14 +438,14 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Path3D" type="Path3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.16875, -1.5, 0.268762)
 curve = SubResource("Curve3D_u7n4l")
 
 [node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Path3D"]
-transform = Transform3D(1, -1.13133e-08, 1.48943e-09, 1.13133e-08, 1, 4.47035e-08, -1.48943e-09, -4.47035e-08, 1, 0, 0, -0.5)
+transform = Transform3D(1, -1.13133e-08, 1.48943e-09, 1.13133e-08, 1, 4.47035e-08, -1.48943e-09, -4.47035e-08, 1, 0, 0, -0.399994)
 material_override = ExtResource("25_pnapc")
 use_collision = true
-polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.9, 1.1)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -451,14 +458,14 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Path3D2" type="Path3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.16875, -1.5, 0.268762)
 curve = SubResource("Curve3D_g2e8g")
 
-[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Path3D2"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, -0.5)
+[node name="pathgon2" type="CSGPolygon3D" parent="LevelSwirl/Path3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 material_override = ExtResource("25_pnapc")
 use_collision = true
-polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.9, 1.1)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -471,14 +478,14 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Path3D3" type="Path3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.16875, -1.5, -0.731238)
 curve = SubResource("Curve3D_6twbs")
 
-[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl/Path3D3"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, -0.5)
+[node name="pathgon2" type="CSGPolygon3D" parent="LevelSwirl/Path3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.20001)
 material_override = ExtResource("25_pnapc")
 use_collision = true
-polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.9, 1.1)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
@@ -491,7 +498,7 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="EV_planet" parent="." instance=ExtResource("27_7jso4")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 6, -3966, -111)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -3966, 0)
 script = ExtResource("28_fpmxv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="EV_planet"]
@@ -509,7 +516,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
 curve = SubResource("Curve3D_g2e8g")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Path3D2"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, -0.5)
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, -81, 0, -0.5)
 material_override = ExtResource("25_pnapc")
 use_collision = true
 polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
