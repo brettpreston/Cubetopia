@@ -342,7 +342,7 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -44.8521, 
 script = ExtResource("11_aen3o")
 
 [node name="Gate text" parent="Gate7" instance=ExtResource("22_vt8ng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018425, 5, -0.0106354)
 text = "central distribution"
 
 [node name="Gate8" parent="." instance=ExtResource("12_wf5fk")]
@@ -581,6 +581,7 @@ material = ExtResource("30_wrvs0")
 [node name="Connect8" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 1.98423e-09, 0, 1, 0, -1.98423e-09, 0, 1, 41.9934, 0.200001, -106.017)
 material_override = ExtResource("29_qrxg5")
+use_collision = true
 size = Vector3(19.0581, 1.2, 8.3)
 material = ExtResource("30_wrvs0")
 
@@ -597,8 +598,9 @@ size = Vector3(2, 0.6, 7.24219)
 material = ExtResource("30_wrvs0")
 
 [node name="Connect9" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 1.98423e-09, 0, 1, 0, -1.98423e-09, 0, 1, -40.6399, 0.425117, -106.032)
+transform = Transform3D(1, 0, 1.98423e-09, 0, 1, 0, -1.98423e-09, 0, 1, -40.6399, 0.313882, -106.032)
 material_override = ExtResource("29_qrxg5")
+use_collision = true
 size = Vector3(20, 1.2, 8.3)
 material = ExtResource("30_wrvs0")
 
