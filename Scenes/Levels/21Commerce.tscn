@@ -1,6 +1,6 @@
-[gd_scene load_steps=34 format=3 uid="uid://ctpo8qxqv8237"]
+[gd_scene load_steps=36 format=3 uid="uid://ctpo8qxqv8237"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_m0f82"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
 [ext_resource type="Texture2D" uid="uid://b6v1pinigq11x" path="res://Assets/background/Background_Mutualism.jpg" id="1_xq6nr"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4u7l8"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="2_x54mw"]
@@ -25,6 +25,8 @@
 [ext_resource type="Material" uid="uid://bwft8j6bmg23c" path="res://Assets/Textures/Path_Texture_SQ_Y.tres" id="23_q3n4e"]
 [ext_resource type="PackedScene" uid="uid://cl1nxstijc6yb" path="res://Assets/Models/Props/Commerce/ant.tscn" id="24_1kan2"]
 [ext_resource type="Material" uid="uid://bkkbv3hve2108" path="res://Assets/Textures/Path_Texture_SQ_G.tres" id="24_5sf5f"]
+[ext_resource type="Material" uid="uid://c817uqxht18at" path="res://Assets/Textures/Path_Texture_SQ_R.tres" id="25_vkpgl"]
+[ext_resource type="Material" uid="uid://coeb05bqdb2hb" path="res://Assets/Textures/Path_Texture_SQ_P.tres" id="26_vfs4q"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lye3d"]
 panorama = ExtResource("1_xq6nr")
@@ -527,6 +529,114 @@ path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+
+[node name="Connect10" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
+transform = Transform3D(0.997846, 0, -0.0655947, 0, 1, 0, 0.0655947, 0, 0.997846, -9.96157, 40.2756, -40.2434)
+material_override = ExtResource("25_vkpgl")
+size = Vector3(17.3706, 1.2, 8.3)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect10"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0732419, 0.450001, 0.0500031)
+operation = 2
+size = Vector3(6.5, 0.7, 14.5785)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect2" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect10"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.195276, 0.400001, 3.60001)
+operation = 2
+size = Vector3(2, 0.6, 6.98425)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect15" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
+transform = Transform3D(-0.321621, 0, -0.946868, 0, 1, 0, 0.946868, 0, -0.321621, 68.5384, 0.291793, 43.7566)
+material_override = ExtResource("25_vkpgl")
+size = Vector3(17.3706, 1.2, 8.3)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect15"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0732419, 0.450001, 0.0500031)
+operation = 2
+size = Vector3(6.5, 0.7, 14.5785)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect2" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect15"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.195276, 0.400001, 3.60001)
+operation = 2
+size = Vector3(2, 0.6, 6.98425)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect14" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
+transform = Transform3D(-0.722231, 0, 0.691652, 0, 1, 0, -0.691652, 0, -0.722231, -54.9616, 0.395464, 50.1566)
+material_override = ExtResource("25_vkpgl")
+size = Vector3(17.3706, 1.2, 8.3)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect14"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0732419, 0.450001, 0.0500031)
+operation = 2
+size = Vector3(6.5, 0.7, 14.5785)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect2" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect14"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.195276, 0.400001, 3.60001)
+operation = 2
+size = Vector3(2, 0.6, 6.98425)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect13" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
+transform = Transform3D(0.855011, 0, 0.518609, 0, 1, 0, -0.518609, 0, 0.855011, -6.56156, -39.6244, -22.9434)
+material_override = ExtResource("25_vkpgl")
+size = Vector3(17.3706, 1.2, 8.3)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect13"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0732419, 0.450001, 0.0500031)
+operation = 2
+size = Vector3(6.5, 0.7, 14.5785)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect2" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect13"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.195276, 0.400001, 3.60001)
+operation = 2
+size = Vector3(2, 0.6, 6.98425)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect12" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
+transform = Transform3D(0.759873, 0, -0.650072, 0, 1, 0, 0.650072, 0, 0.759873, 23.9384, -19.6244, -40.6434)
+material_override = ExtResource("25_vkpgl")
+size = Vector3(17.3706, 1.2, 8.3)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect12"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0732419, 0.450001, 0.0500031)
+operation = 2
+size = Vector3(6.5, 0.7, 14.5785)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect2" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect12"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.195276, 0.400001, 3.60001)
+operation = 2
+size = Vector3(2, 0.6, 6.98425)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect11" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
+transform = Transform3D(0.611303, 0, 0.914499, 0, 1.1, 0, -0.914499, 0, 0.611303, -29.4616, 20.2756, -41.9435)
+material_override = ExtResource("25_vkpgl")
+size = Vector3(17.3706, 1.2, 8.3)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect11"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0732419, 0.450001, 0.0500031)
+operation = 2
+size = Vector3(6.5, 0.7, 14.5785)
+material = ExtResource("26_vfs4q")
+
+[node name="Connect2" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect11"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.195276, 0.400001, 3.60001)
+operation = 2
+size = Vector3(2, 0.6, 6.98425)
+material = ExtResource("26_vfs4q")
 
 [node name="Path3D11" type="Path3D" parent="Pathcom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -101)
