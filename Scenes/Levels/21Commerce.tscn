@@ -1,8 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://ctpo8qxqv8237"]
+[gd_scene load_steps=37 format=3 uid="uid://ctpo8qxqv8237"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_m0f82"]
 [ext_resource type="Texture2D" uid="uid://b6v1pinigq11x" path="res://Assets/background/Background_Mutualism.jpg" id="1_xq6nr"]
-[ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4u7l8"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="2_x54mw"]
 [ext_resource type="AudioStream" uid="uid://dwvyxulo220vj" path="res://Assets/audio/Quotes/02b state of corruption.ogg" id="3_d8xns"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="4_sewm0"]
@@ -19,8 +18,10 @@
 [ext_resource type="Script" path="res://Gate_30Nature.gd" id="12_j5736"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="12_klcs6"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="13_8xrdl"]
+[ext_resource type="AudioStream" uid="uid://e1j3ulfph84" path="res://Assets/audio/Quotes/tts/kropotkin 3.ogg" id="13_uahd6"]
 [ext_resource type="Script" path="res://Gate_31Space.gd" id="14_5g5op"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="16_6k60k"]
+[ext_resource type="PackedScene" uid="uid://c1oyfd7rd1jbx" path="res://Scenes/Titles/Gate.tscn" id="19_grql6"]
 [ext_resource type="Material" uid="uid://cr5t2pix6jm64" path="res://Assets/Textures/Path_Texture_Y.tres" id="22_h300x"]
 [ext_resource type="Material" uid="uid://bwft8j6bmg23c" path="res://Assets/Textures/Path_Texture_SQ_Y.tres" id="23_q3n4e"]
 [ext_resource type="PackedScene" uid="uid://cl1nxstijc6yb" path="res://Assets/Models/Props/Commerce/ant.tscn" id="24_1kan2"]
@@ -41,12 +42,9 @@ sky = SubResource("Sky_6uvix")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ra5ch"]
-size = Vector3(7, 5, 6)
-
 [sub_resource type="Curve3D" id="Curve3D_eyk0i"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 6, 13.82, 0, -6, -10, 0, 0, -21.77, 0, 0, 10, 0, 0, 0, 0, 0, -42),
+"points": PackedVector3Array(0, 0, 0, 0, 0, -10, 0, 0, 10, 0, 6, 13.82, 0, -6, -10, 0, 0, -21.77, 0, 0, 10, 0, 0, 0, 0, 0, -42),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
@@ -67,6 +65,13 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve3D" id="Curve3D_7g8lh"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 10.7, 0, 0, 0, 0, 0, -11.125, 0, 0, 0, 0, -6, 26.742),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -77,33 +82,25 @@ transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_m0f82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.12875, -15.9604)
+
+[node name="quote-greed" parent="." instance=ExtResource("12_klcs6")]
+transform = Transform3D(0.202616, 0, 0.979258, 0, 1, 0, -0.979258, 0, 0.202616, -2.2268, 7.93942, -22.5323)
+skeleton = NodePath("")
+audio_stream = ExtResource("3_d8xns")
 
 [node name="0" parent="." instance=ExtResource("2_x54mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 203.742, 5.32494, -17.2846)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.753778, 4.0238, -43.8853)
 text = "How do you make sure people’s basic needs are met?"
 
 [node name="Door1" parent="." instance=ExtResource("9_34j4l")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 192, 1, -50)
+transform = Transform3D(0.651079, 0, 0.75901, 0, 1, 0, -0.75901, 0, 0.651079, -9.38628, 1.65264, -52.7692)
 
-[node name="3" type="Label3D" parent="Door1"]
-transform = Transform3D(1, 0, 3.27826e-07, 0, 1, 0, -3.27826e-07, 0, 1, 0, 6, 1)
-text = "Everyone’s basic needs s
-till need to be met no questions asked. 
-We need these resources to be abundant, 
-inalienable and easily available."
-font_size = 100
-outline_size = 20
+[node name="PillerR" parent="Door1" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Area3D" type="Area3D" parent="Door1/3"]
-script = ExtResource("2_4u7l8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door1/3/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door1/3/Area3D"]
-bus = &"VO"
+[node name="Gate text" parent="Door1" index="6"]
+text = "We need a centralized system to make sure people's basic needs are met."
 
 [node name="Economy_plus" parent="Door1" instance=ExtResource("4_sewm0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023447, 1, 0.0135422)
@@ -114,24 +111,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0188599, 0, 0.0108871)
 [node name="State_Plus" parent="Door1" instance=ExtResource("6_8bl7j")]
 
 [node name="Door2" parent="." instance=ExtResource("9_34j4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 1, -52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -56.8509)
 
-[node name="4" type="Label3D" parent="Door2"]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0, 5.5, 1)
-text = "Social solidarity and mutual aid networks will keep
-people from falling through the cracks."
-font_size = 100
-outline_size = 20
+[node name="PillerR" parent="Door2" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Area3D" type="Area3D" parent="Door2/4"]
-script = ExtResource("2_4u7l8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2/4/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door2/4/Area3D"]
-bus = &"VO"
+[node name="Gate text" parent="Door2" index="6"]
+text = "Social solidarity and mutual aid networks ."
 
 [node name="Resilience_Minus" parent="Door2" instance=ExtResource("7_7ggiu")]
 
@@ -139,24 +125,14 @@ bus = &"VO"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Door3" parent="." instance=ExtResource("9_34j4l")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 212, 1, -48)
+transform = Transform3D(0.496019, 0, -0.868311, 0, 1, 0, 0.868311, 0, 0.496019, 9.6801, 1, -51.7833)
 
-[node name="5" type="Label3D" parent="Door3"]
-transform = Transform3D(1, 0, 5.06639e-07, 0, 1, 0, -5.06639e-07, 0, 1, 0, 5.5, 1)
+[node name="PillerR" parent="Door3" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door3" index="6"]
 text = "A little precarity makes the
 society grow stronger."
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door3/5"]
-script = ExtResource("2_4u7l8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door3/5/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door3/5/Area3D"]
-bus = &"VO"
 
 [node name="autonomy_Minus" parent="Door3" instance=ExtResource("5_3rfy0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0577927, 0, -0.206619)
@@ -171,30 +147,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Economy_minus" parent="Door3" instance=ExtResource("9_vovpb")]
 
+[node name="quote-ant" parent="." instance=ExtResource("12_klcs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.744962, 2.03833, -68.7759)
+audio_stream = ExtResource("13_uahd6")
+
+[node name="quote-ant3" parent="." instance=ExtResource("12_klcs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0104, 1.28049, -60.1829)
+audio_stream = ExtResource("13_uahd6")
+
+[node name="quote-ant2" parent="." instance=ExtResource("12_klcs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6921, 8.1434, -62.6624)
+audio_stream = ExtResource("13_uahd6")
+
 [node name="4" parent="." instance=ExtResource("2_x54mw")]
-transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 203, 4, -106)
+transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, -0.226504, 6.98721, -92.3337)
+skeleton = NodePath("")
+text = "What if some people start hoarding resources?"
+
+[node name="5" parent="." instance=ExtResource("2_x54mw")]
+transform = Transform3D(0.851141, 0, -0.524937, 0, 1, 0, 0.524937, 0, 0.851141, 21.7446, -14.3124, -84.6317)
+skeleton = NodePath("")
+text = "What if some people start hoarding resources?"
+
+[node name="4b" parent="." instance=ExtResource("2_x54mw")]
+transform = Transform3D(0.829038, 0.234555, 0.507623, 0, 0.907777, -0.419452, -0.559193, 0.347742, 0.752582, -21.9191, 20.3088, -81.42)
 skeleton = NodePath("")
 text = "What if some people start hoarding resources?"
 
 [node name="Door4" parent="." instance=ExtResource("9_34j4l")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 195, 1, -156)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -5.31649, 2.94353, -104.363)
 
-[node name="9" type="Label3D" parent="Door4"]
-transform = Transform3D(1, 0, -4.76837e-07, 0, 1, 0, 4.76837e-07, 0, 1, 0, 5.5, 0.5)
+[node name="PillerR" parent="Door4" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door4" index="6"]
 text = "If everyone’s basic needs are met, hoarding other 
 resources doesn’t bother me."
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door4/9"]
-script = ExtResource("2_4u7l8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door4/9/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.499977, -2, 1.634)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door4/9/Area3D"]
-bus = &"VO"
 
 [node name="Economy_minus" parent="Door4" instance=ExtResource("9_vovpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0518723, 0, -0.029953)
@@ -206,43 +194,86 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00149536, 1, -0.00259399)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214996, 0, -0.0372467)
 
 [node name="Door5" parent="." instance=ExtResource("9_34j4l")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 212, 1, -158)
+transform = Transform3D(0.6619, 0, -0.749591, 0, 1, 0, 0.749591, 0, 0.6619, 4.1274, 1.80929, -103.142)
 
-[node name="10" type="Label3D" parent="Door5"]
-transform = Transform3D(1, 0, 5.06639e-07, 0, 1, 0, -5.06639e-07, 0, 1, 0, 5.5, 0.5)
+[node name="PillerR" parent="Door5" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door5" index="6"]
 text = "There need to be laws to prevent that."
-font_size = 100
-outline_size = 20
-
-[node name="Area3D" type="Area3D" parent="Door5/10"]
-script = ExtResource("2_4u7l8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door5/10/Area3D"]
-transform = Transform3D(1, 0, 8.2423e-13, 0, 1, 0, -8.2423e-13, 0, 1, 4.76837e-07, -2, 2.5)
-shape = SubResource("BoxShape3D_ra5ch")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Door5/10/Area3D"]
-bus = &"VO"
 
 [node name="Economy_plus" parent="Door5" instance=ExtResource("4_sewm0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="State_Plus" parent="Door5" instance=ExtResource("6_8bl7j")]
 
-[node name="quote-greed" parent="." instance=ExtResource("12_klcs6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 198, 6, -214)
-skeleton = NodePath("")
-audio_stream = ExtResource("3_d8xns")
+[node name="Door4" parent="Door5" instance=ExtResource("9_34j4l")]
+transform = Transform3D(0.310958, 0, 0.950423, 0, 1, 0, -0.950423, 0, 0.310958, 19.4711, -20.6596, -8.73332)
+
+[node name="PillerR" parent="Door5/Door4" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door5/Door4" index="6"]
+text = "If everyone’s basic needs are met, hoarding other 
+resources doesn’t bother me."
+
+[node name="Economy_minus" parent="Door5/Door4" instance=ExtResource("9_vovpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0518723, 0, -0.029953)
+
+[node name="Economy_minus2" parent="Door5/Door4" instance=ExtResource("9_vovpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00149536, 1, -0.00259399)
+
+[node name="autonomy_Minus" parent="Door5/Door4" instance=ExtResource("5_3rfy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214996, 0, -0.0372467)
+
+[node name="Door5" parent="Door5" instance=ExtResource("9_34j4l")]
+transform = Transform3D(0.734559, 0, -0.678545, 0, 1, 0, 0.678545, 0, 0.734559, 29.4613, -20.0791, -9.55444)
+
+[node name="PillerR" parent="Door5/Door5" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door5/Door5" index="6"]
+text = "There need to be laws to prevent that."
+
+[node name="Economy_plus" parent="Door5/Door5" instance=ExtResource("4_sewm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="State_Plus" parent="Door5/Door5" instance=ExtResource("6_8bl7j")]
 
 [node name="6" parent="." instance=ExtResource("2_x54mw")]
-transform = Transform3D(1, 0, 1.78814e-07, 0, 1, 0, -1.78814e-07, 0, 1, 202, 2, -231)
+transform = Transform3D(0.92647, 0, -0.37637, 0, 1, 0, 0.37637, 0, 0.92647, 15.9382, -12.5213, -132.115)
 skeleton = NodePath("")
-text = "Should humanity focus on living colse to Earth and our relationship with nature, or go into space?"
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="6c" parent="." instance=ExtResource("2_x54mw")]
+transform = Transform3D(0.934826, 0.214697, 0.282853, 0, 0.79653, -0.604599, -0.355107, 0.565195, 0.744617, -18.1382, 19.593, -129.521)
+skeleton = NodePath("")
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="6c2" parent="." instance=ExtResource("2_x54mw")]
+transform = Transform3D(0.86832, -0.299884, -0.395082, -1.0583e-08, 0.79653, -0.604599, 0.496004, 0.524986, 0.691643, -11.8215, 43.116, -128.973)
+skeleton = NodePath("")
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="6c3" parent="." instance=ExtResource("2_x54mw")]
+transform = Transform3D(-0.878817, -0.0828577, 0.46991, 0, 0.984808, 0.173648, -0.477159, 0.152605, -0.865466, -52.5222, 8.03764, -60.4363)
+skeleton = NodePath("")
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="6a" parent="." instance=ExtResource("2_x54mw")]
+transform = Transform3D(-0.772323, 0, -0.63523, 0, 1, 0, 0.63523, 0, -0.772323, 53.7595, 0.726248, -62.804)
+skeleton = NodePath("")
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+
+[node name="6b" parent="." instance=ExtResource("2_x54mw")]
+transform = Transform3D(0.513646, 0, 0.858002, 0, 1, 0, -0.858002, 0, 0.513646, -1.24157, -33.0164, -113.661)
+skeleton = NodePath("")
+text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 202, 1, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 7.58304, -14.2139)
 inner_radius = 3.0
 outer_radius = 4.0
 
@@ -344,30 +375,26 @@ size = Vector3(10, 1, 7)
 material = ExtResource("11_r5o8g")
 
 [node name="Economy_minus" parent="." instance=ExtResource("9_vovpb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.98898, -15.9975)
 
 [node name="Economy_minus2" parent="." instance=ExtResource("9_vovpb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 2, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0343096, 6.86369, -16.0496)
 
 [node name="Gate1" parent="." instance=ExtResource("11_e48xt")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 196, 0, -246)
+transform = Transform3D(0.9728, 0, 0.231646, 0, 1, 0, -0.231646, 0, 0.9728, 20, -19.37, -145.019)
 script = ExtResource("12_j5736")
 
-[node name="12" type="Label3D" parent="Gate1"]
+[node name="Gate text" parent="Gate1" instance=ExtResource("19_grql6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "NATURE"
-font_size = 100
-outline_size = 20
+text = "nature"
 
 [node name="Gate4" parent="." instance=ExtResource("13_8xrdl")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 208, 0, -246)
+transform = Transform3D(0.163136, 0, -0.986603, 0, 1, 0, 0.986603, 0, 0.163136, 25.9759, -19.3781, -138.98)
 script = ExtResource("14_5g5op")
 
-[node name="12" type="Label3D" parent="Gate4"]
+[node name="Gate text" parent="Gate4" instance=ExtResource("19_grql6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-text = "SPACE"
-font_size = 100
-outline_size = 20
+text = "space"
 
 [node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, 0)
@@ -381,21 +408,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 0)
 [node name="Path3D" type="Path3D" parent="Pathcom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 2)
 curve = SubResource("Curve3D_eyk0i")
-
-[node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D"]
-material_override = ExtResource("22_h300x")
-use_collision = true
-polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_local = true
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
 
 [node name="Triangle" type="CSGPolygon3D" parent="Pathcom"]
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 63.4333, 0.4, -97.7333)
@@ -421,6 +433,7 @@ curve = SubResource("Curve3D_6xw6q")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Pathcom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -46.9)
+material_override = ExtResource("23_q3n4e")
 use_collision = true
 radius = 8.0
 height = 1.8
@@ -515,8 +528,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -101)
 curve = SubResource("Curve3D_kw6yn")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D10"]
-transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 4.5, 0, 1.8)
-material_override = ExtResource("22_h300x")
+transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 4.5, 0.772755, -0.603928)
+material_override = ExtResource("23_q3n4e")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -531,7 +544,7 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="Connect10" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
-transform = Transform3D(0.997846, 0, -0.0655947, 0, 1, 0, 0.0655947, 0, 0.997846, -9.96157, 40.2756, -40.2434)
+transform = Transform3D(0.997846, 0, -0.0655947, 0, 1, 0, 0.0655947, 0, 0.997846, -9.96157, 39.4828, -37.444)
 material_override = ExtResource("25_vkpgl")
 size = Vector3(17.3706, 1.2, 8.3)
 material = ExtResource("26_vfs4q")
@@ -548,8 +561,24 @@ operation = 2
 size = Vector3(2, 0.6, 6.98425)
 material = ExtResource("26_vfs4q")
 
+[node name="Gate1" parent="Pathcom/Path3D10/pathgon/Connect10" instance=ExtResource("11_e48xt")]
+transform = Transform3D(0.532448, 0, 0.846463, 0, 1, 0, -0.846463, 0, 0.532448, -4.42476, -0.292294, -1.29182)
+script = ExtResource("12_j5736")
+
+[node name="Gate text" parent="Pathcom/Path3D10/pathgon/Connect10/Gate1" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "nature"
+
+[node name="Gate4" parent="Pathcom/Path3D10/pathgon/Connect10" instance=ExtResource("13_8xrdl")]
+transform = Transform3D(0.807207, 0, -0.590268, 0, 1, 0, 0.590268, 0, 0.807207, 4.06998, -0.300434, -1.16367)
+script = ExtResource("14_5g5op")
+
+[node name="Gate text" parent="Pathcom/Path3D10/pathgon/Connect10/Gate4" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "space"
+
 [node name="Connect15" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
-transform = Transform3D(-0.321621, 0, -0.946868, 0, 1, 0, 0.946868, 0, -0.321621, 68.5384, 0.291793, 43.7566)
+transform = Transform3D(-0.321621, 0, -0.946868, 0, 1, 0, 0.946868, 0, -0.321621, 67.7668, -0.48886, 45.9408)
 material_override = ExtResource("25_vkpgl")
 size = Vector3(17.3706, 1.2, 8.3)
 material = ExtResource("26_vfs4q")
@@ -585,7 +614,7 @@ size = Vector3(2, 0.6, 6.98425)
 material = ExtResource("26_vfs4q")
 
 [node name="Connect13" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
-transform = Transform3D(0.855011, 0, 0.518609, 0, 1, 0, -0.518609, 0, 0.855011, -6.56156, -39.6244, -22.9434)
+transform = Transform3D(0.855011, 0, 0.518609, 0, 1, 0, -0.518609, 0, 0.855011, -5.94327, -40.4436, -19.9288)
 material_override = ExtResource("25_vkpgl")
 size = Vector3(17.3706, 1.2, 8.3)
 material = ExtResource("26_vfs4q")
@@ -601,6 +630,22 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.1952
 operation = 2
 size = Vector3(2, 0.6, 6.98425)
 material = ExtResource("26_vfs4q")
+
+[node name="Gate1" parent="Pathcom/Path3D10/pathgon/Connect13" instance=ExtResource("11_e48xt")]
+transform = Transform3D(0.476407, 0, 0.879225, 0, 1, 0, -0.879225, 0, 0.476407, -4.74329, -0.251675, -0.765427)
+script = ExtResource("12_j5736")
+
+[node name="Gate text" parent="Pathcom/Path3D10/pathgon/Connect13/Gate1" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "nature"
+
+[node name="Gate4" parent="Pathcom/Path3D10/pathgon/Connect13" instance=ExtResource("13_8xrdl")]
+transform = Transform3D(0.843804, 0, -0.536652, 0, 1, 0, 0.536652, 0, 0.843804, 3.74188, -0.259815, -1.18868)
+script = ExtResource("14_5g5op")
+
+[node name="Gate text" parent="Pathcom/Path3D10/pathgon/Connect13/Gate4" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "space"
 
 [node name="Connect12" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon"]
 transform = Transform3D(0.759873, 0, -0.650072, 0, 1, 0, 0.650072, 0, 0.759873, 23.9384, -19.6244, -40.6434)
@@ -632,6 +677,22 @@ operation = 2
 size = Vector3(6.5, 0.7, 14.5785)
 material = ExtResource("26_vfs4q")
 
+[node name="Gate1" parent="Pathcom/Path3D10/pathgon/Connect11/Connect" instance=ExtResource("11_e48xt")]
+transform = Transform3D(-0.836602, 0, 0.547811, 0, 1, 0, -0.547811, 0, -0.836602, 0.191597, -0.599672, 3.93525)
+script = ExtResource("12_j5736")
+
+[node name="Gate text" parent="Pathcom/Path3D10/pathgon/Connect11/Connect/Gate1" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "nature"
+
+[node name="Gate4" parent="Pathcom/Path3D10/pathgon/Connect11/Connect" instance=ExtResource("13_8xrdl")]
+transform = Transform3D(0.604905, 0, 0.796298, 0, 1, 0, -0.796298, 0, 0.604905, 0.474792, -0.607809, -4.55575)
+script = ExtResource("14_5g5op")
+
+[node name="Gate text" parent="Pathcom/Path3D10/pathgon/Connect11/Connect/Gate4" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "space"
+
 [node name="Connect2" type="CSGBox3D" parent="Pathcom/Path3D10/pathgon/Connect11"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.195276, 0.400001, 3.60001)
 operation = 2
@@ -643,7 +704,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -101)
 curve = SubResource("Curve3D_8asl8")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0.657838, -0.403931)
 material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
@@ -718,6 +779,38 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
+[node name="Gate1" parent="Pathcom/Path3D6/pathgon" instance=ExtResource("11_e48xt")]
+transform = Transform3D(-0.334136, 0, -0.942526, 0, 1, 0, 0.942526, 0, -0.334136, 28.929, -19.059, 40.0841)
+script = ExtResource("12_j5736")
+
+[node name="Gate text" parent="Pathcom/Path3D6/pathgon/Gate1" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "nature"
+
+[node name="Gate4" parent="Pathcom/Path3D6/pathgon" instance=ExtResource("13_8xrdl")]
+transform = Transform3D(-0.916887, 0, 0.39915, 0, 1, 0, -0.39915, 0, -0.916887, 20.6123, -19.0671, 41.8195)
+script = ExtResource("14_5g5op")
+
+[node name="Gate text" parent="Pathcom/Path3D6/pathgon/Gate4" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "space"
+
+[node name="Gate1" parent="Pathcom/Path3D6/pathgon/Gate4" instance=ExtResource("11_e48xt")]
+transform = Transform3D(-0.815136, 0, -0.579266, 0, 1, 0, 0.579266, 0, -0.815136, -9.3645, -0.151788, 126.779)
+script = ExtResource("12_j5736")
+
+[node name="Gate text" parent="Pathcom/Path3D6/pathgon/Gate4/Gate1" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "nature"
+
+[node name="Gate4" parent="Pathcom/Path3D6/pathgon/Gate4" instance=ExtResource("13_8xrdl")]
+transform = Transform3D(-0.520919, 0, 0.853604, 0, 1, 0, -0.853604, 0, -0.520919, -17.1677, -0.159928, 123.419)
+script = ExtResource("14_5g5op")
+
+[node name="Gate text" parent="Pathcom/Path3D6/pathgon/Gate4/Gate4" instance=ExtResource("19_grql6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "space"
+
 [node name="Path3D7" type="Path3D" parent="Pathcom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 21, -97)
 curve = SubResource("Curve3D_8asl8")
@@ -741,8 +834,65 @@ path_joined = false
 [node name="ant" parent="." instance=ExtResource("24_1kan2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, -32)
 
-[connection signal="body_entered" from="Door1/3/Area3D" to="Door1/3/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door2/4/Area3D" to="Door2/4/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door3/5/Area3D" to="Door3/5/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door4/9/Area3D" to="Door4/9/Area3D" method="_on_body_entered"]
-[connection signal="body_entered" from="Door5/10/Area3D" to="Door5/10/Area3D" method="_on_body_entered"]
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(-0.999654, 0, -0.026299, 0, 1, 0, 0.026299, 0, -0.999654, 3.16875, -1.5, 0.268762)
+curve = SubResource("Curve3D_7g8lh")
+
+[node name="pathgon" type="CSGPolygon3D" parent="Path3D"]
+transform = Transform3D(1, -1.13133e-08, 1.86265e-09, 1.13133e-08, 1, 4.47035e-08, -1.86265e-09, -4.47035e-08, 1, 1.88642, 6.86499, 14.0478)
+material_override = ExtResource("22_h300x")
+use_collision = true
+polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.9, 1.1)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_local = true
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Door6" parent="." instance=ExtResource("9_34j4l")]
+transform = Transform3D(-0.509958, 0, 0.860199, 0, 1, 0, -0.860199, 0, -0.509958, -35.7451, 21.6391, -88.7829)
+
+[node name="PillerR" parent="Door6" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door6" index="6"]
+text = "If everyone’s basic needs are met, hoarding other 
+resources doesn’t bother me."
+
+[node name="Economy_minus" parent="Door6" instance=ExtResource("9_vovpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0518723, 0, -0.029953)
+
+[node name="Economy_minus2" parent="Door6" instance=ExtResource("9_vovpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00149536, 1, -0.00259399)
+
+[node name="autonomy_Minus" parent="Door6" instance=ExtResource("5_3rfy0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214996, 0, -0.0372467)
+
+[node name="Door7" parent="." instance=ExtResource("9_34j4l")]
+transform = Transform3D(0.997645, 0, 0.0685897, 0, 1, 0, -0.0685897, 0, 0.997645, -32.5191, 21.8913, -97.075)
+
+[node name="PillerR" parent="Door7" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door7" index="6"]
+text = "There need to be laws to prevent that."
+
+[node name="Economy_plus" parent="Door7" instance=ExtResource("4_sewm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="State_Plus" parent="Door7" instance=ExtResource("6_8bl7j")]
+
+[editable path="Door1"]
+[editable path="Door2"]
+[editable path="Door3"]
+[editable path="Door4"]
+[editable path="Door5"]
+[editable path="Door5/Door4"]
+[editable path="Door5/Door5"]
+[editable path="Door6"]
+[editable path="Door7"]

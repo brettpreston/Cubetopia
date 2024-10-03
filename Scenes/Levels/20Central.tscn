@@ -59,6 +59,51 @@ audio_stream = ExtResource("25_srl31")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -19.6913)
 text = "Who makes decisions about the resources? "
 
+[node name="Door1" parent="." instance=ExtResource("9_qt30p")]
+transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -7, 1, -23)
+
+[node name="PillerR" parent="Door1" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="CSGTorus3D" parent="Door1" index="4"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.00257492, 1, 0.021431)
+
+[node name="Gate text" parent="Door1" index="6"]
+text = "direct democracy"
+
+[node name="Resilience_Minus" parent="Door1" instance=ExtResource("4_ensoe")]
+transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 0, 0)
+
+[node name="Door2" parent="." instance=ExtResource("9_qt30p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30.4)
+
+[node name="PillerR" parent="Door2" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door2" index="6"]
+text = "a group of qualified people"
+
+[node name="State_Plus" parent="Door2" instance=ExtResource("6_hljxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0.753564, 0)
+
+[node name="autonomy_Minus2" parent="Door2" instance=ExtResource("5_u1m6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0.940825, 1.52588e-05)
+
+[node name="Door3" parent="." instance=ExtResource("9_qt30p")]
+transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 7, 1, -23)
+
+[node name="PillerR" parent="Door3" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
+[node name="Gate text" parent="Door3" index="6"]
+text = "a supercomputer"
+
+[node name="autonomy_Minus" parent="Door3" instance=ExtResource("5_u1m6d")]
+
+[node name="Tech_plus" parent="Door3" instance=ExtResource("11_ssr7v")]
+
+[node name="State_Plus" parent="Door3" instance=ExtResource("6_hljxc")]
+
 [node name="quote-info" parent="." instance=ExtResource("2_68nmx")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 3, -34.1199)
 skeleton = NodePath("")
@@ -73,42 +118,6 @@ audio_stream = ExtResource("5_7wj32")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0418, 3, -28.4113)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
-
-[node name="Door1" parent="." instance=ExtResource("9_qt30p")]
-transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -7, 1, -23)
-
-[node name="CSGTorus3D" parent="Door1" index="4"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.00257492, 1, 0.021431)
-
-[node name="Gate text" parent="Door1" index="6"]
-text = "direct democracy"
-
-[node name="Resilience_Minus" parent="Door1" instance=ExtResource("4_ensoe")]
-transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 0, 0)
-
-[node name="Door2" parent="." instance=ExtResource("9_qt30p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30.4)
-
-[node name="Gate text" parent="Door2" index="6"]
-text = "a group of qualified people"
-
-[node name="State_Plus" parent="Door2" instance=ExtResource("6_hljxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0.753564, 0)
-
-[node name="autonomy_Minus2" parent="Door2" instance=ExtResource("5_u1m6d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0.940825, 1.52588e-05)
-
-[node name="Door3" parent="." instance=ExtResource("9_qt30p")]
-transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 7, 1, -23)
-
-[node name="Gate text" parent="Door3" index="6"]
-text = "a supercomputer"
-
-[node name="autonomy_Minus" parent="Door3" instance=ExtResource("5_u1m6d")]
-
-[node name="Tech_plus" parent="Door3" instance=ExtResource("11_ssr7v")]
-
-[node name="State_Plus" parent="Door3" instance=ExtResource("6_hljxc")]
 
 [node name="4" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25728, 4.75162, -59.3619)
@@ -137,6 +146,9 @@ text = "She doesn't want to give it up. This new inequality is threatening to de
 [node name="Door4" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -6, 1, -82)
 
+[node name="PillerR" parent="Door4" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="Gate text" parent="Door4" index="6"]
 text = "She will have to share the knowledge. It's the law."
 
@@ -146,6 +158,9 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door5" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 6, 1, -82)
+
+[node name="PillerR" parent="Door5" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door5" index="6"]
 text = "We will task others with reverse-engineering the new technology."
@@ -157,6 +172,9 @@ text = "We will task others with reverse-engineering the new technology."
 [node name="Door6" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, -1, -59, 1, -17)
 
+[node name="PillerR" parent="Door6" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="Gate text" parent="Door6" index="6"]
 text = "She will have to share the knowledge. It's the law."
 
@@ -166,6 +184,9 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door7" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, -2.54312e-07, 0, 1, 0, 2.54312e-07, 0, 1, -59, 1, -29)
+
+[node name="PillerR" parent="Door7" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door7" index="6"]
 text = "We will task others with reverse-engineering the new technology."
@@ -177,6 +198,9 @@ text = "We will task others with reverse-engineering the new technology."
 [node name="Door8" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, -1, 58, 1, -17)
 
+[node name="PillerR" parent="Door8" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="Gate text" parent="Door8" index="6"]
 text = "She will have to share the knowledge. It's the law."
 
@@ -186,6 +210,9 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door9" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, -2.54312e-07, 0, 1, 0, 2.54312e-07, 0, 1, 58, 1, -29)
+
+[node name="PillerR" parent="Door9" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door9" index="6"]
 text = "We will task others with reverse-engineering the new technology."
