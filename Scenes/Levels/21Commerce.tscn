@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ctpo8qxqv8237"]
+[gd_scene load_steps=35 format=3 uid="uid://ctpo8qxqv8237"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
 [ext_resource type="Texture2D" uid="uid://b6v1pinigq11x" path="res://Assets/background/Background_Mutualism.jpg" id="1_xq6nr"]
@@ -13,8 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cy7dnrux8p15g" path="res://Scenes/mapTriggers/mapEconomy_minus.tscn" id="9_vovpb"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="10_8giv6"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="11_e48xt"]
-[ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="11_r5o8g"]
-[ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="12_enjw7"]
 [ext_resource type="Script" path="res://Gate_30Nature.gd" id="12_j5736"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="12_klcs6"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="13_8xrdl"]
@@ -78,7 +76,7 @@ point_count = 2
 environment = SubResource("Environment_ngaxy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 202, 0, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 26, 0, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_m0f82")]
@@ -278,96 +276,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
 [node name="Gate3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 
-[node name="tree_wire_teal" parent="Gate3" instance=ExtResource("12_enjw7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211, 0, -130)
-
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, -17.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, -70)
-size = Vector3(7, 1, 57)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, -124)
-size = Vector3(7, 1, 45)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 215, 0, -53.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 190, 0, -53.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 190, 0, -81.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 215, 0, -81.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, -226.5)
-size = Vector3(7, 1, 30)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, -245.5)
-size = Vector3(25, 1, 10)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 191, 0, -191.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 215, 0, -191.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.5, 0, -38)
-size = Vector3(10, 1, 7)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 215, 0, -163.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 191, 0, -163.5)
-size = Vector3(7, 1, 36)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.5, 0, -148)
-size = Vector3(10, 1, 7)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.5, 0, -208)
-size = Vector3(10, 1, 7)
-material = ExtResource("11_r5o8g")
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, -100)
-size = Vector3(10, 1, 7)
-material = ExtResource("11_r5o8g")
 
 [node name="Economy_minus" parent="." instance=ExtResource("9_vovpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6.98898, -15.9975)
@@ -392,7 +302,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 text = "space"
 
 [node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 7, -14)
 stream = ExtResource("16_6k60k")
 autoplay = true
 bus = &"SFX"
