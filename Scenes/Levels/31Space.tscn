@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/background/Background_Futuristic.jpg" id="1_0j1uw"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_tbdsx"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_ffvvd"]
 [ext_resource type="AudioStream" uid="uid://bce81v6qkxwcr" path="res://Assets/audio/Quotes/02b distance.ogg" id="4_gv58k"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="10_2pi1e"]
 [ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="11_11it7"]
 [ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="12_mswn4"]
-[ext_resource type="PackedScene" uid="uid://d2jumnpofrwoi" path="res://Assets/Models/Props/Space station 1/space_station.glb" id="14_orji6"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="15_62hdw"]
 [ext_resource type="Script" path="res://Gate_40Final.gd" id="16_ibjn1"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="17_428ou"]
@@ -28,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dir1nnlflaqs7" path="res://Assets/Models/Props/Space/EV_planet.glb" id="27_7jso4"]
 [ext_resource type="Material" uid="uid://bb4rpedebjtkf" path="res://Assets/Textures/Path_Texture_B.tres" id="28_cupe4"]
 [ext_resource type="Script" path="res://Planet_rotate.gd" id="28_fpmxv"]
+[ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="29_w6o4f"]
 [ext_resource type="AudioStream" uid="uid://6wcsprryqp" path="res://Assets/audio/music/ambi/ambi_space2.ogg" id="30_0eflw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wkyxy"]
@@ -109,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.664051, 0.0339952, -21.7988
 text = "Who is in charge of repairing them?"
 
 [node name="Door1" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(0.262172, 0, 0.965021, 0, 1, 0, -0.965021, 0, 0.262172, -4.84754, -5.71221, -26.0445)
+transform = Transform3D(0.00347289, 0, 0.999994, 0, 1, 0, -0.999994, 0, 0.00347289, -6.64754, -5.71221, -26.4445)
 
 [node name="PillerR" parent="Door1" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
@@ -125,7 +125,7 @@ transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34
 transform = Transform3D(0.866086, -0.497686, -0.046955, 0.499895, 0.862364, 0.0801989, 0.00057815, -0.0929312, 0.995673, -0.34848, 0.5, -0.026516)
 
 [node name="Door2" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(0.202924, 0, -0.979194, 0, 1, 0, 0.979194, 0, 0.202924, 4.17535, -5.712, -26.2336)
+transform = Transform3D(-0.0574245, 0, -0.998349, 0, 1, 0, 0.998349, 0, -0.0574245, 6.17535, -5.712, -26.8336)
 
 [node name="PillerR" parent="Door2" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
@@ -173,7 +173,7 @@ transform = Transform3D(-0.254011, 0, -0.967201, 0, 1, 0, 0.967201, 0, -0.254011
 text = "How will you ensure everyone's safety?"
 
 [node name="Door3" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -34.3852, 0.48536, -1.92816)
+transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -35.3852, 1.08536, -1.92816)
 
 [node name="PillerR" parent="Door3" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
@@ -189,7 +189,7 @@ transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34
 transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34957e-14, 1, 0.0472336, 0.504887, -0.00738525)
 
 [node name="Door5" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(0.905902, 0, -0.423488, 0, 1, 0, 0.423488, 0, 0.905902, 34.385, 0.485, -1.928)
+transform = Transform3D(1, 0, -0.000959754, 0, 1, 0, 0.000959754, 0, 1, 34.685, 0.485, -1.928)
 
 [node name="PillerR" parent="Door5" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
@@ -205,7 +205,7 @@ transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34
 transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34957e-14, 1, 0.0472336, 0.504887, -0.00738525)
 
 [node name="Door4" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(-0.868935, -2.8442e-14, 0.494928, 2.01348e-15, 1, 7.10543e-15, -0.494928, -3.38647e-15, -0.868935, -35, -0.378829, 8.603)
+transform = Transform3D(-0.999984, -2.63247e-14, -0.00584728, 2.01348e-15, 1, 7.10543e-15, 0.00584728, 1.12882e-14, -0.999984, -35.3, -0.178829, 10.603)
 
 [node name="PillerR" parent="Door4" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
@@ -221,7 +221,7 @@ transform = Transform3D(0.999999, -2.75631e-14, -2.38419e-07, -1.53982e-15, 1, -
 transform = Transform3D(0.999999, -2.75631e-14, -2.38419e-07, -1.53982e-15, 1, -7.10542e-15, 2.38419e-07, 4.46298e-14, 0.999999, 0, 0.66404, 0)
 
 [node name="Door6" parent="." instance=ExtResource("21_7f4k8")]
-transform = Transform3D(-0.94249, -2.11512e-14, -0.334235, 2.01348e-15, 1, 7.10543e-15, 0.334235, 1.93143e-14, -0.94249, 35, -0.379, 8.603)
+transform = Transform3D(-0.99544, -2.73321e-14, 0.0953937, 2.01348e-15, 1, 7.10543e-15, -0.0953937, 8.56581e-15, -0.99544, 35, -0.379, 10.903)
 
 [node name="PillerR" parent="Door6" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
@@ -257,11 +257,6 @@ script = ExtResource("16_ibjn1")
 [node name="Gate2" type="CSGCombiner3D" parent="Gate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 2.86277)
-inner_radius = 3.0
-outer_radius = 4.0
-
 [node name="Gate3" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -46)
 
@@ -273,10 +268,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1.09518)
 
 [node name="Tech_plus2" parent="." instance=ExtResource("4_mjl73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 1.07158)
-
-[node name="Space Station" parent="." instance=ExtResource("14_orji6")]
-transform = Transform3D(-96.5926, 0, 25.8819, 0, 100, 0, -25.8819, 0, -96.5926, 300, 0, -173)
-visible = false
 
 [node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 115)
@@ -306,15 +297,15 @@ size = Vector3(7.6, 0.433887, 8)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.46875, -0.700001, 35.7687)
+transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.31256, -0.700001, 35.7687)
 material_override = SubResource("StandardMaterial3D_ja0qe")
-size = Vector3(7.6, 0.4, 8)
+size = Vector3(7.88762, 0.4, 8)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.51874, -0.800001, -35.2312)
+transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.36874, -0.800001, -35.2312)
 material_override = SubResource("StandardMaterial3D_ja0qe")
-size = Vector3(7.7, 0.4, 8)
+size = Vector3(8, 0.4, 8)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="Pathbig" type="Path3D" parent="LevelSwirl"]
@@ -342,7 +333,7 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3.16874,
 curve = SubResource("Curve3D_0sirr")
 
 [node name="pathgon2" type="CSGPolygon3D" parent="LevelSwirl/Pathbig2"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, -2.60001)
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, -9.53674e-07, -0.1, -2.60001)
 material_override = ExtResource("28_cupe4")
 use_collision = true
 polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.9, 1.1)
@@ -450,6 +441,9 @@ path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+
+[node name="Portalex" parent="." instance=ExtResource("29_w6o4f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.743606, 3)
 
 [editable path="quote-stars"]
 [editable path="Door1"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=3 uid="uid://ba56j2jb46od5"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_0oc7h"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_0oc7h"]
 [ext_resource type="Texture2D" uid="uid://cyy76lhqi4rnw" path="res://Assets/background/Background_Global.jpg" id="2_2y03g"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_8wbg3"]
 [ext_resource type="AudioStream" uid="uid://c80m0ra5bsdw4" path="res://Assets/audio/Quotes/1b millions.ogg" id="4_bvut0"]
@@ -79,7 +79,7 @@ point_count = 2
 environment = SubResource("Environment_ngaxy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 198, 0, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 19, 0, 0)
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_0oc7h")]

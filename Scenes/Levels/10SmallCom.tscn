@@ -1,6 +1,6 @@
-[gd_scene load_steps=52 format=4 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=50 format=4 uid="uid://3yfweq66ct17"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_8on32"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_8on32"]
 [ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
 [ext_resource type="Texture2D" uid="uid://d36nsphyipmlg" path="res://Assets/background/Background_Self-Sufficient2_s.jpg" id="2_4dctu"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_lcf0d"]
@@ -16,14 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="8_uhbgx"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="9_8qc3j"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="9_vha7y"]
-[ext_resource type="AudioStream" uid="uid://dkdgh15xrb3wm" path="res://Assets/audio/VO/1a_03a-robo.ogg" id="10_718kr"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="10_e33e2"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="11_rwaja"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="13_cauyu"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="13_ks1o3"]
-[ext_resource type="PackedScene" uid="uid://b2kxkqmgi0d1y" path="res://audiotrigger.tscn" id="13_xtfrg"]
 [ext_resource type="Script" path="res://Gate_20Central.gd" id="14_mx81y"]
-[ext_resource type="AudioStream" uid="uid://51qd5ird44ad" path="res://Assets/audio/VO/1a_03b-robo.ogg" id="14_wtq5j"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="15_wtvhc"]
 [ext_resource type="Script" path="res://Gate_21Com.gd" id="16_1dixi"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="17_mtmi3"]
@@ -34,6 +31,7 @@
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ffxqr"]
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_abgwe"]
 [ext_resource type="Texture2D" uid="uid://db6pbgoqtv0kb" path="res://Assets/Textures/Node_Path_W.png" id="31_phtkk"]
+[ext_resource type="Texture2D" uid="uid://dwgkb63ktkjr" path="res://Assets/Models/Props/Community/house1.png" id="35_xxdxt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_43mw4"]
 panorama = ExtResource("2_4dctu")
@@ -258,14 +256,6 @@ Even if that means some people have to stay in unhealthy communities."
 [node name="State_Plus" parent="Door1" instance=ExtResource("5_q1yeh")]
 
 [node name="autonomy_Minus" parent="Door1" instance=ExtResource("9_8qc3j")]
-
-[node name="Audio" parent="Door1" instance=ExtResource("13_xtfrg")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -1, 12)
-audio_stream = ExtResource("14_wtq5j")
-
-[node name="Audio2" parent="Door1" instance=ExtResource("13_xtfrg")]
-transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 0, -1, 6)
-audio_stream = ExtResource("10_718kr")
 
 [node name="Door2" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 10, 2, -80)
@@ -772,6 +762,11 @@ material_override = ExtResource("25_ffxqr")
 use_collision = true
 polygon = PackedVector2Array(3, 1.4, 3.9, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -2.3, 1.5)
 depth = 0.5
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 115, -298)
+billboard = 1
+texture = ExtResource("35_xxdxt")
 
 [editable path="quote-ursula"]
 [editable path="Door1"]
