@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cr5t2pix6jm64"]
+
+[ext_resource type="Texture2D" uid="uid://4trnx2vyfuhi" path="res://Assets/Textures/Node_Path_Y_intense.png" id="1_4ovin"]
+[ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="1_oej2g"]
+
+[resource]
+albedo_color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+albedo_texture = ExtResource("1_4ovin")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("1_4ovin")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_texture = ExtResource("1_oej2g")
+heightmap_flip_texture = true
+uv1_scale = Vector3(0.5, 56, 1)
+texture_filter = 4
