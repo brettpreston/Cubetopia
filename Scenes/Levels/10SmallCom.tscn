@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_lcf0d"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="3_mgfei"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_1stx4"]
-[ext_resource type="AudioStream" uid="uid://demqmf8xjqyop" path="res://Assets/audio/Quotes/tts/ursula.ogg" id="5_hxa2y"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_q1yeh"]
 [ext_resource type="AudioStream" uid="uid://cks0tnoovjwbn" path="res://Assets/audio/Quotes/01a You are not alone.ogg" id="5_v6hbj"]
+[ext_resource type="AudioStream" uid="uid://cgbr2vhtbld0n" path="res://Assets/audio/Quotes/E/Wall.ogg" id="6_gi2m4"]
 [ext_resource type="AudioStream" uid="uid://ka2a55ntcidv" path="res://Assets/audio/VO/1a_01-robo.ogg" id="7_48glk"]
 [ext_resource type="PackedScene" uid="uid://c1oyfd7rd1jbx" path="res://Scenes/Titles/Gate.tscn" id="7_tx0wf"]
 [ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="7_yehxa"]
@@ -218,8 +218,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.3, -0.1)
 [node name="Global_minus" parent="Player/Global_minus" instance=ExtResource("8_uhbgx")]
 
 [node name="quote-ursula" parent="." instance=ExtResource("3_lcf0d")]
-transform = Transform3D(0.0540788, 0, 0.998537, 0, 1, 0, -0.998537, 0, 0.0540788, -2.53848, -12.6082, -13.2779)
-audio_stream = ExtResource("5_hxa2y")
+transform = Transform3D(-0.134228, 0, 0.990951, 0, 1, 0, -0.990951, 0, -0.134228, -2.53848, -12.6082, -13.4819)
+audio_stream = ExtResource("6_gi2m4")
+
+[node name="CollisionShape3D" parent="quote-ursula/Area3D" index="0"]
+transform = Transform3D(0.75, 0, -4.32134e-07, 0, 0.75, 0, 4.32134e-07, 0, 0.75, 0.957544, -1.63681, 3.18622)
 
 [node name="AudioStreamPlayer3D" parent="quote-ursula/Area3D" index="1"]
 max_distance = 8.0
