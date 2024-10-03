@@ -7,9 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://dw3rw16imwlgc" path="res://Assets/audio/Quotes/04 Justice.ogg" id="3_mfxt4"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="4_4blwt"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="4_ensoe"]
+[ext_resource type="AudioStream" uid="uid://ckj2td6kdvdiu" path="res://Assets/audio/Quotes/02a free info.ogg" id="5_7wj32"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="5_u1m6d"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="6_hljxc"]
-[ext_resource type="AudioStream" uid="uid://bmsy8w15kgvfw" path="res://Assets/audio/Quotes/E/info.ogg" id="7_pea6w"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="8_mnfj3"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="9_qt30p"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="10_5nbp2"]
@@ -62,17 +62,17 @@ text = "Who makes decisions about the resources? "
 [node name="quote-info" parent="." instance=ExtResource("2_68nmx")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 3, -34.1199)
 skeleton = NodePath("")
-audio_stream = ExtResource("7_pea6w")
+audio_stream = ExtResource("5_7wj32")
 
 [node name="quote-info2" parent="." instance=ExtResource("2_68nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2123, 3, -29.1589)
 skeleton = NodePath("")
-audio_stream = ExtResource("7_pea6w")
+audio_stream = ExtResource("5_7wj32")
 
 [node name="quote-info3" parent="." instance=ExtResource("2_68nmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0418, 3, -28.4113)
 skeleton = NodePath("")
-audio_stream = ExtResource("7_pea6w")
+audio_stream = ExtResource("5_7wj32")
 
 [node name="Door1" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -7, 1, -23)

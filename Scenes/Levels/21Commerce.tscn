@@ -1,6 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://ctpo8qxqv8237"]
+[gd_scene load_steps=34 format=3 uid="uid://ctpo8qxqv8237"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_m0f82"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_m0f82"]
 [ext_resource type="Texture2D" uid="uid://b6v1pinigq11x" path="res://Assets/background/Background_Mutualism.jpg" id="1_xq6nr"]
 [ext_resource type="Script" path="res://Scenes/Levels/Title.gd" id="2_4u7l8"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="2_x54mw"]
@@ -21,8 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="13_8xrdl"]
 [ext_resource type="Script" path="res://Gate_31Space.gd" id="14_5g5op"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="16_6k60k"]
-[ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="22_3p2cr"]
-[ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="23_tfmmo"]
+[ext_resource type="Material" uid="uid://cr5t2pix6jm64" path="res://Assets/Textures/Path_Texture_Y.tres" id="22_h300x"]
+[ext_resource type="Material" uid="uid://bwft8j6bmg23c" path="res://Assets/Textures/Path_Texture_SQ_Y.tres" id="23_q3n4e"]
 [ext_resource type="PackedScene" uid="uid://cl1nxstijc6yb" path="res://Assets/Models/Props/Commerce/ant.tscn" id="24_1kan2"]
 [ext_resource type="Material" uid="uid://bkkbv3hve2108" path="res://Assets/Textures/Path_Texture_SQ_G.tres" id="24_5sf5f"]
 
@@ -48,9 +48,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6qk8"]
-albedo_texture = ExtResource("23_tfmmo")
 
 [sub_resource type="Curve3D" id="Curve3D_6xw6q"]
 
@@ -384,7 +381,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 2)
 curve = SubResource("Curve3D_eyk0i")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D"]
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -400,19 +397,19 @@ path_joined = false
 
 [node name="Triangle" type="CSGPolygon3D" parent="Pathcom"]
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 63.4333, 0.4, -97.7333)
-material_override = SubResource("StandardMaterial3D_r6qk8")
+material_override = ExtResource("23_q3n4e")
 use_collision = true
 polygon = PackedVector2Array(-0.5, -4.7, -4.4, 2, 3.3, 2.1)
 
 [node name="Triangle3" type="CSGPolygon3D" parent="Pathcom"]
 transform = Transform3D(0.965926, -0.258819, -1.13134e-08, 0, -4.37114e-08, 1, -0.258819, -0.965926, -4.2222e-08, 90.4333, -19.6, -89.0333)
-material_override = SubResource("StandardMaterial3D_r6qk8")
+material_override = ExtResource("23_q3n4e")
 use_collision = true
 polygon = PackedVector2Array(-0.4, -4.7, -4.4, 2.6, 3.8, 2.8)
 
 [node name="Triangle2" type="CSGPolygon3D" parent="Pathcom"]
 transform = Transform3D(0.996195, 0.0871556, 3.80969e-09, 0, -4.37114e-08, 1, 0.0871556, -0.996195, -4.35451e-08, 31.0333, 20.4, -91.0333)
-material_override = SubResource("StandardMaterial3D_r6qk8")
+material_override = ExtResource("23_q3n4e")
 use_collision = true
 polygon = PackedVector2Array(-0.6, -4.6, -4.6, 1.9, 3.2, 2.3)
 
@@ -459,7 +456,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 64, 0,
 curve = SubResource("Curve3D_eyk0i")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D3"]
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -478,7 +475,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.3, 0, -50.3)
 curve = SubResource("Curve3D_kw6yn")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D4"]
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -497,7 +494,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -50)
 curve = SubResource("Curve3D_8asl8")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D5"]
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -517,7 +514,7 @@ curve = SubResource("Curve3D_kw6yn")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D10"]
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 4.5, 0, 1.8)
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -537,7 +534,7 @@ curve = SubResource("Curve3D_8asl8")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 0, 2)
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -557,7 +554,7 @@ curve = SubResource("Curve3D_kw6yn")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D8"]
 transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 6, 1, 6.5)
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -577,7 +574,7 @@ curve = SubResource("Curve3D_8asl8")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D9"]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -8.4, 0.999998, 3.5)
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -597,7 +594,7 @@ curve = SubResource("Curve3D_kw6yn")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D6"]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 8, -1, 4)
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -617,7 +614,7 @@ curve = SubResource("Curve3D_8asl8")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D7"]
 transform = Transform3D(-1, 0, 6.70552e-08, 0, 1, 0, -6.70552e-08, 0, -1, -6.2, -0.9, 7)
-material_override = ExtResource("22_3p2cr")
+material_override = ExtResource("22_h300x")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
