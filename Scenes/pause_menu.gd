@@ -5,11 +5,14 @@ extends ColorRect
 
 func _ready() -> void:
 	resume_button.pressed.connect(unpause)
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func unpause():
 	animator.play("Unpause")
 	get_tree().paused = false
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 func pause():
 	animator.play("Pause")
