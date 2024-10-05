@@ -3,7 +3,7 @@ extends Control
 const NEXT_SCENE=preload("res://Scenes/Levels/00Intro.tscn")
 
 func _ready():
-	music_player.play_bird()
+#	music_player.play_bird()
 	%Start.grab_focus()
 
 func _on_start_pressed() -> void:

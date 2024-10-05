@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxsksshrs1wvu"]
+[gd_scene load_steps=10 format=3 uid="uid://bxsksshrs1wvu"]
 
 [ext_resource type="Theme" uid="uid://cur1si5sm4vmn" path="res://Assets/UI/Menu/CubetopiaTheme.tres" id="1_lfxdq"]
 [ext_resource type="Texture2D" uid="uid://3mwo8hbdejub" path="res://Assets/UI/Menu/MenuBackground.png" id="2_2m7ol"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ufqm3rj58fxr" path="res://Assets/UI/Menu/CCC_Logo.png" id="3_sc3og"]
 [ext_resource type="Texture2D" uid="uid://dwu6pafhi1glq" path="res://Assets/UI/Menu/Logo.png" id="4_j41kh"]
 [ext_resource type="PackedScene" uid="uid://pc54oaofruqg" path="res://Scenes/UI/SettingsPopup/settings.tscn" id="7_jvbr8"]
+[ext_resource type="AudioStream" uid="uid://d1m1tqbh5j7pn" path="res://Assets/audio/music/test/Phoenix_loop.ogg" id="8_o8qi6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxahf"]
 
@@ -125,6 +126,12 @@ stretch_mode = 5
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_o8qi6")
+volume_db = -6.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

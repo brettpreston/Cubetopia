@@ -1,7 +1,7 @@
 [gd_scene load_steps=40 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/background/Background_Futuristic.jpg" id="1_0j1uw"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_p8uvs"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_tbdsx"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_ffvvd"]
 [ext_resource type="AudioStream" uid="uid://bce81v6qkxwcr" path="res://Assets/audio/Quotes/02b distance.ogg" id="4_gv58k"]
@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bqip3t7rag1kd" path="res://Assets/Models/Props/Space/station_lowpoly.glb" id="20_61ent"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="21_7f4k8"]
 [ext_resource type="PackedScene" uid="uid://dhbgxv454h0wh" path="res://Assets/Models/Props/Space/RingStation_lowpoly.glb" id="21_434ds"]
-[ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_pnapc"]
+[ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="25_lki6f"]
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_44qlx"]
 [ext_resource type="PackedScene" uid="uid://dir1nnlflaqs7" path="res://Assets/Models/Props/Space/EV_planet.glb" id="27_7jso4"]
 [ext_resource type="Material" uid="uid://bb4rpedebjtkf" path="res://Assets/Textures/Path_Texture_B.tres" id="28_cupe4"]
@@ -51,7 +51,7 @@ albedo_texture = ExtResource("26_44qlx")
 
 [sub_resource type="Curve3D" id="Curve3D_0sirr"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 1.28, 0, -45, 20, 0, -0.11, 0, 0, -45, -19.385, 8.05, 0, -50, -0.055, -0.24),
+"points": PackedVector3Array(0, 0, 0, 1.28, 0, -45, 20, -0.11, -0.11, 0, 0, -45, -19.385, 8.05, 0, -50, -0.1, -0.24),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -291,21 +291,42 @@ use_collision = true
 [node name="Node3D" type="Node3D" parent="LevelSwirl"]
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -26.8312, -6.68306, -0.231237)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -27.0812, -6.4, -0.231237)
 material_override = SubResource("StandardMaterial3D_ja0qe")
-size = Vector3(7.6, 0.433887, 8)
+size = Vector3(8.1, 1, 8)
+material = SubResource("StandardMaterial3D_ncvh5")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelSwirl/CSGBox3D4"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.201563, 0.421484, -4.47035e-08)
+material_override = SubResource("StandardMaterial3D_ja0qe")
+operation = 2
+size = Vector3(7.69688, 0.957031, 8)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.31256, -0.700001, 35.7687)
+transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.31256, -0.50923, 35.6187)
 material_override = SubResource("StandardMaterial3D_ja0qe")
-size = Vector3(7.88762, 0.4, 8)
+size = Vector3(7.88762, 0.781543, 8.3)
+material = SubResource("StandardMaterial3D_ncvh5")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelSwirl/CSGBox3D3"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.15, 0.382666, -0.481052)
+material_override = SubResource("StandardMaterial3D_ja0qe")
+operation = 2
+size = Vector3(8.4, 1.03467, 7.7)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="LevelSwirl"]
-transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.36874, -0.800001, -35.2312)
+transform = Transform3D(1, 0, 6.35732e-08, 0, 1, 0, -6.35732e-08, 0, 1, 4.36874, -0.559608, -35.1312)
 material_override = SubResource("StandardMaterial3D_ja0qe")
-size = Vector3(8, 0.4, 8)
+size = Vector3(8, 0.880786, 8.2)
+material = SubResource("StandardMaterial3D_ncvh5")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelSwirl/CSGBox3D5"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.15, 0.440527, 0.450001)
+material_override = SubResource("StandardMaterial3D_ja0qe")
+operation = 2
+size = Vector3(8.4, 0.918945, 7.9)
 material = SubResource("StandardMaterial3D_ncvh5")
 
 [node name="Pathbig" type="Path3D" parent="LevelSwirl"]
@@ -408,6 +429,14 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
+[node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl"]
+transform = Transform3D(-4.52008e-08, -4.47035e-08, 1, 1.13133e-08, 1, 4.47035e-08, -1, 1.13133e-08, -4.52008e-08, 3.9668, -1.54824, 0.283595)
+material_override = ExtResource("28_cupe4")
+use_collision = true
+polygon = PackedVector2Array(3.4, 1.4, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -4.3, 0.7, -4.24922, 1.5009, -4.2, 1.5, -3.9, 1.5, -3.6, 1.5)
+depth = 0.5
+material = ExtResource("25_lki6f")
+
 [node name="EV_planet" parent="." instance=ExtResource("27_7jso4")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -3966, 0)
 script = ExtResource("28_fpmxv")
@@ -425,22 +454,6 @@ bus = &"Music"
 [node name="Path3D2" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
 curve = SubResource("Curve3D_g2e8g")
-
-[node name="pathgon" type="CSGPolygon3D" parent="Path3D2"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, -81, 0, -0.5)
-material_override = ExtResource("25_pnapc")
-use_collision = true
-polygon = PackedVector2Array(4, 1, 4, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -3, 1)
-mode = 2
-path_node = NodePath("..")
-path_interval_type = 0
-path_interval = 1.0
-path_simplify_angle = 0.0
-path_rotation = 1
-path_local = true
-path_continuous_u = true
-path_u_distance = 1.0
-path_joined = false
 
 [node name="Portalex" parent="." instance=ExtResource("29_w6o4f")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.743606, 3)
