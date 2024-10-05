@@ -1,15 +1,17 @@
-[gd_scene load_steps=29 format=3 uid="uid://bl0wxpinyyqxb"]
+[gd_scene load_steps=33 format=3 uid="uid://bl0wxpinyyqxb"]
 
 [ext_resource type="Texture2D" uid="uid://cfkyt43mo8cwp" path="res://Assets/background/Background_Centralized.jpg" id="1_apbi8"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_fmc72"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_fmc72"]
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_thq80"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="2_68nmx"]
 [ext_resource type="AudioStream" uid="uid://dw3rw16imwlgc" path="res://Assets/audio/Quotes/04 Justice.ogg" id="3_mfxt4"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="4_4blwt"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="4_ensoe"]
 [ext_resource type="AudioStream" uid="uid://ckj2td6kdvdiu" path="res://Assets/audio/Quotes/02a free info.ogg" id="5_7wj32"]
+[ext_resource type="AudioStream" uid="uid://cti0ax6ydohvu" path="res://Assets/audio/Quotes/tts/Ursula_S1.ogg" id="5_18a66"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="5_u1m6d"]
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="6_hljxc"]
+[ext_resource type="AudioStream" uid="uid://df3ibgqs2muvi" path="res://Assets/audio/VO/2a-1.ogg" id="7_h0e4g"]
 [ext_resource type="PackedScene" uid="uid://heuiqfr0avt8" path="res://Scenes/mapTriggers/mapEconomy_plus.tscn" id="8_mnfj3"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="9_qt30p"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="10_5nbp2"]
@@ -18,13 +20,15 @@
 [ext_resource type="PackedScene" uid="uid://bwb8xnxe7a4nq" path="res://Scenes/mapTriggers/mapTech_plus.tscn" id="11_ssr7v"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="12_ktwn1"]
 [ext_resource type="Script" path="res://Gate_31Space.gd" id="13_s80id"]
+[ext_resource type="AudioStream" uid="uid://mtoc04xeic5y" path="res://Assets/audio/VO/2a-2.ogg" id="14_nuq07"]
+[ext_resource type="AudioStream" uid="uid://b0btayfhprq25" path="res://Assets/audio/VO/2a-3.ogg" id="15_8xikh"]
 [ext_resource type="PackedScene" uid="uid://c1oyfd7rd1jbx" path="res://Scenes/Titles/Gate.tscn" id="16_ld14u"]
 [ext_resource type="AudioStream" uid="uid://1bnrqnavyqs" path="res://Assets/audio/SFX/Portal.ogg" id="16_xibtl"]
+[ext_resource type="AudioStream" uid="uid://c4iufmp1lsyox" path="res://Assets/audio/VO/2a-4.ogg" id="18_to16c"]
 [ext_resource type="Material" uid="uid://coeb05bqdb2hb" path="res://Assets/Textures/Path_Texture_SQ_P.tres" id="23_3ubpf"]
 [ext_resource type="AudioStream" uid="uid://cr4laixmv3rgo" path="res://Assets/audio/music/ambi/ambi_acoustic.ogg" id="24_kugvb"]
 [ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="24_puxl8"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ri24n"]
-[ext_resource type="AudioStream" uid="uid://bpl4yoxot3pd6" path="res://Assets/audio/Quotes/E/freeyourmind.ogg" id="25_srl31"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_exmi3"]
 panorama = ExtResource("1_apbi8")
@@ -53,11 +57,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -1)
 
 [node name="quote-earning" parent="." instance=ExtResource("2_68nmx")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 2, -5.64871)
-audio_stream = ExtResource("25_srl31")
+audio_stream = ExtResource("5_18a66")
 
-[node name="0" parent="." instance=ExtResource("4_4blwt")]
+[node name="1" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -19.6913)
 text = "Who makes decisions about the resources? "
+audio_stream = ExtResource("7_h0e4g")
 
 [node name="Door1" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -7, 1, -23)
@@ -119,29 +124,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0418, 3, -28.4113)
 skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
-[node name="4" parent="." instance=ExtResource("4_4blwt")]
+[node name="2" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25728, 4.75162, -59.3619)
 text = "Elvi is an inventor, and she came up with a new technology that gives her a big advantage over others."
+audio_stream = ExtResource("14_nuq07")
 
-[node name="4b" parent="." instance=ExtResource("4_4blwt")]
+[node name="2a" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -33.9373, 5.58481, -23.2757)
 text = "Elvi is an inventor, and she came up with a new technology that gives her a big advantage over others."
+audio_stream = ExtResource("14_nuq07")
 
-[node name="4b2" parent="." instance=ExtResource("4_4blwt")]
+[node name="2b" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 37.4697, 5.585, -23.466)
 text = "Elvi is an inventor, and she came up with a new technology that gives her a big advantage over others."
+audio_stream = ExtResource("14_nuq07")
 
-[node name="5" parent="." instance=ExtResource("4_4blwt")]
+[node name="3" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712223, 5.59655, -74.154)
 text = "She doesn't want to give it up. This new inequality is threatening to destabilize society."
+audio_stream = ExtResource("15_8xikh")
 
-[node name="5b" parent="." instance=ExtResource("4_4blwt")]
+[node name="3a" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -53.0277, 5.65745, -23.8334)
 text = "She doesn't want to give it up. This new inequality is threatening to destabilize society."
+audio_stream = ExtResource("15_8xikh")
 
-[node name="5b2" parent="." instance=ExtResource("4_4blwt")]
+[node name="3b" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.7497, 5.65745, -23.4723)
 text = "She doesn't want to give it up. This new inequality is threatening to destabilize society."
+audio_stream = ExtResource("15_8xikh")
 
 [node name="Door4" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -6, 1, -82)
@@ -251,29 +262,35 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 61.910
 skeleton = NodePath("")
 audio_stream = ExtResource("3_mfxt4")
 
-[node name="7" parent="." instance=ExtResource("4_4blwt")]
+[node name="4" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 54.3321, 5.71657, 2.74614)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+audio_stream = ExtResource("18_to16c")
 
-[node name="9" parent="." instance=ExtResource("4_4blwt")]
+[node name="4a" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3321, 5.75206, -48.1597)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+audio_stream = ExtResource("18_to16c")
 
-[node name="8" parent="." instance=ExtResource("4_4blwt")]
+[node name="4b" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -60.9879, 5, 5.81517)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+audio_stream = ExtResource("18_to16c")
 
-[node name="10" parent="." instance=ExtResource("4_4blwt")]
+[node name="4c" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9679, 5, -51.2845)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+audio_stream = ExtResource("18_to16c")
 
-[node name="11" parent="." instance=ExtResource("4_4blwt")]
+[node name="4d" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -29.1503, 4.91468, -80.3064)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+audio_stream = ExtResource("18_to16c")
 
-[node name="12" parent="." instance=ExtResource("4_4blwt")]
+[node name="4e" parent="." instance=ExtResource("4_4blwt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.963, 3.69162, -81.9756)
 text = "Should humanity focus on living close to Earth and our relationship with nature, or go into space?"
+audio_stream = ExtResource("18_to16c")
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
