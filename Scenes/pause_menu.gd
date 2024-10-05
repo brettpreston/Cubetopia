@@ -18,7 +18,8 @@ func pause():
 	animator.play("Pause")
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+#	if Input.is_action_pressed("ui_cancel"):
+#		unpause()
 
 func _on_quit_pressed():
 	get_tree().quit()
