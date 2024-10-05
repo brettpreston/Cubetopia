@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_vl1r8"]
 [ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="2_din7f"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="4_yaaxc"]
+[ext_resource type="PackedScene" uid="uid://c1oyfd7rd1jbx" path="res://Scenes/Titles/Gate.tscn" id="5_47ew5"]
 [ext_resource type="Script" path="res://Gate_10smallcom.gd" id="5_bny4j"]
 [ext_resource type="PackedScene" uid="uid://di2j0aky63es5" path="res://Scenes/Gates/Gate2.tscn" id="6_lbjps"]
 [ext_resource type="Script" path="res://Gate_11Global.gd" id="7_abhgn"]
@@ -14,7 +15,6 @@
 [ext_resource type="AudioStream" uid="uid://dxqg5uyh61jfl" path="res://Assets/audio/Intro/2.ogg" id="13_b0n03"]
 [ext_resource type="AudioStream" uid="uid://ck61yaoxa0b4c" path="res://Assets/audio/Intro/3.ogg" id="14_qlo4j"]
 [ext_resource type="AudioStream" uid="uid://qsfb844e60pl" path="res://Assets/audio/VO/00a.ogg" id="14_xokb7"]
-[ext_resource type="FontFile" uid="uid://cokp3lgag5j2p" path="res://Assets/Fonts/exo-2-v7-latin-700.ttf" id="15_jhkdu"]
 [ext_resource type="AudioStream" uid="uid://dncpgga5nk70n" path="res://Assets/audio/VO/00b.ogg" id="15_tmsnj"]
 [ext_resource type="Material" uid="uid://bb4rpedebjtkf" path="res://Assets/Textures/Path_Texture_B.tres" id="16_2fijn"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="16_6sd66"]
@@ -62,9 +62,17 @@ shadow_enabled = true
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -3, 0.5, -138)
 script = ExtResource("5_bny4j")
 
+[node name="Gate text" parent="Gate1" instance=ExtResource("5_47ew5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "small communities"
+
 [node name="Gate2" parent="." instance=ExtResource("6_lbjps")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 2, 0.5, -138)
 script = ExtResource("7_abhgn")
+
+[node name="Gate text" parent="Gate2" instance=ExtResource("5_47ew5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+text = "global cooperation"
 
 [node name="Player" parent="." instance=ExtResource("8_cl2xg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 5.2, -37.8665)
@@ -108,21 +116,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26061, 4.13742, -129.901)
 text = " Or do we have better chances of achieving our goals in small, 
 independent communities?"
 audio_stream = ExtResource("15_tmsnj")
-
-[node name="portal 1" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, -3.03313, 5.16646, -138.007)
-text = "small communities
-"
-font = ExtResource("15_jhkdu")
-font_size = 100
-outline_size = 20
-
-[node name="portal 2" type="Label3D" parent="."]
-transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 1.78885, 5.16839, -137.817)
-text = "global cooperation"
-font = ExtResource("15_jhkdu")
-font_size = 100
-outline_size = 20
 
 [node name="Path3D2" type="Path3D" parent="."]
 curve = SubResource("Curve3D_5xsma")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=50 format=4 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=57 format=4 uid="uid://3yfweq66ct17"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_8on32"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_8on32"]
 [ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
 [ext_resource type="Texture2D" uid="uid://d36nsphyipmlg" path="res://Assets/background/Background_Self-Sufficient2_s.jpg" id="2_4dctu"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_lcf0d"]
@@ -9,14 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://d0eb4ai1ktbjy" path="res://Scenes/TriggersOther/state_plus.tscn" id="5_q1yeh"]
 [ext_resource type="AudioStream" uid="uid://cks0tnoovjwbn" path="res://Assets/audio/Quotes/01a You are not alone.ogg" id="5_v6hbj"]
 [ext_resource type="AudioStream" uid="uid://cgbr2vhtbld0n" path="res://Assets/audio/Quotes/E/Wall.ogg" id="6_gi2m4"]
-[ext_resource type="AudioStream" uid="uid://ka2a55ntcidv" path="res://Assets/audio/VO/1a_01-robo.ogg" id="7_48glk"]
 [ext_resource type="PackedScene" uid="uid://c1oyfd7rd1jbx" path="res://Scenes/Titles/Gate.tscn" id="7_tx0wf"]
 [ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="7_yehxa"]
-[ext_resource type="AudioStream" uid="uid://bitw65bty7x3f" path="res://Assets/audio/VO/1a_02-robo.ogg" id="8_rib6a"]
+[ext_resource type="AudioStream" uid="uid://cue84r7qk7n0l" path="res://Assets/audio/VO/1a-1.ogg" id="8_ptm46"]
 [ext_resource type="PackedScene" uid="uid://ygvlhh5k7w3t" path="res://Scenes/mapTriggers/mapGlobality_minus.tscn" id="8_uhbgx"]
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="9_8qc3j"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="9_vha7y"]
+[ext_resource type="AudioStream" uid="uid://cwr54uhampn2r" path="res://Assets/audio/VO/1a-2.ogg" id="9_vqsoq"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="10_e33e2"]
+[ext_resource type="AudioStream" uid="uid://cuvh4cud5n854" path="res://Assets/audio/VO/1a-3.ogg" id="10_y4jl7"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="11_rwaja"]
 [ext_resource type="PackedScene" uid="uid://bhbijqclbto4s" path="res://Scenes/Gates/Gate1.tscn" id="13_cauyu"]
 [ext_resource type="PackedScene" uid="uid://dkuywsiwfknmt" path="res://Scenes/TriggersOther/state_minus.tscn" id="13_ks1o3"]
@@ -25,9 +26,15 @@
 [ext_resource type="Script" path="res://Gate_21Com.gd" id="16_1dixi"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="17_mtmi3"]
 [ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="17_ufgxs"]
+[ext_resource type="AudioStream" uid="uid://ceu0huuaaljr8" path="res://Assets/audio/VO/1a-4.ogg" id="18_xgpg4"]
+[ext_resource type="AudioStream" uid="uid://cfug43fod2asu" path="res://Assets/audio/VO/1a-5.ogg" id="19_mg8q2"]
+[ext_resource type="AudioStream" uid="uid://pwml2ro7cucy" path="res://Assets/audio/VO/1a-6.ogg" id="20_p31qf"]
+[ext_resource type="AudioStream" uid="uid://cghwf3tdusu1y" path="res://Assets/audio/VO/1a-7.ogg" id="21_nndln"]
+[ext_resource type="AudioStream" uid="uid://tspm54w11dha" path="res://Assets/audio/VO/1a-8.ogg" id="24_a5yix"]
 [ext_resource type="Material" uid="uid://cr5t2pix6jm64" path="res://Assets/Textures/Path_Texture_Y.tres" id="24_ootfi"]
 [ext_resource type="PackedScene" uid="uid://dkxtyrh5srbj2" path="res://Assets/Models/Props/Community/Sunballmod.glb" id="24_pvtyu"]
 [ext_resource type="Material" uid="uid://bwft8j6bmg23c" path="res://Assets/Textures/Path_Texture_SQ_Y.tres" id="25_46ghw"]
+[ext_resource type="AudioStream" uid="uid://cxcqj2i17x0se" path="res://Assets/audio/VO/1a-9.ogg" id="25_730tk"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ffxqr"]
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_abgwe"]
 [ext_resource type="Texture2D" uid="uid://db6pbgoqtv0kb" path="res://Assets/Textures/Node_Path_W.png" id="31_phtkk"]
@@ -229,17 +236,18 @@ max_distance = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.84867, -32.1951)
 text = "Rynn disagrees with her community’s
 beliefs and power structure."
-audio_stream = ExtResource("7_48glk")
+audio_stream = ExtResource("8_ptm46")
 
 [node name="2" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.569657, 0.404623, -49.0003)
 text = "...and Karis would like to move to a more successful
  community, to have a better life."
-audio_stream = ExtResource("8_rib6a")
+audio_stream = ExtResource("9_vqsoq")
 
 [node name="3" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.50389, -66.3321)
 text = "Should they be able to do that?"
+audio_stream = ExtResource("10_y4jl7")
 
 [node name="Door1" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -80)
@@ -281,42 +289,50 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 6
 text = "The communities of Elysium, Horizon and
 Edengale have been living next to each other,
 but Elysium and Horizon are stricken by a famine."
+audio_stream = ExtResource("18_xgpg4")
 
 [node name="4b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22, 6.5, -78.825)
 text = "The communities of Elysium, Horizon and
 Edengale have been living next to each other,
 but Elysium and Horizon are stricken by a famine."
+audio_stream = ExtResource("18_xgpg4")
 
 [node name="5" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.993536, 0, -0.113515, 0, 1, 0, 0.113515, 0, 0.993536, 36.3768, 10.1632, -92.9119)
 text = "Edengale doesn’t have enough 
 food to feed all three communities."
+audio_stream = ExtResource("19_mg8q2")
 
 [node name="5b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.760916, 0, 0.648851, 0, 1, 0, -0.648851, 0, -0.760916, -32.377, 10.163, -68.2457)
 text = "Edengale doesn’t have enough 
 food to feed all three communities."
+audio_stream = ExtResource("19_mg8q2")
 
 [node name="6" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.941471, 0.141395, 0.306007, 0, 0.907777, -0.419452, -0.337095, 0.394902, 0.854646, 38.4925, 19.7877, -113.464)
 text = "How do we prevent Elysium and Horizon
 from taking what they need by force?"
+audio_stream = ExtResource("20_p31qf")
 
 [node name="6b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.958934, -0.118969, -0.257473, 0, 0.907777, -0.419452, 0.28363, -0.402227, -0.870498, -33.3331, 19.788, -52)
 text = "How do we prevent Elysium and Horizon
 from taking what they need by force?"
+audio_stream = ExtResource("20_p31qf")
 
 [node name="7" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.6606, 27.4899, -125.866)
 text = "Or Edengale from subjugating 
 the others in return for food?"
+audio_stream = ExtResource("21_nndln")
 
 [node name="7b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.590605, 0, -0.806961, 0, 1, 0, 0.806961, 0, -0.590605, -23.661, 26.49, -35.5893)
 text = "Or Edengale from subjugating 
 the others in return for food?"
+audio_stream = ExtResource("21_nndln")
 
 [node name="Door3" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 26, -36)
@@ -385,38 +401,46 @@ audio_stream = ExtResource("5_v6hbj")
 [node name="8" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.913303, 0.172123, 0.36912, -2.12929e-08, 0.906308, -0.422618, -0.407278, 0.385979, 0.827734, -5.38581, 33.5987, -153.289)
 text = "Should resources be centrally distributed to ensure equity,"
+audio_stream = ExtResource("24_a5yix")
 
 [node name="8c" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.866025, 0.107368, 0.488336, 0, 0.976672, -0.214735, -0.5, -0.185966, -0.845823, -4.68434, 32.9171, -112.353)
 text = "Should resources be centrally distributed to ensure equity,"
+audio_stream = ExtResource("24_a5yix")
 
 [node name="8b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.907777, -0.0900712, -0.409667, 0, 0.976672, -0.214735, 0.419452, 0.194932, 0.886601, 7.47005, 36.391, -50.8141)
 text = "Should resources be centrally distributed to ensure equity,"
+audio_stream = ExtResource("24_a5yix")
 
 [node name="8d" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.906308, -0.0907511, -0.41276, 0, 0.976672, -0.214735, 0.422618, -0.194616, -0.885166, 7.09111, 33.7054, -6.7)
 text = "Should resources be centrally distributed to ensure equity,"
+audio_stream = ExtResource("24_a5yix")
 
 [node name="9" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -6.7634, 37.2332, -162.05)
 text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
+audio_stream = ExtResource("25_730tk")
 
 [node name="9c" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-1, -4.37114e-08, -7.57103e-08, 0, 0.866025, -0.5, 8.74228e-08, -0.5, -0.866025, -6.84295, 37.971, -100.593)
 text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
+audio_stream = ExtResource("25_730tk")
 
 [node name="9b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.994764, 0.0386162, 0.0946259, 7.71341e-09, 0.925871, -0.377841, -0.102202, 0.375862, 0.921022, 7.94397, 37.0088, -61.8245)
 text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
+audio_stream = ExtResource("25_730tk")
 
 [node name="9d" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.965926, -0.0977924, -0.239633, -2.26267e-08, 0.925871, -0.377841, 0.258819, -0.364966, -0.894322, 10.161, 37.2298, 1.48909)
 text = "or do we need some freedom from chaos, 
 with either commerce or mutualism?"
+audio_stream = ExtResource("25_730tk")
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
 
