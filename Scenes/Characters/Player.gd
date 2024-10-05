@@ -21,8 +21,8 @@ const ANIMATION_BLEND : float = 15.0
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-#			get_tree().quit()
-		$Pause.pause()
+			get_tree().quit()
+#		$Pause.pause()
 
 func _physics_process(delta):
 	var move_direction : Vector3 = Vector3.ZERO
