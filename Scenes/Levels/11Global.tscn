@@ -278,26 +278,26 @@ audio_stream = ExtResource("20_0unee")
 
 [node name="7" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.6313, -120.677)
-text = "Or do we need some freedom from chaos,
-through either commerce or mutualism?"
+text = "or do we need some freedom through chaos, 
+with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
 
 [node name="7b" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.15864, -120.677)
-text = "Or do we need some freedom from chaos,
-through either commerce or mutualism?"
+text = "or do we need some freedom through chaos, 
+with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
 
 [node name="7b3" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.9107, 4.86856, -98.5829)
-text = "Or do we need some freedom from chaos,
-through either commerce or mutualism?"
+text = "or do we need some freedom through chaos, 
+with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
 
 [node name="7b2" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.9007, 4.64375, -96.8539)
-text = "Or do we need some freedom from chaos,
-through either commerce or mutualism?"
+text = "or do we need some freedom through chaos, 
+with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
 
 [node name="Gate" type="CSGCombiner3D" parent="."]
