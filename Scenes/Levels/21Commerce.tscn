@@ -782,7 +782,7 @@ size = Vector3(2, 0.6, 6.98425)
 material = ExtResource("26_vfs4q")
 
 [node name="ant" parent="." instance=ExtResource("24_1kan2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, -32)
+transform = Transform3D(-0.866528, 0.286162, -0.40895, -0.032067, 0.785718, 0.617753, 0.498097, 0.548414, -0.671671, -18.1, 7.5, -63.1978)
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(-0.999654, 0, -0.026299, 0, 1, 0, 0.026299, 0, -0.999654, 3.16875, -1.5, 0.268762)

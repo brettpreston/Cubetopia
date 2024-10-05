@@ -33,9 +33,9 @@ func _physics_process(delta):
 	velocity.y -= gravity * delta
 	
 	#align player with ground
-#	if is_on_floor():
-#		align_with_floor($RayCast3D.get_collision_normal())
-#		global_transform = global_transform.interpolate_with(xform, 0.01)
+	#if is_on_floor():
+	#	align_with_floor($RayCast3D.get_collision_normal())
+	#	global_transform = global_transform.interpolate_with(xform, 0.02)
 	
 	if Input.is_action_pressed("run"):
 		speed = run_speed
