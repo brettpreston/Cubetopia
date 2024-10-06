@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8g1nx260w4rm"]
+[gd_scene load_steps=17 format=3 uid="uid://b8g1nx260w4rm"]
 
 [ext_resource type="Script" path="res://Credits_End.gd" id="1_cquo6"]
-[ext_resource type="Texture2D" uid="uid://23ux7jq4rum" path="res://Scenes/UI/Credits.jpg" id="2_qoqsp"]
+[ext_resource type="Texture2D" uid="uid://b415vuhhodtaq" path="res://Assets/background/end_screen/black.jpg" id="2_s5cad"]
+[ext_resource type="Script" path="res://FinalTechPlus.gd" id="3_sh06w"]
+[ext_resource type="Script" path="res://Scenes/Levels/final_script_01.gd" id="4_3p5lo"]
+[ext_resource type="Script" path="res://Scenes/Levels/economy_plus.gd" id="5_753du"]
+[ext_resource type="Texture2D" uid="uid://b8ojam6yc43y7" path="res://Assets/background/end_screen/07_Futuristic_Centralized_Global.png" id="6_q6j3h"]
+[ext_resource type="Script" path="res://Scenes/Levels/economy_minus.gd" id="6_va3j0"]
+[ext_resource type="Texture2D" uid="uid://2rgmk31resrk" path="res://Assets/background/end_screen/08_Futuristic_Commerce_Global.png" id="8_i4o4f"]
+[ext_resource type="Script" path="res://Scenes/Levels/global_minus.gd" id="8_r78wt"]
+[ext_resource type="Script" path="res://FinalTechMinus.gd" id="9_khb6u"]
+[ext_resource type="Texture2D" uid="uid://cj01dhj6bvkb5" path="res://Assets/background/end_screen/06_Futuristic_Centralized_SelfSufficient.png" id="10_14bwc"]
+[ext_resource type="Texture2D" uid="uid://8eo2sx1jy05t" path="res://Assets/background/end_screen/05_Futuristic_Commerce_SelfSufficient.png" id="11_2kiim"]
+[ext_resource type="Texture2D" uid="uid://clmr030rfc2fd" path="res://Assets/background/end_screen/03_CloseToNature_Centalized_Global.png" id="13_b4a0s"]
+[ext_resource type="Texture2D" uid="uid://csd7tcxoif4se" path="res://Assets/background/end_screen/04_CloseToNature_Commerce_Global.png" id="14_qe3xl"]
+[ext_resource type="Texture2D" uid="uid://ceh3efwaacaiw" path="res://Assets/background/end_screen/02_CloseToNature_Centalized_SelfSufficient.png" id="15_unw2f"]
+[ext_resource type="Texture2D" uid="uid://ba7fcwp6blms5" path="res://Assets/background/end_screen/01_CloseToNature_Commerce_SelfSufficient.png" id="16_g46ma"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -12,14 +26,88 @@ script = ExtResource("1_cquo6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-texture = ExtResource("2_qoqsp")
+texture = ExtResource("2_s5cad")
+
+[node name="TechPlus" type="Node3D" parent="."]
+script = ExtResource("3_sh06w")
+
+[node name="GlobalPlus" type="Node3D" parent="TechPlus"]
+script = ExtResource("4_3p5lo")
+
+[node name="EconomyPlus" type="Node3D" parent="TechPlus/GlobalPlus"]
+script = ExtResource("5_753du")
+
+[node name="07FuturisticCentralizedGlobal" type="Sprite2D" parent="TechPlus/GlobalPlus/EconomyPlus"]
+position = Vector2(433, 460)
+texture = ExtResource("6_q6j3h")
+
+[node name="EconomyMinus" type="Node3D" parent="TechPlus/GlobalPlus"]
+script = ExtResource("6_va3j0")
+
+[node name="Sprite2D" type="Sprite2D" parent="TechPlus/GlobalPlus/EconomyMinus"]
+position = Vector2(433, 464)
+texture = ExtResource("8_i4o4f")
+
+[node name="GlobalMinus" type="Node3D" parent="TechPlus"]
+script = ExtResource("8_r78wt")
+
+[node name="EconomyPlus2" type="Node3D" parent="TechPlus/GlobalMinus"]
+script = ExtResource("5_753du")
+
+[node name="06FuturisticCentralizedSelfSufficient" type="Sprite2D" parent="TechPlus/GlobalMinus/EconomyPlus2"]
+position = Vector2(429, 457)
+texture = ExtResource("10_14bwc")
+
+[node name="EconomyMinus2" type="Node3D" parent="TechPlus/GlobalMinus"]
+script = ExtResource("6_va3j0")
+
+[node name="05FuturisticCommerceSelfSufficient" type="Sprite2D" parent="TechPlus/GlobalMinus/EconomyMinus2"]
+position = Vector2(420, 448)
+texture = ExtResource("11_2kiim")
+
+[node name="TechMinus" type="Node3D" parent="."]
+script = ExtResource("9_khb6u")
+
+[node name="GlobalPlus" type="Node3D" parent="TechMinus"]
+script = ExtResource("4_3p5lo")
+
+[node name="EconomyPlus" type="Node3D" parent="TechMinus/GlobalPlus"]
+script = ExtResource("5_753du")
+
+[node name="03CloseToNatureCentalizedGlobal" type="Sprite2D" parent="TechMinus/GlobalPlus/EconomyPlus"]
+position = Vector2(431, 477)
+texture = ExtResource("13_b4a0s")
+
+[node name="EconomyMinus" type="Node3D" parent="TechMinus/GlobalPlus"]
+script = ExtResource("6_va3j0")
+
+[node name="04CloseToNatureCommerceGlobal" type="Sprite2D" parent="TechMinus/GlobalPlus/EconomyMinus"]
+position = Vector2(442, 457)
+texture = ExtResource("14_qe3xl")
+
+[node name="GlobalMinus" type="Node3D" parent="TechMinus"]
+script = ExtResource("8_r78wt")
+
+[node name="EconomyPlus2" type="Node3D" parent="TechMinus/GlobalMinus"]
+script = ExtResource("5_753du")
+
+[node name="02CloseToNatureCentalizedSelfSufficient" type="Sprite2D" parent="TechMinus/GlobalMinus/EconomyPlus2"]
+position = Vector2(438, 462)
+texture = ExtResource("15_unw2f")
+
+[node name="EconomyMinus2" type="Node3D" parent="TechMinus/GlobalMinus"]
+script = ExtResource("6_va3j0")
+
+[node name="01CloseToNatureCommerceSelfSufficient" type="Sprite2D" parent="TechMinus/GlobalMinus/EconomyMinus2"]
+position = Vector2(433, 467)
+texture = ExtResource("16_g46ma")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 856.0
-offset_top = 768.0
+offset_top = 850.0
 offset_right = 1082.0
-offset_bottom = 898.0
+offset_bottom = 980.0
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
