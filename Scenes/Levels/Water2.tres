@@ -1,0 +1,61 @@
+[gd_resource type="ShaderMaterial" load_steps=10 format=3 uid="uid://b2rl3slu32uf7"]
+
+[ext_resource type="Shader" path="res://Scenes/Levels/water2.gdshader" id="1_0jog3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r6rfy"]
+seed = 155
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mhhfr"]
+seamless = true
+noise = SubResource("FastNoiseLite_r6rfy")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_50qhh"]
+noise_type = 2
+seed = 1085
+frequency = 0.0165
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o0a63"]
+seamless = true
+seamless_blend_skirt = 0.499
+noise = SubResource("FastNoiseLite_50qhh")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8aiff"]
+noise_type = 2
+fractal_type = 3
+fractal_octaves = 10
+fractal_ping_pong_strength = 3.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vox3w"]
+seamless = true
+seamless_blend_skirt = 0.316
+noise = SubResource("FastNoiseLite_8aiff")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ilq0p"]
+noise_type = 2
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ugucv"]
+seamless = true
+noise = SubResource("FastNoiseLite_ilq0p")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0jog3")
+shader_parameter/depth_fade_distance = 10.0
+shader_parameter/absorbance = 0.217
+shader_parameter/shallow_color = Color(0.22, 0.66, 1, 1)
+shader_parameter/deep_color = Color(0, 0.286947, 0.511174, 1)
+shader_parameter/foam_amount = 1.754
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.1
+shader_parameter/wave_scale = 80.67
+shader_parameter/height_scale = 0.15
+shader_parameter/wave_dir1 = Vector2(2.95, -2.02)
+shader_parameter/wave_dir2 = Vector2(1.855, 1.295)
+shader_parameter/wave_speed = 0.015
+shader_parameter/foam_noise = SubResource("NoiseTexture2D_mhhfr")
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_ugucv")
+shader_parameter/normal1 = SubResource("NoiseTexture2D_o0a63")
+shader_parameter/normal2 = SubResource("NoiseTexture2D_vox3w")
