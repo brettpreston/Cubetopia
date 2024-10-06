@@ -14,6 +14,8 @@ func _ready():
 	mesh.text = text
 	mesh.width = width
 	hide()
+	
+	
 
 func _on_body_entered(body):
 	if body is CharacterBody3D:

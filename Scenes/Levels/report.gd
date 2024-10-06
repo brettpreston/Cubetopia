@@ -1,33 +1,52 @@
 extends MeshInstance3D
 
 @export_multiline var text: String
-@export var width := 1000
+@export var width := 800
 @export var audio_stream: AudioStream
 
 
-#var shown = false
-var cube_mesh = load("res://Scenes/Titles/Report_mesh.tres")
-
-var smallcom: String="You walk among your neighbors and look up at the starry sky. "
-var global: String="You are on your way to see your friends in the Capital, and look at the world outside the train window. "
-var nature: String="The wind sways the young trees gently, and you can hear the buzzing of bees."
-var space: String="The lights are reflected in the station dome, beyond it in the sky you can see the waxing Earth. "
-var capitalismState: String="You know that some of your friends are struggling, the inequality has not been contained. But the elite have a strong hold on power. Many will be afraid to strive for change."
-var capitalismNoState: String="You know that some of your friends are struggling, the inequality has not been contained. Here and there, you are starting to hear about violent incidents. Perhaps things will have to change again."
-var commerceNature: String="You've made some pastries for the market, and you're excited to see what your neighbors will bring."
-var commerceTech: String="You’ve made some new medicine in your lab, and you're excited to present it to the crew."
-var central: String="Without existential insecurity, humanity is free to focus on seeking fulfilment and joy."
-var captured: String="Greed for wealth no longer drives us, but greed for power has not been stamped out. And the new government worries you. Perhaps things will have to change again."
-var volatile: String="You know that complete freedom will require effort, but you are ready for it. And you know others are too."
-var solidarity: String="There are still some hardships, but the people have learned to work together in a crisis."
-var utopia: String="The world we fought for is here."
+var shown = false
+var cubetopia_mesh = load("res://Scenes/Titles/Report_mesh.tres")
 
 func _ready():
+	$Area3D.body_entered.connect(_on_body_entered)
+	mesh = mesh.duplicate()
 	var Text2: String =epilogue()
-	mesh.text=Text2
+	#self.text=Text2
+	mesh.text = Text2
+	mesh.width = width
+	hide()
+
+
+var inequality: String="The world is still marred by inequalities. \n"
+var captured: String="The power was captured by new elites and their position appears to be well entrenched. Humanity has overcome worse, and it will again."
+var volatile: String="New elites threaten to capture power, but their position is feeble. Humanity has overcome worse, and it will again."
+var solidarity: String="The society is happy despite the occasional hardships. Thank you for building a better future."
+var utopia: String="Thank you for building a better future."
+
+
+	
 		
 func epilogue():
 	var y: String=""
+	if player_data.vautonomy<0:
+		y=y+"PERSONAL AUTONOMY: WEAK\n"
+	else:
+		y=y+"PERSONAL AUTONOMY: STRONG\n"
+	if player_data.vresilience<0:
+		y=y+"RESILIENCE: WEAK\n"
+	else:
+		y=y+"RESILIENCE: STRONG\n"
+	if player_data.vstate>0:
+		if player_data.vautonomy<0:
+			y=y+"STATE: OPRESSIVE \n"
+		else:
+			y=y+"STATE: INEFFICIENT \n"
+	else:
+		y=y+"STATE: FUNCTIONAL \n"
+	y=y+"\n \n"
+	if player_data.mapEconomy<-2:
+		y=y+inequality
 	if player_data.vautonomy<0:
 		if player_data.vstate>0:
 			y=y+captured
@@ -40,12 +59,13 @@ func epilogue():
 			y=y+utopia
 	return y
 
-func update_visibility():
-	if player_data.mapTech <= 0:
-		self.show()		
-	else:
-		self.queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_body_entered(body):
+	if body is CharacterBody3D:
+		if not shown:
+			show()
+			shown = true
+			print("[Cubetopia] Showing " + name)
+			$AnimationPlayer.play("slide_down")
+			$Area3D/AudioStreamPlayer3D.stream = audio_stream
+			$Area3D/AudioStreamPlayer3D.play()

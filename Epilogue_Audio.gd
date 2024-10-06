@@ -1,7 +1,7 @@
 extends MeshInstance3D
 
 @export_multiline var text: String
-@export var width := 1000
+@export var width := 1500
 @export var audio_stream: AudioStream
 @onready var audio3d = $AudioStreamPlayer3D
 
@@ -9,19 +9,20 @@ var audio_queue = []
 var current_index = 0
 
 # Load Audio
-var smallcomA = preload("res://Assets/audio/VO/Epilogue/smallcom.ogg")
-var globalA = preload("res://Assets/audio/VO/Epilogue/global.ogg")
-var natureA = preload("res://Assets/audio/VO/Epilogue/nature.ogg")
-var spaceA = preload("res://Assets/audio/VO/Epilogue/space.ogg")
-var capitalismStateA = preload("res://Assets/audio/VO/Epilogue/capitalismState.ogg")
-var capitalismNoStateA = preload("res://Assets/audio/VO/Epilogue/capitalismNoState.ogg")
-var commerceNatureA = preload("res://Assets/audio/VO/Epilogue/commerceNature.ogg")
-var commerceTechA = preload("res://Assets/audio/VO/Epilogue/commerceTech.ogg")
-var centralA = preload("res://Assets/audio/VO/Epilogue/central.ogg")
-var capturedA = preload("res://Assets/audio/VO/Epilogue/captured.ogg")
-var volatileA = preload("res://Assets/audio/VO/Epilogue/volatile.ogg")
-var solidarityA = preload("res://Assets/audio/VO/Epilogue/solidarity.ogg")
-var utopiaA = preload("res://Assets/audio/VO/Epilogue/utopia.ogg")
+
+var smallcomA = load("res://Assets/audio/VO/Epilogue/smallcom.ogg")
+var globalA = load("res://Assets/audio/VO/Epilogue/global.ogg")
+var natureA = load("res://Assets/audio/VO/Epilogue/nature.ogg")
+var spaceA = load("res://Assets/audio/VO/Epilogue/space.ogg")
+var capitalismStateA = load("res://Assets/audio/VO/Epilogue/capitalismState.ogg")
+var capitalismNoStateA = load("res://Assets/audio/VO/Epilogue/capitalismNoState.ogg")
+var commerceNatureA = load("res://Assets/audio/VO/Epilogue/commerceNature.ogg")
+var commerceTechA = load("res://Assets/audio/VO/Epilogue/commerceTech.ogg")
+var centralA = load("res://Assets/audio/VO/Epilogue/central.ogg")
+var capturedA = load("res://Assets/audio/VO/Epilogue/captured.ogg")
+var volatileA = load("res://Assets/audio/VO/Epilogue/volatile.ogg")
+var solidarityA = load("res://Assets/audio/VO/Epilogue/solidarity.ogg")
+var utopiaA = load("res://Assets/audio/VO/Epilogue/utopia.ogg")
 
 var shown = false
 var cubetopia_mesh = load("res://Scenes/Titles/Epilogue_mesh.tres")
@@ -33,12 +34,12 @@ var space: String="The lights are reflected in the station dome, beyond it in th
 var capitalismState: String="You know that some of your friends are struggling, the inequality has not been contained. But the elite have a strong hold on power. Many will be afraid to strive for change."
 var capitalismNoState: String="You know that some of your friends are struggling, the inequality has not been contained. Here and there, you are starting to hear about violent incidents. Perhaps things will have to change again."
 var commerceNature: String="You've made some pastries for the market, and you're excited to see what your neighbors will bring."
-var commerceTech: String="You’ve made some new medicine in your lab, and you're excited to present it to the crew."
+var commerceTech: String="You're excited to show off the new gadgets you made in your workshop at the station's market."
 var central: String="Without existential insecurity, humanity is free to focus on seeking fulfilment and joy."
-var captured: String="Greed for wealth no longer drives us, but greed for power has not been stamped out. And the new government worries you. Perhaps things will have to change again."
-var volatile: String="You know that complete freedom will require effort, but you are ready for it. And you know others are too."
-var solidarity: String="There are still some hardships, but the people have learned to work together in a crisis."
-var utopia: String="The world we fought for is here."
+var captured: String="Greed for wealth no longer drives us, but greed for power has yet to be stamped out. But you ready to fight for the furture."
+var volatile: String="You know that complete freedom will require more effort, but you are ready for it. And you know others are too."
+var solidarity: String="There are still some hardships, but the people have learned to work together in a crisis. Humanity is happy."
+var utopia: String="The world we fought for is here. You think of today's children who get to grow up in it and smile."
 
 func _ready():
 	var Text: String = epilogue()
@@ -63,7 +64,7 @@ func epilogue() -> String:
 		else:
 			x += capitalismNoState
 			return x
-	elif player_data.mapEconomy <= 0:
+	elif player_data.mapEconomy < 0:
 		if player_data.mapTech <= 0:
 			x += commerceNature
 		else:
@@ -103,9 +104,27 @@ func play_audio_based_on_choice():
 	else:
 		audio_queue.append(spaceA)
 	if player_data.mapEconomy <= -3:
-		audio_queue.append(commerceTechA)
+		if player_data.vstate>0:
+			audio_queue.append(capitalismStateA)
+		else:
+			audio_queue.append(capitalismNoStateA)
+	elif player_data.mapEconomy<0:
+		if player_data.mapTech<=0:
+			audio_queue.append(commerceNatureA)
+		else:
+			audio_queue.append(commerceTechA)
 	else:
-		audio_queue.append(commerceNatureA)	
+		audio_queue.append(centralA)
+	if player_data.vautonomy < 0:
+		if player_data.vstate > 0:
+			audio_queue.append(capturedA)
+		else:
+			audio_queue.append(volatileA)
+	else:
+		if player_data.vresilience < 0:
+			audio_queue.append(solidarity)
+		else:
+			audio_queue.append(utopiaA)
 		
 		
 	current_index = 0
