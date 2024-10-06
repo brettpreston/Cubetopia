@@ -93,7 +93,7 @@ text = "Try to look at what the world was like a few hundred years ago, and try 
 audio_stream = ExtResource("12_r1e41")
 
 [node name="3" parent="Text" instance=ExtResource("11_02wuk")]
-transform = Transform3D(0.999541, 0.0302943, 0, -0.0302943, 0.999541, 0, 0, 0, 1, -8.58367, 5.67769, -80.9795)
+transform = Transform3D(0.999541, 0.0302943, 0, -0.0302943, 0.999541, 0, 0, 0, 1, -5.72291, 5.67769, -80.9795)
 skeleton = NodePath("")
 text = "What do you want it to look like?
 What do you think is right?"
@@ -107,8 +107,7 @@ audio_stream = ExtResource("14_qlo4j")
 
 [node name="5" parent="Text" instance=ExtResource("11_02wuk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21986, 3.60646, -113.25)
-text = "Do you think humanity of the future 
-should bet on global cooperation and unity...?"
+text = "Do you think humanity of the future should bet on global cooperation and unity...?"
 audio_stream = ExtResource("14_xokb7")
 
 [node name="6" parent="Text" instance=ExtResource("11_02wuk")]

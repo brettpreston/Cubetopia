@@ -102,8 +102,7 @@ transform = Transform3D(1, 0, -2.23517e-08, 0, 1, 0, 2.23517e-08, 0, 1, -0.55439
 
 [node name="1" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -15.2115)
-text = "In different places around the world,
-humanity has very different cultures and beliefs."
+text = "In different places around the world, humanity has very different cultures and beliefs."
 audio_stream = ExtResource("6_5mcy8")
 
 [node name="2" parent="." instance=ExtResource("5_xmy48")]
@@ -118,8 +117,7 @@ transform = Transform3D(0.537608, 0, 0.843194, 0, 1, 0, -0.843194, 0, 0.537608, 
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door1" index="6"]
-text = "If diversity of beliefs means conflicting goals, we should strive 
-for a common culture, so we can cooperate better."
+text = "If diversity of beliefs means conflicting goals, we should strive for a common culture, so we can cooperate better."
 
 [node name="autonomy_Minus" parent="Door1" instance=ExtResource("5_r3hnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0669861, 1, 0.250004)
@@ -137,8 +135,7 @@ transform = Transform3D(0.509357, 0, -0.860555, 0, 1, 0, 0.860555, 0, 0.509357, 
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door2" index="6"]
-text = "It’s crucial to preserve diversity, 
-or we lose our humanity."
+text = "It’s crucial to preserve diversity, or we lose our humanity."
 
 [node name="Autonomy_Plus" parent="Door2" instance=ExtResource("7_ejim6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
@@ -254,50 +251,42 @@ transform = Transform3D(0.75, 0, -9.31323e-08, 0, 0.75, 0, 9.31323e-08, 0, 0.75,
 
 [node name="6" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.621, -107.271)
-text = "Should resources be centrally distributed 
-to ensure equity?"
+text = "Should resources be centrally distributed  to ensure equity?"
 audio_stream = ExtResource("20_0unee")
 
 [node name="6c" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(0.584887, 0, 0.811115, 0, 1, 0, -0.811115, 0, 0.584887, -29.9899, 7.74092, -80.7118)
-text = "Should resources be centrally distributed 
-to ensure equity?"
+text = "Should resources be centrally distributed  to ensure equity?"
 audio_stream = ExtResource("20_0unee")
 
 [node name="6b" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.30033, -107.271)
-text = "Should resources be centrally distributed 
-to ensure equity?"
+text = "Should resources be centrally distributed  to ensure equity?"
 audio_stream = ExtResource("20_0unee")
 
 [node name="6b2" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(0.350207, 0, -0.936672, 0, 1, 0, 0.936672, 0, 0.350207, 32.7415, 0.286341, -75.3036)
-text = "Should resources be centrally distributed 
-to ensure equity?"
+text = "Should resources be centrally distributed  to ensure equity?"
 audio_stream = ExtResource("20_0unee")
 
 [node name="7" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.6313, -120.677)
-text = "or do we need some freedom through chaos, 
-with commerce or mutualism?"
+text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
 
 [node name="7b" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.15864, -120.677)
-text = "or do we need some freedom through chaos, 
-with commerce or mutualism?"
+text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
 
 [node name="7b3" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.9107, 4.86856, -98.5829)
-text = "or do we need some freedom through chaos, 
-with commerce or mutualism?"
+text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
 
 [node name="7b2" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.9007, 4.64375, -96.8539)
-text = "or do we need some freedom through chaos, 
-with commerce or mutualism?"
+text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
 
 [node name="Gate" type="CSGCombiner3D" parent="."]

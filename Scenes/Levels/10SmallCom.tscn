@@ -233,14 +233,12 @@ max_distance = 8.0
 
 [node name="1" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.84867, -32.1951)
-text = "Rynn disagrees with her community’s
-beliefs and power structure."
+text = "Rynn disagrees with her community’s beliefs and power structure."
 audio_stream = ExtResource("8_ptm46")
 
 [node name="2" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.569657, 0.404623, -49.0003)
-text = "...and Karis would like to move to a more successful
- community, to have a better life."
+text = "...and Karis would like to move to a more successful community, to have a better life."
 audio_stream = ExtResource("9_vqsoq")
 
 [node name="3" parent="." instance=ExtResource("3_mgfei")]
@@ -255,8 +253,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2,
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door1" index="6"]
-text = "To join a community, the other members’ consent is necessary.
-Even if that means some people have to stay in unhealthy communities."
+text = "To join a community, the other members’ consent is necessary. Even if that means some people have to stay in unhealthy communities."
 
 [node name="Resilience_Plus" parent="Door1" instance=ExtResource("7_yehxa")]
 
@@ -271,8 +268,7 @@ transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 10, 2, -
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door2" index="6"]
-text = "It should be possible for each person to exit a
-community and enter another at will."
+text = "It should be possible for each person to exit a community and enter another at will."
 
 [node name="Autonomy_Plus" parent="Door2" instance=ExtResource("11_rwaja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8147e-06, 0, 1.14441e-05)
@@ -285,52 +281,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="4" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 6.5, -78.825)
-text = "The communities of Elysium, Horizon and
-Edengale have been living next to each other,
-but Elysium and Horizon are stricken by a famine."
+text = "The communities of Elysium, Horizon and Edengale have been living next to each other, but Elysium and Horizon are stricken by a famine."
 audio_stream = ExtResource("18_xgpg4")
 
 [node name="4b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 22, 6.5, -78.825)
-text = "The communities of Elysium, Horizon and
-Edengale have been living next to each other,
-but Elysium and Horizon are stricken by a famine."
+text = "The communities of Elysium, Horizon and Edengale have been living next to each other, but Elysium and Horizon are stricken by a famine."
 audio_stream = ExtResource("18_xgpg4")
 
 [node name="5" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.993536, 0, -0.113515, 0, 1, 0, 0.113515, 0, 0.993536, 36.3768, 10.1632, -92.9119)
-text = "Edengale doesn’t have enough 
-food to feed all three communities."
+text = "Edengale doesn’t have enough food to feed all three communities."
 audio_stream = ExtResource("19_mg8q2")
 
 [node name="5b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.760916, 0, 0.648851, 0, 1, 0, -0.648851, 0, -0.760916, -32.377, 10.163, -68.2457)
-text = "Edengale doesn’t have enough 
-food to feed all three communities."
+text = "Edengale doesn’t have enough food to feed all three communities."
 audio_stream = ExtResource("19_mg8q2")
 
 [node name="6" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.941471, 0.141395, 0.306007, 0, 0.907777, -0.419452, -0.337095, 0.394902, 0.854646, 38.4925, 19.7877, -113.464)
-text = "How do we prevent Elysium and Horizon
-from taking what they need by force?"
+text = "How do we prevent Elysium and Horizon from taking what they need by force?"
 audio_stream = ExtResource("20_p31qf")
 
 [node name="6b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.958934, -0.118969, -0.257473, 0, 0.907777, -0.419452, 0.28363, -0.402227, -0.870498, -33.3331, 19.788, -52)
-text = "How do we prevent Elysium and Horizon
-from taking what they need by force?"
+text = "How do we prevent Elysium and Horizon from taking what they need by force?"
 audio_stream = ExtResource("20_p31qf")
 
 [node name="7" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.6606, 27.4899, -125.866)
-text = "Or Edengale from subjugating 
-the others in return for food?"
+text = "Or Edengale from subjugating the others in return for food?"
 audio_stream = ExtResource("21_nndln")
 
 [node name="7b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.590605, 0, -0.806961, 0, 1, 0, 0.806961, 0, -0.590605, -23.661, 26.49, -35.5893)
-text = "Or Edengale from subjugating 
-the others in return for food?"
+text = "Or Edengale from subjugating the others in return for food?"
 audio_stream = ExtResource("21_nndln")
 
 [node name="Door3" parent="." instance=ExtResource("9_vha7y")]
@@ -340,8 +326,7 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door3" index="6"]
-text = "There should be a global assembly 
-enforcing peace and responding to crises."
+text = "There should be a global assembly enforcing peace and responding to crises."
 
 [node name="State_Plus" parent="Door3" instance=ExtResource("5_q1yeh")]
 
@@ -352,8 +337,7 @@ transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door3b" index="6"]
-text = "There should be a global assembly 
-enforcing peace and responding to crises."
+text = "There should be a global assembly enforcing peace and responding to crises."
 
 [node name="State_Plus" parent="Door3b" instance=ExtResource("5_q1yeh")]
 
@@ -364,8 +348,7 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door4" index="6"]
-text = "There should be enough trade and cultural exchange between
-communities that stark differences in how they do are impossible"
+text = "There should be enough trade and cultural exchange between communities that stark differences in how they do are impossible"
 
 [node name="Global_plus" parent="Door4" instance=ExtResource("4_1stx4")]
 
@@ -376,8 +359,7 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 26, -13
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door4b" index="6"]
-text = "There should be enough trade and cultural exchange between
-communities that stark differences in how they do are impossible"
+text = "There should be enough trade and cultural exchange between communities that stark differences in how they do are impossible"
 
 [node name="Global_plus" parent="Door4b" instance=ExtResource("4_1stx4")]
 
@@ -419,26 +401,22 @@ audio_stream = ExtResource("24_a5yix")
 
 [node name="9" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, -6.7634, 37.2332, -162.05)
-text = "or do we need some freedom through chaos, 
-with commerce or mutualism?"
+text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("25_730tk")
 
 [node name="9c" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-1, -4.37114e-08, -7.57103e-08, 0, 0.866025, -0.5, 8.74228e-08, -0.5, -0.866025, -6.84295, 37.971, -100.593)
-text = "or do we need some freedom through chaos, 
-with commerce or mutualism?"
+text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("25_730tk")
 
 [node name="9b" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(0.994764, 0.0386162, 0.0946259, 7.71341e-09, 0.925871, -0.377841, -0.102202, 0.375862, 0.921022, 7.94397, 37.0088, -61.8245)
-text = "or do we need some freedom through chaos, 
-with commerce or mutualism?"
+text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("25_730tk")
 
 [node name="9d" parent="." instance=ExtResource("3_mgfei")]
 transform = Transform3D(-0.965926, -0.0977924, -0.239633, -2.26267e-08, 0.925871, -0.377841, 0.258819, -0.364966, -0.894322, 10.161, 37.2298, 1.48909)
-text = "or do we need some freedom through chaos, 
-with commerce or mutualism?"
+text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("25_730tk")
 
 [node name="Gate" type="CSGCombiner3D" parent="."]

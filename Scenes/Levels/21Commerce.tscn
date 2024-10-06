@@ -188,8 +188,7 @@ transform = Transform3D(0.707106, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707106, 
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door4" index="6"]
-text = "If everyone’s basic needs are met, hoarding other 
-resources doesn’t bother me."
+text = "If everyone’s basic needs are met, hoarding other resources doesn’t bother me."
 
 [node name="Economy_minus" parent="Door4" instance=ExtResource("9_vovpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0518723, 0, -0.029953)
