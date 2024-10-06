@@ -15,8 +15,8 @@ wet = 0.1
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_dnmu4"]
 resource_name = "EQ"
-band_db/1000_hz = -10.0
-band_db/3200_hz = -10.0
+band_db/1000_hz = -12.0
+band_db/3200_hz = -12.0
 
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectCompressor_vsmgy")

@@ -49,12 +49,12 @@ func _physics_process(delta):
 		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(velocity.x, velocity.z), LERP_VALUE)
 	
 	var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
-	var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
-	if is_jumping:
-		velocity.y = jump_strength
-		snap_vector = Vector3.ZERO
-	elif just_landed:
-		snap_vector = Vector3.DOWN
+	#var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
+	#if is_jumping:
+	#	velocity.y = jump_strength
+	#	snap_vector = Vector3.ZERO
+	#elif just_landed:
+	#	snap_vector = Vector3.DOWN
 	
 	apply_floor_snap()
 	move_and_slide()
