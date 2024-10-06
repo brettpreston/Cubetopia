@@ -8,8 +8,8 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gnl1v"]
-size = Vector3(3.1, 0.4, 3.5)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n6dil"]
+points = PackedVector3Array(1.44398, 0.0549704, 0.913008, 1.44264, -0.0523821, 0.912235, 0.801988, 0.00127143, -1.56282, -1.58122, -0.281252, 0.621043, 0.000184715, 0.283795, 1.69468, 1.35614, 0.283795, -1.07348, -0.0562592, -0.281252, -1.69508, 0.62172, -0.281252, 1.58176, 1.5258, -0.281252, -0.621443, -0.507811, 0.283795, -1.63879, -1.58122, -0.281252, -0.621443, -1.0729, 0.283795, 1.29928, -0.620699, -0.281252, 1.58176, 1.5258, 0.283795, 0.734318, -1.69411, 0.283795, -0.0564836, -1.12742, 0.00127143, -1.33371, 1.5258, -0.281252, 0.621043, 0.791379, 0.283795, 1.46884, 1.18681, -0.281252, -1.24304, -1.52478, 0.283795, -0.734718, -0.846801, -0.281252, -1.46924, 0.000184715, 0.283795, -1.69508, 1.5258, 0.283795, -0.734718, -1.58122, 0.283795, 0.564759, -1.18579, -0.281252, 1.24264, 1.11852, 0.00127143, 1.33955, -0.491093, 0.00127143, 1.67154, -1.69411, -0.281252, 0.0560835, -0.0562592, -0.281252, 1.69468, -1.5925, 0.0540489, 0.686269, 1.18681, -0.281252, 1.18636, 0.686329, -0.0520856, 1.6012)
 
 [node name="Portalex" type="Node3D"]
 
@@ -19,8 +19,9 @@ size = Vector3(3.1, 0.4, 3.5)
 transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1.5, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_ca5kk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal/discombobulated_mesh_002" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 1.49012e-08, -0.0499999)
-shape = SubResource("BoxShape3D_gnl1v")
+[node name="StaticBody3D" type="StaticBody3D" parent="Portal/discombobulated_mesh_002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Portal/discombobulated_mesh_002/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_n6dil")
 
 [editable path="Portal"]
