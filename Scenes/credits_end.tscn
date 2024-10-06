@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://b8g1nx260w4rm"]
+[gd_scene load_steps=18 format=3 uid="uid://b8g1nx260w4rm"]
 
 [ext_resource type="Script" path="res://Credits_End.gd" id="1_cquo6"]
 [ext_resource type="Texture2D" uid="uid://b415vuhhodtaq" path="res://Assets/background/end_screen/black.jpg" id="2_s5cad"]
+[ext_resource type="Texture2D" uid="uid://ufqm3rj58fxr" path="res://Assets/UI/Menu/CCC_Logo.png" id="3_10egi"]
 [ext_resource type="Script" path="res://FinalTechPlus.gd" id="3_sh06w"]
 [ext_resource type="Script" path="res://Scenes/Levels/final_script_01.gd" id="4_3p5lo"]
 [ext_resource type="Script" path="res://Scenes/Levels/economy_plus.gd" id="5_753du"]
@@ -27,6 +28,11 @@ script = ExtResource("1_cquo6")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("2_s5cad")
+
+[node name="CccLogo" type="Sprite2D" parent="."]
+position = Vector2(1479, 960)
+scale = Vector2(0.372, 0.328)
+texture = ExtResource("3_10egi")
 
 [node name="TechPlus" type="Node3D" parent="."]
 script = ExtResource("3_sh06w")
