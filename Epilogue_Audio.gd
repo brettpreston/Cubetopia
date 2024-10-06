@@ -39,7 +39,7 @@ var central: String="Without existential insecurity, humanity is free to focus o
 var captured: String="Greed for wealth no longer drives us, but greed for power has yet to be stamped out. But you ready to fight for the furture."
 var volatile: String="You know that complete freedom will require more effort, but you are ready for it. And you know others are too."
 var solidarity: String="There are still some hardships, but the people have learned to work together in a crisis. Humanity is happy."
-var utopia: String="The world we fought for is here. You think of today's children who get to grow up in it and smile."
+var utopia: String="The world we fought for is here."
 
 func _ready():
 	var Text: String = epilogue()

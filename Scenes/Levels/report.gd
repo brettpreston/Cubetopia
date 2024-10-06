@@ -19,7 +19,7 @@ func _ready():
 
 
 var inequality: String="The world is still marred by inequalities. \n"
-var captured: String="The power was captured by new elites and their position appears to be well entrenched. Humanity has overcome worse, and it will again."
+var captured: String="The power was captured by new elites and their position appears to be well entrenched. But humanity has overcome worse, and it will again."
 var volatile: String="New elites threaten to capture power, but their position is feeble. Humanity has overcome worse, and it will again."
 var solidarity: String="The society is happy despite the occasional hardships. Thank you for building a better future."
 var utopia: String="Thank you for building a better future."
