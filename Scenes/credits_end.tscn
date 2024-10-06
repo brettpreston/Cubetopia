@@ -38,14 +38,14 @@ script = ExtResource("4_3p5lo")
 script = ExtResource("5_753du")
 
 [node name="07FuturisticCentralizedGlobal" type="Sprite2D" parent="TechPlus/GlobalPlus/EconomyPlus"]
-position = Vector2(433, 460)
+position = Vector2(500, 450)
 texture = ExtResource("6_q6j3h")
 
 [node name="EconomyMinus" type="Node3D" parent="TechPlus/GlobalPlus"]
 script = ExtResource("6_va3j0")
 
 [node name="Sprite2D" type="Sprite2D" parent="TechPlus/GlobalPlus/EconomyMinus"]
-position = Vector2(433, 464)
+position = Vector2(500, 450)
 texture = ExtResource("8_i4o4f")
 
 [node name="GlobalMinus" type="Node3D" parent="TechPlus"]
@@ -55,14 +55,14 @@ script = ExtResource("8_r78wt")
 script = ExtResource("5_753du")
 
 [node name="06FuturisticCentralizedSelfSufficient" type="Sprite2D" parent="TechPlus/GlobalMinus/EconomyPlus2"]
-position = Vector2(429, 457)
+position = Vector2(500, 450)
 texture = ExtResource("10_14bwc")
 
 [node name="EconomyMinus2" type="Node3D" parent="TechPlus/GlobalMinus"]
 script = ExtResource("6_va3j0")
 
 [node name="05FuturisticCommerceSelfSufficient" type="Sprite2D" parent="TechPlus/GlobalMinus/EconomyMinus2"]
-position = Vector2(420, 448)
+position = Vector2(500, 450)
 texture = ExtResource("11_2kiim")
 
 [node name="TechMinus" type="Node3D" parent="."]
@@ -75,14 +75,14 @@ script = ExtResource("4_3p5lo")
 script = ExtResource("5_753du")
 
 [node name="03CloseToNatureCentalizedGlobal" type="Sprite2D" parent="TechMinus/GlobalPlus/EconomyPlus"]
-position = Vector2(431, 477)
+position = Vector2(500, 450)
 texture = ExtResource("13_b4a0s")
 
 [node name="EconomyMinus" type="Node3D" parent="TechMinus/GlobalPlus"]
 script = ExtResource("6_va3j0")
 
 [node name="04CloseToNatureCommerceGlobal" type="Sprite2D" parent="TechMinus/GlobalPlus/EconomyMinus"]
-position = Vector2(442, 457)
+position = Vector2(500, 450)
 texture = ExtResource("14_qe3xl")
 
 [node name="GlobalMinus" type="Node3D" parent="TechMinus"]
@@ -92,22 +92,22 @@ script = ExtResource("8_r78wt")
 script = ExtResource("5_753du")
 
 [node name="02CloseToNatureCentalizedSelfSufficient" type="Sprite2D" parent="TechMinus/GlobalMinus/EconomyPlus2"]
-position = Vector2(438, 462)
+position = Vector2(500, 450)
 texture = ExtResource("15_unw2f")
 
 [node name="EconomyMinus2" type="Node3D" parent="TechMinus/GlobalMinus"]
 script = ExtResource("6_va3j0")
 
 [node name="01CloseToNatureCommerceSelfSufficient" type="Sprite2D" parent="TechMinus/GlobalMinus/EconomyMinus2"]
-position = Vector2(433, 467)
+position = Vector2(500, 450)
 texture = ExtResource("16_g46ma")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 856.0
-offset_top = 850.0
-offset_right = 1082.0
-offset_bottom = 980.0
+offset_left = 400.0
+offset_top = 900.0
+offset_right = 626.0
+offset_bottom = 1030.0
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
