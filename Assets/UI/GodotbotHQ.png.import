@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxbgwytjjj00"
-path="res://.godot/imported/godotbotwire.png-2fd6aaa5d8a6866394071758e7ae6827.ctex"
+uid="uid://p1y7dr0qm3yw"
+path="res://.godot/imported/GodotbotHQ.png-76f90c2dbdbe38e9fa9dd2310e4bbbd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/godotbotwire.png"
-dest_files=["res://.godot/imported/godotbotwire.png-2fd6aaa5d8a6866394071758e7ae6827.ctex"]
+source_file="res://Assets/UI/GodotbotHQ.png"
+dest_files=["res://.godot/imported/GodotbotHQ.png-76f90c2dbdbe38e9fa9dd2310e4bbbd4.ctex"]
 
 [params]
 
