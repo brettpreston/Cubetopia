@@ -6,12 +6,13 @@
 [node name="Resilience_Plus" type="Area3D"]
 script = ExtResource("1_iegm7")
 
-[node name="Collision" parent="." instance=ExtResource("2_u2hwd")]
-
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+visible = false
 billboard = 1
 text = "Resilience +1"
 font_size = 64
+
+[node name="Collision" parent="." instance=ExtResource("2_u2hwd")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://0h47c7s7oxyo"]
 
 [ext_resource type="Script" path="res://Scenes/UI/godotbot.gd" id="1_283y6"]
-[ext_resource type="VideoStream" path="res://Scenes/UI/GodotbotPeaceHQ.ogv" id="1_es005"]
+[ext_resource type="VideoStream" path="res://Scenes/UI/GodotbotPeaceIcon.ogv" id="2_a1hn2"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_283y6")
@@ -9,7 +9,7 @@ script = ExtResource("1_283y6")
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-stream = ExtResource("1_es005")
+stream = ExtResource("2_a1hn2")
 autoplay = true
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

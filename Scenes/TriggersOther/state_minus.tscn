@@ -8,6 +8,7 @@ script = ExtResource("1_0vgrd")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+visible = false
 billboard = 1
 text = "State -1"
 font_size = 64
