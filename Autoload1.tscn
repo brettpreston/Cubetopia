@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://Autoload1.gd" id="1_sony4"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node"]
 script = ExtResource("1_sony4")

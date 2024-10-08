@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://blbv2uxpmu0gb"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/Player.tscn" id="1_sjt0v"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_sjt0v"]
 [ext_resource type="PackedScene" uid="uid://lufia1rcbg7l" path="res://Scenes/Gates/Teleporter.tscn" id="1_vrouy"]
 [ext_resource type="PackedScene" uid="uid://c10y6lgslvp5" path="res://Assets/Models/Props/tree_wire_teal.glb" id="3_asy03"]
 [ext_resource type="PackedScene" uid="uid://bg563s43ytakm" path="res://Assets/Models/Props/Tree_Wire_Green.glb" id="4_1j000"]
