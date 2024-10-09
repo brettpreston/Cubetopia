@@ -5,7 +5,7 @@ func _ready():
 	var texture = sub_viewport.get_texture()
 	
 	# Ensure the MeshInstance3D has a material
-	var mesh_instance = $MeshInstance3D
+	var mesh_instance = $SubViewportContainer/SubViewport/Camera3D/MeshInstance3D
 	if not mesh_instance.material_override:
 		mesh_instance.material_override = StandardMaterial3D.new()
 	
