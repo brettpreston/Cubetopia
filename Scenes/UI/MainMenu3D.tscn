@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://q5ndarkvp0sk"]
+
+[ext_resource type="Script" path="res://Scenes/UI/main_menu_3d.gd" id="1_b3vh5"]
+[ext_resource type="PackedScene" uid="uid://bxsksshrs1wvu" path="res://Scenes/MainMenu.tscn" id="2_km226"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rjssv"]
+sky_horizon_color = Color(0.59625, 0.6135, 0.696324, 1)
+ground_bottom_color = Color(0, 0, 0.235294, 1)
+ground_horizon_color = Color(0.59625, 0.6135, 0.696324, 1)
+
+[sub_resource type="Sky" id="Sky_bci0q"]
+sky_material = SubResource("ProceduralSkyMaterial_rjssv")
+
+[sub_resource type="Environment" id="Environment_t5k5m"]
+background_mode = 2
+sky = SubResource("Sky_bci0q")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k405i"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_uqdrh"]
+material = SubResource("ShaderMaterial_k405i")
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_b3vh5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t5k5m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_uqdrh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = -1
+anchor_right = 0.996
+anchor_bottom = 1.0
+offset_right = 7.67993
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="MainMenu" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_km226")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
