@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ba56j2jb46od5"]
+[gd_scene load_steps=42 format=3 uid="uid://ba56j2jb46od5"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_0oc7h"]
 [ext_resource type="Texture2D" uid="uid://cyy76lhqi4rnw" path="res://Assets/background/Background_Global.jpg" id="2_2y03g"]
@@ -33,6 +33,7 @@
 [ext_resource type="Material" uid="uid://b514p3chhc28p" path="res://Assets/Textures/Path_Texture_R.tres" id="28_bfar3"]
 [ext_resource type="Material" uid="uid://c817uqxht18at" path="res://Assets/Textures/Path_Texture_SQ_R.tres" id="29_qrxg5"]
 [ext_resource type="Material" uid="uid://coeb05bqdb2hb" path="res://Assets/Textures/Path_Texture_SQ_P.tres" id="30_wrvs0"]
+[ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="34_7b6uq"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_37pb6"]
 panorama = ExtResource("2_2y03g")
@@ -166,12 +167,12 @@ audio_stream = ExtResource("17_1t6gx")
 transform = Transform3D(1, 0, -2.68221e-07, 0, 1, 0, 2.68221e-07, 0, 1, 0, 0.135498, 4.5)
 
 [node name="3b" parent="." instance=ExtResource("5_xmy48")]
-transform = Transform3D(0.878418, -0.0187208, 0.477527, 0.109094, 0.980703, -0.162233, -0.465275, 0.194604, 0.86351, 11.4481, 12.8805, -70.4542)
+transform = Transform3D(0.875465, 0.0781003, 0.47693, 0, 0.986856, -0.161604, -0.483282, 0.141478, 0.863958, 11.4481, 12.8805, -70.4542)
 text = "Who makes decisions for the global community?"
 audio_stream = ExtResource("17_1t6gx")
 
 [node name="CollisionShape3D" parent="3b/Area3D" index="0"]
-transform = Transform3D(1, 0, -2.68221e-07, 0, 1, 0, 2.68221e-07, 0, 1, 0, 0.135498, 4.5)
+transform = Transform3D(1, 7.45058e-09, -2.38419e-07, 0, 1, 0, 2.68221e-07, 1.49012e-08, 1, 0, 0.135498, 4.5)
 
 [node name="Door3" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.982697, 0, -0.18522, 0, 1, 0, 0.18522, 0, 0.982697, -0.343659, -8.55114, -84.5759)
@@ -288,13 +289,6 @@ audio_stream = ExtResource("21_siqh0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.9007, 4.64375, -96.8539)
 text = "or do we need some freedom through chaos, with commerce or mutualism?"
 audio_stream = ExtResource("21_siqh0")
-
-[node name="Gate" type="CSGCombiner3D" parent="."]
-
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 9.07261)
-inner_radius = 3.0
-outer_radius = 4.0
 
 [node name="Gate2" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -46)
@@ -628,6 +622,9 @@ material_override = ExtResource("29_qrxg5")
 use_collision = true
 polygon = PackedVector2Array(3, 1.4, 3.9, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -2.3, 1.5)
 depth = 0.5
+
+[node name="Gate_Enter" parent="." instance=ExtResource("34_7b6uq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 10)
 
 [editable path="quote-millions"]
 [editable path="Door1"]

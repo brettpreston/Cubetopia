@@ -64,6 +64,7 @@ stream = ExtResource("3_q6c00")
 attenuation_model = 2
 panning_strength = 0.25
 bus = &"VO"
+attenuation_filter_cutoff_hz = 10000.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

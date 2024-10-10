@@ -472,7 +472,6 @@ curve = SubResource("Curve3D_kw6yn")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D10"]
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 4.5, -0.00607228, -7.9882)
-material_override = ExtResource("23_q3n4e")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -485,6 +484,7 @@ path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+material = ExtResource("24_5sf5f")
 
 [node name="Path3D11" type="Path3D" parent="Pathcom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -101)

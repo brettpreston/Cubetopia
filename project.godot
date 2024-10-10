@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=120
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Scenes/UI/GodotbotSplash2.png"
-config/icon="res://icon.svg"
+config/icon="res://Assets/Logoicon.svg"
 config/macos_native_icon="res://Assets/Logoicon.icns"
 config/windows_native_icon="res://Assets/Logoicon.ico"
 
