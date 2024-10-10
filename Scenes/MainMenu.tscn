@@ -101,7 +101,7 @@ layout_mode = 2
 texture_filter = 1
 layout_mode = 2
 theme_type_variation = &"VersionNumberLabel"
-text = "v1.0"
+text = "v1.01"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
