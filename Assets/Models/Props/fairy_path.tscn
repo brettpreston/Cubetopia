@@ -1,22 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://bajhq28k0d0g7"]
+[gd_scene load_steps=8 format=3 uid="uid://bajhq28k0d0g7"]
 
 [ext_resource type="PackedScene" uid="uid://bidmpxfpxow2h" path="res://Assets/Models/Props/FairyDustwire2.glb" id="1_0f0u7"]
 [ext_resource type="Script" path="res://Assets/Models/Props/fairy_path.gd" id="1_pn3n4"]
 
 [sub_resource type="Curve3D" id="Curve3D_828pr"]
+bake_interval = 100.0
 _data = {
 "points": PackedVector3Array(0, 0, 0, 30.655, 24.06, 17.27, -77.0415, 0.196533, 72.0985, -124.245, -3.94, 0, 27.98, -7.405, -11.945, 69.9454, 6.81543, 67.1548, 19.785, 4.135, 41.315, 2.32, 20.905, -53.045, 135.101, -0.293762, -2.85584, -3.635, 0.585, 0, -52.62, -9.48, -2.69, 64.5077, -0.18512, -64.3213, 19.905, -19.735, -10.03, -21.305, 18.33, -21.245, -82.9563, 0.194336, -64.9407, -20.02, 0, -55.745, 0, 0, 0, -151.592, 0.314026, 0.567923, -32.985, -18.885, 0, 0, 0, 0, -77.0415, 0.196533, 72.0985),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm5f1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuc3p"]
 emission_enabled = true
-emission = Color(0.984744, 0.810185, 0, 1)
-emission_energy_multiplier = 3.0
-
-[sub_resource type="PrismMesh" id="PrismMesh_fbem1"]
-material = SubResource("StandardMaterial3D_rm5f1")
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 10.0
 
 [sub_resource type="Animation" id="Animation_87wu3"]
 resource_name = "Fairy"
@@ -87,18 +85,26 @@ script = ExtResource("1_pn3n4")
 curve = SubResource("Curve3D_828pr")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.285624, -0.163476, 0.944173, -0.436833, 0.899105, 0.0235342, -0.852884, -0.40576, -0.328249, -117.786, 8.33484, -68.8036)
-progress = 556.78
+transform = Transform3D(0.789914, -0.10145, -0.6045, 0.296673, 0.92613, 0.232239, 0.536377, -0.362844, 0.761785, 104.308, 0.118359, -41.398)
+tilt_enabled = false
 
 [node name="FairyDustwire2" parent="Path3D/PathFollow3D" instance=ExtResource("1_0f0u7")]
 transform = Transform3D(8.77916e-06, 0.0418896, 1.99956, -2, -7.23998e-06, 8.93275e-06, 7.42549e-06, -1.99956, 0.0418896, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D/FairyDustwire2"]
-transform = Transform3D(-1, -1.50996e-07, 4.82396e-09, 1.50996e-07, -1, 4.84288e-09, 7.42147e-09, 7.45058e-09, 0.65, -5.96046e-08, 1.2, 0)
-mesh = SubResource("PrismMesh_fbem1")
+[node name="Fairy_Dust_full" parent="Path3D/PathFollow3D/FairyDustwire2" index="0"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, -4, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Path3D/PathFollow3D/FairyDustwire2"]
+transform = Transform3D(-1, 7.07805e-08, 0, -8.56817e-08, -1, 1.67638e-08, -5.96046e-08, -2.42144e-08, 1, 0, -4.325, 0)
+radius = 0.458
+height = 4.0
+cone = true
+material = SubResource("StandardMaterial3D_vuc3p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Path3D/PathFollow3D")
 libraries = {
 "": SubResource("AnimationLibrary_r808j")
 }
+
+[editable path="Path3D/PathFollow3D/FairyDustwire2"]

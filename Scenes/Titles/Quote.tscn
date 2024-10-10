@@ -63,7 +63,7 @@ shape = SubResource("BoxShape3D_hsow4")
 stream = ExtResource("3_q6c00")
 attenuation_model = 2
 panning_strength = 0.25
-bus = &"VO"
+bus = &"Quote"
 attenuation_filter_cutoff_hz = 10000.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
