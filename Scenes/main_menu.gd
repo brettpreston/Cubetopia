@@ -1,6 +1,6 @@
 extends Control
 
-const NEXT_SCENE=preload("res://Scenes/Levels/00Intro.tscn")
+var NEXT_SCENE=load("res://Scenes/Levels/00Intro.tscn")
 var Credits=load("res://Scenes/credits.tscn")
 
 func _ready():

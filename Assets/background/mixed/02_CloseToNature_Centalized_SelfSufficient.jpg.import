@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1h6mktxc2f3a"
 path.s3tc="res://.godot/imported/02_CloseToNature_Centalized_SelfSufficient.jpg-1e755044eb2cf02307ee291d68cb5262.s3tc.ctex"
+path.etc2="res://.godot/imported/02_CloseToNature_Centalized_SelfSufficient.jpg-1e755044eb2cf02307ee291d68cb5262.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/background/mixed/02_CloseToNature_Centalized_SelfSufficient.jpg"
-dest_files=["res://.godot/imported/02_CloseToNature_Centalized_SelfSufficient.jpg-1e755044eb2cf02307ee291d68cb5262.s3tc.ctex"]
+dest_files=["res://.godot/imported/02_CloseToNature_Centalized_SelfSufficient.jpg-1e755044eb2cf02307ee291d68cb5262.s3tc.ctex", "res://.godot/imported/02_CloseToNature_Centalized_SelfSufficient.jpg-1e755044eb2cf02307ee291d68cb5262.etc2.ctex"]
 
 [params]
 

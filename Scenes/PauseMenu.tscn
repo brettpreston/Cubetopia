@@ -198,8 +198,14 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 55
 text = "Resume"
+
+[node name="Main" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -208,7 +214,6 @@ theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="PauseMenuT" type="Sprite2D" parent="."]
@@ -222,4 +227,5 @@ libraries = {
 autoplay = "Unpause"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main" to="." method="_on_main_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

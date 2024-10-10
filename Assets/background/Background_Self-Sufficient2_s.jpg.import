@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d36nsphyipmlg"
 path.s3tc="res://.godot/imported/Background_Self-Sufficient2_s.jpg-dba69ffb7f1ed3202d0cf13acd639e33.s3tc.ctex"
+path.etc2="res://.godot/imported/Background_Self-Sufficient2_s.jpg-dba69ffb7f1ed3202d0cf13acd639e33.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/background/Background_Self-Sufficient2_s.jpg"
-dest_files=["res://.godot/imported/Background_Self-Sufficient2_s.jpg-dba69ffb7f1ed3202d0cf13acd639e33.s3tc.ctex"]
+dest_files=["res://.godot/imported/Background_Self-Sufficient2_s.jpg-dba69ffb7f1ed3202d0cf13acd639e33.s3tc.ctex", "res://.godot/imported/Background_Self-Sufficient2_s.jpg-dba69ffb7f1ed3202d0cf13acd639e33.etc2.ctex"]
 
 [params]
 

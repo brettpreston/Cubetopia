@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://4trnx2vyfuhi"
 path.s3tc="res://.godot/imported/Node_Path_Y_intense.png-1ee729172c9f0e4ca112f832c8b2aadb.s3tc.ctex"
+path.etc2="res://.godot/imported/Node_Path_Y_intense.png-1ee729172c9f0e4ca112f832c8b2aadb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/Node_Path_Y_intense.png"
-dest_files=["res://.godot/imported/Node_Path_Y_intense.png-1ee729172c9f0e4ca112f832c8b2aadb.s3tc.ctex"]
+dest_files=["res://.godot/imported/Node_Path_Y_intense.png-1ee729172c9f0e4ca112f832c8b2aadb.s3tc.ctex", "res://.godot/imported/Node_Path_Y_intense.png-1ee729172c9f0e4ca112f832c8b2aadb.etc2.ctex"]
 
 [params]
 

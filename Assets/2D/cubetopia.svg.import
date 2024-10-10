@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://reuwi5xjik34"
 path.s3tc="res://.godot/imported/cubetopia.svg-e1450cdf35ae52daf1b96e2a79108371.s3tc.ctex"
+path.etc2="res://.godot/imported/cubetopia.svg-e1450cdf35ae52daf1b96e2a79108371.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/2D/cubetopia.svg"
-dest_files=["res://.godot/imported/cubetopia.svg-e1450cdf35ae52daf1b96e2a79108371.s3tc.ctex"]
+dest_files=["res://.godot/imported/cubetopia.svg-e1450cdf35ae52daf1b96e2a79108371.s3tc.ctex", "res://.godot/imported/cubetopia.svg-e1450cdf35ae52daf1b96e2a79108371.etc2.ctex"]
 
 [params]
 

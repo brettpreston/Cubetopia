@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d383xag2d1o8l"
 path.s3tc="res://.godot/imported/SimpleCube.png-ca42bdc8c2b92b9e38225c659dcf0907.s3tc.ctex"
+path.etc2="res://.godot/imported/SimpleCube.png-ca42bdc8c2b92b9e38225c659dcf0907.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/UI/Menu/SimpleCube.png"
-dest_files=["res://.godot/imported/SimpleCube.png-ca42bdc8c2b92b9e38225c659dcf0907.s3tc.ctex"]
+dest_files=["res://.godot/imported/SimpleCube.png-ca42bdc8c2b92b9e38225c659dcf0907.s3tc.ctex", "res://.godot/imported/SimpleCube.png-ca42bdc8c2b92b9e38225c659dcf0907.etc2.ctex"]
 
 [params]
 

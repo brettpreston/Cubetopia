@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://gpucvhoowop3"
 path.s3tc="res://.godot/imported/Energy.png-ea773f9d6d4ea6139b9fab2d9b03b279.s3tc.ctex"
+path.etc2="res://.godot/imported/Energy.png-ea773f9d6d4ea6139b9fab2d9b03b279.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/Energy.png"
-dest_files=["res://.godot/imported/Energy.png-ea773f9d6d4ea6139b9fab2d9b03b279.s3tc.ctex"]
+dest_files=["res://.godot/imported/Energy.png-ea773f9d6d4ea6139b9fab2d9b03b279.s3tc.ctex", "res://.godot/imported/Energy.png-ea773f9d6d4ea6139b9fab2d9b03b279.etc2.ctex"]
 
 [params]
 

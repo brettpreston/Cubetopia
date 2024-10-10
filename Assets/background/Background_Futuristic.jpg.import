@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bo32b88vqwt1l"
 path.s3tc="res://.godot/imported/Background_Futuristic.jpg-6d1f879cd1a140d97535084b6d1c40eb.s3tc.ctex"
+path.etc2="res://.godot/imported/Background_Futuristic.jpg-6d1f879cd1a140d97535084b6d1c40eb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/background/Background_Futuristic.jpg"
-dest_files=["res://.godot/imported/Background_Futuristic.jpg-6d1f879cd1a140d97535084b6d1c40eb.s3tc.ctex"]
+dest_files=["res://.godot/imported/Background_Futuristic.jpg-6d1f879cd1a140d97535084b6d1c40eb.s3tc.ctex", "res://.godot/imported/Background_Futuristic.jpg-6d1f879cd1a140d97535084b6d1c40eb.etc2.ctex"]
 
 [params]
 

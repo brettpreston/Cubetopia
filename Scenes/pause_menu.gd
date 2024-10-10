@@ -1,5 +1,7 @@
 extends ColorRect
 
+var next_scene = load("res://Scenes/MainMenu.tscn")
+
 @onready var animator: AnimationPlayer = $AnimationPlayer
 @onready var resume_button: Button = $MarginContainer/VBoxContainer/Resume
 
@@ -23,3 +25,7 @@ func pause():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_main_pressed() -> void:
+	get_tree().change_scene_to_packed(next_scene)

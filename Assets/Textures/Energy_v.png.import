@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpot6yddpgadd"
 path.s3tc="res://.godot/imported/Energy_v.png-c6d51f871aaa609be20cf38823f8e7ed.s3tc.ctex"
+path.etc2="res://.godot/imported/Energy_v.png-c6d51f871aaa609be20cf38823f8e7ed.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Textures/Energy_v.png"
-dest_files=["res://.godot/imported/Energy_v.png-c6d51f871aaa609be20cf38823f8e7ed.s3tc.ctex"]
+dest_files=["res://.godot/imported/Energy_v.png-c6d51f871aaa609be20cf38823f8e7ed.s3tc.ctex", "res://.godot/imported/Energy_v.png-c6d51f871aaa609be20cf38823f8e7ed.etc2.ctex"]
 
 [params]
 

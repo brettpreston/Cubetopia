@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxt6aldd0s8a0"
 path.s3tc="res://.godot/imported/04_CloseToNature_Commerce_Global.jpg-12a34b8a2fc966ad1b0f3df4ba8b54af.s3tc.ctex"
+path.etc2="res://.godot/imported/04_CloseToNature_Commerce_Global.jpg-12a34b8a2fc966ad1b0f3df4ba8b54af.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/background/mixed/04_CloseToNature_Commerce_Global.jpg"
-dest_files=["res://.godot/imported/04_CloseToNature_Commerce_Global.jpg-12a34b8a2fc966ad1b0f3df4ba8b54af.s3tc.ctex"]
+dest_files=["res://.godot/imported/04_CloseToNature_Commerce_Global.jpg-12a34b8a2fc966ad1b0f3df4ba8b54af.s3tc.ctex", "res://.godot/imported/04_CloseToNature_Commerce_Global.jpg-12a34b8a2fc966ad1b0f3df4ba8b54af.etc2.ctex"]
 
 [params]
 

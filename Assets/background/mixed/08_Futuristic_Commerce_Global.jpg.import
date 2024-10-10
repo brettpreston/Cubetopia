@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwd7nky24spsg"
 path.s3tc="res://.godot/imported/08_Futuristic_Commerce_Global.jpg-8dbea9446911a010435de2d478b8e9cd.s3tc.ctex"
+path.etc2="res://.godot/imported/08_Futuristic_Commerce_Global.jpg-8dbea9446911a010435de2d478b8e9cd.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/background/mixed/08_Futuristic_Commerce_Global.jpg"
-dest_files=["res://.godot/imported/08_Futuristic_Commerce_Global.jpg-8dbea9446911a010435de2d478b8e9cd.s3tc.ctex"]
+dest_files=["res://.godot/imported/08_Futuristic_Commerce_Global.jpg-8dbea9446911a010435de2d478b8e9cd.s3tc.ctex", "res://.godot/imported/08_Futuristic_Commerce_Global.jpg-8dbea9446911a010435de2d478b8e9cd.etc2.ctex"]
 
 [params]
 
