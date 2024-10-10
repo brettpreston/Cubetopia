@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://3yfweq66ct17"]
+[gd_scene load_steps=56 format=4 uid="uid://3yfweq66ct17"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_8on32"]
 [ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
@@ -35,7 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://dkxtyrh5srbj2" path="res://Assets/Models/Props/Community/Sunballmod.glb" id="24_pvtyu"]
 [ext_resource type="Material" uid="uid://bwft8j6bmg23c" path="res://Assets/Textures/Path_Texture_SQ_Y.tres" id="25_46ghw"]
 [ext_resource type="AudioStream" uid="uid://cxcqj2i17x0se" path="res://Assets/audio/VO/1a-9.ogg" id="25_730tk"]
-[ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ffxqr"]
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_abgwe"]
 [ext_resource type="Texture2D" uid="uid://db6pbgoqtv0kb" path="res://Assets/Textures/Node_Path_W.png" id="31_phtkk"]
 [ext_resource type="Texture2D" uid="uid://dwgkb63ktkjr" path="res://Assets/Models/Props/Community/house1.png" id="35_xxdxt"]
@@ -775,7 +774,7 @@ path_joined = false
 
 [node name="pathgon" type="CSGPolygon3D" parent="LevelSwirl"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 71.9, -16, -0.900003)
-material_override = ExtResource("25_ffxqr")
+material_override = ExtResource("25_46ghw")
 use_collision = true
 polygon = PackedVector2Array(3, 1.4, 3.9, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -2.3, 1.5)
 depth = 0.5

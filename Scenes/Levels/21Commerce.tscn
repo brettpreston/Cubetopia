@@ -845,6 +845,13 @@ volume_db = 10.0
 autoplay = true
 bus = &"Music"
 
+[node name="pathgon" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-1.09954, 0.023766, -0.0211316, 0.0237617, 1.09974, 0.000456665, 0.0211365, 0, -1.0998, 1.34473, 5.14328, -13.809)
+material_override = ExtResource("23_q3n4e")
+use_collision = true
+polygon = PackedVector2Array(3, 1.4, 3.9, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -2.3, 1.5)
+depth = 0.5
+
 [editable path="Door1"]
 [editable path="Door2"]
 [editable path="Door3"]

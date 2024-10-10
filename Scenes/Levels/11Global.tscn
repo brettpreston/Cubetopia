@@ -622,6 +622,13 @@ operation = 2
 size = Vector3(2, 0.6, 6.87653)
 material = ExtResource("30_wrvs0")
 
+[node name="pathgon" type="CSGPolygon3D" parent="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.4, -0.6, 10.5)
+material_override = ExtResource("29_qrxg5")
+use_collision = true
+polygon = PackedVector2Array(3, 1.4, 3.9, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -2.3, 1.5)
+depth = 0.5
+
 [editable path="quote-millions"]
 [editable path="Door1"]
 [editable path="Door2"]

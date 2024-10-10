@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgbmtwhesfdgt"]
+
+[ext_resource type="Script" path="res://Scenes/UI/main_menu_3d_gui.gd" id="1_u6uvi"]
+[ext_resource type="Texture2D" uid="uid://dwgkb63ktkjr" path="res://Assets/Models/Props/Community/house1.png" id="3_220y4"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_0p0to"]
+size = Vector2(1.78, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1pnl4"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uwlp4"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_1pnl4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hbe6k"]
+size = Vector3(1.8, 1, 0.085)
+
+[node name="Menu" type="Node3D"]
+script = ExtResource("1_u6uvi")
+
+[node name="Quad" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_0p0to")
+surface_material_override/0 = SubResource("StandardMaterial3D_uwlp4")
+
+[node name="Area3D" type="Area3D" parent="Quad"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Quad/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9407e-08, 0, 0)
+shape = SubResource("BoxShape3D_hbe6k")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="House1" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+texture_filter = 1
+position = Vector2(546.775, 584.265)
+texture = ExtResource("3_220y4")

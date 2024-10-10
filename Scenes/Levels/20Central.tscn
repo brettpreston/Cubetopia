@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bl0wxpinyyqxb"]
+[gd_scene load_steps=34 format=3 uid="uid://bl0wxpinyyqxb"]
 
 [ext_resource type="Texture2D" uid="uid://cfkyt43mo8cwp" path="res://Assets/background/Background_Centralized.jpg" id="1_apbi8"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_fmc72"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://cr4laixmv3rgo" path="res://Assets/audio/music/ambi/ambi_acoustic.ogg" id="24_kugvb"]
 [ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="24_puxl8"]
 [ext_resource type="Material" uid="uid://c5fu46a4poyek" path="res://Assets/Textures/Path_Texture.tres" id="25_ri24n"]
+[ext_resource type="Material" uid="uid://bwft8j6bmg23c" path="res://Assets/Textures/Path_Texture_SQ_Y.tres" id="28_5p143"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_exmi3"]
 panorama = ExtResource("1_apbi8")
@@ -797,6 +798,14 @@ material = ExtResource("23_3ubpf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9, 0.35, 0)
 operation = 2
 size = Vector3(2, 0.3, 6)
+material = ExtResource("23_3ubpf")
+
+[node name="pathgon" type="CSGPolygon3D" parent="LevelPath"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, -1, 0.4)
+material_override = ExtResource("28_5p143")
+use_collision = true
+polygon = PackedVector2Array(3, 1.4, 3.9, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -2.3, 1.5)
+depth = 0.5
 material = ExtResource("23_3ubpf")
 
 [node name="Economy_plus3" parent="." instance=ExtResource("8_mnfj3")]
