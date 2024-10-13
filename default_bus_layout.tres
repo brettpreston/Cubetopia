@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://c18ihn31s35c5"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://c18ihn31s35c5"]
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_vsmgy"]
 resource_name = "Compressor"
@@ -13,13 +13,6 @@ spread = 0.5
 hipass = 0.25
 wet = 0.15
 
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_dg0xf"]
-resource_name = "Compressor"
-threshold = -6.0
-gain = 6.0
-attack_us = 50.0
-release_ms = 400.0
-
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_dnmu4"]
 resource_name = "EQ"
 band_db/1000_hz = -12.0
@@ -28,8 +21,7 @@ band_db/3200_hz = -12.0
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_wp4qb"]
 resource_name = "Compressor"
 threshold = -10.0
-ratio = 8.0
-attack_us = 40.0
+attack_us = 50.0
 release_ms = 700.0
 sidechain = &"VO"
 
@@ -50,8 +42,6 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"VO"
-bus/2/effect/0/effect = SubResource("AudioEffectCompressor_dg0xf")
-bus/2/effect/0/enabled = true
 bus/3/name = &"SFX"
 bus/3/solo = false
 bus/3/mute = false
