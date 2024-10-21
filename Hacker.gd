@@ -15,7 +15,7 @@ var xform : Transform3D
 
 const ANIMATION_BLEND : float = 15.0
 
-@onready var player_mesh : Node3D = $Mesh
+@onready var player_mesh : Node3D = $Armature
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
 @onready var animator : AnimationTree = $AnimationTree
 

@@ -1,7 +1,6 @@
 [gd_scene load_steps=56 format=4 uid="uid://3yfweq66ct17"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_8on32"]
-[ext_resource type="Script" path="res://Scenes/Levels/10_small_com.gd" id="1_x5krv"]
 [ext_resource type="Texture2D" uid="uid://d36nsphyipmlg" path="res://Assets/background/Background_Self-Sufficient2_s.jpg" id="2_4dctu"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_lcf0d"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="3_mgfei"]
@@ -38,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_abgwe"]
 [ext_resource type="Texture2D" uid="uid://db6pbgoqtv0kb" path="res://Assets/Textures/Node_Path_W.png" id="31_phtkk"]
 [ext_resource type="Texture2D" uid="uid://dwgkb63ktkjr" path="res://Assets/Models/Props/Community/house1.png" id="35_xxdxt"]
+[ext_resource type="AudioStream" uid="uid://dwt23s43rj4vc" path="res://Assets/audio/music/test/BP - Neurons & Nebulae.ogg" id="38_6f8oo"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_43mw4"]
 panorama = ExtResource("2_4dctu")
@@ -203,7 +203,6 @@ point_count = 2
 
 [node name="Node3D2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-script = ExtResource("1_x5krv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ngaxy")
@@ -248,10 +247,7 @@ audio_stream = ExtResource("10_y4jl7")
 [node name="Door1" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -80)
 
-[node name="PillerR" parent="Door1" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door1" index="6"]
+[node name="Gate text" parent="Door1" index="7"]
 text = "To join a community, the other members’ consent is necessary. Even if that means some people have to stay in unhealthy communities."
 
 [node name="Resilience_Plus" parent="Door1" instance=ExtResource("7_yehxa")]
@@ -263,10 +259,7 @@ text = "To join a community, the other members’ consent is necessary. Even if 
 [node name="Door2" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 10, 2, -80)
 
-[node name="PillerR" parent="Door2" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door2" index="6"]
+[node name="Gate text" parent="Door2" index="7"]
 text = "It should be possible for each person to exit a community and enter another at will."
 
 [node name="Autonomy_Plus" parent="Door2" instance=ExtResource("11_rwaja")]
@@ -321,10 +314,7 @@ audio_stream = ExtResource("21_nndln")
 [node name="Door3" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 26, -36)
 
-[node name="PillerR" parent="Door3" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door3" index="6"]
+[node name="Gate text" parent="Door3" index="7"]
 text = "There should be a global assembly enforcing peace and responding to crises."
 
 [node name="State_Plus" parent="Door3" instance=ExtResource("5_q1yeh")]
@@ -332,10 +322,7 @@ text = "There should be a global assembly enforcing peace and responding to cris
 [node name="Door3b" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4, 26, -126)
 
-[node name="PillerR" parent="Door3b" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door3b" index="6"]
+[node name="Gate text" parent="Door3b" index="7"]
 text = "There should be a global assembly enforcing peace and responding to crises."
 
 [node name="State_Plus" parent="Door3b" instance=ExtResource("5_q1yeh")]
@@ -343,10 +330,7 @@ text = "There should be a global assembly enforcing peace and responding to cris
 [node name="Door4" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -1, 26, -24)
 
-[node name="PillerR" parent="Door4" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door4" index="6"]
+[node name="Gate text" parent="Door4" index="7"]
 text = "There should be enough trade and cultural exchange between communities that stark differences in how they do are impossible"
 
 [node name="Global_plus" parent="Door4" instance=ExtResource("4_1stx4")]
@@ -354,10 +338,7 @@ text = "There should be enough trade and cultural exchange between communities t
 [node name="Door4b" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 26, -137)
 
-[node name="PillerR" parent="Door4b" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door4b" index="6"]
+[node name="Gate text" parent="Door4b" index="7"]
 text = "There should be enough trade and cultural exchange between communities that stark differences in how they do are impossible"
 
 [node name="Global_plus" parent="Door4b" instance=ExtResource("4_1stx4")]
@@ -783,6 +764,10 @@ depth = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 115, -298)
 billboard = 1
 texture = ExtResource("35_xxdxt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_6f8oo")
+autoplay = true
 
 [editable path="quote-ursula"]
 [editable path="Door1"]

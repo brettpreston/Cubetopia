@@ -1,0 +1,299 @@
+[gd_scene load_steps=33 format=3 uid="uid://co7awagts3133"]
+
+[ext_resource type="PackedScene" uid="uid://cxgmcyb1poq1p" path="res://Assets/Models/Characters/Hacker/Hacker_T.glb" id="1_6hevv"]
+[ext_resource type="Script" path="res://Hacker.gd" id="2_16sgt"]
+[ext_resource type="Shader" path="res://Scenes/Characters/player_wire.gdshader" id="3_c4t06"]
+[ext_resource type="Script" path="res://SpringArm_GP_S.gd" id="3_odbea"]
+[ext_resource type="AnimationLibrary" uid="uid://ck35rh325ckl" path="res://Assets/Models/Characters/Animation/Anim2.res" id="3_sur1k"]
+[ext_resource type="Script" path="res://Assets/UI/Hud.gd" id="4_fhrnc"]
+[ext_resource type="PackedScene" uid="uid://c2gd0yw1gwrx4" path="res://Assets/UI/mapCube/Map_subview.tscn" id="5_m35cy"]
+[ext_resource type="AudioStream" uid="uid://cjlp0cpkbb21t" path="res://Assets/audio/SFX/step.ogg" id="6_45tvv"]
+[ext_resource type="PackedScene" uid="uid://b7i26dwsefhlq" path="res://Scenes/PauseMenu.tscn" id="7_etc15"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_80y7b"]
+render_priority = 0
+shader = ExtResource("3_c4t06")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1abnl"]
+next_pass = SubResource("ShaderMaterial_80y7b")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8c6m"]
+render_priority = 0
+shader = ExtResource("3_c4t06")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fujw"]
+next_pass = SubResource("ShaderMaterial_q8c6m")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4u7pa"]
+render_priority = 0
+shader = ExtResource("3_c4t06")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24lc3"]
+next_pass = SubResource("ShaderMaterial_4u7pa")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vcuk1"]
+render_priority = 0
+shader = ExtResource("3_c4t06")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oj16"]
+next_pass = SubResource("ShaderMaterial_vcuk1")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h54my"]
+render_priority = 0
+shader = ExtResource("3_c4t06")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgtuo"]
+next_pass = SubResource("ShaderMaterial_h54my")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w6oxd"]
+render_priority = 0
+shader = ExtResource("3_c4t06")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66u5x"]
+next_pass = SubResource("ShaderMaterial_w6oxd")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rr13c"]
+render_priority = 0
+shader = ExtResource("3_c4t06")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 3.0
+
+[sub_resource type="Animation" id="Animation_ppgjc"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b83fh"]
+_data = {
+"RESET": SubResource("Animation_ppgjc")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dfvqk"]
+animation = &"Anim2/Air"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u51wd"]
+animation = &"Anim2/Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2dl1e"]
+animation = &"Anim2/Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yfirh"]
+animation = &"Anim2/Walk"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_hbu2o"]
+xfade_time = 0.2
+input_0/name = "grounded"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "air"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_3c3it"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_57q2r"]
+graph_offset = Vector2(61.5934, 3.34152)
+nodes/Air/node = SubResource("AnimationNodeAnimation_dfvqk")
+nodes/Air/position = Vector2(400, 400)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_u51wd")
+nodes/Idle/position = Vector2(220, 60)
+nodes/Run/node = SubResource("AnimationNodeAnimation_2dl1e")
+nodes/Run/position = Vector2(200, 400)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_yfirh")
+nodes/Walk/position = Vector2(200, 200)
+nodes/ground_air_transition/node = SubResource("AnimationNodeTransition_hbu2o")
+nodes/ground_air_transition/position = Vector2(640, 160)
+nodes/iwr_blend/node = SubResource("AnimationNodeBlend3_3c3it")
+nodes/iwr_blend/position = Vector2(420, 160)
+nodes/output/position = Vector2(860, 160)
+node_connections = [&"ground_air_transition", 0, &"iwr_blend", &"ground_air_transition", 1, &"Air", &"iwr_blend", 0, &"Idle", &"iwr_blend", 1, &"Walk", &"iwr_blend", 2, &"Run", &"output", 0, &"ground_air_transition"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6us32"]
+radius = 0.283343
+height = 1.84319
+
+[node name="Player" instance=ExtResource("1_6hevv")]
+script = ExtResource("2_16sgt")
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09, 0)
+
+[node name="GeneralSkeleton" parent="Armature" index="0"]
+bones/0/position = Vector3(-3.05864e-05, 1.01812, 0.0154084)
+bones/0/rotation = Quaternion(0.183994, -0.0817734, -0.0332487, 0.978956)
+bones/1/rotation = Quaternion(0.0245204, -0.0876916, 0.0256987, 0.995514)
+bones/2/rotation = Quaternion(0.021019, -0.0201021, 0.00530458, 0.999563)
+bones/3/rotation = Quaternion(0.021026, -0.0207004, 0.00475603, 0.999553)
+bones/4/rotation = Quaternion(-0.0730699, 0.0147, -0.00247922, 0.997215)
+bones/5/rotation = Quaternion(-0.15479, 0.182216, -0.0255873, 0.970661)
+bones/9/rotation = Quaternion(0.544121, 0.444671, 0.554857, -0.445347)
+bones/10/rotation = Quaternion(0.131166, 0.901964, -0.409847, -0.0358145)
+bones/11/rotation = Quaternion(0.499904, -0.500098, 0.499903, 0.500096)
+bones/12/rotation = Quaternion(-0.0602278, 0.61547, 0.0150704, 0.785711)
+bones/13/rotation = Quaternion(-0.26376, 0.71853, 0.169211, 0.620897)
+bones/14/rotation = Quaternion(0.233576, 0.0522037, -0.00928405, 0.970892)
+bones/15/rotation = Quaternion(0.135049, 0.0314096, 0.00984046, 0.990292)
+bones/17/rotation = Quaternion(0.171176, -0.0148222, -0.0047434, 0.985118)
+bones/18/rotation = Quaternion(0.182684, -0.00108349, -0.0252753, 0.982846)
+bones/19/rotation = Quaternion(-0.0347909, -0.00010249, 0.00537136, 0.99938)
+bones/21/rotation = Quaternion(0.221303, -0.0104001, -0.0616949, 0.973196)
+bones/22/rotation = Quaternion(0.192236, -0.00146349, -0.0263289, 0.980994)
+bones/23/rotation = Quaternion(-0.0262446, 2.66731e-05, 0.000208706, 0.999656)
+bones/25/rotation = Quaternion(0.279926, -0.00617167, -0.0942014, 0.955369)
+bones/26/rotation = Quaternion(0.159967, 0.00110973, -0.0188789, 0.986941)
+bones/27/rotation = Quaternion(0.017326, 0.000538513, -0.00164518, 0.999848)
+bones/29/rotation = Quaternion(0.311719, -0.011247, -0.118676, 0.942667)
+bones/30/rotation = Quaternion(0.160211, -0.000538126, -0.0145549, 0.986975)
+bones/31/rotation = Quaternion(-0.00900872, -9.12845e-05, -0.00658508, 0.999938)
+bones/33/rotation = Quaternion(0.576378, -0.417831, -0.499529, -0.493636)
+bones/34/rotation = Quaternion(0.0538348, 0.843214, -0.434344, 0.312148)
+bones/35/rotation = Quaternion(0.517141, 0.482251, -0.51714, 0.482251)
+bones/36/rotation = Quaternion(-0.00833128, -0.634613, -0.154173, 0.75725)
+bones/37/rotation = Quaternion(-0.191688, -0.702321, -0.138894, 0.671349)
+bones/38/rotation = Quaternion(0.115779, -0.0550639, 0.0606862, 0.989889)
+bones/39/rotation = Quaternion(0.137602, -0.0292685, -0.0140246, 0.989956)
+bones/41/rotation = Quaternion(0.149955, 0.0121227, 0.0179903, 0.988455)
+bones/42/rotation = Quaternion(0.18277, 0.00114021, 0.0252852, 0.98283)
+bones/43/rotation = Quaternion(0.0778638, 0.00144896, -0.00271121, 0.996959)
+bones/45/rotation = Quaternion(0.22932, 0.0106039, 0.0624639, 0.971287)
+bones/46/rotation = Quaternion(0.192459, 0.00159568, 0.0263522, 0.98095)
+bones/47/rotation = Quaternion(0.0860174, 0.000125617, 0.00963786, 0.996247)
+bones/49/rotation = Quaternion(0.273429, 0.00455798, 0.100099, 0.956659)
+bones/50/rotation = Quaternion(0.160125, -0.00112946, 0.0188955, 0.986915)
+bones/51/rotation = Quaternion(0.0846623, 0.000838026, -0.00766584, 0.99638)
+bones/53/rotation = Quaternion(0.291747, 0.00723417, 0.14597, 0.945264)
+bones/54/rotation = Quaternion(0.160142, 0.00156258, 0.0145497, 0.986986)
+bones/55/rotation = Quaternion(0.085726, 0.00389135, -0.0101924, 0.996259)
+bones/57/rotation = Quaternion(0.0680155, 0.0287693, 0.996917, 0.0265071)
+bones/58/rotation = Quaternion(-0.0218525, 0.868585, -0.494302, 0.027339)
+bones/59/rotation = Quaternion(-0.015684, 0.842967, -0.532175, 0.0771407)
+bones/60/rotation = Quaternion(-3.07492e-09, 0.999171, 0.0406974, -4.36517e-09)
+bones/62/rotation = Quaternion(0.0383711, 0.477335, 0.872769, -0.0946263)
+bones/63/rotation = Quaternion(0.00746719, 0.981094, -0.18884, -0.0416954)
+bones/64/rotation = Quaternion(0.0205087, 0.734382, -0.676492, -0.0511853)
+bones/65/rotation = Quaternion(-3.35011e-08, 0.997122, 0.0758164, 4.25091e-08)
+
+[node name="Wolf3D_Facewear" parent="Armature/GeneralSkeleton" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1abnl")
+surface_material_override/2 = SubResource("StandardMaterial3D_4fujw")
+surface_material_override/3 = SubResource("StandardMaterial3D_24lc3")
+surface_material_override/4 = SubResource("StandardMaterial3D_2oj16")
+surface_material_override/5 = SubResource("StandardMaterial3D_bgtuo")
+surface_material_override/6 = SubResource("StandardMaterial3D_66u5x")
+
+[node name="Wolf3D_Glasses" parent="Armature/GeneralSkeleton" index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_rr13c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+audio_max_polyphony = 1
+libraries = {
+"": SubResource("AnimationLibrary_b83fh"),
+"Anim2": ExtResource("3_sur1k")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+callback_mode_process = 0
+tree_root = SubResource("AnimationNodeBlendTree_57q2r")
+anim_player = NodePath("../AnimationPlayer")
+parameters/ground_air_transition/current_state = "grounded"
+parameters/ground_air_transition/transition_request = ""
+parameters/ground_air_transition/current_index = 0
+parameters/iwr_blend/blend_amount = -1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.908729, 0)
+shape = SubResource("CapsuleShape3D_6us32")
+
+[node name="SpringArmPivot" type="Node3D" parent="." index="4"]
+script = ExtResource("3_odbea")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31667, 0)
+spring_length = 2.0
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="SpringArmPivot/SpringArm3D" index="0"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="SpringArmPivot/SpringArm3D/Camera3D" index="0"]
+
+[node name="mapdebug" type="Control" parent="SpringArmPivot/SpringArm3D/Camera3D" index="1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 636.0
+offset_bottom = 347.0
+script = ExtResource("4_fhrnc")
+
+[node name="mapGlobality" type="Label" parent="SpringArmPivot/SpringArm3D/Camera3D/mapdebug" index="0"]
+visible = false
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 75.0
+
+[node name="mapTech" type="Label" parent="SpringArmPivot/SpringArm3D/Camera3D/mapdebug" index="1"]
+visible = false
+layout_mode = 0
+offset_top = 138.0
+offset_right = 148.0
+offset_bottom = 211.0
+
+[node name="mapEconomy" type="Label" parent="SpringArmPivot/SpringArm3D/Camera3D/mapdebug" index="2"]
+visible = false
+layout_mode = 0
+offset_top = 75.0
+offset_right = 115.0
+offset_bottom = 138.0
+
+[node name="state" type="Label" parent="SpringArmPivot/SpringArm3D/Camera3D/mapdebug" index="3"]
+visible = false
+layout_mode = 0
+offset_top = 268.0
+offset_right = 40.0
+offset_bottom = 291.0
+
+[node name="resilience" type="Label" parent="SpringArmPivot/SpringArm3D/Camera3D/mapdebug" index="4"]
+visible = false
+layout_mode = 0
+offset_top = 295.0
+offset_right = 40.0
+offset_bottom = 318.0
+
+[node name="autonomy" type="Label" parent="SpringArmPivot/SpringArm3D/Camera3D/mapdebug" index="5"]
+visible = false
+layout_mode = 0
+offset_top = 318.0
+offset_right = 40.0
+offset_bottom = 341.0
+
+[node name="Cube View" parent="SpringArmPivot/SpringArm3D/Camera3D/mapdebug" index="6" instance=ExtResource("5_m35cy")]
+layout_mode = 0
+offset_top = 567.0
+offset_right = 512.0
+offset_bottom = 1079.0
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="5"]
+
+[node name="Step" type="AudioStreamPlayer3D" parent="." index="6"]
+stream = ExtResource("6_45tvv")
+autoplay = true
+bus = &"SFX"
+
+[node name="Pause" parent="." index="7" instance=ExtResource("7_etc15")]

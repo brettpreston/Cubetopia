@@ -144,9 +144,8 @@ func _on_fullscreen_option_button_item_selected(index: int) -> void:
 		get_tree().root.set_mode(Window.MODE_EXCLUSIVE_FULLSCREEN)
 
 
-func _on_fov_slider_value_changed(value: float) -> void:
+#func _on_fov_slider_value_changed(value: float) -> void:
 	#camera.fov = value
-	pass
 
 
 func _on_shadow_filter_option_button_item_selected(index):
