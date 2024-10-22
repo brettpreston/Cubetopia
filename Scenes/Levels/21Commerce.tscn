@@ -1,6 +1,5 @@
-[gd_scene load_steps=40 format=3 uid="uid://ctpo8qxqv8237"]
+[gd_scene load_steps=41 format=3 uid="uid://ctpo8qxqv8237"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_m0f82"]
 [ext_resource type="Texture2D" uid="uid://b6v1pinigq11x" path="res://Assets/background/Background_Mutualism.jpg" id="1_xq6nr"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="2_x54mw"]
 [ext_resource type="AudioStream" uid="uid://dwvyxulo220vj" path="res://Assets/audio/Quotes/02b state of corruption.ogg" id="3_d8xns"]
@@ -30,7 +29,9 @@
 [ext_resource type="Material" uid="uid://bkkbv3hve2108" path="res://Assets/Textures/Path_Texture_SQ_G.tres" id="24_5sf5f"]
 [ext_resource type="Material" uid="uid://coeb05bqdb2hb" path="res://Assets/Textures/Path_Texture_SQ_P.tres" id="26_vfs4q"]
 [ext_resource type="AudioStream" uid="uid://dwt23s43rj4vc" path="res://Assets/audio/music/test/BP - Neurons & Nebulae.ogg" id="27_0t8ok"]
+[ext_resource type="Material" uid="uid://b3xnc07swt73v" path="res://Assets/Textures/Path_Texture_G.tres" id="27_pnfrv"]
 [ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="28_dy13m"]
+[ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="31_h5jf8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lye3d"]
 panorama = ExtResource("1_xq6nr")
@@ -84,9 +85,6 @@ environment = SubResource("Environment_ngaxy")
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 26, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_m0f82")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6.62875, -15.9604)
-
 [node name="quote-greed" parent="." instance=ExtResource("12_klcs6")]
 transform = Transform3D(0.202616, 0, 0.979258, 0, 1, 0, -0.979258, 0, 0.202616, -2.2268, 7.93942, -22.5323)
 skeleton = NodePath("")
@@ -100,10 +98,7 @@ audio_stream = ExtResource("6_0rlwc")
 [node name="Door1" parent="." instance=ExtResource("9_34j4l")]
 transform = Transform3D(0.651079, 0, 0.75901, 0, 1, 0, -0.75901, 0, 0.651079, -9.38628, 1.65264, -52.7692)
 
-[node name="PillerR" parent="Door1" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door1" index="6"]
+[node name="Gate text" parent="Door1" index="7"]
 text = "We need a centralized system to make sure people's basic needs are met."
 
 [node name="Economy_plus" parent="Door1" instance=ExtResource("4_sewm0")]
@@ -117,10 +112,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0188599, 0, 0.0108871)
 [node name="Door2" parent="." instance=ExtResource("9_34j4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -56.8509)
 
-[node name="PillerR" parent="Door2" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door2" index="6"]
+[node name="Gate text" parent="Door2" index="7"]
 text = "Social solidarity and mutual aid networks ."
 
 [node name="Resilience_Minus" parent="Door2" instance=ExtResource("7_7ggiu")]
@@ -131,10 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Door3" parent="." instance=ExtResource("9_34j4l")]
 transform = Transform3D(0.496019, 0, -0.868311, 0, 1, 0, 0.868311, 0, 0.496019, 9.6801, 1, -51.7833)
 
-[node name="PillerR" parent="Door3" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door3" index="6"]
+[node name="Gate text" parent="Door3" index="7"]
 text = "A little precarity makes the
 society grow stronger."
 
@@ -184,10 +173,7 @@ audio_stream = ExtResource("16_04d18")
 [node name="Door4" parent="." instance=ExtResource("9_34j4l")]
 transform = Transform3D(0.707106, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707106, -5.31649, 2.24351, -111.747)
 
-[node name="PillerR" parent="Door4" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door4" index="6"]
+[node name="Gate text" parent="Door4" index="7"]
 text = "If everyone’s basic needs are met, hoarding other resources doesn’t bother me."
 
 [node name="Economy_minus" parent="Door4" instance=ExtResource("9_vovpb")]
@@ -202,10 +188,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214996, 0, -0.0372467)
 [node name="Door5" parent="." instance=ExtResource("9_34j4l")]
 transform = Transform3D(0.6619, 0, -0.749591, 0, 1, 0, 0.749591, 0, 0.6619, 4.1274, 1.10927, -110.526)
 
-[node name="PillerR" parent="Door5" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door5" index="6"]
+[node name="Gate text" parent="Door5" index="7"]
 text = "There need to be laws to prevent that."
 
 [node name="Economy_plus" parent="Door5" instance=ExtResource("4_sewm0")]
@@ -216,10 +199,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Door4" parent="Door5" instance=ExtResource("9_34j4l")]
 transform = Transform3D(0.422729, 0, 0.906256, 0, 1, 0, -0.906256, 0, 0.422729, 25.6937, -20.6596, -4.43211)
 
-[node name="PillerR" parent="Door5/Door4" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door5/Door4" index="6"]
+[node name="Gate text" parent="Door5/Door4" index="7"]
 text = "If everyone’s basic needs are met, hoarding other 
 resources doesn’t bother me."
 
@@ -235,10 +215,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214996, 0, -0.0372467)
 [node name="Door5" parent="Door5" instance=ExtResource("9_34j4l")]
 transform = Transform3D(0.436864, 0, -0.899528, 0, 1, 0, 0.899528, 0, 0.436864, 35.2238, -20.0791, -5.03427)
 
-[node name="PillerR" parent="Door5/Door5" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door5/Door5" index="6"]
+[node name="Gate text" parent="Door5/Door5" index="7"]
 text = "There need to be laws to prevent that."
 
 [node name="Economy_plus" parent="Door5/Door5" instance=ExtResource("4_sewm0")]
@@ -472,6 +449,7 @@ curve = SubResource("Curve3D_kw6yn")
 
 [node name="pathgon" type="CSGPolygon3D" parent="Pathcom/Path3D10"]
 transform = Transform3D(1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 4.5, -0.00607228, -7.9882)
+material_override = ExtResource("27_pnfrv")
 use_collision = true
 polygon = PackedVector2Array(3.7, 0.4, 3.7, 0.8, 4.1, 0.8, 4, 0, -4, 0, -4.1, 0.9, -3.8, 0.9, -3.7, 0.4)
 mode = 2
@@ -484,7 +462,6 @@ path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
-material = ExtResource("24_5sf5f")
 
 [node name="Path3D11" type="Path3D" parent="Pathcom"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -101)
@@ -806,10 +783,7 @@ path_joined = false
 [node name="Door6" parent="." instance=ExtResource("9_34j4l")]
 transform = Transform3D(-0.509958, 0, 0.860199, 0, 1, 0, -0.860199, 0, -0.509958, -36.8451, 21.6391, -88.6829)
 
-[node name="PillerR" parent="Door6" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door6" index="6"]
+[node name="Gate text" parent="Door6" index="7"]
 text = "If everyone’s basic needs are met, hoarding other 
 resources doesn’t bother me."
 
@@ -825,10 +799,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214996, 0, -0.0372467)
 [node name="Door7" parent="." instance=ExtResource("9_34j4l")]
 transform = Transform3D(0.994399, 0, -0.105692, 0, 1, 0, 0.105692, 0, 0.994399, -32.5191, 21.8913, -97.075)
 
-[node name="PillerR" parent="Door7" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door7" index="6"]
+[node name="Gate text" parent="Door7" index="7"]
 text = "There need to be laws to prevent that."
 
 [node name="Economy_plus" parent="Door7" instance=ExtResource("4_sewm0")]
@@ -851,6 +822,9 @@ material_override = ExtResource("23_q3n4e")
 use_collision = true
 polygon = PackedVector2Array(3, 1.4, 3.9, 1.4, 4.3, 1.4, 4.3, 0.7, -3.4, 0.7, -3.4, 1.5, -3, 1.5, -2.3, 1.5)
 depth = 0.5
+
+[node name="Player" parent="." instance=ExtResource("31_h5jf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1613, 6.72541, -15.9351)
 
 [editable path="Door1"]
 [editable path="Door2"]

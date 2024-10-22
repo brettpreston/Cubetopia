@@ -1,6 +1,5 @@
 [gd_scene load_steps=42 format=3 uid="uid://ba56j2jb46od5"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_0oc7h"]
 [ext_resource type="Texture2D" uid="uid://cyy76lhqi4rnw" path="res://Assets/background/Background_Global.jpg" id="2_2y03g"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_8wbg3"]
 [ext_resource type="AudioStream" uid="uid://c80m0ra5bsdw4" path="res://Assets/audio/Quotes/1b millions.ogg" id="4_bvut0"]
@@ -34,6 +33,7 @@
 [ext_resource type="Material" uid="uid://c817uqxht18at" path="res://Assets/Textures/Path_Texture_SQ_R.tres" id="29_qrxg5"]
 [ext_resource type="Material" uid="uid://coeb05bqdb2hb" path="res://Assets/Textures/Path_Texture_SQ_P.tres" id="30_wrvs0"]
 [ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="34_7b6uq"]
+[ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="34_cpsvj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_37pb6"]
 panorama = ExtResource("2_2y03g")
@@ -88,11 +88,6 @@ environment = SubResource("Environment_ngaxy")
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 19, 0, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_0oc7h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.180225, 1.1, 6.72342)
-
-[node name="Tween" type="Node3D" parent="Player"]
-
 [node name="quote-millions" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(-0.0898506, 0, 0.995955, 0, 1, 0, -0.995955, 0, -0.0898506, -5.78836, 2.86, 0.111526)
 script = ExtResource("6_y1j5h")
@@ -117,7 +112,7 @@ transform = Transform3D(0.537608, 0, 0.843194, 0, 1, 0, -0.843194, 0, 0.537608, 
 [node name="PillerR" parent="Door1" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Gate text" parent="Door1" index="6"]
+[node name="Gate text" parent="Door1" index="7"]
 text = "If diversity of beliefs means conflicting goals, we should strive for a common culture, so we can cooperate better."
 
 [node name="autonomy_Minus" parent="Door1" instance=ExtResource("5_r3hnj")]
@@ -135,7 +130,7 @@ transform = Transform3D(0.509357, 0, -0.860555, 0, 1, 0, 0.860555, 0, 0.509357, 
 [node name="PillerR" parent="Door2" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Gate text" parent="Door2" index="6"]
+[node name="Gate text" parent="Door2" index="7"]
 text = "It’s crucial to preserve diversity, or we lose our humanity."
 
 [node name="Autonomy_Plus" parent="Door2" instance=ExtResource("7_ejim6")]
@@ -180,7 +175,7 @@ transform = Transform3D(0.982697, 0, -0.18522, 0, 1, 0, 0.18522, 0, 0.982697, -0
 [node name="PillerR" parent="Door3" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Gate text" parent="Door3" index="6"]
+[node name="Gate text" parent="Door3" index="7"]
 text = "Democratically elected global assembly."
 
 [node name="Resilience_Minus" parent="Door3" instance=ExtResource("9_2ftih")]
@@ -192,7 +187,7 @@ transform = Transform3D(-0.350894, 0, 0.936415, 0, 1, 0, -0.936415, 0, -0.350894
 [node name="PillerR" parent="Door5" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Gate text" parent="Door5" index="6"]
+[node name="Gate text" parent="Door5" index="7"]
 text = "Democratically elected global assembly."
 
 [node name="Resilience_Minus" parent="Door5" instance=ExtResource("9_2ftih")]
@@ -204,7 +199,7 @@ transform = Transform3D(-0.255564, 0, -0.966792, 0, 1, 0, 0.966792, 0, -0.255564
 [node name="PillerR" parent="Door4" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Gate text" parent="Door4" index="6"]
+[node name="Gate text" parent="Door4" index="7"]
 text = "A group of people educated for the purpose."
 
 [node name="autonomy_Minus2" parent="Door4" instance=ExtResource("5_r3hnj")]
@@ -216,7 +211,7 @@ transform = Transform3D(0.988743, 0, -0.149622, 0, 1, 0, 0.149622, 0, 0.988743, 
 [node name="PillerR" parent="Door6" index="1"]
 transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
-[node name="Gate text" parent="Door6" index="6"]
+[node name="Gate text" parent="Door6" index="7"]
 text = "A group of people educated for the purpose."
 
 [node name="autonomy_Minus2" parent="Door6" instance=ExtResource("5_r3hnj")]
@@ -625,6 +620,9 @@ depth = 0.5
 
 [node name="Gate_Enter" parent="." instance=ExtResource("34_7b6uq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 10)
+
+[node name="Player" parent="." instance=ExtResource("34_cpsvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239002, 0.3, 6.80812)
 
 [editable path="quote-millions"]
 [editable path="Door1"]

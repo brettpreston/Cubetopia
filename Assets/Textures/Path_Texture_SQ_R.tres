@@ -10,7 +10,6 @@ albedo_texture = ExtResource("1_fmjnb")
 emission_enabled = true
 emission_energy_multiplier = 3.0
 emission_texture = ExtResource("2_docec")
-heightmap_enabled = true
 heightmap_scale = 16.0
 heightmap_texture = ExtResource("1_nqy58")
 heightmap_flip_texture = true

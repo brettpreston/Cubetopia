@@ -20,7 +20,6 @@ cutoff_hz = 50.0
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_08bd1"]
 resource_name = "Compressor"
 threshold = -30.6
-ratio = 48.0
 gain = 10.1
 attack_us = 30.0
 release_ms = 300.0
@@ -35,6 +34,7 @@ band_db/3200_hz = -12.0
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_wp4qb"]
 resource_name = "Compressor"
 threshold = -10.0
+ratio = 2.0
 attack_us = 50.0
 release_ms = 700.0
 mix = 0.75
@@ -66,7 +66,7 @@ bus/3/send = &"Master"
 bus/3/effect/0/effect = SubResource("AudioEffectHighPassFilter_7836f")
 bus/3/effect/0/enabled = true
 bus/3/effect/1/effect = SubResource("AudioEffectCompressor_08bd1")
-bus/3/effect/1/enabled = true
+bus/3/effect/1/enabled = false
 bus/4/name = &"Music"
 bus/4/solo = false
 bus/4/mute = false

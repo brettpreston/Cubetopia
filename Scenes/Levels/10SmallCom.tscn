@@ -1,6 +1,5 @@
 [gd_scene load_steps=56 format=4 uid="uid://3yfweq66ct17"]
 
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_8on32"]
 [ext_resource type="Texture2D" uid="uid://d36nsphyipmlg" path="res://Assets/background/Background_Self-Sufficient2_s.jpg" id="2_4dctu"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_lcf0d"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="3_mgfei"]
@@ -38,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://db6pbgoqtv0kb" path="res://Assets/Textures/Node_Path_W.png" id="31_phtkk"]
 [ext_resource type="Texture2D" uid="uid://dwgkb63ktkjr" path="res://Assets/Models/Props/Community/house1.png" id="35_xxdxt"]
 [ext_resource type="AudioStream" uid="uid://dwt23s43rj4vc" path="res://Assets/audio/music/test/BP - Neurons & Nebulae.ogg" id="38_6f8oo"]
+[ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="38_aua1g"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_43mw4"]
 panorama = ExtResource("2_4dctu")
@@ -210,14 +210,6 @@ environment = SubResource("Environment_ngaxy")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("1_8on32")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -14, -10)
-
-[node name="Global_minus" parent="Player" instance=ExtResource("8_uhbgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.3, -0.1)
-
-[node name="Global_minus" parent="Player/Global_minus" instance=ExtResource("8_uhbgx")]
 
 [node name="quote-ursula" parent="." instance=ExtResource("3_lcf0d")]
 transform = Transform3D(-0.134228, 0, 0.990951, 0, 1, 0, -0.990951, 0, -0.134228, -2.53848, -12.6082, -13.4819)
@@ -768,6 +760,14 @@ texture = ExtResource("35_xxdxt")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("38_6f8oo")
 autoplay = true
+
+[node name="Global_minus" parent="." instance=ExtResource("8_uhbgx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, -13.7, -10.1)
+
+[node name="Global_minus" parent="Global_minus" instance=ExtResource("8_uhbgx")]
+
+[node name="Player" parent="." instance=ExtResource("38_aua1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -14.8, -10)
 
 [editable path="quote-ursula"]
 [editable path="Door1"]

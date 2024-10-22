@@ -1,7 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Texture2D" uid="uid://bo32b88vqwt1l" path="res://Assets/background/Background_Futuristic.jpg" id="1_0j1uw"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_p8uvs"]
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_tbdsx"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="3_ffvvd"]
 [ext_resource type="AudioStream" uid="uid://bce81v6qkxwcr" path="res://Assets/audio/Quotes/02b distance.ogg" id="4_gv58k"]
@@ -34,6 +33,7 @@
 [ext_resource type="Script" path="res://Planet_rotate.gd" id="28_fpmxv"]
 [ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="29_w6o4f"]
 [ext_resource type="AudioStream" uid="uid://6wcsprryqp" path="res://Assets/audio/music/ambi/ambi_space2.ogg" id="30_0eflw"]
+[ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="34_t6317"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wkyxy"]
 panorama = ExtResource("1_0j1uw")
@@ -95,9 +95,6 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_uadpp")
 
-[node name="Player" parent="." instance=ExtResource("1_p8uvs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.1504)
-
 [node name="quote-stars" parent="." instance=ExtResource("3_ffvvd")]
 transform = Transform3D(0.10524, 0, 0.994447, 0, 1, 0, -0.994447, 0, 0.10524, -5.11546, 2.53278, 8.82668)
 audio_stream = ExtResource("5_g8afr")
@@ -118,10 +115,7 @@ audio_stream = ExtResource("8_krf0h")
 [node name="Door1" parent="." instance=ExtResource("21_7f4k8")]
 transform = Transform3D(0.00347289, 0, 0.999994, 0, 1, 0, -0.999994, 0, 0.00347289, -6.64754, -5.71221, -26.4445)
 
-[node name="PillerR" parent="Door1" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door1" index="6"]
+[node name="Gate text" parent="Door1" index="7"]
 text = "A professional class of engineers. We can’t risk this being done badly."
 
 [node name="State_Plus" parent="Door1" instance=ExtResource("5_nbvwk")]
@@ -133,10 +127,7 @@ transform = Transform3D(0.866086, -0.497686, -0.046955, 0.499895, 0.862364, 0.08
 [node name="Door2" parent="." instance=ExtResource("21_7f4k8")]
 transform = Transform3D(-0.0574245, 0, -0.998349, 0, 1, 0, 0.998349, 0, -0.0574245, 6.17535, -5.712, -26.8336)
 
-[node name="PillerR" parent="Door2" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door2" index="6"]
+[node name="Gate text" parent="Door2" index="7"]
 text = "Everyone is taught to fix life-saving infrastructure."
 
 [node name="Autonomy_Plus" parent="Door2" instance=ExtResource("10_2pi1e")]
@@ -186,10 +177,7 @@ audio_stream = ExtResource("17_5huyn")
 [node name="Door3" parent="." instance=ExtResource("21_7f4k8")]
 transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, -35.3852, 1.08536, -1.92816)
 
-[node name="PillerR" parent="Door3" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door3" index="6"]
+[node name="Gate text" parent="Door3" index="7"]
 text = "Mediation, conflict resolution, strong leadership."
 
 [node name="Resilience_Plus" parent="Door3" instance=ExtResource("11_11it7")]
@@ -201,10 +189,7 @@ transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34
 [node name="Door5" parent="." instance=ExtResource("21_7f4k8")]
 transform = Transform3D(1, 0, -0.000959754, 0, 1, 0, 0.000959754, 0, 1, 34.685, 0.485, -1.928)
 
-[node name="PillerR" parent="Door5" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door5" index="6"]
+[node name="Gate text" parent="Door5" index="7"]
 text = "Mediation, conflict resolution, strong leadership."
 
 [node name="Resilience_Plus" parent="Door5" instance=ExtResource("11_11it7")]
@@ -216,10 +201,7 @@ transform = Transform3D(1, 1.17285e-15, 2.08616e-07, 0, 1, 0, -2.08616e-07, 3.34
 [node name="Door4" parent="." instance=ExtResource("21_7f4k8")]
 transform = Transform3D(-0.999984, -2.63247e-14, -0.00584728, 2.01348e-15, 1, 7.10543e-15, 0.00584728, 1.12882e-14, -0.999984, -35.3, -0.178829, 10.603)
 
-[node name="PillerR" parent="Door4" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door4" index="6"]
+[node name="Gate text" parent="Door4" index="7"]
 text = "Provide a way for the family to safely exit the spaceship."
 
 [node name="Resilience_Minus" parent="Door4" instance=ExtResource("6_mncwm")]
@@ -231,10 +213,7 @@ transform = Transform3D(0.999999, -2.75631e-14, -2.38419e-07, -1.53982e-15, 1, -
 [node name="Door6" parent="." instance=ExtResource("21_7f4k8")]
 transform = Transform3D(-0.99544, -2.73321e-14, 0.0953937, 2.01348e-15, 1, 7.10543e-15, -0.0953937, 8.56581e-15, -0.99544, 35, -0.379, 10.903)
 
-[node name="PillerR" parent="Door6" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
-[node name="Gate text" parent="Door6" index="6"]
+[node name="Gate text" parent="Door6" index="7"]
 text = "Provide a way for the family to safely exit the spaceship."
 
 [node name="Resilience_Minus" parent="Door6" instance=ExtResource("6_mncwm")]
@@ -464,6 +443,9 @@ curve = SubResource("Curve3D_g2e8g")
 
 [node name="Portalex" parent="." instance=ExtResource("29_w6o4f")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.743606, 19)
+
+[node name="Player" parent="." instance=ExtResource("34_t6317")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17)
 
 [editable path="quote-stars"]
 [editable path="Door1"]

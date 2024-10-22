@@ -8,7 +8,6 @@ albedo_texture = ExtResource("1_kkosf")
 emission_enabled = true
 emission_energy_multiplier = 2.0
 emission_texture = ExtResource("1_kkosf")
-heightmap_enabled = true
 heightmap_scale = 16.0
 heightmap_texture = ExtResource("1_kkosf")
 heightmap_flip_texture = true
