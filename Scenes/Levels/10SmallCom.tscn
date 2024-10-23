@@ -239,6 +239,9 @@ audio_stream = ExtResource("10_y4jl7")
 [node name="Door1" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -80)
 
+[node name="PillerR" parent="Door1" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="Gate text" parent="Door1" index="7"]
 text = "To join a community, the other members’ consent is necessary. Even if that means some people have to stay in unhealthy communities."
 
@@ -250,6 +253,9 @@ text = "To join a community, the other members’ consent is necessary. Even if 
 
 [node name="Door2" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 10, 2, -80)
+
+[node name="PillerR" parent="Door2" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door2" index="7"]
 text = "It should be possible for each person to exit a community and enter another at will."
@@ -306,6 +312,9 @@ audio_stream = ExtResource("21_nndln")
 [node name="Door3" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 26, -36)
 
+[node name="PillerR" parent="Door3" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="Gate text" parent="Door3" index="7"]
 text = "There should be a global assembly enforcing peace and responding to crises."
 
@@ -313,6 +322,9 @@ text = "There should be a global assembly enforcing peace and responding to cris
 
 [node name="Door3b" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 4, 26, -126)
+
+[node name="PillerR" parent="Door3b" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door3b" index="7"]
 text = "There should be a global assembly enforcing peace and responding to crises."
@@ -322,6 +334,9 @@ text = "There should be a global assembly enforcing peace and responding to cris
 [node name="Door4" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -1, 26, -24)
 
+[node name="PillerR" parent="Door4" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="Gate text" parent="Door4" index="7"]
 text = "There should be enough trade and cultural exchange between communities that stark differences in how they do are impossible"
 
@@ -329,6 +344,9 @@ text = "There should be enough trade and cultural exchange between communities t
 
 [node name="Door4b" parent="." instance=ExtResource("9_vha7y")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 3, 26, -137)
+
+[node name="PillerR" parent="Door4b" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="Gate text" parent="Door4b" index="7"]
 text = "There should be enough trade and cultural exchange between communities that stark differences in how they do are impossible"

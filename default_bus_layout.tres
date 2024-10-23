@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=7 format=3 uid="uid://c18ihn31s35c5"]
+[gd_resource type="AudioBusLayout" load_steps=8 format=3 uid="uid://c18ihn31s35c5"]
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_vsmgy"]
 resource_name = "Compressor"
@@ -23,8 +23,16 @@ threshold = -30.6
 gain = 10.1
 attack_us = 30.0
 release_ms = 300.0
-mix = 0.75
+mix = 0.5
 sidechain = &"VO"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_xfvd0"]
+resource_name = "Reverb"
+room_size = 0.2
+damping = 0.1
+spread = 0.5
+hipass = 0.25
+wet = 0.15
 
 [sub_resource type="AudioEffectEQ" id="AudioEffectEQ_dnmu4"]
 resource_name = "EQ"
@@ -66,7 +74,9 @@ bus/3/send = &"Master"
 bus/3/effect/0/effect = SubResource("AudioEffectHighPassFilter_7836f")
 bus/3/effect/0/enabled = true
 bus/3/effect/1/effect = SubResource("AudioEffectCompressor_08bd1")
-bus/3/effect/1/enabled = false
+bus/3/effect/1/enabled = true
+bus/3/effect/2/effect = SubResource("AudioEffectReverb_xfvd0")
+bus/3/effect/2/enabled = true
 bus/4/name = &"Music"
 bus/4/solo = false
 bus/4/mute = false
