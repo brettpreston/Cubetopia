@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8g1nx260w4rm"]
+[gd_scene load_steps=19 format=3 uid="uid://b8g1nx260w4rm"]
 
 [ext_resource type="Script" path="res://Credits_End.gd" id="1_cquo6"]
 [ext_resource type="Texture2D" uid="uid://b415vuhhodtaq" path="res://Assets/background/end_screen/black.jpg" id="2_s5cad"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://csd7tcxoif4se" path="res://Assets/background/end_screen/04_CloseToNature_Commerce_Global.png" id="14_qe3xl"]
 [ext_resource type="Texture2D" uid="uid://ceh3efwaacaiw" path="res://Assets/background/end_screen/02_CloseToNature_Centalized_SelfSufficient.png" id="15_unw2f"]
 [ext_resource type="Texture2D" uid="uid://ba7fcwp6blms5" path="res://Assets/background/end_screen/01_CloseToNature_Commerce_SelfSufficient.png" id="16_g46ma"]
+[ext_resource type="AudioStream" uid="uid://biqh7the0uu40" path="res://Assets/audio/music/Perc_pan.ogg" id="18_2he57"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -127,6 +128,11 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_2he57")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -3,6 +3,7 @@ extends Control
 var MainMenu=load("res://Scenes/MainMenu.tscn")
 
 func _ready() -> void:
+		TransitionScene.fadein()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 func _on_button_pressed() -> void:

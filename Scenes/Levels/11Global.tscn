@@ -1,5 +1,6 @@
-[gd_scene load_steps=42 format=3 uid="uid://ba56j2jb46od5"]
+[gd_scene load_steps=43 format=3 uid="uid://ba56j2jb46od5"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/11_global.gd" id="1_a5b3g"]
 [ext_resource type="Texture2D" uid="uid://cyy76lhqi4rnw" path="res://Assets/background/Background_Global.jpg" id="2_2y03g"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_8wbg3"]
 [ext_resource type="AudioStream" uid="uid://c80m0ra5bsdw4" path="res://Assets/audio/Quotes/1b millions.ogg" id="4_bvut0"]
@@ -80,6 +81,7 @@ _data = {
 point_count = 2
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_a5b3g")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ngaxy")
@@ -109,8 +111,8 @@ audio_stream = ExtResource("7_5io3u")
 [node name="Door1" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.537608, 0, 0.843194, 0, 1, 0, -0.843194, 0, 0.537608, -5.31574, 1, -35.2784)
 
-[node name="PillerR" parent="Door1" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+[node name="CSGTorus3D" parent="Door1" index="4"]
+material_override = ExtResource("29_qrxg5")
 
 [node name="Gate text" parent="Door1" index="7"]
 text = "If diversity of beliefs means conflicting goals, we should strive for a common culture, so we can cooperate better."
@@ -127,8 +129,8 @@ transform = Transform3D(0.999822, 0, 0.0189011, 0, 1, 0, -0.0189011, 0, 0.999822
 [node name="Door2" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.509357, 0, -0.860555, 0, 1, 0, 0.860555, 0, 0.509357, 4.88805, 1, -34.7317)
 
-[node name="PillerR" parent="Door2" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+[node name="CSGTorus3D" parent="Door2" index="4"]
+material_override = ExtResource("29_qrxg5")
 
 [node name="Gate text" parent="Door2" index="7"]
 text = "It’s crucial to preserve diversity, or we lose our humanity."
@@ -172,8 +174,8 @@ transform = Transform3D(1, 7.45058e-09, -2.38419e-07, 0, 1, 0, 2.68221e-07, 1.49
 [node name="Door3" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.982697, 0, -0.18522, 0, 1, 0, 0.18522, 0, 0.982697, -0.343659, -8.55114, -84.5759)
 
-[node name="PillerR" parent="Door3" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+[node name="CSGTorus3D" parent="Door3" index="4"]
+material_override = ExtResource("29_qrxg5")
 
 [node name="Gate text" parent="Door3" index="7"]
 text = "Democratically elected global assembly."
@@ -184,8 +186,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Door5" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(-0.350894, 0, 0.936415, 0, 1, 0, -0.936415, 0, -0.350894, -4.563, 11.134, -77.48)
 
-[node name="PillerR" parent="Door5" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+[node name="CSGTorus3D" parent="Door5" index="4"]
+material_override = ExtResource("29_qrxg5")
 
 [node name="Gate text" parent="Door5" index="7"]
 text = "Democratically elected global assembly."
@@ -196,8 +198,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Door4" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(-0.255564, 0, -0.966792, 0, 1, 0, 0.966792, 0, -0.255564, 4.89518, -8.551, -77.4203)
 
-[node name="PillerR" parent="Door4" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+[node name="CSGTorus3D" parent="Door4" index="4"]
+material_override = ExtResource("29_qrxg5")
 
 [node name="Gate text" parent="Door4" index="7"]
 text = "A group of people educated for the purpose."
@@ -208,8 +210,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Door6" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.988743, 0, -0.149622, 0, 1, 0, 0.149622, 0, 0.988743, 0.861327, 11.1343, -84.9099)
 
-[node name="PillerR" parent="Door6" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+[node name="CSGTorus3D" parent="Door6" index="4"]
+material_override = ExtResource("29_qrxg5")
 
 [node name="Gate text" parent="Door6" index="7"]
 text = "A group of people educated for the purpose."
@@ -349,7 +351,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 text = "commerce or mutualism"
 
 [node name="AudioEnter" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42183, -3.91202)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42183, 8.08798)
 stream = ExtResource("16_mvms0")
 autoplay = true
 bus = &"SFX"
@@ -622,7 +624,7 @@ depth = 0.5
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 10)
 
 [node name="Player" parent="." instance=ExtResource("34_cpsvj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239002, 0.3, 6.80812)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239002, 0.3, 7.80812)
 
 [editable path="quote-millions"]
 [editable path="Door1"]
