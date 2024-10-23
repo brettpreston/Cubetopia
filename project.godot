@@ -25,6 +25,8 @@ config/windows_native_icon="res://Assets/Logoicon.ico"
 
 Autoload1="*res://Autoload1.gd"
 music_player="*res://Scenes/music_player.tscn"
+Transition="*res://Scenes/UI/transition.gd"
+TransitionScene="*res://Scenes/UI/Transition.tscn"
 
 [display]
 
