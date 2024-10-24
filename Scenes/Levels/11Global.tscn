@@ -259,7 +259,7 @@ audio_stream = ExtResource("20_0unee")
 
 [node name="6b" parent="." instance=ExtResource("5_xmy48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.30033, -107.271)
-text = "Should resources be centrally distributed  to ensure equity?"
+text = "Should resources be centrally distributed to ensure equity?"
 audio_stream = ExtResource("20_0unee")
 
 [node name="6b2" parent="." instance=ExtResource("5_xmy48")]

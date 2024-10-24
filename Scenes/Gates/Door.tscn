@@ -205,10 +205,12 @@ outer_radius = 4.0
 
 [node name="AudioDoor2" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_fsx0u")
+max_db = 0.0
 bus = &"SFX"
 
 [node name="AudioDoorClose" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_a55hr")
+max_db = 0.0
 bus = &"SFX"
 
 [node name="Gate text" parent="." instance=ExtResource("5_lrl7c")]
@@ -216,10 +218,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 1)
 
 [node name="AudioDoor3" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_lj3no")
+volume_db = -3.0
+max_db = 0.0
 bus = &"SFX"
 
 [node name="AudioDoor4" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_s2why")
+volume_db = -3.0
+max_db = 0.0
 bus = &"SFX"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]

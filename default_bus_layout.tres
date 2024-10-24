@@ -1,7 +1,7 @@
-[gd_resource type="AudioBusLayout" load_steps=8 format=3 uid="uid://c18ihn31s35c5"]
+[gd_resource type="AudioBusLayout" load_steps=10 format=3 uid="uid://c18ihn31s35c5"]
 
-[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_vsmgy"]
-resource_name = "Compressor"
+[sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_hryto"]
+resource_name = "HardLimiter"
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_7qdr1"]
 resource_name = "Reverb"
@@ -13,13 +13,24 @@ spread = 0.5
 hipass = 0.25
 wet = 0.15
 
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_1g1f4"]
+resource_name = "Compressor"
+threshold = -10.0
+ratio = 2.0
+gain = 3.0
+
 [sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_7836f"]
 resource_name = "HighPassFilter"
 cutoff_hz = 50.0
 
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_5ikfa"]
+resource_name = "LowPassFilter"
+cutoff_hz = 20000.0
+
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_08bd1"]
 resource_name = "Compressor"
-threshold = -30.6
+threshold = -10.1
+ratio = 2.0
 gain = 10.1
 attack_us = 30.0
 release_ms = 300.0
@@ -49,7 +60,7 @@ mix = 0.5
 sidechain = &"VO"
 
 [resource]
-bus/0/effect/0/effect = SubResource("AudioEffectCompressor_vsmgy")
+bus/0/effect/0/effect = SubResource("AudioEffectHardLimiter_hryto")
 bus/0/effect/0/enabled = true
 bus/1/name = &"VO"
 bus/1/solo = false
@@ -65,6 +76,8 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"VO"
+bus/2/effect/0/effect = SubResource("AudioEffectCompressor_1g1f4")
+bus/2/effect/0/enabled = true
 bus/3/name = &"SFX"
 bus/3/solo = false
 bus/3/mute = false
@@ -73,17 +86,25 @@ bus/3/volume_db = 0.0
 bus/3/send = &"Master"
 bus/3/effect/0/effect = SubResource("AudioEffectHighPassFilter_7836f")
 bus/3/effect/0/enabled = true
-bus/3/effect/1/effect = SubResource("AudioEffectCompressor_08bd1")
+bus/3/effect/1/effect = SubResource("AudioEffectLowPassFilter_5ikfa")
 bus/3/effect/1/enabled = true
-bus/3/effect/2/effect = SubResource("AudioEffectReverb_xfvd0")
+bus/3/effect/2/effect = SubResource("AudioEffectCompressor_08bd1")
 bus/3/effect/2/enabled = true
-bus/4/name = &"Music"
+bus/3/effect/3/effect = SubResource("AudioEffectReverb_xfvd0")
+bus/3/effect/3/enabled = true
+bus/4/name = &"Steps"
 bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
-bus/4/volume_db = -6.91795
-bus/4/send = &"Master"
-bus/4/effect/0/effect = SubResource("AudioEffectEQ_dnmu4")
-bus/4/effect/0/enabled = true
-bus/4/effect/1/effect = SubResource("AudioEffectCompressor_wp4qb")
-bus/4/effect/1/enabled = true
+bus/4/volume_db = -10.5236
+bus/4/send = &"SFX"
+bus/5/name = &"Music"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = -6.24739
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectEQ_dnmu4")
+bus/5/effect/0/enabled = true
+bus/5/effect/1/effect = SubResource("AudioEffectCompressor_wp4qb")
+bus/5/effect/1/enabled = true

@@ -121,7 +121,7 @@ skeleton = NodePath("")
 audio_stream = ExtResource("5_7wj32")
 
 [node name="2" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25728, 4.75162, -59.3619)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.752, -59.362)
 text = "Elvi is an inventor, and she came up with a new technology that gives her a big advantage over others."
 audio_stream = ExtResource("14_nuq07")
 
@@ -136,7 +136,7 @@ text = "Elvi is an inventor, and she came up with a new technology that gives he
 audio_stream = ExtResource("14_nuq07")
 
 [node name="3" parent="." instance=ExtResource("4_4blwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712223, 5.59655, -74.154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.597, -74.154)
 text = "She doesn't want to give it up. This new inequality is threatening to destabilize society."
 audio_stream = ExtResource("15_8xikh")
 
