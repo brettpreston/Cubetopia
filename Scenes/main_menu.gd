@@ -9,6 +9,7 @@ var Credits=load("res://Scenes/credits.tscn")
 #	%Start.grab_focus()
 
 func _on_start_pressed() -> void:
+	$Click.play()
 	player_data.mapGlobality = 0
 	player_data.mapTech = 0
 	player_data.mapEconomy = 0
@@ -21,12 +22,31 @@ func _on_start_pressed() -> void:
 
 
 func _on_quit_pressed():
+	$Click.play()
 	get_tree().quit()
 
 
 func _on_options_pressed():
+	$Click.play()
 	%Settings.show()
 
 
 func _on_credits_pressed() -> void:
+	$Click.play()
 	get_tree().change_scene_to_packed(Credits)
+
+
+func _on_start_mouse_entered() -> void:
+	$Hover.play()
+
+
+func _on_options_mouse_entered() -> void:
+	$Hover.play()
+
+
+func _on_credits_mouse_entered() -> void:
+	$Hover.play()
+
+
+func _on_quit_mouse_entered() -> void:
+	$Hover.play()

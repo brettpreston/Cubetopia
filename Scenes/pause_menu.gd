@@ -11,6 +11,8 @@ func _ready() -> void:
 
 func unpause():
 	animator.play("Unpause")
+	$Click.play()
+	$UnPause.play()
 	get_tree().paused = false
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -18,15 +20,30 @@ func unpause():
 
 func pause():
 	animator.play("Pause")
+	$Pause.play()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 #	if Input.is_action_pressed("ui_cancel"):
 #		unpause()
 
 func _on_quit_pressed():
+	$Click.play()
 	get_tree().quit()
 
 
 func _on_main_pressed() -> void:
+	$Click.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(next_scene)
+
+
+func _on_quit_mouse_entered() -> void:
+	$Hover.play()
+
+
+func _on_main_mouse_entered() -> void:
+	$Hover.play()
+
+
+func _on_resume_mouse_entered() -> void:
+	$Hover.play()

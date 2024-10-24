@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b8g1nx260w4rm"]
+[gd_scene load_steps=24 format=3 uid="uid://b8g1nx260w4rm"]
 
 [ext_resource type="Script" path="res://Credits_End.gd" id="1_cquo6"]
 [ext_resource type="Texture2D" uid="uid://b415vuhhodtaq" path="res://Assets/background/end_screen/black.jpg" id="2_s5cad"]
@@ -18,6 +18,17 @@
 [ext_resource type="Texture2D" uid="uid://ceh3efwaacaiw" path="res://Assets/background/end_screen/02_CloseToNature_Centalized_SelfSufficient.png" id="15_unw2f"]
 [ext_resource type="Texture2D" uid="uid://ba7fcwp6blms5" path="res://Assets/background/end_screen/01_CloseToNature_Commerce_SelfSufficient.png" id="16_g46ma"]
 [ext_resource type="AudioStream" uid="uid://biqh7the0uu40" path="res://Assets/audio/music/Perc_pan.ogg" id="18_2he57"]
+[ext_resource type="AudioStream" uid="uid://dbtpwp7j2rd4t" path="res://Assets/audio/UI/confirm_02.ogg" id="19_pbap5"]
+[ext_resource type="AudioStream" uid="uid://bi0bisi7souj3" path="res://Assets/audio/UI/browse_menu_03.ogg" id="20_ld7bo"]
+[ext_resource type="AudioStream" uid="uid://b2gyqjaw54cr1" path="res://Assets/audio/UI/browse_menu_13.ogg" id="21_wrvsc"]
+[ext_resource type="AudioStream" uid="uid://cndmarlw8ooh7" path="res://Assets/audio/UI/browse_menu_24.ogg" id="22_oeo7f"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tnvts"]
+random_pitch = 2.0
+streams_count = 3
+stream_0/stream = ExtResource("20_ld7bo")
+stream_1/stream = ExtResource("21_wrvsc")
+stream_2/stream = ExtResource("22_oeo7f")
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -134,5 +145,19 @@ stream = ExtResource("18_2he57")
 autoplay = true
 bus = &"Music"
 
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_pbap5")
+volume_db = -3.0
+pitch_scale = 3.0
+bus = &"SFX"
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_tnvts")
+volume_db = -3.0
+pitch_scale = 2.0
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

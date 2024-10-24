@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://vxvuihjdrq8n"]
+[gd_scene load_steps=8 format=3 uid="uid://vxvuihjdrq8n"]
 
 [ext_resource type="Script" path="res://Credits_Screen.gd" id="1_g1h6q"]
 [ext_resource type="Texture2D" uid="uid://23ux7jq4rum" path="res://Scenes/UI/Credits.jpg" id="2_ai0fa"]
+[ext_resource type="AudioStream" uid="uid://dbtpwp7j2rd4t" path="res://Assets/audio/UI/confirm_02.ogg" id="3_6q8wa"]
+[ext_resource type="AudioStream" uid="uid://bi0bisi7souj3" path="res://Assets/audio/UI/browse_menu_03.ogg" id="4_cc21b"]
+[ext_resource type="AudioStream" uid="uid://b2gyqjaw54cr1" path="res://Assets/audio/UI/browse_menu_13.ogg" id="5_h3dew"]
+[ext_resource type="AudioStream" uid="uid://cndmarlw8ooh7" path="res://Assets/audio/UI/browse_menu_24.ogg" id="6_ncwpo"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pdo0r"]
+random_pitch = 2.0
+streams_count = 3
+stream_0/stream = ExtResource("4_cc21b")
+stream_1/stream = ExtResource("5_h3dew")
+stream_2/stream = ExtResource("6_ncwpo")
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -28,4 +39,17 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Return to Main Menu"
 
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6q8wa")
+volume_db = -3.0
+pitch_scale = 3.0
+bus = &"SFX"
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_pdo0r")
+volume_db = -3.0
+pitch_scale = 2.0
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="VBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
