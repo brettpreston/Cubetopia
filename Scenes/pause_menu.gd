@@ -9,6 +9,7 @@ func _ready() -> void:
 	resume_button.pressed.connect(unpause)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
+
 func unpause():
 	animator.play("Unpause")
 	$Click.play()
@@ -23,8 +24,6 @@ func pause():
 	$Pause.play()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-#	if Input.is_action_pressed("ui_cancel"):
-#		unpause()
 
 func _on_quit_pressed():
 	$Click.play()

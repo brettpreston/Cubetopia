@@ -39,12 +39,14 @@ size_flags_vertical = 3
 theme_override_constants/separation = 10
 
 [node name="PresetSection" type="Label" parent="SettingsMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.682353, 0.917647, 1, 1)
 text = "Apply Preset"
 horizontal_alignment = 1
 
 [node name="Presets" type="HBoxContainer" parent="SettingsMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="VeryLowPreset" type="Button" parent="SettingsMenu/VBoxContainer/Presets"]
@@ -73,6 +75,7 @@ size_flags_horizontal = 3
 text = "Ultra"
 
 [node name="HSeparator" type="HSeparator" parent="SettingsMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="UISection" type="Label" parent="SettingsMenu/VBoxContainer"]
@@ -215,6 +218,7 @@ max_value = 300.0
 step = 10.0
 
 [node name="TAALabel" type="Label" parent="SettingsMenu/VBoxContainer/GridContainer2"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 16
@@ -222,6 +226,7 @@ text = "Anti-Aliasing (TAA):"
 
 [node name="TAAOptionButton" type="OptionButton" parent="SettingsMenu/VBoxContainer/GridContainer2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 16

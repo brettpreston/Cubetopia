@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxsksshrs1wvu"]
+[gd_scene load_steps=12 format=3 uid="uid://bxsksshrs1wvu"]
 
 [ext_resource type="Theme" uid="uid://cur1si5sm4vmn" path="res://Assets/UI/Menu/CubetopiaTheme.tres" id="1_lfxdq"]
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="2_4u76l"]
@@ -8,18 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://pc54oaofruqg" path="res://Scenes/UI/SettingsPopup/settings.tscn" id="7_jvbr8"]
 [ext_resource type="AudioStream" uid="uid://dbtpwp7j2rd4t" path="res://Assets/audio/UI/confirm_02.ogg" id="8_mauvo"]
 [ext_resource type="AudioStream" uid="uid://d1m1tqbh5j7pn" path="res://Assets/audio/music/test/Phoenix_loop.ogg" id="8_o8qi6"]
-[ext_resource type="AudioStream" uid="uid://bi0bisi7souj3" path="res://Assets/audio/UI/browse_menu_03.ogg" id="9_8v8kh"]
 [ext_resource type="AudioStream" uid="uid://b2gyqjaw54cr1" path="res://Assets/audio/UI/browse_menu_13.ogg" id="10_bh22m"]
-[ext_resource type="AudioStream" uid="uid://cndmarlw8ooh7" path="res://Assets/audio/UI/browse_menu_24.ogg" id="11_mf84r"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxahf"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e7bil"]
-random_pitch = 2.0
-streams_count = 3
-stream_0/stream = ExtResource("9_8v8kh")
-stream_1/stream = ExtResource("10_bh22m")
-stream_2/stream = ExtResource("11_mf84r")
+random_pitch = 1.5
+streams_count = 1
+stream_0/stream = ExtResource("10_bh22m")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -32,11 +28,12 @@ theme = ExtResource("1_lfxdq")
 script = ExtResource("2_4u76l")
 
 [node name="MenuBackground2" type="Sprite2D" parent="."]
-position = Vector2(976, 544)
+position = Vector2(960, 568)
 texture = ExtResource("3_3e1yw")
 
 [node name="MenuBackground" type="Sprite2D" parent="MenuBackground2"]
-scale = Vector2(0.5, 0.5)
+position = Vector2(-8.29697e-05, -28)
+scale = Vector2(0.48, 0.48)
 texture = ExtResource("3_3e1yw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -147,7 +144,6 @@ bus = &"SFX"
 [node name="Hover" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_e7bil")
 volume_db = -3.0
-pitch_scale = 2.0
 bus = &"SFX"
 
 [connection signal="mouse_entered" from="VBoxContainer/VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
