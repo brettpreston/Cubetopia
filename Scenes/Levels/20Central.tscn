@@ -1,6 +1,5 @@
 [gd_scene load_steps=34 format=3 uid="uid://bl0wxpinyyqxb"]
 
-[ext_resource type="Texture2D" uid="uid://cfkyt43mo8cwp" path="res://Assets/background/Background_Centralized.jpg" id="1_apbi8"]
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_thq80"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="2_68nmx"]
 [ext_resource type="AudioStream" uid="uid://dw3rw16imwlgc" path="res://Assets/audio/Quotes/04 Justice.ogg" id="3_mfxt4"]
@@ -31,8 +30,11 @@
 [ext_resource type="Material" uid="uid://bwft8j6bmg23c" path="res://Assets/Textures/Path_Texture_SQ_Y.tres" id="28_5p143"]
 [ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="30_j21nk"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u72jg"]
+load_path = "res://.godot/imported/Background_Centralized.jpg-ee6ba5247664c0b613ce3b2e3c4f326a.s3tc.ctex"
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_exmi3"]
-panorama = ExtResource("1_apbi8")
+panorama = SubResource("CompressedTexture2D_u72jg")
 
 [sub_resource type="Sky" id="Sky_6uvix"]
 sky_material = SubResource("PanoramaSkyMaterial_exmi3")
@@ -65,9 +67,6 @@ audio_stream = ExtResource("7_h0e4g")
 [node name="Door1" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -7, 1, -23)
 
-[node name="PillerR" parent="Door1" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
 [node name="CSGTorus3D" parent="Door1" index="4"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.00257492, 1, 0.021431)
 material_override = ExtResource("23_3ubpf")
@@ -80,9 +79,6 @@ transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 0, 0)
 
 [node name="Door2" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30.4)
-
-[node name="PillerR" parent="Door2" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door2" index="4"]
 material_override = ExtResource("23_3ubpf")
@@ -98,9 +94,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0.940825, 1.525
 
 [node name="Door3" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 7, 1, -23)
-
-[node name="PillerR" parent="Door3" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door3" index="4"]
 material_override = ExtResource("23_3ubpf")
@@ -162,9 +155,6 @@ audio_stream = ExtResource("15_8xikh")
 [node name="Door4" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -6, 1, -82)
 
-[node name="PillerR" parent="Door4" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
 [node name="CSGTorus3D" parent="Door4" index="4"]
 material_override = ExtResource("23_3ubpf")
 
@@ -177,9 +167,6 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door5" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 6, 1, -82)
-
-[node name="PillerR" parent="Door5" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door5" index="4"]
 material_override = ExtResource("23_3ubpf")
@@ -194,9 +181,6 @@ text = "We will task others with reverse-engineering the new technology."
 [node name="Door6" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, -1, -59, 1, -17)
 
-[node name="PillerR" parent="Door6" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
 [node name="CSGTorus3D" parent="Door6" index="4"]
 material_override = ExtResource("23_3ubpf")
 
@@ -209,9 +193,6 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door7" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, -2.54312e-07, 0, 1, 0, 2.54312e-07, 0, 1, -59, 1, -29)
-
-[node name="PillerR" parent="Door7" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door7" index="4"]
 material_override = ExtResource("23_3ubpf")
@@ -226,9 +207,6 @@ text = "We will task others with reverse-engineering the new technology."
 [node name="Door8" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, -1, 58, 1, -17)
 
-[node name="PillerR" parent="Door8" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
 [node name="CSGTorus3D" parent="Door8" index="4"]
 material_override = ExtResource("23_3ubpf")
 
@@ -241,9 +219,6 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door9" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, -2.54312e-07, 0, 1, 0, 2.54312e-07, 0, 1, 58, 1, -29)
-
-[node name="PillerR" parent="Door9" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door9" index="4"]
 material_override = ExtResource("23_3ubpf")

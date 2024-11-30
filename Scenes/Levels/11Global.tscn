@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://ba56j2jb46od5"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/11_global.gd" id="1_a5b3g"]
-[ext_resource type="Texture2D" uid="uid://cyy76lhqi4rnw" path="res://Assets/background/Background_Global.jpg" id="2_2y03g"]
+[ext_resource type="Texture2D" uid="uid://kbfjtjag3yxb" path="res://Assets/background/Background_Global_s.jpg" id="2_33y81"]
 [ext_resource type="PackedScene" uid="uid://c5eeldadkg7tc" path="res://Scenes/mapTriggers/mapGlobality_plus.tscn" id="4_8wbg3"]
 [ext_resource type="AudioStream" uid="uid://c80m0ra5bsdw4" path="res://Assets/audio/Quotes/1b millions.ogg" id="4_bvut0"]
 [ext_resource type="PackedScene" uid="uid://ct3t8flmtdjqq" path="res://Scenes/Gates/Door.tscn" id="4_gg55x"]
@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="34_cpsvj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_37pb6"]
-panorama = ExtResource("2_2y03g")
+panorama = ExtResource("2_33y81")
 
 [sub_resource type="Sky" id="Sky_6uvix"]
 sky_material = SubResource("PanoramaSkyMaterial_37pb6")
@@ -111,9 +111,6 @@ audio_stream = ExtResource("7_5io3u")
 [node name="Door1" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.537608, 0, 0.843194, 0, 1, 0, -0.843194, 0, 0.537608, -5.31574, 1, -35.2784)
 
-[node name="PillerR" parent="Door1" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
 [node name="CSGTorus3D" parent="Door1" index="4"]
 material_override = ExtResource("29_qrxg5")
 
@@ -131,9 +128,6 @@ transform = Transform3D(0.999822, 0, 0.0189011, 0, 1, 0, -0.0189011, 0, 0.999822
 
 [node name="Door2" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.509357, 0, -0.860555, 0, 1, 0, 0.860555, 0, 0.509357, 4.88805, 1, -34.7317)
-
-[node name="PillerR" parent="Door2" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door2" index="4"]
 material_override = ExtResource("29_qrxg5")
@@ -180,9 +174,6 @@ transform = Transform3D(1, 7.45058e-09, -2.38419e-07, 0, 1, 0, 2.68221e-07, 1.49
 [node name="Door3" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.982697, 0, -0.18522, 0, 1, 0, 0.18522, 0, 0.982697, -0.343659, -8.55114, -84.5759)
 
-[node name="PillerR" parent="Door3" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
 [node name="CSGTorus3D" parent="Door3" index="4"]
 material_override = ExtResource("29_qrxg5")
 
@@ -194,9 +185,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Door5" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(-0.350894, 0, 0.936415, 0, 1, 0, -0.936415, 0, -0.350894, -4.563, 11.134, -77.48)
-
-[node name="PillerR" parent="Door5" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door5" index="4"]
 material_override = ExtResource("29_qrxg5")
@@ -210,9 +198,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Door4" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(-0.255564, 0, -0.966792, 0, 1, 0, 0.966792, 0, -0.255564, 4.89518, -8.551, -77.4203)
 
-[node name="PillerR" parent="Door4" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
-
 [node name="CSGTorus3D" parent="Door4" index="4"]
 material_override = ExtResource("29_qrxg5")
 
@@ -224,9 +209,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Door6" parent="." instance=ExtResource("4_gg55x")]
 transform = Transform3D(0.988743, 0, -0.149622, 0, 1, 0, 0.149622, 0, 0.988743, 0.861327, 11.1343, -84.9099)
-
-[node name="PillerR" parent="Door6" index="1"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door6" index="4"]
 material_override = ExtResource("29_qrxg5")
@@ -418,7 +400,7 @@ polygon = PackedVector2Array(0, -4.2, -3.8, 2, 3.6, 2)
 depth = 0.5
 
 [node name="Triangle2" type="CSGPolygon3D" parent="Node3D"]
-transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0.5, 10.4404, -80)
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0.5, 10.4505, -80)
 material_override = ExtResource("29_qrxg5")
 use_collision = true
 polygon = PackedVector2Array(0, -4.2, -3.8, 2, 3.6, 2)
