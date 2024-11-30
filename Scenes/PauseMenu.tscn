@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7i26dwsefhlq"]
+[gd_scene load_steps=17 format=3 uid="uid://b7i26dwsefhlq"]
 
 [ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="1_d14em"]
 [ext_resource type="Shader" path="res://Scenes/blur.gdshader" id="1_e0yhc"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cndmarlw8ooh7" path="res://Assets/audio/UI/browse_menu_24.ogg" id="7_ref4k"]
 [ext_resource type="AudioStream" uid="uid://dex684w38oanb" path="res://Assets/audio/UI/Pause.ogg" id="8_h2ecw"]
 [ext_resource type="AudioStream" uid="uid://b0tlhfh1p5r0e" path="res://Assets/audio/UI/UnPause.ogg" id="9_4k4qc"]
+[ext_resource type="PackedScene" uid="uid://pc54oaofruqg" path="res://Scenes/UI/SettingsPopup/settings.tscn" id="10_kyc4r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8j0ex"]
 shader = ExtResource("1_e0yhc")
@@ -201,9 +202,9 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 848.0
-offset_top = 840.0
-offset_right = -909.0
-offset_bottom = -110.0
+offset_top = 712.0
+offset_right = -846.0
+offset_bottom = -56.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -216,6 +217,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 55
 text = "Resume"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 55
+text = "Options"
 
 [node name="Main" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -264,8 +272,15 @@ volume_db = -3.0
 pitch_scale = 2.0
 bus = &"SFX"
 
+[node name="Settings" parent="." instance=ExtResource("10_kyc4r")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Options" to="." method="_on_resume_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Main" to="." method="_on_main_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Main" to="." method="_on_main_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]

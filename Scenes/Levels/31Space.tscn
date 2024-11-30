@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://dir0spdqulavi"]
+[gd_scene load_steps=45 format=3 uid="uid://dir0spdqulavi"]
 
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_tbdsx"]
 [ext_resource type="Texture2D" uid="uid://vuqbtrwyo2hk" path="res://Assets/background/Background_Futuristic_s.jpg" id="2_kqafr"]
@@ -29,7 +29,6 @@
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="25_lki6f"]
 [ext_resource type="Texture2D" uid="uid://c76mjx5r5n5pf" path="res://Assets/Textures/Node_Path.png" id="26_44qlx"]
 [ext_resource type="PackedScene" uid="uid://dir1nnlflaqs7" path="res://Assets/Models/Props/Space/EV_planet.glb" id="27_7jso4"]
-[ext_resource type="Texture2D" uid="uid://dqd8ksacgyxiq" path="res://Assets/Sprites/RingStation_lowpoly.png" id="27_epr7a"]
 [ext_resource type="Material" uid="uid://bb4rpedebjtkf" path="res://Assets/Textures/Path_Texture_B.tres" id="28_cupe4"]
 [ext_resource type="Script" path="res://Planet_rotate.gd" id="28_fpmxv"]
 [ext_resource type="PackedScene" uid="uid://bho5hnrcogrsl" path="res://Assets/Models/Props/portal_powerless.tscn" id="29_w6o4f"]
@@ -286,13 +285,8 @@ transform = Transform3D(10, 0, 0, 0, -5, 8.66025, 0, -8.66025, -5, -859, 1101, -
 [node name="station_lowpoly" parent="." instance=ExtResource("20_61ent")]
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, -69, 316, 1043)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(22.1938, 0, 33.2782, 0, 40, 0, -33.2782, 0, 22.1938, 1484, 457, 257)
-texture = ExtResource("27_epr7a")
-
 [node name="RingStation_lowpoly" parent="." instance=ExtResource("21_434ds")]
 transform = Transform3D(8.66025, 5, 2.30318e-06, -4.33013, 7.5, 5, 2.5, -4.33013, 8.66025, 1484, 457, 257)
-visible = false
 
 [node name="LevelSwirl" type="CSGCombiner3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)

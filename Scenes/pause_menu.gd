@@ -46,3 +46,8 @@ func _on_main_mouse_entered() -> void:
 
 func _on_resume_mouse_entered() -> void:
 	$Hover.play()
+
+
+func _on_options_pressed() -> void:
+	$Hover.play()
+	%Settings.show()

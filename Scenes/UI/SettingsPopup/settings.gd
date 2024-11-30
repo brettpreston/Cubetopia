@@ -228,3 +228,19 @@ func update_preset() -> void:
 
 func _on_hide_button_pressed():
 	hide()
+
+
+func _on_audio_slider_1_value_changed(value):
+	AudioServer.set_bus_volume_db(0, value)
+
+
+func _on_audio_slider_2_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(1, value)
+
+
+func _on_audio_slider_3_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(3, value)
+
+
+func _on_audio_slider_4_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(5, value)
