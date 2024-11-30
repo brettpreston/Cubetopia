@@ -122,7 +122,7 @@ func play_audio_based_on_choice():
 			audio_queue.append(volatileA)
 	elif  player_data.mapEconomy>-3:
 		if player_data.vresilience < 0:
-			audio_queue.append(solidarity)
+			audio_queue.append(solidarityA)
 		else:
 			audio_queue.append(utopiaA)
 		
