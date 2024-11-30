@@ -10,6 +10,8 @@ func _on_button_pressed() -> void:
 	$Click.play()
 	get_tree().change_scene_to_packed(MainMenu)
 
+func _input(event): 
+	if Input.is_action_pressed("StartGP"):_on_button_pressed()
 
 #	if Input.is_action_pressed("ui_cancel"):
 #		unpause()

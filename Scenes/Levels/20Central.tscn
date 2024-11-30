@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://music_auto_stop.gd" id="1_thq80"]
 [ext_resource type="PackedScene" uid="uid://dvijjw3gnflmg" path="res://Scenes/Titles/Quote.tscn" id="2_68nmx"]
+[ext_resource type="Texture2D" uid="uid://bc4vciee2xaa6" path="res://Assets/background/Background_Centralized_s.jpg" id="2_6703q"]
 [ext_resource type="AudioStream" uid="uid://dw3rw16imwlgc" path="res://Assets/audio/Quotes/04 Justice.ogg" id="3_mfxt4"]
 [ext_resource type="PackedScene" uid="uid://bsbnduuv6kfxe" path="res://Scenes/Titles/Title.tscn" id="4_4blwt"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="4_ensoe"]
@@ -30,11 +31,8 @@
 [ext_resource type="Material" uid="uid://bwft8j6bmg23c" path="res://Assets/Textures/Path_Texture_SQ_Y.tres" id="28_5p143"]
 [ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="30_j21nk"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u72jg"]
-load_path = "res://.godot/imported/Background_Centralized.jpg-ee6ba5247664c0b613ce3b2e3c4f326a.s3tc.ctex"
-
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_exmi3"]
-panorama = SubResource("CompressedTexture2D_u72jg")
+panorama = ExtResource("2_6703q")
 
 [sub_resource type="Sky" id="Sky_6uvix"]
 sky_material = SubResource("PanoramaSkyMaterial_exmi3")
