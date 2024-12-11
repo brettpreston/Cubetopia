@@ -65,6 +65,9 @@ audio_stream = ExtResource("7_h0e4g")
 [node name="Door1" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -7, 1, -23)
 
+[node name="PillerR" parent="Door1" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="CSGTorus3D" parent="Door1" index="4"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.00257492, 1, 0.021431)
 material_override = ExtResource("23_3ubpf")
@@ -77,6 +80,9 @@ transform = Transform3D(1, 0, 2.98023e-07, 0, 1, 0, -2.98023e-07, 0, 1, 0, 0, 0)
 
 [node name="Door2" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -30.4)
+
+[node name="PillerR" parent="Door2" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door2" index="4"]
 material_override = ExtResource("23_3ubpf")
@@ -92,6 +98,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, 0.940825, 1.525
 
 [node name="Door3" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 7, 1, -23)
+
+[node name="PillerR" parent="Door3" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door3" index="4"]
 material_override = ExtResource("23_3ubpf")
@@ -153,6 +162,9 @@ audio_stream = ExtResource("15_8xikh")
 [node name="Door4" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, 1, 0, 1, 0, -1, 0, -2.98023e-07, -6, 1, -82)
 
+[node name="PillerR" parent="Door4" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="CSGTorus3D" parent="Door4" index="4"]
 material_override = ExtResource("23_3ubpf")
 
@@ -165,6 +177,9 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door5" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-2.98023e-07, 0, -1, 0, 1, 0, 1, 0, -2.98023e-07, 6, 1, -82)
+
+[node name="PillerR" parent="Door5" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door5" index="4"]
 material_override = ExtResource("23_3ubpf")
@@ -179,6 +194,9 @@ text = "We will task others with reverse-engineering the new technology."
 [node name="Door6" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, -1, -59, 1, -17)
 
+[node name="PillerR" parent="Door6" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="CSGTorus3D" parent="Door6" index="4"]
 material_override = ExtResource("23_3ubpf")
 
@@ -191,6 +209,9 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door7" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, -2.54312e-07, 0, 1, 0, 2.54312e-07, 0, 1, -59, 1, -29)
+
+[node name="PillerR" parent="Door7" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door7" index="4"]
 material_override = ExtResource("23_3ubpf")
@@ -205,6 +226,9 @@ text = "We will task others with reverse-engineering the new technology."
 [node name="Door8" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(-1, 0, -3.41735e-07, 0, 1, 0, 3.41735e-07, 0, -1, 58, 1, -17)
 
+[node name="PillerR" parent="Door8" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
+
 [node name="CSGTorus3D" parent="Door8" index="4"]
 material_override = ExtResource("23_3ubpf")
 
@@ -217,6 +241,9 @@ text = "She will have to share the knowledge. It's the law."
 
 [node name="Door9" parent="." instance=ExtResource("9_qt30p")]
 transform = Transform3D(1, 0, -2.54312e-07, 0, 1, 0, 2.54312e-07, 0, 1, 58, 1, -29)
+
+[node name="PillerR" parent="Door9" index="1"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 3, 0, 0)
 
 [node name="CSGTorus3D" parent="Door9" index="4"]
 material_override = ExtResource("23_3ubpf")

@@ -16,9 +16,9 @@ stream_2/stream = ExtResource("6_ncwpo")
 
 [node name="Credits" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource("1_g1h6q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
