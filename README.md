@@ -107,7 +107,7 @@ A trailer for the game can be found at https://www.youtube.com/watch?v=tXytOYlsu
 
 ## FOSS tech stack
 
-We built Cubetopia entirely in Godot, with art assets made in Blender and GIMP. We are proud to use FOSS tools.
+We built Cubetopia in Godot, with art assets made in Blender and GIMP. We are proud to use FOSS tools.
 
 
 
