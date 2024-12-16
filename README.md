@@ -19,7 +19,7 @@ they each present their own challenges, which provides the
 game with replayability.
 
 As the choices are made, the visual art and music become
-more complex and reflect the player’s choices. Eppic audio damples referencing the CCC's history of changing the world are woven into the dreamlike narrative.
+more complex and reflect the player’s choices. Epic audio samples referencing the CCC's history of changing the world are woven into the dreamlike narrative.
 
 ```
 “Try to look at what the world was like a few hundred years ago,
