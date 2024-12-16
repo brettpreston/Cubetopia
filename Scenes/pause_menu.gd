@@ -10,7 +10,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
-func _input(event): 
+func _input(_event): 
 	if Input.is_action_pressed("StartGP"):pause()
 	if Input.is_action_pressed("Resume"):unpause()
 

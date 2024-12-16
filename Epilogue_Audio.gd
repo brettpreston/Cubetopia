@@ -29,7 +29,7 @@ var cubetopia_mesh = load("res://Scenes/Titles/Epilogue_mesh.tres")
 
 var smallcom: String="You walk among your neighbors and look up at the starry sky. "
 var global: String="You are on your way to see your friends in the Capital, and look at the world outside the train window. "
-var nature: String="The wind sways the young trees gently, and you can hear the buzzing of bees."
+var nature: String="The wind sways the young trees gently, and you can hear the buzzing of bees. "
 var space: String="The lights are reflected in the station dome, beyond it in the sky you can see the waxing Earth. "
 var capitalismState: String="You know that some of your friends are struggling, the inequality has not been contained. But the elite have a strong hold on power. Many will be afraid to strive for change. "
 var capitalismNoState: String="You know that some of your friends are struggling, the inequality has not been contained. Here and there, you are starting to hear about violent incidents. Perhaps things will have to change again. "

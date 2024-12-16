@@ -1,84 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhbijqclbto4s"]
+[gd_scene load_steps=9 format=3 uid="uid://bhbijqclbto4s"]
 
-[ext_resource type="Texture2D" uid="uid://dkpqh8de7tb3n" path="res://Assets/Textures/Grids/Green.png" id="2_60px3"]
 [ext_resource type="PackedScene" uid="uid://dj25egnveivgn" path="res://Assets/Models/Props/Portal_Teal.glb" id="3_ldq13"]
-[ext_resource type="Texture2D" uid="uid://cpot6yddpgadd" path="res://Assets/Textures/Energy_v.png" id="4_1a10k"]
+[ext_resource type="Texture2D" uid="uid://b70qkbc614vpe" path="res://Assets/Textures/Grids/Purple.png" id="4_hn0bi"]
 [ext_resource type="AudioStream" uid="uid://bx52jr3l5e4q4" path="res://Assets/audio/SFX/portalhum.ogg" id="5_cw2pk"]
 [ext_resource type="Shader" uid="uid://gei33hqy7aj4" path="res://Scenes/Gates/GatePortalV.tres" id="5_i14mt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3718j"]
-albedo_texture = ExtResource("2_60px3")
-emission_enabled = true
-emission = Color(0, 0, 1, 1)
-emission_energy_multiplier = 8.24
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_w676p"]
 size = Vector3(3, 3.5, 1)
-
-[sub_resource type="Shader" id="Shader_hff17"]
-code = "// NOTE: Shader automatically converted from Godot Engine 4.2.2.stable's StandardMaterial3D.
-
-shader_type spatial;
-render_mode blend_add,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
-uniform vec4 albedo : source_color;
-uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
-uniform float point_size : hint_range(0,128);
-uniform sampler2D texture_emission : source_color, hint_default_black,filter_linear_mipmap,repeat_enable;
-uniform vec4 emission : source_color;
-uniform float emission_energy;
-varying vec3 uv1_triplanar_pos;
-varying vec3 uv2_triplanar_pos;
-uniform float uv1_blend_sharpness;
-varying vec3 uv1_power_normal;
-uniform vec3 uv1_scale;
-uniform vec3 uv1_offset;
-uniform vec3 uv2_scale;
-uniform vec3 uv2_offset;
-
-void vertex() {
-	vec3 normal = NORMAL;
-	uv1_power_normal=pow(abs(NORMAL),vec3(uv1_blend_sharpness));
-	uv1_triplanar_pos = VERTEX * uv1_scale + uv1_offset;
-	uv1_power_normal/=dot(uv1_power_normal,vec3(1.0));
-	uv1_triplanar_pos *= vec3(1.0,-1.0, 1.0);
-	uv1_triplanar_pos.y += TIME * float(1);
-	uv2_triplanar_pos.y += TIME * float(1);
-}
-
-
-
-
-vec4 triplanar_texture(sampler2D p_sampler,vec3 p_weights,vec3 p_triplanar_pos) {
-	vec4 samp=vec4(0.0);
-	samp+= texture(p_sampler,p_triplanar_pos.xy) * p_weights.z;
-	samp+= texture(p_sampler,p_triplanar_pos.xz) * p_weights.y;
-	samp+= texture(p_sampler,p_triplanar_pos.zy * vec2(-1.0,1.0)) * p_weights.x;
-	return samp;
-}
-
-
-void fragment() {
-	vec4 albedo_tex = triplanar_texture(texture_albedo,uv1_power_normal,uv1_triplanar_pos);
-	ALBEDO = albedo.rgb * albedo_tex.rgb;
-	vec3 emission_tex = triplanar_texture(texture_emission, uv1_power_normal, uv1_triplanar_pos).rgb;
-	EMISSION = (emission.rgb + emission_tex) * emission_energy;
-	ALPHA *= albedo.a * albedo_tex.a;
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e8yds"]
-render_priority = 0
-shader = SubResource("Shader_hff17")
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/point_size = 1.0
-shader_parameter/emission = Color(0.14902, 0.635294, 1, 1)
-shader_parameter/emission_energy = 1.0
-shader_parameter/uv1_blend_sharpness = 1.0
-shader_parameter/uv1_scale = Vector3(0, 1, 1)
-shader_parameter/uv1_offset = Vector3(0, 0, 0)
-shader_parameter/uv2_scale = Vector3(1, 1, 1)
-shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/texture_albedo = ExtResource("4_1a10k")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p7l30"]
 render_priority = 0
@@ -88,18 +16,13 @@ shader_parameter/ColorParameter = Color(3.85046e-06, 0.648047, 0.910132, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_62om5"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3jpa"]
+albedo_texture = ExtResource("4_hn0bi")
+emission_enabled = true
+emission = Color(0.309804, 0.00784314, 0.643137, 1)
+emission_energy_multiplier = 3.8
+
 [node name="Gate1" type="Area3D"]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-visible = false
-size = Vector3(5, 4, 1)
-material = SubResource("StandardMaterial3D_3718j")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
-operation = 2
-size = Vector3(3, 3.5, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
@@ -107,15 +30,6 @@ shape = SubResource("BoxShape3D_w676p")
 
 [node name="Portal_Teal" parent="." instance=ExtResource("3_ldq13")]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 0, 0)
-
-[node name="Energy" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 0, 1.7, 0)
-visible = false
-radius = 2.0
-height = 0.2
-cone = true
-smooth_faces = false
-material = SubResource("ShaderMaterial_e8yds")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.8, 0)
@@ -130,5 +44,17 @@ volume_db = -3.0
 unit_size = 1.5
 autoplay = true
 bus = &"SFX"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+use_collision = true
+size = Vector3(5, 4, 1)
+material = SubResource("StandardMaterial3D_f3jpa")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+operation = 2
+size = Vector3(3, 3.5, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

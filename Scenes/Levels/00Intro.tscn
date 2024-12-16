@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwjj0q4okd4tu"]
+[gd_scene load_steps=33 format=3 uid="uid://dwjj0q4okd4tu"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_vl1r8"]
 [ext_resource type="Texture2D" uid="uid://c2s84cb5ai8tb" path="res://Assets/background/Stars_Nat.jpg" id="2_din7f"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://bajhq28k0d0g7" path="res://Assets/Models/Props/fairy_path.tscn" id="22_3y3la"]
 [ext_resource type="Material" uid="uid://caf2ufboi3wj0" path="res://Assets/Textures/Path_Texture_SQ.tres" id="25_c6r3i"]
 [ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="25_g8gph"]
+[ext_resource type="Script" path="res://Scenes/Levels/Controlsheet.gd" id="26_e7ufp"]
+[ext_resource type="Texture2D" uid="uid://c3hskeax8fe3r" path="res://Assets/UI/controlsheetpc.png" id="27_rb1rg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kjwaf"]
 panorama = ExtResource("2_din7f")
@@ -47,6 +49,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a8e5n"]
+size = Vector3(4.2, 1.4, 4)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 78.6239)
@@ -228,3 +233,19 @@ material = ExtResource("25_c6r3i")
 
 [node name="Player" parent="." instance=ExtResource("25_g8gph")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 5, -35.6239)
+
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("sprite", "area")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 6.4, -39)
+script = ExtResource("26_e7ufp")
+sprite = NodePath("Sprite3D")
+area = NodePath("Area3D")
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(0.435, 0, 0, 0, 0.435, 0, 0, 0, 0.435, 0, 0, 0)
+texture = ExtResource("27_rb1rg")
+
+[node name="Area3D" type="Area3D" parent="Node3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0, 2)
+shape = SubResource("BoxShape3D_a8e5n")

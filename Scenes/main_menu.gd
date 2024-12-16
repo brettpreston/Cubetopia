@@ -9,7 +9,7 @@ var Credits=load("res://Scenes/credits.tscn")
 #	music_player.play_bird()
 #	%Start.grab_focus()
 	
-func _input(event): 
+func _input(_event): 
 	if Input.is_action_pressed("StartGP"):_on_start_pressed()
 
 func _on_start_pressed() -> void:

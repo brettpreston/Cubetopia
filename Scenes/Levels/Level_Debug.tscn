@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bdfctj3ikcg5v" path="res://Scenes/TriggersOther/autonomy_minus.tscn" id="18_5s3dj"]
 [ext_resource type="PackedScene" uid="uid://du3kmpndgn2oe" path="res://Scenes/TriggersOther/autonomy_plus.tscn" id="19_8oltt"]
 [ext_resource type="PackedScene" uid="uid://cm40w5k725ljo" path="res://Scenes/TriggersOther/resilience_minus.tscn" id="20_y6g53"]
-[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="21_10jnl"]
+[ext_resource type="PackedScene" uid="uid://co7awagts3133" path="res://Scenes/Characters/Hacker.tscn" id="21_bm5hy"]
 [ext_resource type="PackedScene" uid="uid://b2kxkqmgi0d1y" path="res://audiotrigger.tscn" id="21_dwyv3"]
 [ext_resource type="PackedScene" uid="uid://byxgfc4rsrx14" path="res://Scenes/TriggersOther/resilience_plus.tscn" id="21_nr0tr"]
 
@@ -172,5 +172,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 2, -3)
 [node name="Audio" parent="." instance=ExtResource("21_dwyv3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.4, 0)
 
-[node name="Player" parent="." instance=ExtResource("21_10jnl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 1)
+[node name="Player" parent="." instance=ExtResource("21_bm5hy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 2)
