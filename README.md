@@ -3,6 +3,7 @@
 #### Funded by Chaos Computer Club's initiative "Call for Stories" to celebrate the Club's 42-year history of changing the world.
 
 [CUBETOPIA WEB PAGE](https://cubetopia.art)
+
 [PLAY ON ITCH.IO](https://machine-elves-workshop.itch.io/cubetopia)
 
 ## The project
