@@ -244,3 +244,45 @@ func _on_audio_slider_3_value_changed(value: float) -> void:
 
 func _on_audio_slider_4_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(5, value)
+
+func _on_menu_opened():
+	# Graphics
+	%QualitySlider.value = get_viewport().scaling_3d_scale
+	%FilterOptionButton.selected = get_viewport().scaling_3d_mode
+	%FSRSharpnessSlider.value = 2.0 - get_viewport().fsr_sharpness
+	%VsyncOptionButton.selected = DisplayServer.window_get_vsync_mode()
+	%LimitFPSSlider.value = Engine.max_fps
+	%MSAAOptionButton.selected = get_viewport().msaa_3d
+	%TAAOptionButton.selected = int(get_viewport().use_taa)
+	%FXAAOptionButton.selected = int(get_viewport().screen_space_aa)
+	%FullscreenOptionButton.selected = get_tree().root.get_mode()
+	#%ShadowFilterOptionButton.selected = RenderingServer.directional_soft_shadow_filter_get_quality()
+	%MeshLODOptionButton.selected = _get_mesh_lod_index(get_viewport().mesh_lod_threshold)
+	%UIScaleOptionButton.selected = _get_ui_scale_index(get_tree().root.content_scale_factor)
+
+	# Audio
+	%AudioSlider1.value = AudioServer.get_bus_volume_db(0)
+	%AudioSlider2.value = AudioServer.get_bus_volume_db(1)
+	%AudioSlider3.value = AudioServer.get_bus_volume_db(3)
+	%AudioSlider4.value = AudioServer.get_bus_volume_db(5)
+
+func _get_mesh_lod_index(threshold: float) -> int:
+	if threshold == 8.0: return 0
+	if threshold == 4.0: return 1
+	if threshold == 2.0: return 2
+	if threshold == 1.0: return 3
+	if threshold == 0.0: return 4
+	return 2 # Default to Medium
+
+func _get_ui_scale_index(scale: float) -> int:
+	match scale:
+		0.5: return 0
+		0.75: return 1
+		1.0: return 2
+		1.25: return 3
+		1.5: return 4
+	return 2 # Default to 1.0
+
+#func show():
+#	_on_menu_opened()
+#	super.show()
