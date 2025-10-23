@@ -2,6 +2,9 @@ extends Control
 
 var MainMenu=load("res://Scenes/MainMenu.tscn")
 
+func _ready():
+	$VBoxContainer/Button.grab_focus()
+
 func _on_button_pressed() -> void:
 	$Click.play()
 	get_tree().change_scene_to_packed(MainMenu)

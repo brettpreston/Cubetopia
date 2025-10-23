@@ -26,8 +26,8 @@ func _process(_delta):
 	var look_y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
 
 	if look_x != 0 or look_y != 0:
-		rotate_y(look_x * 0.05)
-		spring_arm.rotate_x(look_y * 0.05)
+		rotate_y(look_x * 0.02)
+		spring_arm.rotate_x(look_y * 0.02)
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
 
 func _physics_process(_delta):

@@ -29,7 +29,8 @@ func pause():
 	$Pause.play()
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	$MarginContainer/VBoxContainer/Resume.grab_focus()
+	
 func _on_quit_pressed():
 	$Click.play()
 	get_tree().quit()
