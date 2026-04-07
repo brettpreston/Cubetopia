@@ -7,7 +7,7 @@ extends Node3D
 
 const CAMERA_BLEND : float = 0.05
 
-@export var mouse_sensitivity : float = 0.001
+@export var mouse_sensitivity : float = 0.003
 
 @onready var spring_arm : SpringArm3D = $SpringArm3D
 @onready var camera : Camera3D = $SpringArm3D/Camera3D
@@ -26,8 +26,8 @@ func _process(_delta):
 	var look_y = Input.get_action_strength("look_down") - Input.get_action_strength("look_up")
 
 	if look_x != 0 or look_y != 0:
-		rotate_y(look_x * 0.02)
-		spring_arm.rotate_x(look_y * 0.02)
+		rotate_y(look_x * 0.06)
+		spring_arm.rotate_x(look_y * 0.06)
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
 
 func _physics_process(_delta):
