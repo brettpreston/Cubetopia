@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=10 format=3 uid="uid://c18ihn31s35c5"]
+[gd_resource type="AudioBusLayout" format=3 uid="uid://c18ihn31s35c5"]
 
 [sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_hryto"]
 resource_name = "HardLimiter"

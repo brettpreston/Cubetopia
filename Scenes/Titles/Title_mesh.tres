@@ -1,7 +1,7 @@
-[gd_resource type="TextMesh" load_steps=5 format=3 uid="uid://7y8x3yq3okct"]
+[gd_resource type="TextMesh" format=3 uid="uid://7y8x3yq3okct"]
 
 [ext_resource type="FontFile" uid="uid://bcrbhs7gvwvsf" path="res://Assets/Fonts/dejavu-sans-mono.bold.ttf" id="1_ue0hj"]
-[ext_resource type="Shader" path="res://Scenes/Titles/outline.gdshader" id="2_q4hk3"]
+[ext_resource type="Shader" uid="uid://bthoj33efgwr7" path="res://Scenes/Titles/outline.gdshader" id="2_q4hk3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oebv2"]
 render_priority = 0
@@ -13,7 +13,7 @@ shader_parameter/outline_width = 4.0
 next_pass = SubResource("ShaderMaterial_oebv2")
 emission_enabled = true
 emission = Color(0.758192, 0.758192, 0.758192, 1)
-emission_energy_multiplier = 10.0
+emission_energy_multiplier = 5.0
 
 [resource]
 material = SubResource("StandardMaterial3D_1vuul")

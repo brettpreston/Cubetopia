@@ -6,7 +6,7 @@ extends MeshInstance3D
 
 var shown = false
 var cubetopia_mesh = load("res://Scenes/Titles/Quote_mesh.tres")
-var fade_out_time := 1.0 # seconds
+var fade_out_time := 3.0 # seconds
 var fade_out_tween: Tween
 
 func _ready():
